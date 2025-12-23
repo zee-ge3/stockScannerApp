@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './App.css'
+import TVChart from './TVChart'
 
 function App() {
   // Tabs State: 'scan', 'lookup', 'manage'
@@ -148,6 +149,11 @@ function App() {
                     Score: {stockReport.total_score}
                 </div>
               </div>
+
+              {/* Charting */}
+              {stockReport.prices && stockReport.prices.length > 0 && (
+                <TVChart data={stockReport.prices} symbol={stockReport.symbol} />                
+              )}
 
               {/* FINANCIALS TABLE */}
               <h3>Recent Quarters</h3>

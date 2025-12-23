@@ -96,6 +96,16 @@ def read_root():
 @app.get("/stock/{symbol}")
 def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
     symbol = symbol.upper() 
+    
+    # get stock price history
+    statement_price = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
+    results_price = session.exec(statement_price).all()
+
+    if not results_price:
+        raise HTTPException(status_code=404, detail="Price data not found")
+
+    # Grab the last year of data
+    price_data = [r.model_dump() for r in results_price]
 
     # 1. Fetch Financials
     statement_fin = select(QuarterlyFinancials).where(QuarterlyFinancials.symbol == symbol).order_by(QuarterlyFinancials.date)
@@ -131,7 +141,8 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
         "components": score_dict.get("components"),
         # We send the raw records so the frontend can display a table of the last 4 quarters
         "financials": [r.model_dump() for r in results_fin[-4:]], # Last 4 quarters
-        "surprises": [r.model_dump() for r in results_surprise[-4:]] if results_surprise else []
+        "surprises": [r.model_dump() for r in results_surprise[-4:]] if results_surprise else [],
+        "prices": price_data
     }
 
 @app.post("/update")
