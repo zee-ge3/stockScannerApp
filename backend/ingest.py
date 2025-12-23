@@ -5,7 +5,8 @@ from database import engine, create_db_and_tables
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
 
 # UPDATE THIS PATH if your folder is somewhere else
-DATA_DIR = "/home/g30rgez/stockScannerApp/stockdata"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "stockdata")
 
 def ingest_data():
     # 1. SETUP: Create the empty table structure in the DB file
