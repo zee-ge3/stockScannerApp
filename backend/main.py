@@ -5,6 +5,7 @@ from database import get_session
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
 from scanner_logic import get_values, primary_screen, fundamental_screen
 import pandas as pd
+from update import update_prices, update_fundamentals_full
 
 app = FastAPI()
 
@@ -132,3 +133,34 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
         "financials": [r.model_dump() for r in results_fin[-4:]], # Last 4 quarters
         "surprises": [r.model_dump() for r in results_surprise[-4:]] if results_surprise else []
     }
+
+@app.post("/update")
+def trigger_update(session: Session = Depends(get_session)):
+    """
+    Triggers the Yahoo Finance download for all stocks.
+    """
+    try:
+        # We run the update logic inside the API call
+        # Note: For 500 stocks, this might take 1-2 minutes.
+        # Ideally this runs in a background task, but for a personal app, waiting is fine.
+        update_prices(session)
+        return {"status": "success", "message": "Prices updated successfully"}
+    except Exception as e:
+        print(f"Update failed: {e}")
+        return {"status": "error", "message": str(e)}
+    
+@app.post("/update-earnings")
+def trigger_earnings_update():
+    """
+    Triggers the heavy earnings download and ingestion.
+    WARNING: This can take a long time (minutes to hours).
+    """
+    try:
+        print("Starting Earnings Update via API...")
+        # Note: This will block the server until finished. 
+        # For a local app, this is fine, but the UI will spin for a while.
+        update_fundamentals_full()
+        return {"status": "success", "message": "Earnings data updated successfully"}
+    except Exception as e:
+        print(f"Earnings update failed: {e}")
+        return {"status": "error", "message": str(e)}

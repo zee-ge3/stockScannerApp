@@ -3,26 +3,35 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
-  // Tabs State: 'scan' or 'lookup'
+  // Tabs State: 'scan', 'lookup', 'manage'
   const [activeTab, setActiveTab] = useState('scan')
   
   // Scanner State
   const [scanResults, setScanResults] = useState<any[]>([])
   const [scanning, setScanning] = useState(false)
+  const [scannedCount, setScannedCount] = useState(0)
 
   // Lookup State
   const [tickerSearch, setTickerSearch] = useState('')
   const [stockReport, setStockReport] = useState<any>(null)
   const [lookingUp, setLookingUp] = useState(false)
 
+  // Manage State
+  const [updating, setUpdating] = useState(false)
+  const [updateMsg, setUpdateMsg] = useState('')
+  const [updatingEarnings, setUpdatingEarnings] = useState(false)
+  const [earningsMsg, setEarningsMsg] = useState('')
+
   // --- HANDLERS ---
   
   const handleScan = async () => {
     setScanning(true)
+    setScanResults([]) // Clear previous
     try {
       const response = await axios.get('http://localhost:8000/scan')
       setScanResults(response.data.passed_stocks)
-    } catch (e) { alert("Scan failed") }
+      setScannedCount(response.data.scanned_count)
+    } catch (e) { alert("Scan failed. Is backend running?") }
     setScanning(false)
   }
 
@@ -40,6 +49,42 @@ function App() {
     setLookingUp(false)
   }
 
+  const handleUpdate = async () => {
+    setUpdating(true)
+    setUpdateMsg('Connecting to Yahoo Finance... (This may take a minute)')
+    try {
+        const response = await axios.post('http://localhost:8000/update')
+        if (response.data.status === 'success') {
+            setUpdateMsg('✅ Success! Database is up to date.')
+        } else {
+            setUpdateMsg('❌ Error: ' + response.data.message)
+        }
+    } catch (e) {
+        setUpdateMsg('❌ Failed to connect to server.')
+    }
+    setUpdating(false)
+  }
+
+  const handleUpdateEarnings = async () => {
+    if (!confirm("⚠️ This process downloads data for ALL stocks. It can take 10-20 minutes. Continue?")) return;
+
+    setUpdatingEarnings(true)
+    setEarningsMsg('Downloading Earnings Data... Please check the terminal for progress.')
+    try {
+        // Note: This request might time out if it takes too long, 
+        // but the backend will keep running.
+        const response = await axios.post('http://localhost:8000/update-earnings')
+        if (response.data.status === 'success') {
+            setEarningsMsg('✅ Success! Earnings data refreshed.')
+        } else {
+            setEarningsMsg('❌ Error: ' + response.data.message)
+        }
+    } catch (e) {
+        setEarningsMsg('⚠️ Process started, but browser timed out waiting. Check terminal.')
+    }
+    setUpdatingEarnings(false)
+}
+
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
       <h1>📈 Algo Dashboard</h1>
@@ -52,6 +97,9 @@ function App() {
         <button onClick={() => setActiveTab('lookup')} style={{ flex: 1, background: activeTab === 'lookup' ? '#646cff' : '#333' }}>
           Scorecard Lookup
         </button>
+        <button onClick={() => setActiveTab('manage')} style={{ flex: 1, background: activeTab === 'manage' ? '#646cff' : '#333' }}>
+          Manage Data
+        </button>
       </div>
 
       {/* === SCANNER TAB === */}
@@ -61,6 +109,8 @@ function App() {
             {scanning ? 'Scanning...' : 'Run Full Scan'}
           </button>
           
+          {scannedCount > 0 && <p style={{color:'#888', fontSize:'0.9rem'}}>Scanned {scannedCount} stocks</p>}
+
           <ul style={{ marginTop: '20px', padding: 0 }}>
             {scanResults.map((item: any) => (
               <li key={item.symbol} style={{ background: '#222', padding: '10px', margin: '5px 0', borderRadius: '5px', display: 'flex', justifyContent: 'space-between' }}>
@@ -130,8 +180,6 @@ function App() {
                         {stockReport.surprises.map((s: any) => (
                             <div key={s.date} style={{ background: '#333', padding: '10px', borderRadius: '5px', textAlign: 'center' }}>
                                 <div style={{ fontSize: '12px', color: '#aaa' }}>{new Date(s.date).toLocaleDateString()}</div>
-                                
-                                {/* FIX: Multiply by 100 and fix to 2 decimals */}
                                 <div style={{ fontWeight: 'bold', color: s.surprise_percent > 0 ? '#4caf50' : '#f44336' }}>
                                     {s.surprise_percent > 0 ? '+' : ''}{(s.surprise_percent * 100).toFixed(2)}%
                                 </div>
@@ -145,6 +193,63 @@ function App() {
         </div>
       )}
 
+      {/* === MANAGE TAB === */}
+      {activeTab === 'manage' && (
+        <div style={{textAlign: 'left'}}>
+            <h2>Data Management</h2>
+            <p>Use this tool to pull the latest daily prices and earnings data from Yahoo Finance.</p>
+            
+            <div style={{ background: '#1a1a1a', padding: '20px', borderRadius: '10px', marginTop: '20px' }}>
+                <h3>Daily Price Update</h3>
+                <p style={{fontSize: '0.9rem', color: '#aaa'}}>
+                    This checks the last recorded date for every stock in your database and downloads any missing days.
+                </p>
+                <button 
+                    onClick={handleUpdate} 
+                    disabled={updating}
+                    style={{ background: updating ? '#555' : '#2196f3', marginTop: '10px' }}
+                >
+                    {updating ? 'Updating Prices...' : 'Update All Prices Now'}
+                </button>
+                
+                {updateMsg && (
+                    <p style={{ 
+                        marginTop: '15px', 
+                        fontWeight: 'bold', 
+                        color: updateMsg.includes('Success') ? '#4caf50' : '#ddd' 
+                    }}>
+                        {updateMsg}
+                    </p>
+                )}
+            </div>
+
+            <div style={{ background: '#1a1a1a', padding: '20px', borderRadius: '10px', marginTop: '20px', border: '1px solid #333' }}>
+                <h3>Quarterly Earnings Update</h3>
+                <p style={{fontSize: '0.9rem', color: '#aaa'}}>
+                    This downloads full financial history (Revenue, EPS, Surprise) for every stock.
+                    <br/>
+                    <strong>Warning:</strong> This process is slow. Do not close the backend terminal while this runs.
+                </p>
+                <button 
+                    onClick={handleUpdateEarnings} 
+                    disabled={updatingEarnings}
+                    style={{ background: updatingEarnings ? '#555' : '#ff9800', color: 'white', marginTop: '10px' }}
+                >
+                    {updatingEarnings ? 'Downloading (Check Terminal)...' : 'Update Earnings Data'}
+                </button>
+
+                {earningsMsg && (
+                    <p style={{ 
+                        marginTop: '15px', 
+                        fontWeight: 'bold', 
+                        color: earningsMsg.includes('Success') ? '#4caf50' : '#ff9800' 
+                    }}>
+                        {earningsMsg}
+                    </p>
+                )}
+            </div>
+        </div>
+      )}
     </div>
   )
 }
