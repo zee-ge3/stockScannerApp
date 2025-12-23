@@ -1,0 +1,31 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-17 11:54:53,Baird,Neutral,Neutral,main
+2023-08-02 13:07:20,Truist Securities,Hold,Hold,main
+2023-06-15 13:24:50,Truist Securities,Hold,Hold,reit
+2023-05-30 11:01:05,Baird,Neutral,Neutral,main
+2023-04-27 15:10:51,Roth MKM,Buy,,main
+2023-04-24 11:00:15,Truist Securities,Hold,Buy,down
+2023-02-10 19:35:40,Baird,Neutral,Neutral,main
+2022-11-01 18:37:31,Baird,Neutral,Neutral,main
+2021-08-03 13:57:56,Truist Securities,Buy,,main
+2021-08-03 13:47:36,Roth Capital,Buy,,main
+2021-07-13 12:28:26,William Blair,Outperform,,init
+2021-05-04 12:53:03,Roth Capital,Buy,,main
+2020-05-05 15:39:53,SunTrust Robinson Humphrey,Buy,,main
+2020-04-03 16:00:31,SunTrust Robinson Humphrey,Buy,,main
+2020-02-12 15:16:02,SunTrust Robinson Humphrey,Buy,,main
+2020-02-12 10:34:59,Baird,Neutral,Outperform,down
+2019-04-30 11:17:07,SunTrust Robinson Humphrey,Buy,Hold,up
+2018-11-02 17:49:01,Baird,Outperform,Outperform,main
+2018-08-02 12:25:13,First Analysis,Equal-Weight,Overweight,down
+2017-08-01 13:31:37,Roth Capital,Buy,Neutral,up
+2017-02-14 13:42:55,Roth Capital,Neutral,Buy,down
+2017-02-14 13:22:45,First Analysis,Overweight,Equal-Weight,up
+2016-07-07 11:24:41,First Analysis,Equal-Weight,Overweight,down
+2016-05-03 10:51:48,Roth Capital,Buy,,main
+2016-04-29 11:23:10,Baird,Outperform,Neutral,up
+2016-02-16 10:51:20,First Analysis,Overweight,Equal-Weight,up
+2015-02-11 11:42:40,Roth Capital,Buy,Neutral,up
+2015-01-27 11:22:53,First Analysis,Equal-Weight,Overweight,down
+2014-02-11 21:00:00,Roth Capital,Neutral,Buy,down
+2013-02-13 14:15:03,SunTrust Robinson Humphrey,Neutral,Buy,down

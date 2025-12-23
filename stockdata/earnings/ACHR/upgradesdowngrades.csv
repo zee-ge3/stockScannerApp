@@ -1,0 +1,26 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-24 14:55:03,JP Morgan,Overweight,Overweight,main
+2024-07-22 17:24:15,Cantor Fitzgerald,Overweight,Overweight,reit
+2024-07-15 14:28:22,Cantor Fitzgerald,Overweight,Overweight,reit
+2024-07-01 15:29:52,Cantor Fitzgerald,Overweight,Overweight,reit
+2024-06-17 17:38:29,Cantor Fitzgerald,Overweight,Overweight,reit
+2024-05-21 15:23:49,Benchmark,Buy,Buy,reit
+2024-05-17 17:20:49,Barclays,Equal-Weight,Equal-Weight,main
+2024-05-03 19:09:54,JP Morgan,Overweight,Overweight,main
+2024-02-27 14:17:30,Cantor Fitzgerald,Overweight,Overweight,main
+2024-01-29 18:07:59,Cantor Fitzgerald,Overweight,Overweight,reit
+2023-08-22 11:11:28,Raymond James,Outperform,Outperform,main
+2023-08-11 17:16:49,JP Morgan,Overweight,Overweight,main
+2023-08-11 16:25:42,Benchmark,Buy,Buy,reit
+2023-07-19 11:12:35,JP Morgan,Overweight,Overweight,main
+2023-07-06 12:09:00,Canaccord Genuity,Buy,Buy,reit
+2023-06-23 15:53:33,Cantor Fitzgerald,Overweight,Overweight,reit
+2023-06-09 10:00:32,Canaccord Genuity,Buy,,init
+2023-03-10 15:40:23,Benchmark,Buy,,reit
+2022-11-15 11:46:38,Barclays,Equal-Weight,,main
+2022-10-18 12:59:43,JP Morgan,Overweight,,main
+2022-09-12 10:42:14,Barclays,Equal-Weight,,main
+2022-07-27 10:15:57,Raymond James,Outperform,,init
+2022-04-28 10:08:51,JP Morgan,Overweight,,init
+2022-04-11 11:46:05,Deutsche Bank,Buy,,init
+2021-11-30 12:08:36,Cantor Fitzgerald,Overweight,,init

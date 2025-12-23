@@ -1,0 +1,61 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-07 16:55:52,Barclays,Overweight,Overweight,main
+2024-08-07 10:14:33,TD Cowen,Hold,Hold,reit
+2024-07-17 17:04:58,B of A Securities,Buy,Buy,main
+2024-07-17 09:47:07,TD Cowen,Hold,Hold,main
+2024-07-02 11:24:53,Stifel,Hold,Hold,main
+2024-06-13 17:21:54,TD Cowen,Hold,Hold,main
+2024-05-08 19:40:45,TD Cowen,Hold,Hold,main
+2024-05-08 18:08:53,Barclays,Overweight,Overweight,main
+2024-04-12 15:44:01,TD Cowen,Hold,Hold,reit
+2024-04-11 17:50:35,TD Cowen,Hold,Hold,reit
+2024-04-10 16:10:22,TD Cowen,Hold,Hold,reit
+2024-03-06 15:24:35,Stifel,Hold,Hold,main
+2024-03-06 13:29:49,Citigroup,Buy,Buy,main
+2024-03-06 12:31:02,Barclays,Overweight,Overweight,main
+2024-03-05 18:30:34,TD Cowen,Market Perform,Market Perform,main
+2024-01-25 12:43:53,Raymond James,Strong Buy,Strong Buy,main
+2024-01-04 10:53:02,Stifel,Hold,Buy,down
+2024-01-03 13:50:52,Barclays,Overweight,Overweight,main
+2023-11-02 16:22:03,Raymond James,Strong Buy,Strong Buy,main
+2023-10-23 10:38:47,Barclays,Overweight,Overweight,main
+2023-10-18 11:28:10,Raymond James,Strong Buy,Outperform,up
+2023-08-02 11:43:56,Raymond James,Outperform,Outperform,main
+2023-08-02 10:13:23,Barclays,Overweight,Overweight,main
+2023-08-01 16:55:42,TD Cowen,Market Perform,,reit
+2023-07-27 15:26:24,Citigroup,Buy,Buy,main
+2023-07-18 08:56:31,Piper Sandler,Overweight,,init
+2023-06-15 10:04:16,TD Cowen,Market Perform,Market Perform,reit
+2023-06-09 09:55:05,TD Cowen,Market Perform,Market Perform,reit
+2023-05-31 15:43:44,TD Cowen,Market Perform,Market Perform,main
+2023-05-03 16:59:14,Citigroup,Buy,,main
+2023-05-03 09:50:07,Barclays,Overweight,,main
+2023-05-03 08:16:19,TD Cowen,Market Perform,,main
+2023-03-08 13:23:09,Citigroup,Buy,,main
+2023-03-08 12:09:33,Raymond James,Outperform,,main
+2023-03-08 10:10:07,TD Cowen,Market Perform,,reit
+2023-01-26 11:54:47,Barclays,Overweight,,main
+2023-01-24 12:39:46,Raymond James,Outperform,,main
+2023-01-05 13:01:12,Barclays,Overweight,,main
+2022-11-08 14:48:56,Barclays,Overweight,,main
+2022-11-08 12:02:36,Citigroup,Buy,,main
+2022-11-07 18:22:35,Cowen & Co.,Market Perform,,main
+2022-11-01 11:39:06,Citigroup,Buy,,main
+2022-08-10 12:45:20,Goldman Sachs,Buy,,main
+2022-08-10 09:56:27,Cowen & Co.,Market Perform,,main
+2022-06-09 11:01:06,Barclays,Overweight,,main
+2022-04-25 11:15:44,Barclays,Overweight,,main
+2022-03-24 11:28:08,Goldman Sachs,Buy,,main
+2022-03-24 10:34:13,Barclays,Overweight,,main
+2022-03-24 08:54:51,Cowen & Co.,Market Perform,,main
+2022-03-22 13:29:35,Jefferies,Buy,,main
+2022-01-13 10:18:50,Raymond James,Outperform,,init
+2021-12-15 12:59:21,Barclays,Overweight,,main
+2021-10-26 13:13:38,Jefferies,Buy,,init
+2021-10-26 12:14:39,Guggenheim,Buy,,init
+2021-10-26 12:01:52,B of A Securities,Buy,,init
+2021-10-26 11:47:54,Stifel,Buy,,init
+2021-10-26 11:42:53,Piper Sandler,Overweight,,init
+2021-10-26 11:04:25,Barclays,Overweight,,init
+2021-10-26 10:12:36,Goldman Sachs,Buy,,init
+2021-10-26 09:44:30,Cowen & Co.,Market Perform,,init

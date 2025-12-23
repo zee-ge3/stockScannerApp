@@ -1,0 +1,36 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-21 14:53:29,RBC Capital,Outperform,Outperform,main
+2024-03-04 15:23:44,RBC Capital,Outperform,Outperform,main
+2024-02-29 15:36:21,Oppenheimer,Outperform,Outperform,main
+2024-01-17 15:57:01,Oppenheimer,Outperform,Outperform,main
+2023-10-30 17:22:07,RBC Capital,Outperform,Outperform,main
+2023-07-31 14:19:45,RBC Capital,Outperform,Outperform,main
+2023-07-27 14:11:40,Oppenheimer,Outperform,Outperform,main
+2023-05-01 13:07:50,RBC Capital,Outperform,,main
+2023-04-28 16:23:56,Oppenheimer,Outperform,,main
+2023-02-27 14:24:00,RBC Capital,Outperform,,main
+2022-11-03 13:43:36,RBC Capital,Outperform,,main
+2022-08-01 11:42:20,RBC Capital,Outperform,,main
+2022-04-28 13:15:08,RBC Capital,Outperform,,main
+2022-03-04 13:31:07,RBC Capital,Outperform,,main
+2021-07-29 14:52:58,RBC Capital,Outperform,,main
+2021-02-25 16:51:20,Oppenheimer,Outperform,,main
+2020-03-11 10:40:43,RBC Capital,Outperform,Sector Perform,up
+2020-02-19 14:32:51,Oppenheimer,Outperform,,main
+2019-11-25 14:37:38,Oppenheimer,Perform,,main
+2019-11-01 10:12:36,JMP Securities,Market Outperform,Market Perform,up
+2019-02-25 14:37:27,RBC Capital,Sector Perform,Sector Perform,main
+2018-10-12 11:25:20,B of A Securities,Buy,,init
+2017-10-27 17:25:13,Oppenheimer,Outperform,,main
+2017-08-28 09:58:48,Keybanc,Sector Weight,,init
+2015-09-22 10:42:20,Oppenheimer,Outperform,,main
+2015-04-29 13:00:00,Oppenheimer,Outperform,,main
+2014-05-01 04:27:19,Deutsche Bank,Hold,,main
+2013-10-30 11:27:31,Deutsche Bank,Hold,,main
+2013-09-10 11:37:50,Deutsche Bank,Hold,,main
+2013-07-19 13:34:01,CL King,Neutral,Buy,down
+2013-06-11 14:39:52,Oppenheimer,Outperform,,main
+2013-04-19 12:18:43,Deutsche Bank,Hold,,main
+2012-10-31 15:05:00,CL King,Buy,Strong Buy,down
+2012-10-31 12:21:00,Deutsche Bank,Hold,,main
+2012-10-03 10:47:00,Oppenheimer,Outperform,,main

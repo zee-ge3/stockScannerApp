@@ -1,0 +1,128 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-07 14:21:01,Wedbush,Neutral,Neutral,reit
+2024-08-01 10:44:18,Telsey Advisory Group,Market Perform,Market Perform,main
+2024-07-31 14:58:39,Telsey Advisory Group,Market Perform,Market Perform,main
+2024-07-26 15:23:53,Wedbush,Neutral,Neutral,reit
+2024-07-25 11:01:25,Telsey Advisory Group,Market Perform,Market Perform,main
+2024-06-06 11:36:56,BTIG,Buy,Buy,main
+2024-05-17 17:04:40,Wedbush,Neutral,Neutral,reit
+2024-05-01 12:48:47,Telsey Advisory Group,Market Perform,Market Perform,main
+2024-04-26 10:05:46,Telsey Advisory Group,Market Perform,Market Perform,main
+2024-02-29 17:05:41,Citigroup,Neutral,Neutral,main
+2024-02-21 10:55:32,Williams Trading,Hold,Buy,down
+2024-02-21 10:17:09,Telsey Advisory Group,Market Perform,Market Perform,reit
+2024-02-14 12:27:34,Piper Sandler,Neutral,,init
+2024-02-07 13:20:31,Wedbush,Neutral,Neutral,main
+2024-02-07 12:02:33,Citigroup,Neutral,Buy,down
+2024-01-04 12:57:59,Jefferies,Hold,Buy,down
+2023-11-29 13:24:19,Wedbush,Neutral,Neutral,reit
+2023-11-15 10:34:06,Telsey Advisory Group,Market Perform,Market Perform,reit
+2023-10-24 09:36:25,Telsey Advisory Group,Market Perform,Market Perform,reit
+2023-08-03 11:51:04,Citigroup,Buy,Buy,main
+2023-08-03 09:32:11,Telsey Advisory Group,Market Perform,Market Perform,reit
+2023-07-27 13:04:29,Citigroup,Buy,Buy,main
+2023-07-27 13:01:41,Citigroup,Buy,Buy,main
+2023-07-27 09:39:37,Telsey Advisory Group,Market Perform,Market Perform,reit
+2023-05-10 09:35:18,Telsey Advisory Group,Market Perform,,reit
+2023-05-03 09:10:32,Telsey Advisory Group,Market Perform,,reit
+2023-04-13 10:00:14,Citigroup,Buy,Neutral,up
+2023-03-30 12:09:10,UBS,Neutral,,main
+2023-02-24 13:08:31,Citigroup,Neutral,,main
+2023-02-24 10:05:28,Telsey Advisory Group,Market Perform,,main
+2023-02-23 14:18:01,Telsey Advisory Group,Market Perform,,main
+2023-02-16 14:19:43,UBS,Neutral,,main
+2023-02-16 10:12:20,Telsey Advisory Group,Market Perform,,reit
+2023-02-14 14:07:32,Loop Capital,Hold,,main
+2023-02-08 10:45:04,Telsey Advisory Group,Market Perform,,reit
+2022-11-03 09:26:42,Telsey Advisory Group,Market Perform,,main
+2022-11-01 11:19:20,Wedbush,Neutral,Outperform,down
+2022-10-21 13:51:12,Citigroup,Neutral,,main
+2022-09-28 12:28:28,CL King,Buy,Neutral,up
+2022-09-21 11:32:28,Exane BNP Paribas,Outperform,,init
+2022-09-13 11:03:26,Loop Capital,Hold,Buy,down
+2022-08-01 13:16:04,UBS,Neutral,,main
+2022-07-28 09:50:17,Telsey Advisory Group,Market Perform,,main
+2022-07-21 13:42:29,BTIG,Buy,,main
+2022-06-09 12:27:38,Wedbush,Outperform,,main
+2022-06-08 11:19:34,Loop Capital,Buy,,main
+2022-01-11 12:02:52,Loop Capital,Buy,Hold,up
+2021-12-06 10:20:22,Piper Sandler,Overweight,Neutral,up
+2021-11-04 09:22:42,Telsey Advisory Group,Market Perform,,main
+2021-10-05 10:06:11,Wedbush,Outperform,,init
+2021-09-21 09:28:45,Jefferies,Buy,Hold,up
+2021-07-29 09:33:53,Telsey Advisory Group,Market Perform,,main
+2021-06-08 12:36:31,BTIG,Buy,Neutral,up
+2021-05-25 10:18:59,Telsey Advisory Group,Market Perform,,main
+2021-04-29 10:02:14,Telsey Advisory Group,Market Perform,,main
+2020-12-07 09:38:55,Keybanc,Overweight,,main
+2020-11-12 09:06:50,Keybanc,Overweight,Sector Weight,up
+2020-10-12 15:25:22,Susquehanna,Positive,Neutral,up
+2020-07-30 18:26:56,Piper Sandler,Neutral,,main
+2020-07-30 12:28:57,Wedbush,Neutral,,main
+2020-07-22 09:14:23,UBS,Neutral,,init
+2020-05-26 12:00:57,Wedbush,Neutral,,main
+2020-05-14 13:07:16,Wells Fargo,Underweight,Equal-Weight,down
+2020-05-13 11:32:10,Loop Capital,Hold,Buy,down
+2020-04-29 09:46:19,BTIG,Neutral,,init
+2020-04-24 14:49:23,Citigroup,Neutral,,main
+2020-04-06 11:11:11,Susquehanna,Neutral,Positive,down
+2020-03-26 12:51:28,B. Riley Securities,Buy,,main
+2020-03-16 13:53:26,Wells Fargo,Equal-Weight,,main
+2020-03-02 13:06:34,Citigroup,Neutral,,main
+2019-05-14 11:26:13,Piper Sandler,Neutral,Overweight,down
+2019-01-31 12:21:35,Telsey Advisory Group,Market Perform,Outperform,down
+2018-12-03 12:38:13,Citigroup,Neutral,Buy,down
+2018-10-30 16:27:47,Loop Capital,Buy,Hold,up
+2018-10-22 13:49:00,Wells Fargo,Market Perform,Market Perform,main
+2018-10-19 11:47:11,Citigroup,Buy,Buy,main
+2018-10-17 12:41:47,Buckingham Research,Buy,Buy,main
+2018-08-16 12:21:01,Buckingham Research,Buy,Buy,main
+2018-07-11 11:21:38,Wedbush,Neutral,Outperform,down
+2018-06-07 12:16:08,Canaccord Genuity,Buy,Buy,main
+2018-06-05 13:08:48,Loop Capital,Hold,,init
+2018-04-23 11:59:54,Buckingham Research,Buy,Buy,main
+2018-02-28 15:24:25,Canaccord Genuity,Buy,Buy,main
+2017-11-29 13:51:49,Buckingham Research,Buy,Neutral,up
+2017-11-01 12:20:48,Buckingham Research,Neutral,,main
+2017-08-15 10:12:20,Wedbush,Outperform,,init
+2017-08-07 17:21:20,Morgan Stanley,Equal-Weight,,main
+2017-08-02 17:06:43,Buckingham Research,Neutral,,main
+2017-08-02 15:02:31,Canaccord Genuity,Buy,,main
+2017-02-27 11:15:37,B. Riley Securities,Buy,Neutral,up
+2017-02-23 13:15:21,Piper Sandler,Overweight,Neutral,up
+2017-01-31 11:33:47,Citigroup,Buy,Neutral,up
+2017-01-03 11:17:30,Jefferies,Hold,,down
+2016-12-06 11:24:01,Wells Fargo,Market Perform,,init
+2016-08-12 10:26:19,Susquehanna,Positive,,init
+2016-08-01 12:18:24,B. Riley Securities,Neutral,Buy,down
+2016-07-18 11:27:09,Buckingham Research,Neutral,Buy,down
+2016-04-12 20:11:22,Piper Sandler,Neutral,Overweight,down
+2016-03-01 12:17:49,Goldman Sachs,Sell,Neutral,down
+2016-01-05 14:50:19,Piper Sandler,Overweight,,main
+2015-10-01 10:23:27,Taglich Brothers,Outperform,Market Perform,up
+2015-04-27 13:00:00,Citigroup,Neutral,,main
+2015-04-02 10:14:10,Piper Sandler,Overweight,Neutral,up
+2015-02-25 14:00:00,Citigroup,Neutral,,main
+2014-12-19 14:00:00,Citigroup,Neutral,,main
+2014-12-10 05:00:00,Goldman Sachs,Neutral,Buy,down
+2014-11-18 11:26:06,BB&T Capital,Hold,,init
+2014-10-30 11:52:53,Morgan Stanley,Equal-Weight,,init
+2014-10-20 12:30:00,Wunderlich Securities,Buy,,main
+2014-10-01 13:00:00,Wunderlich Securities,Buy,,main
+2014-08-15 20:00:00,Sterne Agee,Buy,Neutral,up
+2014-08-12 13:00:00,Citigroup,Neutral,,main
+2014-07-23 00:01:32,B. Riley Securities,Buy,,main
+2014-04-10 12:44:45,Buckingham Research,Buy,,init
+2014-01-21 21:00:00,BB&T Capital,Buy,Hold,up
+2014-01-08 13:30:00,Piper Sandler,Neutral,Overweight,down
+2013-09-17 11:15:07,Wedbush,Neutral,Outperform,down
+2013-08-05 10:40:34,Goldman Sachs,Buy,Sell,up
+2013-07-15 10:47:49,Sterne Agee,Neutral,,init
+2013-06-06 20:09:51,Piper Sandler,Overweight,,init
+2012-11-27 12:19:00,Goldman Sachs,Sell,,init
+2012-11-01 19:51:00,Sterne Agee,Buy,,main
+2012-11-01 19:26:00,Wedbush,Outperform,,main
+2012-10-04 13:46:00,Brean Capital,Buy,,init
+2012-10-04 13:04:00,Brean Capital,Buy,,init
+2012-07-26 12:35:00,Wedbush,Outperform,Neutral,up
+2012-02-21 19:33:00,Citigroup,Buy,,main

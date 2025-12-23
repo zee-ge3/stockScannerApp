@@ -1,0 +1,60 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-17 14:51:55,DA Davidson,Neutral,Neutral,main
+2024-05-09 15:59:04,Deutsche Bank,Hold,Hold,main
+2024-03-01 10:43:19,DA Davidson,Neutral,,init
+2023-11-13 18:04:51,Truist Securities,Hold,Hold,main
+2023-08-11 14:31:56,Stephens & Co.,Equal-Weight,Equal-Weight,reit
+2023-05-22 14:02:40,Deutsche Bank,Hold,Hold,main
+2023-05-19 12:22:34,Stephens & Co.,Equal-Weight,Equal-Weight,reit
+2023-03-20 17:19:17,Deutsche Bank,Hold,,main
+2023-03-03 10:26:16,Deutsche Bank,Hold,Sell,up
+2022-12-06 11:11:07,Deutsche Bank,Sell,Hold,down
+2022-05-23 13:15:25,Deutsche Bank,Hold,,main
+2021-01-20 13:19:48,Stephens & Co.,Equal-Weight,,init
+2020-05-15 13:38:43,SunTrust Robinson Humphrey,Hold,,main
+2020-05-15 12:16:41,Deutsche Bank,Hold,,main
+2020-01-23 11:42:48,Jefferies,Hold,,init
+2019-11-12 13:59:34,DA Davidson,Neutral,,main
+2019-08-05 11:53:47,DA Davidson,Neutral,,init
+2018-07-09 11:23:58,Vertical Research,Hold,Buy,down
+2018-05-21 11:11:45,Berenberg,Hold,,init
+2018-04-03 15:50:00,Hilliard Lyons,Long-Term Buy,,init
+2018-03-28 10:21:58,Keybanc,Overweight,,init
+2017-11-15 13:14:49,BMO Capital,Market Perform,,main
+2017-07-28 11:19:02,Jefferies,Hold,Buy,down
+2017-01-13 13:43:46,Wunderlich Securities,Buy,,init
+2016-12-15 11:03:23,Keybanc,Overweight,Sector Weight,up
+2016-10-05 08:26:35,DA Davidson,Neutral,,init
+2016-08-11 16:12:31,Jefferies,Buy,,main
+2016-08-05 13:36:48,Deutsche Bank,Hold,,main
+2016-05-26 10:26:45,Keybanc,Sector Weight,,init
+2016-02-16 12:37:53,BB&T Capital,Buy,Hold,up
+2016-02-12 10:42:59,BMO Capital,Market Perform,Outperform,down
+2016-02-12 10:42:50,Deutsche Bank,Hold,Buy,down
+2016-02-11 12:49:58,Stephens & Co.,Equal-Weight,Overweight,down
+2016-02-11 11:50:37,SunTrust Robinson Humphrey,Neutral,Buy,down
+2016-02-05 09:18:27,Deutsche Bank,Buy,,main
+2016-01-25 08:34:38,Jefferies,Buy,,main
+2016-01-07 14:28:39,Deutsche Bank,Buy,,main
+2015-12-15 21:24:31,Jefferies,Buy,,init
+2015-09-22 10:40:51,SunTrust Robinson Humphrey,Buy,,main
+2015-04-13 13:00:00,Deutsche Bank,Buy,,main
+2015-03-31 13:00:00,BMO Capital,Outperform,,main
+2015-02-06 14:00:00,Deutsche Bank,Buy,,main
+2015-01-23 14:32:18,BB&T Capital,Hold,Buy,down
+2014-10-27 10:07:07,Pivotal Research,Sell,,init
+2014-08-13 13:00:00,Deutsche Bank,Buy,,main
+2014-08-06 01:59:34,Deutsche Bank,Buy,,main
+2014-06-03 00:35:47,Deutsche Bank,Buy,,main
+2014-05-01 10:39:17,Imperial Capital,Outperform,,init
+2014-03-18 12:00:00,BMO Capital,Outperform,Market Perform,up
+2013-08-23 13:28:40,Northcoast Research,Sell,,init
+2013-08-14 13:01:36,Deutsche Bank,Buy,,main
+2013-03-21 11:37:23,BMO Capital,Market Perform,,main
+2013-02-08 13:20:27,BMO Capital,Market Perform,,main
+2013-02-08 11:47:21,DA Davidson,Underperform,,main
+2013-01-07 12:57:24,Deutsche Bank,Buy,Hold,up
+2012-11-19 14:50:00,Keybanc,Buy,Hold,up
+2012-07-30 10:09:00,Deutsche Bank,Hold,,main
+2012-05-18 10:28:00,Deutsche Bank,Hold,,main
+2012-05-01 13:11:00,Longbow Research,Neutral,Buy,down

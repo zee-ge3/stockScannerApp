@@ -1,0 +1,37 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-16 15:40:19,Needham,Buy,Buy,reit
+2024-05-14 11:00:33,HC Wainwright & Co.,Buy,Buy,main
+2024-05-14 09:40:06,Needham,Buy,Buy,main
+2024-04-10 10:57:02,Needham,Buy,Buy,reit
+2024-03-01 13:08:15,Needham,Buy,Buy,reit
+2024-03-01 12:05:44,HC Wainwright & Co.,Buy,Buy,main
+2023-12-15 18:34:58,Jefferies,Buy,Buy,reit
+2023-11-10 09:49:26,Needham,Buy,Buy,main
+2023-10-12 10:35:56,HC Wainwright & Co.,Buy,Buy,reit
+2023-08-23 08:12:55,Needham,Buy,Buy,reit
+2023-08-10 08:44:03,Needham,Buy,Buy,reit
+2023-07-27 10:12:04,HC Wainwright & Co.,Buy,Buy,main
+2023-07-25 11:54:02,RBC Capital,Outperform,Outperform,main
+2023-07-25 09:21:28,Needham,Buy,Hold,up
+2023-07-17 13:51:28,HC Wainwright & Co.,Buy,Buy,reit
+2023-03-22 10:16:47,Jefferies,Buy,,init
+2023-03-07 13:04:58,RBC Capital,Outperform,,reit
+2023-02-13 11:12:18,RBC Capital,Outperform,Sector Perform,up
+2022-05-31 13:05:21,HC Wainwright & Co.,Buy,,main
+2022-05-25 08:44:12,RBC Capital,Sector Perform,Outperform,down
+2022-03-10 13:40:21,Brookline Capital,Buy,,init
+2022-03-03 11:02:42,Needham,Buy,,main
+2021-09-22 10:04:36,HC Wainwright & Co.,Buy,,main
+2021-09-21 11:14:18,RBC Capital,Outperform,,main
+2021-09-21 09:30:54,Needham,Buy,,main
+2021-05-14 10:30:25,RBC Capital,Outperform,,init
+2021-03-08 11:10:25,HC Wainwright & Co.,Buy,,main
+2021-02-17 16:38:09,Needham,Buy,,main
+2020-07-15 12:10:38,B of A Securities,Neutral,Buy,down
+2020-06-30 10:56:31,HC Wainwright & Co.,Buy,,main
+2020-06-30 10:01:52,Needham,Buy,,main
+2020-06-24 13:16:12,Northland Capital Markets,Outperform,,init
+2020-03-24 09:23:03,Needham,Buy,,init
+2019-02-21 12:07:44,HC Wainwright & Co.,Buy,,init
+2018-07-10 11:28:04,Jefferies,Buy,,init
+2018-07-10 11:26:08,Cowen & Co.,Outperform,,init

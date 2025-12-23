@@ -1,0 +1,45 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-05 16:23:24,B. Riley Securities,Neutral,Neutral,main
+2024-07-31 10:01:09,Stifel,Hold,Buy,down
+2024-07-29 17:49:27,Raymond James,Market Perform,Strong Buy,down
+2024-07-18 13:27:26,Truist Securities,Hold,Hold,main
+2024-05-09 13:58:17,Stifel,Buy,Buy,main
+2024-04-23 16:52:40,Truist Securities,Hold,Hold,main
+2024-03-01 12:51:46,Truist Securities,Hold,Buy,down
+2024-03-01 11:15:48,Jefferies,Hold,Buy,down
+2023-11-09 21:33:24,Truist Securities,Buy,Buy,main
+2023-11-09 13:07:25,Raymond James,Strong Buy,Strong Buy,main
+2023-10-18 16:19:33,Truist Securities,Buy,Buy,main
+2023-08-10 16:52:13,Truist Securities,Buy,Buy,main
+2023-08-10 13:23:05,Raymond James,Strong Buy,Strong Buy,main
+2023-08-10 12:45:58,B. Riley Securities,Buy,Buy,main
+2023-07-18 14:00:12,Truist Securities,Buy,Buy,main
+2023-05-11 11:10:39,Raymond James,Strong Buy,Strong Buy,main
+2023-05-02 14:37:13,Stifel,Buy,,main
+2023-01-17 14:29:42,Craig-Hallum,Buy,,main
+2022-08-04 11:49:52,Raymond James,Strong Buy,,main
+2022-07-20 13:39:48,Truist Securities,Buy,,main
+2022-06-28 13:55:33,B. Riley Securities,Buy,,main
+2022-05-11 11:32:33,Raymond James,Strong Buy,,main
+2022-01-11 12:38:31,Raymond James,Strong Buy,,main
+2021-11-04 11:33:29,Raymond James,Strong Buy,,main
+2021-05-06 11:54:29,Raymond James,Strong Buy,,main
+2021-04-28 10:13:25,B. Riley Securities,Buy,,init
+2021-01-14 14:31:32,Raymond James,Strong Buy,,main
+2020-12-03 13:38:46,Roth Capital,Buy,,main
+2020-11-03 12:46:46,Raymond James,Strong Buy,,main
+2020-10-13 13:52:02,Roth Capital,Buy,,main
+2020-09-09 11:31:10,BTIG,Buy,,init
+2020-07-10 15:29:55,Roth Capital,Buy,,init
+2020-06-03 13:35:23,SunTrust Robinson Humphrey,Buy,,main
+2020-06-03 11:20:36,Raymond James,Strong Buy,,main
+2020-05-28 13:36:16,Stifel,Buy,,main
+2020-05-06 15:57:32,SunTrust Robinson Humphrey,Buy,,main
+2019-11-18 13:13:48,Raymond James,Strong Buy,,reit
+2019-09-26 11:32:50,Macquarie,Outperform,,init
+2019-02-11 11:34:04,SunTrust Robinson Humphrey,Buy,,init
+2018-08-08 12:25:46,Jefferies,Buy,Buy,main
+2018-03-14 12:09:49,Telsey Advisory Group,Outperform,,init
+2017-03-15 13:13:50,Craig-Hallum,Buy,Hold,up
+2017-03-15 10:15:37,Telsey Advisory Group,Outperform,Market Perform,up
+2016-03-16 13:35:35,Craig-Hallum,Hold,Buy,down

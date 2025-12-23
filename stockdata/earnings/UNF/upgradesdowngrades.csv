@@ -1,0 +1,25 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-06-27 16:01:42,UBS,Neutral,Neutral,main
+2024-06-27 14:13:14,JP Morgan,Underweight,Underweight,main
+2024-06-27 11:50:44,Baird,Neutral,Neutral,main
+2024-03-28 14:35:32,UBS,Neutral,Neutral,main
+2024-02-29 13:17:41,Barclays,Equal-Weight,Equal-Weight,main
+2024-01-04 13:02:14,Baird,Neutral,Outperform,down
+2023-10-19 18:29:23,JP Morgan,Underweight,Underweight,main
+2023-10-06 14:07:29,Barclays,Equal-Weight,,init
+2023-06-29 16:17:11,JP Morgan,Underweight,Underweight,main
+2023-06-01 09:09:41,UBS,Neutral,,init
+2023-03-30 11:05:59,Baird,Outperform,,main
+2022-05-18 12:27:38,Baird,Outperform,,main
+2022-04-01 08:53:15,JP Morgan,Underweight,Neutral,down
+2022-01-06 13:31:33,Baird,Outperform,Neutral,up
+2021-03-15 11:36:17,Baird,Neutral,Outperform,down
+2020-07-02 13:23:20,Baird,Outperform,,main
+2020-04-02 16:19:21,JP Morgan,Neutral,,main
+2019-06-27 13:32:16,JP Morgan,Neutral,,main
+2019-01-04 15:10:32,Baird,Outperform,Outperform,main
+2018-06-28 13:08:23,Baird,Outperform,Outperform,main
+2017-10-19 18:23:27,Baird,Outperform,,main
+2017-06-29 11:20:23,Baird,Outperform,Neutral,up
+2016-07-01 10:18:48,Baird,Neutral,Outperform,down
+2013-03-07 15:10:30,Argus Research,Hold,Buy,down

@@ -1,0 +1,28 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-07 14:35:53,Wedbush,Outperform,Outperform,reit
+2024-07-31 09:40:36,Raymond James,Outperform,,init
+2024-07-03 16:27:30,Piper Sandler,Overweight,Overweight,main
+2024-06-07 11:16:33,HC Wainwright & Co.,Buy,Buy,reit
+2024-05-16 11:35:29,HC Wainwright & Co.,Buy,Buy,main
+2024-04-08 15:16:38,Wedbush,Outperform,Outperform,main
+2024-03-18 10:44:34,HC Wainwright & Co.,Buy,Buy,reit
+2024-03-13 13:38:28,Wedbush,Outperform,Outperform,reit
+2023-11-22 11:24:10,HC Wainwright & Co.,Buy,Buy,reit
+2023-09-12 14:11:44,Wedbush,Outperform,Outperform,reit
+2023-07-14 11:19:53,Piper Sandler,Overweight,,init
+2023-06-30 08:44:42,Stifel,Buy,Hold,up
+2023-06-28 12:04:43,HC Wainwright & Co.,Buy,Neutral,up
+2023-06-27 16:49:22,Stifel,Hold,Hold,reit
+2023-06-27 15:08:15,Wedbush,Outperform,Neutral,up
+2023-05-10 13:25:38,Wedbush,Neutral,,reit
+2022-03-29 10:57:01,Wedbush,Neutral,Outperform,down
+2022-03-22 10:10:24,HC Wainwright & Co.,Neutral,Buy,down
+2022-03-18 13:15:50,Stifel,Hold,,main
+2021-09-30 08:53:54,Stifel,Hold,,init
+2021-01-07 11:25:54,Wedbush,Outperform,,init
+2020-11-24 13:21:45,Berenberg,Buy,,init
+2020-05-04 15:58:40,HC Wainwright & Co.,Buy,,init
+2020-02-24 15:24:03,Jefferies,Buy,,init
+2020-02-24 11:01:52,Canaccord Genuity,Buy,,init
+2020-02-24 11:00:44,Cowen & Co.,Outperform,,init
+2020-02-24 10:34:07,JP Morgan,Overweight,,init

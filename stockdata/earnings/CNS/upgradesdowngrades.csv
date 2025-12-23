@@ -1,0 +1,35 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-10 14:21:56,UBS,Sell,Sell,main
+2024-04-12 16:46:05,UBS,Sell,Sell,main
+2024-03-08 15:14:54,Evercore ISI Group,Outperform,Outperform,main
+2024-01-10 13:33:05,UBS,Sell,Sell,main
+2024-01-05 15:17:09,UBS,Sell,,init
+2023-04-13 13:19:16,Evercore ISI Group,Outperform,,main
+2020-11-19 12:14:08,B of A Securities,Buy,Neutral,up
+2020-04-24 11:18:18,B of A Securities,Neutral,Underperform,up
+2020-03-23 12:21:44,B of A Securities,Underperform,,main
+2019-04-22 14:25:13,Gabelli & Co.,Hold,Buy,down
+2019-02-21 11:29:04,"Keefe, Bruyette & Woods",Underperform,Market Perform,down
+2019-01-25 11:30:02,"Keefe, Bruyette & Woods",Market Perform,Underperform,up
+2018-07-20 12:24:49,Credit Suisse,Neutral,Neutral,main
+2018-04-16 14:39:25,Gabelli & Co.,Buy,Hold,up
+2018-01-26 12:05:17,"Keefe, Bruyette & Woods",Underperform,Market Perform,down
+2018-01-11 11:10:06,Gabelli & Co.,Hold,Buy,down
+2017-10-20 16:48:38,B of A Securities,Underperform,,main
+2017-10-20 14:22:26,Credit Suisse,Neutral,,main
+2016-10-14 04:00:00,"Keefe, Bruyette & Woods",Market Perform,,main
+2016-07-15 12:26:22,Credit Suisse,Neutral,,init
+2016-07-14 20:58:26,Credit Suisse,Neutral,,init
+2016-04-11 13:44:16,Sidoti & Co.,Buy,,init
+2016-03-15 12:39:05,B of A Securities,Buy,Underperform,up
+2015-06-12 12:05:23,Oppenheimer,Outperform,,init
+2014-10-16 17:13:53,Gabelli & Co.,Buy,Hold,up
+2014-10-14 20:00:00,B of A Securities,Underperform,,main
+2014-04-21 11:06:32,B of A Securities,Underperform,,main
+2013-04-08 17:12:48,Sidoti & Co.,Buy,,init
+2013-04-03 12:35:02,B of A Securities,Underperform,Buy,down
+2012-09-12 09:55:00,Goldman Sachs,Sell,Neutral,down
+2012-04-13 11:02:00,Credit Suisse,Neutral,Outperform,down
+2012-04-11 10:48:00,B of A Securities,Buy,Neutral,up
+2012-04-03 10:13:00,Deutsche Bank,Hold,,main
+2012-03-16 10:17:00,Deutsche Bank,Hold,,main

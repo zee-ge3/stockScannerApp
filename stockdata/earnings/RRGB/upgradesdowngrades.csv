@@ -1,0 +1,134 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-30 19:35:31,Lake Street,Buy,Buy,main
+2024-04-30 15:45:05,Lake Street,Buy,,init
+2024-04-25 11:43:52,Craig-Hallum,Buy,,init
+2024-04-15 14:55:12,Benchmark,Buy,Buy,reit
+2024-03-26 11:51:49,Benchmark,Buy,Buy,reit
+2024-03-05 14:38:20,Benchmark,Buy,Buy,reit
+2024-02-29 14:27:58,Benchmark,Buy,Buy,main
+2023-10-03 19:38:25,Jefferies,Hold,Hold,main
+2023-08-18 13:27:47,Benchmark,Buy,Buy,reit
+2023-06-22 16:26:30,CL King,Neutral,,main
+2023-03-22 12:58:34,Benchmark,Buy,,main
+2023-03-01 11:30:53,Benchmark,Buy,Hold,up
+2022-12-21 11:06:02,Jefferies,Hold,Buy,down
+2022-08-11 11:15:31,Benchmark,Hold,Buy,down
+2022-04-18 10:58:54,Raymond James,Market Perform,Outperform,down
+2022-01-26 12:53:44,Raymond James,Outperform,,main
+2021-11-23 12:52:46,Benchmark,Buy,,init
+2021-11-11 14:30:47,Raymond James,Outperform,,main
+2021-09-24 09:32:18,Jefferies,Buy,Hold,up
+2021-09-13 12:10:58,Morgan Stanley,Equal-Weight,,main
+2021-08-30 11:34:44,CL King,Buy,,init
+2021-08-19 11:56:53,Raymond James,Outperform,,main
+2021-08-19 11:53:55,Wells Fargo,Underweight,,main
+2021-05-26 12:42:07,Morgan Stanley,Equal-Weight,,main
+2021-04-12 14:39:40,Morgan Stanley,Equal-Weight,,main
+2021-03-22 11:52:33,Raymond James,Outperform,,main
+2021-03-05 13:38:41,Morgan Stanley,Equal-Weight,,main
+2021-03-04 13:34:33,Raymond James,Outperform,,main
+2021-02-10 12:49:51,Raymond James,Outperform,,main
+2021-01-19 14:54:12,Morgan Stanley,Equal-Weight,,main
+2021-01-19 13:31:26,Raymond James,Outperform,,main
+2021-01-06 12:33:21,Raymond James,Outperform,Market Perform,up
+2020-12-17 12:48:23,Wells Fargo,Underweight,Equal-Weight,down
+2020-10-14 13:14:00,Morgan Stanley,Equal-Weight,,main
+2020-08-12 13:15:07,Morgan Stanley,Equal-Weight,,main
+2020-06-12 16:01:07,B of A Securities,Underperform,,main
+2020-06-12 12:16:56,Morgan Stanley,Equal-Weight,,main
+2020-06-11 12:24:59,Wells Fargo,Equal-Weight,,main
+2020-04-22 14:21:23,Jefferies,Hold,,main
+2020-01-23 13:44:48,Wells Fargo,Equal-Weight,,main
+2019-11-06 14:48:36,Stifel,Hold,,main
+2019-08-27 10:28:48,B of A Securities,Underperform,Neutral,down
+2019-08-26 11:30:30,Morgan Stanley,Equal-Weight,,main
+2019-06-14 12:47:11,Maxim Group,Buy,Hold,up
+2019-05-31 15:49:19,Morgan Stanley,Equal-Weight,,main
+2019-04-04 11:19:37,B of A Securities,Neutral,Buy,down
+2019-02-27 14:01:41,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2019-02-27 13:28:57,Maxim Group,Hold,Buy,down
+2018-12-19 13:30:36,Jefferies,Hold,Buy,down
+2018-11-02 13:31:25,Loop Capital,Hold,,init
+2018-10-19 17:28:05,Gordon Haskett,Hold,,init
+2018-10-18 12:37:45,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-08-24 11:54:38,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-08-03 11:14:59,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-08-02 16:16:53,B of A Securities,Buy,Buy,main
+2018-08-02 14:35:55,Maxim Group,Buy,Buy,main
+2018-08-02 12:47:57,Canaccord Genuity,Hold,Buy,down
+2018-08-02 11:54:59,Raymond James,Market Perform,Outperform,down
+2018-08-02 11:36:27,Stifel,Hold,Hold,main
+2018-05-23 12:56:33,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-05-23 12:24:46,BTIG,Neutral,Buy,down
+2018-05-23 10:26:24,Stifel,Hold,Buy,down
+2018-05-16 12:13:07,Maxim Group,Buy,Hold,up
+2018-05-09 11:37:06,Stifel,Buy,Hold,up
+2018-04-18 11:21:34,Stifel,Hold,Hold,main
+2018-02-26 12:24:42,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2017-12-22 11:22:08,Jefferies,Buy,Hold,up
+2017-11-07 13:14:49,Maxim Group,Hold,Buy,down
+2017-11-07 12:29:16,Jefferies,Hold,,main
+2017-10-03 10:52:06,Stifel,Hold,,init
+2017-08-09 15:09:38,Raymond James,Strong Buy,,main
+2017-08-09 11:21:55,BTIG,Buy,Neutral,up
+2017-05-26 11:24:02,Canaccord Genuity,Buy,Hold,up
+2017-05-17 11:07:51,B of A Securities,Buy,Neutral,up
+2017-03-28 19:04:01,Standpoint Research,Hold,Buy,down
+2016-12-14 12:59:56,B of A Securities,Neutral,Underperform,up
+2016-10-21 04:00:00,Stephens & Co.,Overweight,,main
+2016-09-13 11:31:43,B of A Securities,Underperform,Buy,down
+2016-08-23 02:24:35,Canaccord Genuity,Hold,,init
+2016-08-08 14:08:53,Standpoint Research,Buy,,init
+2016-07-26 12:04:30,Jefferies,Hold,Buy,down
+2016-05-17 17:26:45,Keybanc,Sector Weight,Overweight,down
+2016-04-21 13:04:41,Maxim Group,Buy,,main
+2015-07-15 20:32:02,BTIG,Neutral,,init
+2015-03-11 10:07:09,Longbow Research,Buy,Neutral,up
+2015-02-17 14:00:00,Jefferies,Buy,,main
+2015-01-20 14:00:00,Wunderlich Securities,Buy,,main
+2015-01-09 05:00:00,Tigress Financial,Neutral,Underperform,up
+2015-01-06 14:00:00,Jefferies,Buy,,main
+2014-11-05 14:00:00,B of A Securities,Buy,,main
+2014-08-15 13:00:00,Wunderlich Securities,Buy,,main
+2014-08-14 20:00:00,Longbow Research,Neutral,Buy,down
+2014-02-10 13:00:00,Raymond James,Strong Buy,Outperform,up
+2014-02-10 11:49:33,B of A Securities,Buy,Underperform,up
+2014-02-07 13:00:00,Longbow Research,Buy,,init
+2013-12-20 21:00:00,Miller Tabak,Buy,Hold,up
+2013-11-15 12:47:43,Wunderlich Securities,Buy,,main
+2013-11-06 18:08:13,BMO Capital,Market Perform,,main
+2013-11-06 17:53:55,Jefferies,Buy,,main
+2013-11-06 11:25:25,B of A Securities,Underperform,Neutral,down
+2013-11-01 11:13:11,Wunderlich Securities,Buy,Hold,up
+2013-10-01 10:55:16,Raymond James,Outperform,Strong Buy,down
+2013-09-25 10:34:55,Piper Sandler,Neutral,Underweight,up
+2013-09-10 11:12:16,Wunderlich Securities,Hold,Buy,down
+2013-08-20 11:54:14,Jefferies,Buy,Hold,up
+2013-08-16 11:36:29,Miller Tabak,Hold,,main
+2013-08-16 11:07:41,B. Riley Securities,Neutral,Buy,up
+2013-07-23 12:27:53,Wunderlich Securities,Buy,,init
+2013-07-12 11:20:08,BMO Capital,Market Perform,Outperform,down
+2013-05-22 12:48:25,Jefferies,Hold,,main
+2013-05-10 14:53:20,Northcoast Research,Buy,Neutral,up
+2013-04-24 11:50:36,Keybanc,Buy,Hold,up
+2013-04-08 11:17:01,Jefferies,Hold,,main
+2013-02-20 15:46:18,Davenport,Neutral,Buy,down
+2013-02-20 13:14:57,Piper Sandler,Underweight,,main
+2013-02-20 13:02:48,Jefferies,Hold,,main
+2013-02-20 12:52:34,BMO Capital,Outperform,,main
+2013-02-19 20:25:18,Miller Tabak,Hold,Buy,down
+2013-01-10 11:54:20,B of A Securities,Neutral,Buy,down
+2013-01-09 14:18:59,Morgan Stanley,Equal-Weight,Underweight,up
+2013-01-08 13:56:56,Miller Tabak,Buy,,main
+2012-10-31 09:54:00,Miller Tabak,Buy,Hold,up
+2012-08-10 13:01:00,B of A Securities,Buy,,main
+2012-08-10 10:28:00,Jefferies,Hold,,main
+2012-08-07 10:44:00,Sterne Agee,Neutral,Buy,down
+2012-07-24 12:50:00,Davenport,Buy,,init
+2012-07-13 10:23:00,Keybanc,Hold,,init
+2012-05-17 11:13:00,B of A Securities,Buy,,main
+2012-04-16 11:11:00,Morgan Stanley,Underweight,,main
+2012-04-09 10:07:00,Piper Sandler,Underweight,,main
+2012-04-05 10:43:00,B of A Securities,Buy,,main
+2012-03-28 14:30:00,DA Davidson,Buy,,init
+2012-02-10 14:08:00,B of A Securities,Buy,,main

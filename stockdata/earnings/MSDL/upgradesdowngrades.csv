@@ -1,0 +1,15 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-29 14:49:43,JP Morgan,Neutral,Neutral,main
+2024-07-26 12:36:03,Wells Fargo,Equal-Weight,Equal-Weight,main
+2024-07-18 12:30:25,UBS,Neutral,Buy,down
+2024-05-23 14:04:44,RBC Capital,Outperform,Outperform,main
+2024-05-14 13:35:09,Wells Fargo,Equal-Weight,Equal-Weight,main
+2024-05-13 11:36:00,Raymond James,Market Perform,Outperform,down
+2024-04-12 15:16:10,JP Morgan,Neutral,Neutral,main
+2024-03-04 16:23:40,RBC Capital,Outperform,Outperform,reit
+2024-02-20 15:10:58,RBC Capital,Outperform,,init
+2024-02-20 12:12:38,Wells Fargo,Equal-Weight,,init
+2024-02-20 11:35:12,Raymond James,Outperform,,init
+2024-02-20 11:32:58,JP Morgan,Neutral,,init
+2024-02-20 10:53:43,UBS,Buy,,init
+2024-02-20 10:27:45,"Keefe, Bruyette & Woods",Market Perform,,init

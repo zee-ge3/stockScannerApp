@@ -1,0 +1,108 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-07 20:55:09,BTIG,Buy,Buy,main
+2024-08-07 18:03:54,JP Morgan,Underweight,Underweight,main
+2024-08-07 16:01:34,Baird,Outperform,Outperform,main
+2024-08-07 12:58:38,Truist Securities,Hold,Hold,main
+2024-08-07 11:34:59,Piper Sandler,Neutral,Neutral,main
+2024-07-15 13:38:31,JMP Securities,Market Outperform,Market Outperform,reit
+2024-07-12 09:09:46,Piper Sandler,Neutral,Neutral,main
+2024-06-28 20:29:53,Citigroup,Neutral,Neutral,main
+2024-05-08 15:22:35,BMO Capital,Market Perform,Market Perform,main
+2024-05-08 11:36:43,Baird,Outperform,Outperform,main
+2024-04-23 16:14:03,Citigroup,Neutral,Neutral,main
+2024-04-23 09:09:55,Piper Sandler,Neutral,Underweight,up
+2024-03-27 17:15:27,Citigroup,Neutral,Neutral,main
+2024-03-18 09:09:15,Wolfe Research,Peer Perform,,init
+2024-02-14 19:20:45,Baird,Outperform,Outperform,main
+2024-02-14 18:04:33,JP Morgan,Underweight,Underweight,main
+2024-02-14 18:04:20,JMP Securities,Market Outperform,Market Outperform,reit
+2024-02-14 15:21:23,Citigroup,Neutral,Neutral,main
+2024-02-14 13:16:32,William Blair,Market Perform,Outperform,down
+2024-02-14 10:47:55,Piper Sandler,Underweight,Underweight,main
+2024-02-13 14:46:53,JP Morgan,Market Perform,Market Perform,main
+2024-01-24 16:13:41,Goldman Sachs,Sell,Sell,main
+2024-01-23 13:51:04,Goldman Sachs,Sell,Sell,main
+2024-01-04 16:09:41,Baird,Outperform,Outperform,main
+2024-01-02 12:04:56,Piper Sandler,Underweight,Neutral,down
+2023-12-18 16:50:03,JMP Securities,Market Outperform,Market Outperform,reit
+2023-11-03 08:59:03,Piper Sandler,Neutral,Neutral,reit
+2023-09-19 15:51:55,Truist Securities,Hold,Hold,reit
+2023-09-18 13:23:03,Citigroup,Neutral,Neutral,main
+2023-08-10 16:20:33,Citigroup,Neutral,Neutral,main
+2023-08-09 17:00:43,JMP Securities,Market Outperform,Market Outperform,main
+2023-08-09 16:42:08,JP Morgan,Underweight,Underweight,main
+2023-08-09 15:27:45,BTIG,Buy,Buy,main
+2023-08-09 08:37:22,Piper Sandler,Neutral,Neutral,main
+2023-07-21 10:13:57,Citigroup,Neutral,Neutral,main
+2023-05-08 13:46:08,Citigroup,Neutral,Sell,up
+2023-05-08 12:51:08,Truist Securities,Buy,,main
+2023-05-05 12:41:14,JMP Securities,Market Outperform,,reit
+2023-05-05 09:50:04,Piper Sandler,Neutral,,main
+2023-03-06 15:50:27,Piper Sandler,Neutral,,reit
+2023-02-15 15:42:09,Truist Securities,Hold,,main
+2023-02-15 13:45:57,Citigroup,Sell,,main
+2023-02-15 13:26:31,BMO Capital,Market Perform,,main
+2023-02-15 12:02:40,Baird,Outperform,,main
+2023-02-15 09:50:42,Piper Sandler,Neutral,,main
+2023-01-18 12:13:57,Citigroup,Sell,Neutral,down
+2023-01-09 09:53:03,Piper Sandler,Neutral,Overweight,down
+2022-11-04 13:55:59,Goldman Sachs,Sell,,main
+2022-11-04 12:42:50,Baird,Outperform,,main
+2022-10-21 09:28:10,Goldman Sachs,Sell,,init
+2022-10-20 09:33:14,Piper Sandler,Overweight,,main
+2022-10-19 11:25:18,Berenberg,Hold,Buy,down
+2022-10-18 12:09:53,JMP Securities,Market Outperform,,main
+2022-09-01 12:47:09,Citigroup,Neutral,,init
+2022-07-18 10:53:55,B of A Securities,Underperform,Neutral,down
+2022-05-06 10:33:03,Piper Sandler,Overweight,,main
+2022-04-20 10:57:25,JMP Securities,Market Outperform,,main
+2022-02-11 12:57:07,JMP Securities,Market Outperform,,main
+2022-02-11 09:29:18,Piper Sandler,Overweight,,main
+2022-02-01 11:48:28,BMO Capital,Market Perform,,init
+2022-01-28 11:35:57,BTIG,Buy,,main
+2022-01-25 09:29:48,Keybanc,Sector Weight,Overweight,down
+2022-01-12 11:23:44,Piper Sandler,Overweight,,main
+2021-11-05 13:25:22,Oppenheimer,Outperform,,main
+2021-11-05 09:35:50,Piper Sandler,Overweight,,main
+2021-05-07 14:05:26,BTIG,Buy,,main
+2021-04-23 11:28:41,B of A Securities,Neutral,,init
+2021-03-04 12:48:04,Berenberg,Buy,,init
+2021-02-12 14:04:15,Oppenheimer,Outperform,,main
+2021-02-12 10:24:29,Piper Sandler,Overweight,,main
+2021-02-12 09:35:24,Keybanc,Overweight,,main
+2021-02-02 17:05:42,JMP Securities,Market Outperform,,main
+2021-02-02 09:58:00,Keybanc,Overweight,,main
+2020-10-30 09:16:30,Piper Sandler,Overweight,,main
+2020-10-30 08:48:26,Keybanc,Overweight,,main
+2020-10-06 11:07:58,BTIG,Buy,,init
+2020-08-10 16:50:30,Truist Securities,Hold,,main
+2020-08-07 09:37:24,Piper Sandler,Overweight,,main
+2020-07-01 11:05:01,Keybanc,Overweight,,init
+2020-06-18 14:14:34,Baird,Outperform,,main
+2020-05-28 10:02:42,Piper Sandler,Overweight,,main
+2020-05-14 12:53:18,Oppenheimer,Outperform,,main
+2020-03-31 10:23:38,Piper Sandler,Overweight,,main
+2020-03-17 14:14:22,Oppenheimer,Outperform,,main
+2020-02-14 11:28:48,Piper Sandler,Overweight,Neutral,up
+2020-02-11 11:48:39,JMP Securities,Market Outperform,,main
+2020-01-17 12:49:16,Oppenheimer,Outperform,Perform,up
+2019-11-26 11:37:18,Piper Sandler,Neutral,,init
+2019-11-26 11:16:28,Piper Sandler,Neutral,,init
+2019-08-02 10:31:03,Keybanc,Overweight,,main
+2019-07-02 10:42:25,Goldman Sachs,Sell,Buy,down
+2019-01-22 12:35:15,Raymond James,Market Perform,Outperform,down
+2018-11-16 13:31:18,Keybanc,Overweight,Overweight,main
+2018-11-02 17:41:26,Baird,Outperform,Outperform,main
+2018-10-19 16:14:58,Oppenheimer,Perform,,init
+2018-09-18 10:31:49,Keybanc,Overweight,Overweight,main
+2018-03-19 11:43:27,SunTrust Robinson Humphrey,Hold,Buy,down
+2018-03-12 13:44:04,Keybanc,Overweight,Overweight,main
+2018-01-25 14:13:04,JP Morgan,Underweight,Neutral,down
+2017-11-17 10:01:04,Keybanc,Overweight,,main
+2017-11-16 11:18:10,JMP Securities,Market Outperform,Market Perform,up
+2017-06-26 21:06:37,SunTrust Robinson Humphrey,Buy,,init
+2016-11-22 13:40:42,Goldman Sachs,Neutral,,init
+2016-11-22 12:48:52,Raymond James,Outperform,,init
+2016-11-22 12:48:13,JP Morgan,Neutral,,init
+2016-11-22 12:47:35,Baird,Outperform,,init
+2016-11-22 12:21:34,Pacific Crest,Overweight,,init

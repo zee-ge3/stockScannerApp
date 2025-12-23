@@ -1,0 +1,101 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-19 12:50:11,Raymond James,Market Perform,,init
+2024-07-16 13:43:40,Truist Securities,Hold,Hold,main
+2024-06-17 10:20:27,B of A Securities,Buy,Neutral,up
+2024-06-07 12:40:22,Wells Fargo,Overweight,Overweight,main
+2024-06-07 09:08:37,B of A Securities,Neutral,Neutral,main
+2024-04-18 12:36:41,Truist Securities,Hold,,init
+2024-01-11 11:49:34,Wells Fargo,Overweight,Equal-Weight,up
+2023-12-08 15:34:26,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-12-07 18:11:04,Stifel,Buy,Buy,reit
+2023-09-01 13:06:22,Stifel,Buy,Buy,reit
+2023-08-31 14:37:59,Stifel,Buy,Buy,reit
+2023-07-10 13:34:23,B of A Securities,Neutral,Underperform,up
+2023-06-09 14:09:50,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-06-02 12:09:39,Wells Fargo,Equal-Weight,Equal-Weight,main
+2022-11-30 14:07:19,Wells Fargo,Equal-Weight,,main
+2022-10-31 09:04:03,BMO Capital,Underperform,Market Perform,down
+2022-10-13 13:27:32,B of A Securities,Underperform,Buy,down
+2022-10-06 11:42:06,Wells Fargo,Equal-Weight,,main
+2022-09-06 10:35:51,Wells Fargo,Equal-Weight,Overweight,down
+2022-09-06 09:02:36,BMO Capital,Market Perform,Underperform,up
+2022-09-02 12:25:55,Stifel,Buy,,init
+2022-06-13 11:09:56,Wells Fargo,Overweight,,main
+2022-02-15 11:58:24,Wells Fargo,Overweight,Equal-Weight,up
+2022-01-12 14:46:34,Wells Fargo,Equal-Weight,,main
+2021-12-15 15:44:36,B of A Securities,Underperform,Neutral,down
+2021-12-10 10:37:54,Keybanc,Underweight,,main
+2021-11-29 11:17:41,Wells Fargo,Equal-Weight,Overweight,down
+2021-11-12 09:43:09,BMO Capital,Market Perform,Outperform,down
+2021-10-14 12:13:33,B of A Securities,Neutral,Buy,down
+2021-09-03 08:36:22,Keybanc,Underweight,,main
+2021-08-16 09:25:47,Keybanc,Underweight,,main
+2021-04-05 10:10:59,Keybanc,Underweight,,main
+2020-10-12 11:09:38,BMO Capital,Outperform,Market Perform,up
+2020-09-23 11:08:44,BMO Capital,Market Perform,Underperform,up
+2020-09-21 12:11:39,B of A Securities,Buy,Underperform,up
+2020-06-05 14:15:14,Wells Fargo,Overweight,,main
+2020-05-08 10:06:54,Keybanc,Underweight,,main
+2020-04-09 14:55:59,Wells Fargo,Overweight,,main
+2020-04-09 09:37:28,Keybanc,Underweight,,main
+2020-02-28 13:56:15,Baird,Neutral,,main
+2020-01-14 13:04:10,Wells Fargo,Overweight,Equal-Weight,up
+2019-12-12 14:09:07,BMO Capital,Underperform,,main
+2019-12-06 15:01:50,Wells Fargo,Market Perform,,main
+2019-12-06 14:10:23,Baird,Neutral,,main
+2018-12-21 14:04:47,Baird,Outperform,Outperform,main
+2018-12-21 13:13:48,BMO Capital,Underperform,Outperform,down
+2018-12-21 12:00:22,Wells Fargo,Market Perform,Outperform,down
+2018-12-21 10:52:58,Keybanc,Underweight,Underweight,main
+2018-12-07 13:27:51,Wells Fargo,Outperform,Outperform,main
+2018-07-16 13:37:43,B of A Securities,Underperform,Neutral,down
+2018-05-22 14:47:32,B of A Securities,Neutral,Neutral,main
+2018-04-02 11:28:59,B of A Securities,Neutral,Buy,down
+2018-04-02 11:27:43,BMO Capital,Outperform,Market Perform,up
+2018-03-13 15:24:23,B of A Securities,Buy,Buy,main
+2018-01-02 14:01:19,B of A Securities,Buy,Neutral,up
+2017-12-07 18:24:46,DA Davidson,Buy,Neutral,up
+2017-09-01 11:18:19,B of A Securities,Neutral,Buy,down
+2017-03-09 13:47:40,BMO Capital,Market Perform,Underperform,up
+2017-03-06 11:18:41,Wells Fargo,Outperform,Market Perform,up
+2017-03-03 11:51:45,DA Davidson,Neutral,Underperform,up
+2017-01-27 14:09:26,B of A Securities,Buy,Neutral,up
+2017-01-04 13:01:28,Baird,Outperform,Neutral,up
+2016-12-22 11:17:43,BMO Capital,Underperform,Market Perform,down
+2016-11-29 10:42:19,Keybanc,Underweight,Hold,down
+2016-11-22 13:13:09,B of A Securities,Neutral,Buy,down
+2016-11-21 16:21:36,Wells Fargo,Market Perform,Outperform,down
+2016-11-21 16:18:08,DA Davidson,Underperform,Neutral,down
+2016-09-06 11:28:29,B of A Securities,Buy,Neutral,up
+2016-09-02 10:42:52,DA Davidson,Neutral,Buy,down
+2016-06-09 11:41:30,BMO Capital,Market Perform,Outperform,down
+2016-05-25 10:56:57,BMO Capital,Market Perform,Outperform,down
+2016-03-09 18:51:07,Baird,Neutral,,main
+2015-09-02 10:40:06,BMO Capital,Outperform,Market Perform,up
+2015-08-18 12:29:32,DA Davidson,Buy,Neutral,up
+2015-06-10 11:54:11,B of A Securities,Underperform,,main
+2015-06-08 10:46:07,BMO Capital,Market Perform,Underperform,up
+2015-05-29 15:28:44,B of A Securities,Underperform,Neutral,down
+2015-05-27 11:35:47,DA Davidson,Neutral,Buy,down
+2015-01-16 11:27:11,BMO Capital,Underperform,Market Perform,down
+2015-01-15 05:00:00,B of A Securities,Neutral,Buy,down
+2014-10-08 12:30:00,Wells Fargo,Outperform,,up
+2014-09-04 10:10:28,BMO Capital,Market Perform,,init
+2014-06-13 10:56:12,B of A Securities,Buy,Underperform,up
+2013-08-16 12:17:39,B of A Securities,Underperform,,main
+2013-06-18 11:55:41,Longbow Research,Neutral,,init
+2013-03-04 13:23:36,B of A Securities,Underperform,,main
+2013-03-01 11:28:57,DA Davidson,Buy,,main
+2012-11-29 21:18:39,B of A Securities,Underperform,,main
+2012-11-29 17:53:00,JP Morgan,Neutral,,main
+2012-11-20 14:42:00,Wells Fargo,Market Perform,Outperform,down
+2012-08-30 20:03:00,B of A Securities,Neutral,,main
+2012-08-30 20:01:00,JP Morgan,Neutral,,main
+2012-08-30 16:56:00,Barrington Research,Outperform,,main
+2012-08-15 18:25:00,JP Morgan,Neutral,,main
+2012-07-17 09:53:00,B of A Securities,Neutral,,init
+2012-06-25 10:02:00,JP Morgan,Neutral,Overweight,down
+2012-04-11 11:08:00,Keybanc,Hold,,init
+2012-03-05 10:55:00,JP Morgan,Overweight,Neutral,up
+2012-03-02 16:07:00,Barrington Research,Outperform,Market Perform,up
+2012-03-02 11:15:00,Deutsche Bank,Hold,Buy,down

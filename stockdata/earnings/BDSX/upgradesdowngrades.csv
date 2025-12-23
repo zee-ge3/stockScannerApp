@@ -1,0 +1,15 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-26 16:09:28,Craig-Hallum,Buy,,init
+2024-05-13 11:25:14,TD Cowen,Buy,,init
+2024-05-03 16:06:48,Lake Street,Buy,,init
+2024-03-04 15:02:46,Canaccord Genuity,Buy,Buy,reit
+2023-12-07 15:45:20,Canaccord Genuity,Buy,Buy,reit
+2022-05-12 14:04:00,Morgan Stanley,Equal-Weight,,main
+2022-04-20 10:19:03,Cowen & Co.,Outperform,,init
+2021-11-17 12:55:52,Morgan Stanley,Equal-Weight,Overweight,down
+2021-05-12 11:36:11,Morgan Stanley,Overweight,,main
+2021-03-18 11:53:14,Morgan Stanley,Overweight,,main
+2021-02-02 16:48:54,Canaccord Genuity,Buy,,main
+2020-11-23 16:00:08,William Blair,Outperform,,init
+2020-11-23 12:46:59,BTIG,Buy,,init
+2020-11-23 12:46:01,Morgan Stanley,Overweight,,init

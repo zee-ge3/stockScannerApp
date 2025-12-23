@@ -1,0 +1,102 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-02 10:56:51,Needham,Buy,Buy,reit
+2024-07-12 19:28:02,Citigroup,Buy,Buy,main
+2024-05-08 14:04:59,Wedbush,Outperform,Neutral,up
+2024-05-08 11:51:24,Needham,Buy,Buy,reit
+2024-05-03 10:17:36,Needham,Buy,Buy,reit
+2024-05-01 14:07:54,Wedbush,Neutral,Neutral,reit
+2024-04-22 15:36:46,Citigroup,Buy,Buy,main
+2024-04-02 17:30:18,TD Cowen,Outperform,Outperform,main
+2024-03-01 13:07:47,TD Cowen,Outperform,Outperform,main
+2024-03-01 10:02:42,Needham,Buy,Buy,reit
+2024-01-17 12:10:49,Citigroup,Buy,Neutral,up
+2023-12-14 13:18:15,Wedbush,Neutral,Neutral,reit
+2023-10-16 15:58:58,Citigroup,Neutral,Neutral,main
+2023-09-19 08:53:06,Jefferies,Hold,,init
+2023-08-22 11:10:56,JP Morgan,Overweight,Overweight,main
+2023-08-21 13:55:35,TD Cowen,Outperform,Outperform,main
+2023-07-28 14:27:13,TD Cowen,Outperform,Outperform,main
+2023-07-28 11:10:34,JP Morgan,Overweight,Overweight,main
+2023-07-28 10:43:51,Citigroup,Neutral,Neutral,main
+2023-07-28 08:35:25,Needham,Buy,Buy,reit
+2023-04-28 14:43:47,Citigroup,Neutral,,main
+2023-04-28 08:49:46,Needham,Buy,,reit
+2023-03-15 11:07:54,Citigroup,Neutral,Sell,up
+2023-03-03 11:34:28,Needham,Buy,,main
+2023-02-24 09:36:41,Needham,Buy,,reit
+2022-10-28 08:52:52,Needham,Buy,,main
+2022-10-14 12:53:46,JP Morgan,Overweight,,main
+2022-07-29 09:40:07,Needham,Buy,Hold,up
+2022-07-20 10:52:26,Citigroup,Sell,Neutral,down
+2022-06-17 11:59:51,Cowen & Co.,Outperform,,main
+2022-04-05 13:57:11,Cowen & Co.,Outperform,,main
+2022-02-28 11:25:12,Cowen & Co.,Outperform,Market Perform,up
+2022-02-25 12:32:16,Citigroup,Neutral,,main
+2021-08-17 13:06:28,JP Morgan,Neutral,,main
+2021-05-12 11:41:14,B of A Securities,Neutral,Underperform,up
+2021-03-01 16:23:43,Citigroup,Neutral,,main
+2020-08-10 11:07:24,Citigroup,Neutral,,main
+2020-05-13 15:25:51,Barrington Research,Market Perform,Outperform,down
+2020-05-08 17:27:16,Stifel,Buy,,main
+2020-05-07 18:54:32,Needham,Hold,Buy,down
+2020-05-01 12:37:47,Stifel,Buy,,main
+2020-04-22 16:20:17,Citigroup,Neutral,,main
+2020-04-17 10:58:36,Wells Fargo,Equal-Weight,Underweight,up
+2020-03-24 13:12:32,Baird,Neutral,,main
+2020-03-20 12:29:23,Needham,Buy,,main
+2020-02-28 14:52:13,JP Morgan,Neutral,,main
+2020-02-28 11:37:42,Cantor Fitzgerald,Overweight,,main
+2020-02-28 10:12:57,Citigroup,Neutral,Sell,up
+2020-01-15 12:53:38,Citigroup,Sell,,main
+2020-01-09 15:17:41,Wells Fargo,Underweight,Equal-Weight,down
+2019-10-30 11:42:14,Citigroup,Sell,,main
+2019-10-07 11:39:03,JP Morgan,Neutral,,main
+2019-07-17 11:39:15,Citigroup,Sell,Neutral,down
+2019-03-01 13:48:16,Citigroup,Neutral,Neutral,main
+2019-03-01 11:44:36,Baird,Neutral,Outperform,down
+2018-06-01 11:52:08,SunTrust Robinson Humphrey,Buy,Hold,up
+2018-03-01 11:53:50,Cowen & Co.,Market Perform,Outperform,down
+2017-10-27 12:39:40,Citigroup,Neutral,,main
+2017-10-12 14:37:53,Baird,Outperform,,main
+2017-08-09 13:21:16,B of A Securities,Underperform,Buy,down
+2017-08-04 11:08:42,Wedbush,Neutral,,init
+2017-07-18 11:29:19,Citigroup,Neutral,Buy,down
+2016-07-29 14:43:11,Citigroup,Buy,,main
+2016-05-27 15:46:37,Citigroup,Buy,,main
+2016-02-29 18:00:25,Jefferies,Hold,,main
+2016-02-24 11:49:59,Citigroup,Buy,,main
+2016-02-19 10:23:28,Cowen & Co.,Outperform,,init
+2015-11-17 14:02:24,B of A Securities,Buy,Neutral,up
+2015-10-30 07:31:29,SunTrust Robinson Humphrey,Neutral,,main
+2015-07-31 17:48:02,Citigroup,Buy,,main
+2015-07-16 12:36:52,Barrington Research,Outperform,,init
+2015-05-29 10:16:23,SunTrust Robinson Humphrey,Neutral,,init
+2015-03-02 14:00:00,Jefferies,Hold,,main
+2015-02-25 14:00:00,Stifel,Buy,,main
+2015-02-25 10:58:42,William Blair,Outperform,Market Perform,up
+2015-02-24 11:44:07,William Blair,Outperform,Market Perform,up
+2015-01-15 05:00:00,JP Morgan,Neutral,Underweight,up
+2015-01-09 14:00:00,Citigroup,Buy,,main
+2014-11-03 14:00:00,Jefferies,Hold,,main
+2014-03-05 13:00:00,Citigroup,Buy,,main
+2014-03-04 12:05:56,Stifel,Buy,,main
+2014-01-22 13:00:00,Goldman Sachs,Buy,Neutral,up
+2013-11-06 12:00:00,William Blair,Market Perform,Outperform,down
+2013-11-05 15:48:07,Citigroup,Buy,,main
+2013-11-05 12:21:41,Wells Fargo,Market Perform,Outperform,down
+2013-11-05 11:48:02,Oppenheimer,Perform,Outperform,down
+2013-11-05 11:46:16,JP Morgan,Underweight,Neutral,down
+2013-11-05 11:32:12,Goldman Sachs,Neutral,,main
+2013-08-23 12:49:10,Baird,Outperform,Neutral,down
+2013-03-04 14:24:18,B of A Securities,Neutral,,main
+2013-03-04 13:10:49,JP Morgan,Neutral,,main
+2013-03-04 12:59:46,Needham,Hold,Buy,down
+2013-03-04 12:41:20,Goldman Sachs,Neutral,,main
+2013-03-04 12:40:27,Oppenheimer,Outperform,,main
+2013-03-04 12:19:46,Jefferies,Hold,,main
+2012-10-17 14:38:00,Baird,Neutral,Outperform,down
+2012-10-16 19:07:00,Citigroup,Buy,,main
+2012-08-13 10:50:00,JP Morgan,Neutral,Overweight,down
+2012-07-03 15:00:00,Citigroup,Buy,,main
+2012-05-04 12:26:00,Stifel,Buy,,main
+2012-03-05 11:14:00,Jefferies,Hold,,main

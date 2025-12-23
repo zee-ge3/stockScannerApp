@@ -1,0 +1,19 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-02 10:58:16,Needham,Buy,Buy,reit
+2024-05-15 09:45:35,Needham,Buy,Buy,reit
+2024-05-03 19:32:40,Needham,Buy,Buy,reit
+2024-01-18 09:54:03,Needham,Buy,Buy,reit
+2023-09-12 09:24:16,Needham,Buy,Buy,reit
+2023-08-07 10:55:06,Needham,Buy,Buy,reit
+2023-08-04 15:24:36,Baird,Outperform,Outperform,main
+2023-08-04 08:24:26,Needham,Buy,Buy,reit
+2023-02-24 13:27:33,Baird,Outperform,,main
+2023-02-24 12:04:41,Needham,Buy,,reit
+2022-11-07 13:45:03,Baird,Outperform,,main
+2022-10-24 14:03:40,B. Riley Securities,Buy,,main
+2021-11-12 14:12:32,B. Riley Securities,Buy,,main
+2021-07-23 11:26:13,Baird,Outperform,,init
+2021-07-15 10:22:24,B. Riley Securities,Buy,,init
+2021-06-28 10:20:19,Needham,Buy,,init
+2021-06-03 12:17:10,CJS Securities,Outperform,,init
+2020-11-18 11:11:59,William Blair,Outperform,,init

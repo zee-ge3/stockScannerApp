@@ -1,0 +1,51 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-05 22:58:19,Barclays,Overweight,Overweight,main
+2024-08-05 22:52:54,DA Davidson,Buy,Buy,main
+2024-08-02 17:57:08,Stifel,Buy,Buy,main
+2024-08-02 17:35:48,B of A Securities,Buy,Buy,main
+2024-08-02 15:48:49,Oppenheimer,Outperform,Outperform,main
+2024-05-07 14:38:38,DA Davidson,Buy,Buy,main
+2024-05-06 12:04:33,Oppenheimer,Outperform,Outperform,reit
+2024-04-22 10:42:59,Baird,Outperform,Outperform,main
+2024-04-04 17:53:05,Stifel,Buy,Buy,main
+2024-04-01 14:42:43,Jefferies,Hold,Buy,down
+2024-02-28 16:16:58,Barclays,Overweight,Overweight,main
+2024-02-21 18:35:36,Wells Fargo,Overweight,Overweight,main
+2024-02-21 14:13:17,Stifel,Buy,Buy,main
+2024-01-30 19:40:10,Deutsche Bank,Buy,Buy,main
+2024-01-19 20:11:38,Oppenheimer,Outperform,Outperform,main
+2024-01-08 17:21:29,Morgan Stanley,Equal-Weight,,init
+2023-12-19 16:07:25,Stifel,Buy,Buy,main
+2023-10-11 14:03:39,Wells Fargo,Overweight,,init
+2023-07-12 15:23:01,Oppenheimer,Outperform,Outperform,main
+2023-05-01 13:44:40,Oppenheimer,Outperform,,main
+2023-05-01 12:07:58,Morgan Stanley,Overweight,,main
+2023-04-28 14:24:34,Deutsche Bank,Buy,,main
+2023-04-27 11:25:26,Baird,Outperform,,main
+2023-04-21 11:25:56,Baird,Outperform,,main
+2023-04-17 15:01:32,Deutsche Bank,Buy,,main
+2023-02-23 14:07:58,Oppenheimer,Outperform,,main
+2023-02-23 12:23:54,Baird,Outperform,,main
+2023-02-14 13:44:40,Morgan Stanley,Overweight,,main
+2023-02-08 12:11:39,William Blair,Outperform,,init
+2022-12-14 16:45:23,Morgan Stanley,Overweight,,main
+2022-12-02 13:11:28,Barclays,Overweight,,main
+2022-11-07 15:05:36,Morgan Stanley,Overweight,,main
+2022-10-13 13:05:58,Morgan Stanley,Overweight,,main
+2022-08-23 11:53:47,Baird,Outperform,,main
+2022-08-08 14:42:09,Morgan Stanley,Overweight,,main
+2022-07-18 14:22:14,Morgan Stanley,Overweight,,main
+2022-03-30 09:18:37,Deutsche Bank,Buy,,init
+2022-03-02 13:07:59,Barclays,Overweight,Equal-Weight,up
+2021-11-09 13:53:06,Credit Suisse,Outperform,,main
+2021-05-03 12:40:57,Morgan Stanley,Overweight,,main
+2021-04-12 15:14:02,Morgan Stanley,Overweight,,main
+2021-04-01 16:23:28,Credit Suisse,Outperform,,main
+2021-03-03 12:36:06,Baird,Outperform,Neutral,up
+2021-03-01 14:49:19,Morgan Stanley,Overweight,,main
+2021-02-02 16:53:08,Deutsche Bank,Buy,,main
+2021-01-22 14:52:43,Morgan Stanley,Overweight,,main
+2020-12-15 18:18:32,Morgan Stanley,Overweight,,main
+2020-09-16 11:22:29,Berenberg,Buy,,init
+2020-09-01 10:33:49,Baird,Neutral,,init
+2020-08-11 13:32:37,Morgan Stanley,Overweight,,main

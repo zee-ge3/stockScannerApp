@@ -1,0 +1,25 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-04-30 17:23:31,DA Davidson,Buy,Buy,main
+2024-04-08 09:39:00,Baird,Neutral,Outperform,down
+2023-04-19 14:44:46,DA Davidson,Buy,,main
+2023-04-18 15:44:28,Baird,Outperform,,main
+2023-04-18 12:28:27,DA Davidson,Buy,,reit
+2023-02-21 12:16:39,DA Davidson,Buy,,main
+2021-10-14 09:12:38,DA Davidson,Buy,,init
+2021-02-03 12:28:14,Baird,Outperform,Neutral,up
+2020-05-06 16:01:30,Baird,Neutral,,main
+2020-05-01 13:46:12,Sidoti & Co.,Buy,,main
+2020-03-12 13:31:43,Sidoti & Co.,Buy,Neutral,up
+2020-02-26 14:21:16,Baird,Neutral,,main
+2020-01-14 16:12:40,Sidoti & Co.,Neutral,Buy,down
+2019-11-05 13:53:35,Sidoti & Co.,Buy,,main
+2017-01-24 12:24:54,Craig-Hallum,Buy,,init
+2016-07-06 13:52:41,Seaport Global,Neutral,,down
+2016-05-24 12:53:08,Seaport Global,Buy,,up
+2016-04-20 13:15:27,Seaport Global,Neutral,,init
+2016-03-03 14:47:28,Sidoti & Co.,Buy,,init
+2014-09-15 09:33:24,Baird,Neutral,Outperform,down
+2014-02-05 13:00:00,Baird,Outperform,Neutral,up
+2013-08-28 11:12:32,Credit Suisse,Underperform,Neutral,down
+2013-05-08 11:53:59,Baird,Neutral,Outperform,down
+2013-01-24 12:14:55,Credit Suisse,Neutral,Outperform,down

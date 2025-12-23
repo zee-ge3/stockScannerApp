@@ -1,0 +1,41 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-15 14:05:15,UBS,Sell,Sell,main
+2024-01-05 13:55:44,UBS,Sell,Neutral,down
+2023-08-21 11:53:37,UBS,Neutral,Neutral,main
+2023-05-30 12:53:14,UBS,Neutral,Neutral,main
+2023-04-10 13:06:43,UBS,Neutral,,init
+2020-05-26 16:09:41,CFRA,Sell,Hold,down
+2018-11-02 11:18:58,Deutsche Bank,Hold,Sell,up
+2017-08-18 12:57:50,Deutsche Bank,Sell,,main
+2017-05-19 10:15:20,Deutsche Bank,Sell,Hold,down
+2017-04-07 10:06:39,Deutsche Bank,Hold,Sell,up
+2016-05-06 13:23:29,Wolfe Research,Underperform,Peer Perform,down
+2016-04-26 20:39:17,Deutsche Bank,Sell,,init
+2016-03-30 16:24:14,Standpoint Research,Hold,Buy,down
+2016-01-07 16:06:55,Standpoint Research,Buy,Hold,up
+2015-08-17 21:06:26,Wolfe Research,Peer Perform,,init
+2015-05-22 13:00:00,Susquehanna,Neutral,,main
+2015-05-22 09:46:55,Keybanc,Sector Perform,Underperform,up
+2015-01-09 14:00:00,CRT Capital,Fair Value,,main
+2014-11-14 11:09:40,BB&T Capital,Underweight,,init
+2014-11-07 10:22:37,Brean Capital,Hold,,init
+2014-11-07 03:06:04,Brean Capital,Hold,,init
+2014-05-22 10:16:01,Ascendiant Capital,Hold,Sell,up
+2014-05-14 12:15:31,CRT Capital,Fair Value,,init
+2014-05-09 06:34:17,JP Morgan,Neutral,,main
+2014-03-24 11:32:16,Nomura,,,main
+2014-03-07 13:00:00,Janney Montgomery Scott,Neutral,Sell,up
+2014-02-27 13:00:00,Wedbush,Neutral,,init
+2013-09-09 12:00:24,Nomura,Neutral,,init
+2013-05-24 15:45:42,Ascendiant Capital,Sell,Neutral,down
+2013-05-24 15:06:46,Imperial Capital,In-Line,,main
+2013-04-08 10:06:25,Ascendiant Capital,Neutral,,init
+2013-03-25 16:40:06,Imperial Capital,In-Line,,main
+2012-11-12 13:03:00,Sterne Agee,Buy,,main
+2012-08-30 14:03:00,Sterne Agee,Buy,,main
+2012-07-25 12:08:00,Keybanc,Underweight,Hold,down
+2012-07-05 17:38:00,Imperial Capital,In-Line,,main
+2012-07-05 14:55:00,Sterne Agee,Buy,,main
+2012-05-11 10:02:00,B of A Securities,Underperform,,init
+2012-03-02 16:24:00,Imperial Capital,In-Line,,main
+2012-03-01 17:13:00,Sterne Agee,Buy,,main

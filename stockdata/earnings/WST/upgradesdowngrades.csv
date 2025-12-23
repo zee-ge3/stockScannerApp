@@ -1,0 +1,50 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-02-16 18:34:21,UBS,Neutral,Neutral,main
+2024-02-13 10:31:54,Keybanc,Overweight,Overweight,main
+2024-02-07 11:24:13,Jefferies,Buy,Hold,up
+2023-10-27 15:31:03,Stephens & Co.,Overweight,Overweight,main
+2023-08-30 08:08:18,Keybanc,Overweight,Overweight,main
+2023-08-21 08:11:20,Keybanc,Overweight,Overweight,main
+2023-07-28 09:03:15,Keybanc,Overweight,Overweight,main
+2023-07-17 15:57:33,Stephens & Co.,Overweight,Overweight,main
+2023-06-16 11:12:07,B of A Securities,Buy,Neutral,up
+2023-04-11 10:50:48,Stephens & Co.,Overweight,Equal-Weight,up
+2023-02-17 09:51:20,Keybanc,Overweight,,main
+2022-12-14 09:58:31,Deutsche Bank,Hold,,init
+2022-12-02 09:53:27,Keybanc,Overweight,,main
+2022-11-30 13:56:16,UBS,Neutral,,init
+2022-10-28 11:01:43,B of A Securities,Neutral,Buy,down
+2022-10-28 08:51:46,Keybanc,Overweight,,main
+2022-07-29 12:38:21,Stephens & Co.,Equal-Weight,Equal-Weight,main
+2022-04-29 12:27:12,B of A Securities,Buy,Buy,main
+2022-04-29 08:50:16,Keybanc,Overweight,,main
+2021-09-15 12:24:10,B of A Securities,Buy,Buy,main
+2021-07-30 12:37:09,Stephens & Co.,Equal-Weight,Equal-Weight,main
+2021-07-30 09:54:32,Keybanc,Overweight,,main
+2021-04-30 12:35:36,Stephens & Co.,Equal-Weight,Equal-Weight,main
+2021-02-19 13:29:46,Stephens & Co.,Equal-Weight,Equal-Weight,main
+2020-11-10 09:28:47,Keybanc,Overweight,,init
+2020-10-14 12:36:03,Stephens & Co.,Equal-Weight,,init
+2020-04-24 11:16:51,B of A Securities,Neutral,Underperform,up
+2019-12-12 12:20:08,B of A Securities,Underperform,Neutral,down
+2019-07-26 12:01:36,B of A Securities,Neutral,Underperform,up
+2019-05-01 11:49:19,Jefferies,Hold,Buy,down
+2019-04-23 12:26:21,William Blair,Outperform,,init
+2018-04-25 13:25:54,B of A Securities,Underperform,Neutral,down
+2018-01-24 13:27:22,Goldman Sachs,Neutral,,init
+2017-10-27 13:18:02,Wells Fargo,Outperform,,main
+2017-10-17 13:30:10,B of A Securities,Neutral,Buy,down
+2017-10-03 11:16:39,Stephens & Co.,Equal-Weight,,init
+2017-09-15 10:35:11,Jefferies,Buy,Hold,up
+2016-10-28 04:00:00,Wells Fargo,Outperform,Market Perform,up
+2016-09-21 11:35:08,Wells Fargo,Market Perform,Outperform,down
+2016-07-29 17:42:09,Jefferies,Hold,,main
+2016-03-22 10:52:48,Wells Fargo,Outperform,,init
+2016-01-08 08:55:30,Janney Montgomery Scott,Buy,,init
+2015-02-20 14:00:00,Jefferies,Hold,,main
+2014-11-03 14:00:00,Jefferies,Hold,,main
+2014-08-06 03:28:48,Jefferies,Hold,,main
+2013-10-08 10:04:31,B of A Securities,Buy,,init
+2013-02-22 12:55:27,Jefferies,Hold,,main
+2012-11-05 12:54:00,Jefferies,Hold,,main
+2012-04-27 11:05:00,Jefferies,Hold,,main

@@ -1,0 +1,20 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2023-11-10 13:15:59,Needham,Buy,Buy,main
+2023-08-10 10:57:50,Needham,Buy,Buy,main
+2023-03-17 10:31:20,Needham,Buy,,reit
+2022-12-08 12:08:23,Raymond James,Market Perform,Strong Buy,down
+2022-12-07 11:35:00,Needham,Buy,,main
+2022-08-10 10:40:51,Needham,Buy,,main
+2022-05-11 10:03:38,Needham,Buy,,main
+2022-03-09 10:46:55,Raymond James,Strong Buy,,main
+2021-11-08 11:58:07,Raymond James,Strong Buy,Outperform,up
+2021-06-22 09:01:28,Needham,Buy,,init
+2021-05-06 11:57:52,Raymond James,Outperform,,main
+2021-03-03 12:20:28,Raymond James,Outperform,,main
+2019-08-05 11:31:31,Raymond James,Outperform,,reit
+2019-05-06 15:27:58,Raymond James,Outperform,,reit
+2019-03-06 11:56:06,B. Riley Securities,Buy,,init
+2018-09-24 09:53:03,Chardan Capital,Buy,Neutral,up
+2017-03-28 10:34:48,Raymond James,Outperform,Strong Buy,down
+2016-05-31 10:10:39,Chardan Capital,Neutral,Buy,down
+2013-09-11 13:11:42,Chardan Capital,Buy,,init

@@ -1,0 +1,22 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-08 16:14:54,Craig-Hallum,Hold,Hold,main
+2024-04-11 18:06:14,Lake Street,Buy,Buy,main
+2024-03-19 15:18:06,DA Davidson,Buy,Buy,main
+2023-11-10 12:09:02,Craig-Hallum,Hold,Buy,down
+2023-05-11 12:09:36,Credit Suisse,Underperform,Underperform,reit
+2022-11-10 12:49:10,Credit Suisse,Underperform,,main
+2022-08-10 13:56:59,Credit Suisse,Underperform,,main
+2022-07-19 13:29:46,Craig-Hallum,Buy,,init
+2021-09-09 16:11:52,Credit Suisse,Underperform,,main
+2021-03-25 14:00:47,Lake Street,Buy,,init
+2021-03-25 10:28:03,DA Davidson,Buy,,init
+2020-04-22 12:31:47,Credit Suisse,Underperform,,main
+2018-03-19 13:55:13,Credit Suisse,Underperform,Underperform,main
+2017-08-14 10:56:13,UBS,Neutral,Buy,down
+2017-08-11 15:43:40,Credit Suisse,Underperform,,main
+2017-03-01 11:18:05,Keybanc,Sector Weight,Overweight,down
+2016-10-13 04:00:00,Credit Suisse,Underperform,Neutral,down
+2016-02-29 18:00:23,Credit Suisse,Neutral,,main
+2015-07-10 12:14:26,BB&T Capital,Buy,,init
+2015-07-08 14:20:01,Johnson Rice,Buy,,init
+2015-07-02 10:06:57,UBS,Buy,,init

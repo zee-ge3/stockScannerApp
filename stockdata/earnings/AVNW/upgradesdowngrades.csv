@@ -1,0 +1,32 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-05 12:47:21,Lake Street,Buy,Buy,reit
+2024-05-02 17:56:46,B. Riley Securities,Buy,Buy,main
+2024-02-07 16:34:46,JMP Securities,Market Outperform,Market Outperform,reit
+2024-02-07 10:12:26,B. Riley Securities,Buy,Buy,main
+2024-02-05 17:52:27,JMP Securities,Market Outperform,Market Outperform,reit
+2023-09-25 12:43:44,JMP Securities,Market Outperform,Market Outperform,reit
+2023-09-08 16:48:39,JMP Securities,Market Outperform,Market Outperform,reit
+2023-08-24 15:44:17,Roth Capital,Buy,Buy,main
+2023-08-24 14:50:56,B. Riley Securities,Buy,Buy,main
+2023-06-30 13:17:14,JMP Securities,Market Outperform,Market Outperform,reit
+2023-06-06 17:23:17,Lake Street,Buy,,init
+2023-05-10 12:34:33,JMP Securities,Market Outperform,,reit
+2023-05-04 11:36:11,JMP Securities,Market Outperform,,reit
+2023-03-13 11:40:32,JMP Securities,Market Outperform,,reit
+2023-02-02 14:12:10,B. Riley Securities,Buy,,main
+2023-02-02 12:59:25,JMP Securities,Market Outperform,,reit
+2022-09-01 10:45:04,JMP Securities,Market Outperform,,init
+2022-08-24 13:18:53,B. Riley Securities,Buy,,main
+2022-06-28 14:53:34,Northland Capital Markets,Outperform,,main
+2021-08-26 12:49:17,Roth Capital,Buy,,main
+2021-08-24 13:43:53,Roth Capital,Buy,,init
+2021-02-04 17:18:37,Northland Capital Markets,Outperform,,main
+2019-12-04 14:01:39,Northland Capital Markets,Outperform,,init
+2015-07-09 11:11:33,HC Wainwright & Co.,Neutral,,init
+2014-09-05 15:11:10,HC Wainwright & Co.,Neutral,,init
+2014-09-03 15:27:16,Needham,Buy,Hold,up
+2013-10-03 20:00:00,Needham,Hold,Buy,down
+2013-05-02 10:46:39,DA Davidson,Neutral,,main
+2013-01-31 11:53:30,DA Davidson,Neutral,,main
+2013-01-15 11:47:12,DA Davidson,Neutral,,main
+2012-11-02 14:52:00,Stephens & Co.,Overweight,Equal-Weight,up

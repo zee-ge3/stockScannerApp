@@ -1,0 +1,96 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-07 09:38:43,Needham,Buy,Buy,main
+2024-08-06 18:09:36,Needham,Buy,Buy,reit
+2024-07-23 17:25:37,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2024-05-14 17:12:10,Needham,Buy,Buy,reit
+2024-05-06 12:48:58,Truist Securities,Buy,Buy,main
+2024-05-03 09:46:26,Needham,Buy,Buy,main
+2024-05-02 11:51:27,Needham,Buy,Buy,reit
+2024-02-29 13:42:42,Needham,Buy,Buy,reit
+2024-02-23 15:19:42,Needham,Buy,Buy,reit
+2024-02-22 19:02:10,Truist Securities,Buy,Buy,main
+2024-02-22 10:26:38,Needham,Buy,Buy,reit
+2023-11-01 12:54:32,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-11-01 10:43:16,Needham,Buy,Buy,main
+2023-10-02 10:36:40,Needham,Buy,Buy,reit
+2023-09-13 14:18:56,Truist Securities,Buy,Buy,reit
+2023-08-02 16:41:52,Truist Securities,Buy,Buy,main
+2023-08-02 15:00:48,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-08-02 09:40:34,Needham,Buy,Buy,main
+2023-08-01 16:51:13,Needham,Buy,Buy,reit
+2023-07-12 09:16:40,Needham,Buy,Buy,reit
+2023-07-11 07:57:32,Needham,Buy,Buy,reit
+2023-06-29 08:14:29,Needham,Buy,Buy,reit
+2023-05-24 12:59:24,JMP Securities,Market Perform,,main
+2023-05-24 10:31:27,Needham,Buy,Buy,reit
+2023-05-17 08:23:32,Needham,Buy,Buy,reit
+2023-04-26 13:54:33,Truist Securities,Buy,,main
+2023-04-26 12:51:52,Morgan Stanley,Equal-Weight,,main
+2023-04-26 09:47:36,Needham,Buy,,reit
+2023-03-06 10:32:51,Needham,Buy,,reit
+2023-03-01 11:49:25,Needham,Buy,,reit
+2023-02-24 11:59:38,Needham,Buy,,reit
+2023-02-10 14:14:39,Truist Securities,Buy,,main
+2023-02-10 12:43:37,Morgan Stanley,Equal-Weight,,main
+2023-02-10 10:08:46,Needham,Buy,,main
+2022-11-28 14:01:29,JMP Securities,Market Perform,Market Outperform,down
+2022-10-26 10:24:27,Needham,Buy,,main
+2022-10-25 12:44:39,Morgan Stanley,Equal-Weight,,main
+2022-10-24 13:11:18,Truist Securities,Buy,,main
+2022-08-25 13:23:33,Redburn Partners,Buy,,init
+2022-07-28 10:10:13,Morgan Stanley,Equal-Weight,,init
+2022-07-27 14:31:10,JMP Securities,Market Outperform,,main
+2022-07-27 13:47:49,Truist Securities,Buy,,main
+2022-07-27 09:30:45,Needham,Buy,,main
+2022-04-27 10:18:32,Needham,Buy,,main
+2022-02-11 11:40:03,Needham,Buy,,main
+2021-10-27 09:57:18,Needham,Buy,,main
+2021-07-28 10:35:57,Needham,Buy,,main
+2021-04-28 12:17:38,JMP Securities,Market Outperform,,main
+2021-04-27 10:11:10,Needham,Buy,,init
+2020-10-28 15:04:11,Stifel,Buy,,main
+2020-10-28 11:26:53,JMP Securities,Market Outperform,,main
+2020-10-23 16:23:29,Stifel,Buy,,init
+2020-10-23 10:21:42,JMP Securities,Market Outperform,,init
+2020-09-29 11:51:16,B of A Securities,Buy,,init
+2020-08-28 11:19:54,Truist Securities,Buy,Hold,up
+2020-07-23 11:18:08,Needham,Buy,,init
+2020-04-29 16:56:43,SunTrust Robinson Humphrey,Hold,,main
+2018-10-31 13:44:52,Deutsche Bank,Hold,Hold,main
+2018-08-15 12:43:55,Deutsche Bank,Hold,Hold,main
+2018-02-23 14:13:34,Deutsche Bank,Hold,Hold,main
+2017-11-01 16:24:30,Jefferies,Underperform,,main
+2017-08-25 10:11:00,Jefferies,Underperform,Hold,down
+2017-08-16 10:31:37,SunTrust Robinson Humphrey,Hold,,init
+2017-08-03 17:02:03,Deutsche Bank,Hold,,main
+2016-11-07 10:50:26,Raymond James,Market Perform,Outperform,down
+2016-09-16 11:23:04,Jefferies,Hold,,main
+2016-08-10 01:57:49,Deutsche Bank,Hold,,main
+2016-08-05 14:55:04,Jefferies,Hold,,main
+2016-08-05 12:26:55,Loop Capital,Hold,,init
+2016-08-04 15:45:29,Cantor Fitzgerald,Hold,Buy,down
+2016-02-25 11:18:39,Jefferies,Hold,,main
+2016-02-25 11:07:26,Deutsche Bank,Hold,,main
+2015-11-06 15:01:31,Deutsche Bank,Hold,,main
+2015-08-07 17:17:32,Cantor Fitzgerald,Buy,,main
+2015-08-07 11:39:01,RBC Capital,Sector Perform,Outperform,down
+2015-08-07 11:26:55,Jefferies,Hold,Buy,down
+2015-08-07 11:24:33,William Blair,Market Perform,Outperform,down
+2015-07-14 12:00:24,Morgan Stanley,Underweight,,init
+2015-06-17 12:37:36,RBC Capital,Outperform,,main
+2015-05-28 20:22:07,Topeka Capital,Buy,,init
+2015-05-08 13:00:00,Deutsche Bank,Hold,,main
+2015-04-01 10:02:14,Raymond James,Outperform,,init
+2015-02-13 14:00:00,Jefferies,Buy,,main
+2014-08-08 20:00:00,JP Morgan,Hold,,main
+2013-12-20 11:24:21,Wunderlich Securities,Buy,,init
+2013-08-08 11:53:49,Deutsche Bank,Hold,,main
+2013-08-08 11:44:47,Jefferies,Buy,,main
+2013-04-09 11:38:54,Jefferies,Buy,,main
+2013-02-22 12:54:05,Jefferies,Buy,,main
+2013-01-10 21:13:56,Cantor Fitzgerald,Buy,,init
+2012-11-16 12:36:00,Jefferies,Buy,,main
+2012-11-05 15:53:00,RBC Capital,Outperform,,init
+2012-11-05 11:53:00,Jefferies,Buy,,init
+2012-11-05 11:01:00,Morgan Stanley,Equal-Weight,,init
+2012-11-05 10:53:00,Deutsche Bank,Hold,,init

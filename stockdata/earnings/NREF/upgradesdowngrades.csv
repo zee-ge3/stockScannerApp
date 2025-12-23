@@ -1,0 +1,22 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-07 13:18:49,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-05-06 13:15:27,Piper Sandler,Neutral,Neutral,main
+2024-04-10 15:40:31,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-03-11 12:55:21,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2023-08-01 11:22:41,Raymond James,Strong Buy,Strong Buy,main
+2023-05-02 12:16:29,"Keefe, Bruyette & Woods",Outperform,,main
+2023-05-02 11:28:54,Raymond James,Strong Buy,,main
+2023-04-13 13:52:45,"Keefe, Bruyette & Woods",Outperform,,main
+2022-10-18 14:17:37,Raymond James,Strong Buy,,main
+2022-03-17 08:47:56,Raymond James,Strong Buy,,main
+2021-11-16 13:05:04,Raymond James,Strong Buy,,main
+2021-04-15 12:01:28,Raymond James,Strong Buy,,main
+2021-03-12 13:08:54,Raymond James,Strong Buy,,main
+2020-12-02 14:09:07,Raymond James,Strong Buy,,main
+2020-06-08 13:21:19,Baird,Outperform,,main
+2020-05-21 11:16:26,Raymond James,Strong Buy,Outperform,up
+2020-05-07 12:04:31,"Keefe, Bruyette & Woods",Outperform,,main
+2020-04-13 12:15:19,Raymond James,Outperform,,main
+2020-03-03 12:30:13,Raymond James,Outperform,,init
+2020-03-03 11:01:30,Baird,Outperform,,init
+2020-03-03 10:57:05,"Keefe, Bruyette & Woods",Outperform,,init

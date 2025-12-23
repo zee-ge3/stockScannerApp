@@ -1,0 +1,26 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-08 12:48:40,Wells Fargo,Overweight,Overweight,main
+2024-07-26 12:19:38,Wells Fargo,Overweight,Overweight,main
+2024-05-29 10:55:54,Wells Fargo,Overweight,Equal-Weight,up
+2024-05-23 12:57:52,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-05-08 14:39:01,Wells Fargo,Equal-Weight,Equal-Weight,main
+2024-01-29 14:44:53,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-08-10 16:24:30,Citigroup,Neutral,Neutral,main
+2023-08-10 13:59:23,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-05-11 14:58:58,Citigroup,Neutral,Neutral,main
+2023-05-11 12:22:47,Wells Fargo,Equal-Weight,Underweight,up
+2023-04-18 11:59:53,Wells Fargo,Underweight,,main
+2023-03-03 13:06:53,Wells Fargo,Underweight,,main
+2023-03-02 13:52:55,Citigroup,Neutral,,main
+2022-10-24 12:06:15,Wells Fargo,Underweight,,main
+2022-07-25 10:16:22,Wells Fargo,Underweight,Equal-Weight,down
+2021-08-06 12:59:44,Oppenheimer,Perform,,main
+2021-03-01 11:15:37,Wells Fargo,Equal-Weight,Underweight,up
+2020-06-29 12:16:06,B of A Securities,Neutral,Buy,down
+2020-05-04 12:44:21,Credit Suisse,Outperform,,main
+2020-04-07 14:14:34,Citigroup,Neutral,,main
+2020-03-25 13:58:49,Wells Fargo,Underweight,,main
+2020-01-27 10:56:12,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2020-01-15 11:25:29,Wells Fargo,Underweight,Equal-Weight,down
+2019-04-24 12:07:33,JMP Securities,Market Perform,,init
+2019-04-24 11:02:11,JMP Securities,Market Perform,,init

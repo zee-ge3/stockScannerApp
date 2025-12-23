@@ -1,0 +1,40 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-09 13:53:17,Barrington Research,Outperform,Outperform,main
+2024-03-13 12:52:55,JP Morgan,Overweight,Overweight,main
+2024-03-01 15:47:59,Barrington Research,Outperform,Outperform,main
+2024-01-03 15:39:07,Barrington Research,Outperform,Outperform,main
+2023-11-17 16:11:55,JP Morgan,Overweight,Overweight,main
+2023-11-09 16:45:14,Barrington Research,Outperform,Outperform,main
+2023-09-22 09:39:20,JP Morgan,Overweight,,init
+2023-09-19 15:31:55,CJS Securities,Market Outperform,Market Perform,up
+2023-08-14 13:05:23,Barrington Research,Outperform,Outperform,main
+2023-06-30 10:40:27,B of A Securities,Buy,,init
+2023-05-05 17:37:37,Barrington Research,Outperform,,main
+2023-02-24 14:39:54,Barrington Research,Outperform,,main
+2021-12-14 15:23:14,CJS Securities,Market Outperform,Market Perform,up
+2021-05-07 14:37:33,Barrington Research,Outperform,Market Perform,up
+2021-05-03 11:13:12,Jefferies,Buy,Hold,up
+2021-02-26 15:55:14,Barrington Research,Market Perform,Outperform,down
+2020-03-27 14:32:29,Sidoti & Co.,Buy,,main
+2019-11-08 13:49:40,Barrington Research,Outperform,Market Perform,up
+2019-03-08 12:00:38,William Blair,Outperform,,init
+2018-11-02 14:37:59,Cantor Fitzgerald,Neutral,Neutral,main
+2018-05-04 12:35:09,Cantor Fitzgerald,Neutral,Overweight,down
+2017-11-03 13:29:39,Barrington Research,Market Perform,Outperform,down
+2017-07-25 11:16:34,Cantor Fitzgerald,Overweight,,init
+2017-03-17 13:18:06,Barrington Research,Market Perform,Outperform,down
+2016-11-04 12:25:28,Barrington Research,Outperform,Market Perform,up
+2016-08-05 14:55:06,Jefferies,Hold,,main
+2016-05-06 12:10:47,Barrington Research,Outperform,Market Perform,up
+2016-03-01 10:55:01,Jefferies,Hold,Buy,down
+2015-05-06 14:07:52,Barrington Research,Outperform,Market Perform,up
+2015-03-26 10:27:51,Barrington Research,Market Perform,,init
+2014-10-28 13:00:00,Jefferies,Buy,,main
+2013-12-17 21:00:00,JMP Securities,Market Perform,Market Outperform,down
+2013-08-12 14:03:35,Noble Capital Markets,Hold,Buy,down
+2013-03-08 14:31:57,Noble Capital Markets,Buy,Hold,up
+2013-01-10 14:25:14,Noble Capital Markets,Hold,Buy,down
+2012-05-09 14:55:00,Dougherty & Co.,Buy,,main
+2012-05-04 11:05:00,Jefferies,Buy,,main
+2012-03-13 10:11:00,Jefferies,Buy,,main
+2012-03-07 11:31:00,Jefferies,Buy,,main

@@ -1,0 +1,68 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-08 15:44:08,JP Morgan,Neutral,Neutral,main
+2024-08-02 14:04:40,Piper Sandler,Overweight,Overweight,main
+2024-05-28 12:32:45,Wells Fargo,Overweight,Overweight,main
+2024-05-23 11:17:58,Mizuho,Neutral,Neutral,main
+2024-05-20 16:13:05,Truist Securities,Buy,Buy,main
+2024-05-16 13:29:07,Scotiabank,Sector Outperform,Sector Outperform,main
+2024-05-03 16:13:05,Evercore ISI Group,Outperform,Outperform,main
+2024-04-22 09:29:05,Deutsche Bank,Buy,Hold,up
+2024-04-05 11:24:19,B of A Securities,Buy,Buy,main
+2024-03-25 16:08:55,Truist Securities,Buy,Buy,reit
+2024-03-07 19:26:58,Jefferies,Hold,Hold,main
+2024-02-29 10:39:58,Wells Fargo,Overweight,Equal-Weight,up
+2024-02-28 20:21:43,Scotiabank,Sector Outperform,Sector Outperform,main
+2024-02-23 15:19:58,Mizuho,Neutral,Neutral,main
+2024-01-19 13:00:08,Barclays,Overweight,Overweight,main
+2024-01-16 16:57:34,Truist Securities,Buy,Hold,up
+2024-01-10 15:59:23,Mizuho,Neutral,Neutral,main
+2023-12-20 17:58:40,Piper Sandler,Overweight,Overweight,main
+2023-12-01 12:19:28,Mizuho,Neutral,Neutral,main
+2023-11-27 14:47:03,Evercore ISI Group,Outperform,In-Line,up
+2023-11-13 15:05:06,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-09-18 10:12:02,Mizuho,Neutral,Buy,down
+2023-09-05 09:53:58,Raymond James,Outperform,Strong Buy,down
+2023-08-22 13:43:42,B of A Securities,Buy,Buy,main
+2023-08-11 14:23:35,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-07-20 15:55:00,Mizuho,Buy,Buy,main
+2023-07-13 13:11:44,UBS,Neutral,Neutral,main
+2023-06-30 08:38:34,Piper Sandler,Overweight,Neutral,up
+2023-06-16 11:26:45,Raymond James,Strong Buy,Strong Buy,main
+2023-05-31 16:08:19,Citigroup,Neutral,Neutral,main
+2023-05-26 14:18:49,JP Morgan,Neutral,Neutral,main
+2023-05-25 11:35:37,Mizuho,Buy,Buy,main
+2023-05-24 08:41:10,Wells Fargo,Equal-Weight,,init
+2023-05-17 13:02:34,Mizuho,Buy,Buy,reit
+2023-05-15 11:28:37,Truist Securities,Hold,Hold,main
+2023-04-05 10:18:01,Piper Sandler,Neutral,,main
+2023-03-01 13:30:48,Mizuho,Buy,,main
+2023-02-15 12:34:53,Barclays,Overweight,,main
+2023-02-09 14:50:45,UBS,Neutral,,main
+2023-02-09 12:32:29,Credit Suisse,Neutral,,main
+2023-01-30 13:28:35,Compass Point,Buy,Neutral,up
+2023-01-17 16:01:45,Truist Securities,Hold,Hold,main
+2023-01-04 13:05:33,Raymond James,Strong Buy,,main
+2022-12-16 12:07:11,JP Morgan,Neutral,Overweight,down
+2022-12-15 10:08:48,Piper Sandler,Neutral,Overweight,down
+2022-12-06 12:17:01,Barclays,Overweight,,main
+2022-11-11 12:49:43,Mizuho,Buy,,main
+2022-10-07 12:01:57,Piper Sandler,Overweight,,main
+2022-09-27 13:25:40,Evercore ISI Group,In-Line,,main
+2022-09-01 12:01:05,Raymond James,Strong Buy,,main
+2022-08-22 12:28:54,Truist Securities,Hold,,main
+2022-08-16 13:22:27,Mizuho,Buy,,main
+2022-08-09 12:15:57,B of A Securities,Buy,Neutral,up
+2022-07-25 12:49:44,UBS,Neutral,,main
+2022-07-21 12:00:23,Mizuho,Buy,,main
+2022-07-15 11:10:38,Barclays,Overweight,,main
+2022-06-30 14:22:00,Jefferies,Hold,,main
+2022-06-23 09:14:06,Credit Suisse,Neutral,,init
+2022-06-03 15:03:02,Truist Securities,Hold,Hold,main
+2022-05-12 09:14:34,Raymond James,Strong Buy,Market Perform,up
+2022-04-07 11:53:12,Wells Fargo,Equal-Weight,,main
+2022-03-31 12:29:29,Deutsche Bank,Buy,,main
+2022-03-09 16:04:25,Truist Securities,Hold,Hold,main
+2022-02-15 12:24:18,Mizuho,Buy,,main
+2022-02-09 13:50:52,Capital One,Overweight,Equal-Weight,up
+2021-08-27 15:06:12,Truist Securities,Hold,Hold,main
+2020-12-30 16:08:14,Truist Securities,Hold,Hold,main

@@ -1,0 +1,47 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-11 10:58:21,Keybanc,Overweight,Overweight,main
+2024-07-02 16:59:59,Leerink Partners,Outperform,,init
+2024-05-02 20:05:00,Citigroup,Buy,Buy,main
+2024-05-02 16:59:18,Craig-Hallum,Buy,Buy,main
+2024-03-01 17:22:16,Citigroup,Buy,Buy,main
+2024-03-01 14:33:32,Goldman Sachs,Neutral,Neutral,main
+2024-02-29 20:45:57,Keybanc,Overweight,Overweight,main
+2024-02-29 17:03:48,Citigroup,Buy,Buy,main
+2024-02-29 15:44:07,B of A Securities,Neutral,Neutral,main
+2024-02-29 13:44:11,Piper Sandler,Overweight,Overweight,main
+2024-01-26 11:57:35,TD Cowen,Outperform,,init
+2024-01-19 19:54:19,Craig-Hallum,Buy,Buy,main
+2023-12-05 11:10:17,Keybanc,Overweight,,init
+2023-11-13 13:43:36,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-08-04 19:17:20,Morgan Stanley,Equal-Weight,Equal-Weight,reit
+2023-08-03 19:40:19,BMO Capital,Outperform,Outperform,main
+2023-06-29 12:07:06,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-05-08 11:15:17,Citigroup,Buy,,main
+2023-03-10 13:53:38,Morgan Stanley,Equal-Weight,,main
+2023-03-01 12:40:17,BMO Capital,Outperform,,main
+2023-01-31 11:53:52,Citigroup,Buy,,main
+2023-01-19 17:07:44,Piper Sandler,Overweight,,main
+2022-11-04 14:15:37,BMO Capital,Outperform,,main
+2022-11-04 13:25:30,Morgan Stanley,Equal-Weight,,main
+2022-09-09 13:21:42,Morgan Stanley,Equal-Weight,,main
+2022-08-24 12:24:18,Morgan Stanley,Equal-Weight,,main
+2022-07-26 11:18:11,Piper Sandler,Overweight,,main
+2022-05-05 14:03:47,Morgan Stanley,Equal-Weight,,main
+2022-03-01 10:53:13,Citigroup,Buy,,init
+2021-11-19 11:44:07,Morgan Stanley,Equal-Weight,Overweight,down
+2021-11-19 09:54:20,Piper Sandler,Overweight,,init
+2021-11-11 11:25:15,B of A Securities,Neutral,Buy,down
+2021-10-13 11:11:46,Berenberg,Buy,,init
+2021-09-01 10:04:33,Morgan Stanley,Overweight,Equal-Weight,up
+2021-05-25 12:48:50,Craig-Hallum,Buy,,init
+2021-05-12 12:52:28,Morgan Stanley,Equal-Weight,,main
+2020-11-23 15:35:15,B of A Securities,Buy,Neutral,up
+2020-11-13 13:16:31,Morgan Stanley,Equal-Weight,,main
+2020-10-13 14:18:01,Morgan Stanley,Equal-Weight,,main
+2020-10-12 13:25:07,Jefferies,Buy,Hold,up
+2020-07-15 14:50:26,Morgan Stanley,Equal-Weight,,main
+2020-05-14 15:41:22,BMO Capital,Outperform,,main
+2020-05-14 11:56:12,Morgan Stanley,Equal-Weight,,main
+2020-03-02 13:36:28,Morgan Stanley,Equal-Weight,,init
+2020-03-02 13:35:16,Jefferies,Hold,,init
+2020-03-02 11:53:42,BMO Capital,Outperform,,init

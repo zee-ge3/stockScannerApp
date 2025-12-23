@@ -1,0 +1,18 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-06 18:45:23,Needham,Hold,,reit
+2024-07-01 10:31:01,Needham,Hold,,init
+2024-02-23 15:01:51,Barclays,Equal-Weight,Equal-Weight,main
+2024-01-03 10:33:45,Barclays,Equal-Weight,,init
+2023-05-03 14:22:15,TD Cowen,Outperform,,main
+2022-11-09 09:13:51,SVB Leerink,Market Perform,,main
+2022-05-04 08:36:39,SVB Leerink,Market Perform,,main
+2021-12-02 10:00:39,Jefferies,Hold,,init
+2021-11-16 12:15:58,SVB Leerink,Market Perform,Outperform,down
+2021-11-16 12:02:42,Citigroup,Neutral,Buy,down
+2021-11-16 11:11:39,Baird,Neutral,Outperform,down
+2021-08-19 11:40:26,Citigroup,Buy,,init
+2021-07-19 12:29:47,William Blair,Outperform,,init
+2021-07-09 09:09:34,Baird,Outperform,,init
+2021-07-08 11:56:04,Baird,Outperform,,init
+2021-07-06 11:50:15,Cowen & Co.,Outperform,,init
+2021-07-06 11:41:40,SVB Leerink,Outperform,,init

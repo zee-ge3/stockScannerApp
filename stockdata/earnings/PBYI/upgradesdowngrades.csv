@@ -1,0 +1,77 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-02 12:05:10,HC Wainwright & Co.,Buy,Buy,reit
+2024-07-26 19:59:50,HC Wainwright & Co.,Buy,Buy,reit
+2024-06-04 11:36:05,HC Wainwright & Co.,Buy,Buy,reit
+2024-06-03 11:40:43,HC Wainwright & Co.,Buy,Buy,reit
+2024-05-20 12:03:50,HC Wainwright & Co.,Buy,Buy,reit
+2024-05-03 19:17:21,HC Wainwright & Co.,Buy,Buy,reit
+2024-03-01 19:52:01,HC Wainwright & Co.,Buy,Buy,main
+2024-02-13 17:28:33,HC Wainwright & Co.,Buy,Buy,reit
+2023-09-20 10:35:10,HC Wainwright & Co.,Buy,Buy,reit
+2023-08-04 12:19:51,HC Wainwright & Co.,Buy,Buy,reit
+2023-06-05 10:33:29,HC Wainwright & Co.,Buy,Buy,reit
+2023-05-05 11:38:40,HC Wainwright & Co.,Buy,,reit
+2023-03-06 11:15:34,HC Wainwright & Co.,Buy,,reit
+2022-08-05 12:29:01,HC Wainwright & Co.,Buy,,main
+2022-05-06 16:21:54,HC Wainwright & Co.,Buy,,main
+2021-09-28 08:54:51,Citigroup,Buy,Neutral,up
+2021-08-06 14:44:06,RBC Capital,Sector Perform,,main
+2021-08-06 12:50:03,Goldman Sachs,Sell,,main
+2020-08-10 11:34:59,Citigroup,Neutral,,main
+2020-08-07 09:35:55,SVB Leerink,Market Perform,,main
+2020-05-20 11:23:22,Cantor Fitzgerald,Neutral,,main
+2019-12-06 12:28:22,HC Wainwright & Co.,Buy,,init
+2019-10-08 10:53:25,Goldman Sachs,Sell,Neutral,down
+2019-08-09 12:59:20,Barclays,Underweight,,main
+2019-05-10 12:33:20,Citigroup,Neutral,Buy,down
+2019-05-10 10:52:34,Cantor Fitzgerald,Neutral,Overweight,down
+2019-03-01 13:52:09,Citigroup,Buy,Buy,main
+2019-01-17 13:13:37,Leerink Swann,Market Perform,,init
+2019-01-03 13:32:01,Guggenheim,Neutral,Buy,down
+2018-11-19 10:57:36,Goldman Sachs,Neutral,Sell,up
+2018-11-02 17:00:36,JP Morgan,Underweight,Underweight,main
+2018-11-02 14:18:47,Cantor Fitzgerald,Overweight,Overweight,main
+2018-11-02 10:08:32,Barclays,Underweight,Equal-Weight,down
+2018-10-01 12:03:24,Cantor Fitzgerald,Overweight,,init
+2018-09-18 12:05:31,Citigroup,Buy,Buy,main
+2018-09-17 12:23:28,Goldman Sachs,Sell,,init
+2018-08-10 12:01:09,JP Morgan,Overweight,Overweight,main
+2018-06-28 11:32:16,Citigroup,Buy,Buy,main
+2018-04-12 10:36:52,Barclays,Equal-Weight,Overweight,down
+2018-03-09 13:03:43,Stifel,Buy,Buy,main
+2018-03-02 16:21:51,Barclays,Overweight,Overweight,main
+2018-01-24 15:22:25,JP Morgan,Overweight,Overweight,main
+2018-01-24 14:18:36,Credit Suisse,Outperform,Outperform,main
+2018-01-24 13:30:17,B of A Securities,Buy,Buy,main
+2018-01-24 13:00:38,Citigroup,Buy,Buy,main
+2018-01-24 12:05:53,Cowen & Co.,Market Perform,Outperform,down
+2017-11-10 17:18:22,Barclays,Overweight,,main
+2017-11-10 15:51:35,Credit Suisse,Outperform,,main
+2017-10-09 13:23:04,B of A Securities,Buy,,main
+2017-10-05 13:03:01,Citigroup,Buy,,main
+2017-09-11 18:00:07,Credit Suisse,Outperform,,main
+2017-09-07 11:29:14,Barclays,Overweight,,init
+2017-07-18 12:56:43,Credit Suisse,Outperform,,main
+2017-05-25 11:32:10,Cowen & Co.,Outperform,Market Perform,up
+2016-09-22 12:18:39,Credit Suisse,Outperform,,main
+2016-09-21 11:29:56,Stifel,Buy,Hold,up
+2016-04-11 10:21:32,UBS,Buy,,main
+2016-03-29 08:08:40,Citigroup,Buy,,main
+2016-03-29 08:05:21,JP Morgan,Overweight,,main
+2016-03-29 08:03:30,Credit Suisse,Outperform,,main
+2016-03-29 07:48:06,RBC Capital,Sector Perform,Outperform,down
+2016-02-11 21:52:43,Credit Suisse,Outperform,,init
+2016-01-20 21:49:00,Credit Suisse,Outperform,,init
+2015-12-14 14:05:19,Citigroup,Buy,Neutral,up
+2015-08-27 11:40:15,JP Morgan,Overweight,,init
+2015-05-05 11:49:00,Cowen & Co.,Market Perform,Outperform,down
+2015-03-03 14:00:00,Citigroup,Buy,,main
+2014-07-24 02:36:58,UBS,Buy,,main
+2014-07-24 01:30:44,Citigroup,Buy,,main
+2014-06-24 23:56:41,Citigroup,Buy,,main
+2014-04-21 12:12:33,Citigroup,Buy,,init
+2013-12-24 11:34:18,B of A Securities,Buy,,main
+2013-12-19 12:04:29,Stifel,Hold,Buy,down
+2012-11-30 12:09:52,B of A Securities,Buy,,init
+2012-11-13 18:12:00,Cowen & Co.,Outperform,,init
+2012-08-24 12:37:00,Stifel,Buy,,init

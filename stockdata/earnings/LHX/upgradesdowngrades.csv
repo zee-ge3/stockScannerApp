@@ -1,0 +1,119 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-31 16:09:31,Wells Fargo,Overweight,Overweight,main
+2024-07-30 11:39:39,Barclays,Overweight,Overweight,main
+2024-07-29 14:41:20,RBC Capital,Outperform,Outperform,reit
+2024-07-29 12:37:51,Susquehanna,Positive,Positive,main
+2024-07-26 09:27:16,Deutsche Bank,Hold,Buy,down
+2024-05-07 17:00:48,Wells Fargo,Overweight,Overweight,main
+2024-05-01 14:48:37,JP Morgan,Overweight,Overweight,main
+2024-04-30 13:13:06,Barclays,Overweight,Overweight,main
+2024-04-29 14:09:54,RBC Capital,Outperform,Outperform,main
+2024-04-22 10:59:20,Alembic Global,Overweight,Neutral,up
+2024-02-13 15:36:47,Citigroup,Buy,Buy,main
+2024-01-30 12:29:39,Wells Fargo,Overweight,Overweight,main
+2024-01-29 17:31:54,RBC Capital,Outperform,Outperform,main
+2024-01-29 16:09:24,UBS,Neutral,Neutral,main
+2024-01-29 14:02:46,Raymond James,Outperform,Outperform,main
+2024-01-11 11:53:44,JP Morgan,Overweight,Neutral,up
+2023-12-15 12:29:15,Deutsche Bank,Buy,Hold,up
+2023-12-14 18:29:10,Truist Securities,Buy,Buy,main
+2023-12-13 19:09:09,Raymond James,Outperform,Outperform,main
+2023-12-13 16:17:14,RBC Capital,Outperform,Outperform,reit
+2023-12-07 17:07:40,RBC Capital,Outperform,Outperform,reit
+2023-11-29 18:13:40,Truist Securities,Buy,Buy,reit
+2023-11-28 14:49:47,Wells Fargo,Overweight,Overweight,main
+2023-10-31 09:39:22,Baird,Outperform,Neutral,up
+2023-10-30 18:24:47,RBC Capital,Outperform,Outperform,main
+2023-10-30 09:15:25,Raymond James,Outperform,Market Perform,up
+2023-10-20 16:54:58,Truist Securities,Buy,Buy,main
+2023-09-28 08:48:47,Deutsche Bank,Hold,,init
+2023-09-18 10:07:58,Wells Fargo,Overweight,Equal-Weight,up
+2023-08-28 08:29:59,Bernstein,Market Perform,Outperform,down
+2023-08-18 14:08:01,RBC Capital,Outperform,Outperform,reit
+2023-08-02 11:08:31,B of A Securities,Neutral,Neutral,main
+2023-07-31 16:05:27,Jefferies,Buy,Buy,main
+2023-07-28 16:23:27,RBC Capital,Outperform,Outperform,main
+2023-07-28 15:50:24,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-05-01 13:18:39,RBC Capital,Outperform,,reit
+2023-05-01 11:10:26,Baird,Neutral,,main
+2023-05-01 10:34:27,Credit Suisse,Outperform,,main
+2023-02-01 14:44:53,Wells Fargo,Equal-Weight,,main
+2023-01-30 13:54:49,Morgan Stanley,Overweight,,main
+2023-01-30 13:42:21,Truist Securities,Buy,,main
+2023-01-30 12:52:15,Susquehanna,Positive,,main
+2023-01-20 11:54:38,Credit Suisse,Outperform,,main
+2023-01-12 12:44:55,Cowen & Co.,Outperform,,main
+2023-01-11 13:21:46,Wells Fargo,Equal-Weight,,main
+2022-12-19 11:00:07,Baird,Neutral,Outperform,down
+2022-12-15 11:42:57,Morgan Stanley,Overweight,Equal-Weight,up
+2022-12-12 13:06:39,JP Morgan,Neutral,,main
+2022-11-11 12:39:42,B of A Securities,Neutral,Buy,down
+2022-11-10 14:01:15,Argus Research,Hold,Buy,down
+2022-11-10 13:17:57,Morgan Stanley,Equal-Weight,,main
+2022-10-31 12:48:28,Baird,Outperform,,main
+2022-10-28 09:29:55,Raymond James,Market Perform,Outperform,down
+2022-10-12 10:03:36,Credit Suisse,Outperform,,init
+2022-10-11 08:49:49,Wolfe Research,Peer Perform,,init
+2022-09-28 10:11:46,Wells Fargo,Equal-Weight,Overweight,down
+2022-08-30 08:55:28,RBC Capital,Outperform,,init
+2022-05-02 14:16:34,Susquehanna,Positive,,main
+2022-04-29 13:35:31,Raymond James,Outperform,,main
+2022-03-07 12:55:03,Wells Fargo,Overweight,,main
+2022-03-02 14:50:13,Morgan Stanley,Equal-Weight,,main
+2022-02-02 10:51:07,Raymond James,Outperform,,main
+2022-02-01 15:16:58,Susquehanna,Positive,,main
+2022-02-01 13:45:19,Wells Fargo,Overweight,,main
+2022-01-11 12:00:33,Wolfe Research,Outperform,Peer Perform,up
+2022-01-10 11:51:53,Wells Fargo,Overweight,Equal-Weight,up
+2022-01-06 13:28:23,Baird,Outperform,Neutral,up
+2021-12-14 12:33:41,UBS,Neutral,Buy,down
+2021-11-04 13:57:57,Morgan Stanley,Equal-Weight,,main
+2021-11-02 11:25:12,Wells Fargo,Equal-Weight,,main
+2021-09-23 12:03:02,Goldman Sachs,Sell,Neutral,down
+2021-09-08 12:04:29,Wolfe Research,Peer Perform,,init
+2021-08-11 10:14:53,Morgan Stanley,Equal-Weight,Overweight,down
+2021-08-04 12:58:07,Susquehanna,Positive,,main
+2021-08-04 11:31:26,Raymond James,Outperform,,main
+2021-05-13 10:59:08,Wells Fargo,Equal-Weight,,init
+2021-05-03 12:18:57,Jefferies,Buy,,main
+2021-05-03 12:10:44,Morgan Stanley,Overweight,,main
+2021-04-27 11:17:25,Benchmark,Hold,Buy,down
+2021-04-13 12:09:49,Credit Suisse,Outperform,,main
+2021-04-08 10:12:09,Goldman Sachs,Neutral,Buy,down
+2021-02-08 13:37:22,Morgan Stanley,Overweight,,main
+2021-02-01 16:39:08,Credit Suisse,Outperform,,main
+2021-02-01 15:15:02,Citigroup,Buy,,main
+2021-01-07 16:25:38,Morgan Stanley,Overweight,,main
+2021-01-07 12:10:43,Baird,Neutral,Outperform,down
+2020-12-15 13:47:07,JP Morgan,Neutral,Overweight,down
+2020-10-01 11:27:41,UBS,Buy,Neutral,up
+2020-09-08 11:49:26,Morgan Stanley,Overweight,,init
+2020-08-04 14:42:14,Citigroup,Buy,,main
+2020-07-20 12:29:27,Credit Suisse,Outperform,,main
+2020-06-11 11:36:52,UBS,Neutral,,main
+2020-05-21 09:07:45,RBC Capital,Outperform,,init
+2020-05-19 12:52:57,Seaport Global,Buy,,init
+2020-05-13 11:26:31,Benchmark,Buy,,reit
+2020-05-06 12:58:56,Credit Suisse,Outperform,,main
+2020-04-20 13:49:33,Bernstein,Outperform,,main
+2020-04-16 17:23:52,SunTrust Robinson Humphrey,Buy,,main
+2020-04-16 11:43:15,B of A Securities,Buy,,init
+2020-04-14 14:30:55,Morgan Stanley,Overweight,,main
+2020-03-24 14:36:09,Morgan Stanley,Overweight,,main
+2020-02-12 13:41:28,Argus Research,Buy,,main
+2020-02-07 12:54:23,Benchmark,Buy,,init
+2020-02-05 14:02:40,Baird,Outperform,,main
+2020-02-05 13:58:52,Credit Suisse,Outperform,,main
+2020-02-05 12:21:12,Raymond James,Outperform,,main
+2020-02-04 17:37:24,CFRA,Buy,,main
+2020-01-15 13:53:32,UBS,Neutral,,main
+2019-12-10 13:14:51,Bernstein,Outperform,,init
+2019-11-19 11:24:01,Alembic Global,Overweight,,init
+2019-11-01 11:20:49,UBS,Neutral,,main
+2019-08-08 14:12:24,Buckingham Research,Buy,,main
+2019-08-06 11:11:34,Morgan Stanley,Overweight,,init
+2019-08-01 14:11:00,Credit Suisse,Outperform,,main
+2019-08-01 13:40:54,JP Morgan,Overweight,,main
+2019-08-01 12:34:42,UBS,Neutral,,main
+2019-07-10 12:47:17,UBS,Neutral,,main
+2019-07-03 11:05:31,Vertical Research,Buy,,init

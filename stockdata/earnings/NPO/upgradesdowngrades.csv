@@ -1,0 +1,32 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2023-07-05 08:23:38,Keybanc,Overweight,Overweight,main
+2023-06-22 08:43:26,Keybanc,Overweight,Overweight,main
+2022-11-03 09:00:53,Keybanc,Overweight,,main
+2022-08-03 08:36:44,Keybanc,Overweight,,main
+2022-07-12 08:51:31,Keybanc,Overweight,,main
+2021-11-08 08:30:53,Keybanc,Overweight,,main
+2021-06-08 12:17:08,Keybanc,Overweight,,main
+2021-06-02 10:49:26,Oppenheimer,Outperform,,main
+2021-03-08 16:57:38,Oppenheimer,Outperform,,main
+2021-01-14 10:34:27,KeyBanc,Overweight,,main
+2020-11-18 09:03:17,Keybanc,Overweight,,main
+2020-11-04 08:58:54,Keybanc,Overweight,,main
+2020-09-24 08:43:52,Keybanc,Overweight,Sector Weight,up
+2020-06-23 13:52:40,Sidoti & Co.,Buy,,main
+2019-02-19 11:14:30,Keybanc,Sector Weight,Overweight,down
+2018-11-01 15:08:52,Keybanc,Overweight,Overweight,main
+2018-08-06 13:50:42,B. Riley Securities,Buy,Buy,main
+2018-07-12 11:22:36,SunTrust Robinson Humphrey,Buy,,init
+2018-05-03 11:25:08,Keybanc,Overweight,Overweight,main
+2017-12-08 11:03:11,Keybanc,Overweight,Sector Weight,up
+2017-03-22 10:21:54,Wunderlich Securities,Buy,,init
+2015-09-23 14:05:52,Sidoti & Co.,Neutral,,main
+2015-02-11 11:42:38,Keybanc,Buy,Hold,up
+2014-08-01 15:03:15,Keybanc,Hold,Buy,down
+2014-01-22 21:00:00,Sidoti & Co.,Neutral,Buy,down
+2014-01-13 13:30:00,CL King,Buy,Neutral,up
+2013-03-07 14:17:31,Ascendiant Capital,Neutral,,init
+2013-02-05 16:19:46,Sterne Agee,Buy,,main
+2012-08-03 13:51:00,Sterne Agee,Buy,,main
+2012-08-02 13:55:00,Oppenheimer,Outperform,,main
+2012-05-03 16:59:00,Oppenheimer,Outperform,,main

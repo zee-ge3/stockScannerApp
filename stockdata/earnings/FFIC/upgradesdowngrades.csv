@@ -1,0 +1,25 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-01 14:06:03,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-07-31 16:50:50,Raymond James,Outperform,Outperform,main
+2024-07-30 09:16:45,Piper Sandler,Neutral,Overweight,down
+2024-04-26 13:32:00,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-04-05 14:49:06,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-03-05 16:55:42,DA Davidson,Neutral,Neutral,main
+2024-01-05 17:29:25,Raymond James,Outperform,Outperform,main
+2023-08-31 11:17:38,Raymond James,Outperform,,init
+2023-07-27 18:58:39,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2023-04-06 13:31:23,"Keefe, Bruyette & Woods",Market Perform,,main
+2019-11-04 11:54:25,"Keefe, Bruyette & Woods",Underperform,Market Perform,down
+2018-04-26 13:13:10,Gabelli & Co.,Buy,Hold,up
+2017-11-30 14:25:07,Piper Sandler,Hold,Buy,down
+2016-11-11 11:19:59,Gabelli & Co.,Hold,Buy,down
+2016-08-31 12:44:34,Piper Sandler,Hold,Buy,down
+2016-08-01 14:00:55,"Keefe, Bruyette & Woods",Market Perform,,main
+2016-06-29 15:38:39,Gabelli & Co.,Buy,,init
+2015-10-29 13:07:37,Piper Sandler,Neutral,Overweight,down
+2015-07-13 11:21:11,Guggenheim,Neutral,Buy,down
+2015-05-01 13:00:00,"Keefe, Bruyette & Woods",Market Perform,,main
+2015-01-30 14:00:00,"Keefe, Bruyette & Woods",Market Perform,,main
+2014-10-06 13:00:00,FBR Capital,Market Perform,,main
+2014-01-02 21:00:00,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2012-02-14 11:44:00,Guggenheim,Neutral,Buy,down

@@ -1,0 +1,10 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-15 13:47:01,Truist Securities,Hold,Hold,main
+2023-12-18 10:30:14,JP Morgan,Overweight,Neutral,up
+2023-11-09 15:47:38,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-09-12 12:39:37,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-06-28 14:20:25,Truist Securities,Hold,Hold,main
+2023-02-21 13:13:12,Truist Securities,Hold,,main
+2023-01-11 12:30:58,BTIG,Neutral,Buy,down
+2022-11-29 14:16:51,Truist Securities,Hold,,main
+2022-11-22 12:58:54,Wells Fargo,Equal-Weight,,main

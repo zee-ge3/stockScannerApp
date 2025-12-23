@@ -1,0 +1,29 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-29 14:38:45,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2023-10-31 16:20:35,Piper Sandler,Neutral,Neutral,main
+2023-04-24 13:11:25,Piper Sandler,Neutral,,main
+2023-04-06 12:24:33,"Keefe, Bruyette & Woods",Market Perform,,main
+2021-03-09 16:17:21,Gabelli & Co.,Hold,Buy,down
+2020-12-17 11:37:28,Seaport Global,Neutral,,init
+2020-10-26 13:30:05,Piper Sandler,Neutral,,main
+2020-09-30 12:39:01,Piper Sandler,Neutral,,main
+2019-09-24 11:59:18,Janney Montgomery Scott,Neutral,Buy,down
+2019-07-19 11:04:44,Piper Sandler,Hold,Buy,down
+2019-07-19 10:36:59,Piper Sandler,Neutral,Overweight,down
+2019-07-18 20:52:51,Piper Sandler,Hold,Buy,down
+2019-07-16 10:48:42,Piper Sandler,Overweight,,init
+2018-08-27 12:09:48,Gabelli & Co.,Buy,,init
+2018-01-19 13:03:29,Stephens & Co.,Overweight,Equal-Weight,up
+2017-02-09 14:00:45,Piper Sandler,Buy,Hold,up
+2015-12-02 10:22:59,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2015-06-26 11:47:49,Piper Sandler,Hold,Buy,down
+2015-03-17 13:00:00,"Keefe, Bruyette & Woods",Outperform,,main
+2015-01-23 14:28:47,Piper Sandler,Buy,Hold,up
+2014-05-07 10:15:51,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
+2013-10-23 10:15:06,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2013-10-22 12:00:00,Piper Sandler,Hold,Buy,down
+2013-04-17 10:24:28,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
+2012-10-24 14:30:00,FBR Capital,Outperform,Market Perform,up
+2012-10-24 12:13:00,Stifel,Buy,,main
+2012-04-26 12:46:00,FIG Partners,Outperform,Market Perform,up
+2012-04-25 11:57:00,Stifel,Buy,,main

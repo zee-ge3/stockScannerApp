@@ -1,0 +1,35 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-02 13:25:20,Scotiabank,Sector Outperform,Sector Outperform,main
+2024-05-14 13:25:38,Wells Fargo,Equal-Weight,Equal-Weight,main
+2024-05-10 17:36:36,Scotiabank,Sector Outperform,Sector Outperform,main
+2024-04-23 10:48:37,Mizuho,Buy,Buy,main
+2024-04-22 12:33:57,Barclays,Equal-Weight,,init
+2024-04-17 14:22:19,JP Morgan,Overweight,Overweight,main
+2024-03-25 09:00:57,RBC Capital,Outperform,,init
+2024-03-08 12:47:43,JP Morgan,Overweight,Neutral,up
+2023-10-03 14:33:29,Pickering Energy Partners,Neutral,,init
+2023-09-18 10:25:25,Wells Fargo,Equal-Weight,,init
+2023-09-06 10:01:11,Citigroup,Neutral,Buy,down
+2023-08-29 14:11:12,Scotiabank,Outperform,Outperform,main
+2023-08-02 09:15:26,JonesTrading,Buy,,init
+2023-07-21 11:20:54,Mizuho,Buy,Buy,main
+2023-07-18 14:18:32,Morgan Stanley,Equal-Weight,Equal-Weight,reit
+2023-07-10 14:20:58,Citigroup,Buy,Buy,reit
+2023-06-12 12:16:11,Scotiabank,Sector Outperform,Sector Perform,up
+2023-04-21 11:55:11,Raymond James,Market Perform,,init
+2023-03-14 11:07:12,Citigroup,Buy,,main
+2023-03-02 14:24:42,Scotiabank,Sector Perform,,init
+2023-02-27 11:56:19,Mizuho,Buy,,main
+2023-01-09 15:56:08,Morgan Stanley,Equal-Weight,,main
+2022-12-09 12:19:55,Citigroup,Buy,,init
+2022-10-25 10:49:57,Mizuho,Buy,,main
+2022-10-19 14:33:07,Morgan Stanley,Equal-Weight,,main
+2022-10-07 12:38:48,JP Morgan,Neutral,,init
+2022-10-07 11:31:32,Goldman Sachs,Neutral,,init
+2022-08-25 10:24:51,Morgan Stanley,Equal-Weight,,init
+2022-08-11 14:16:27,Mizuho,Buy,,main
+2022-07-20 12:55:37,Mizuho,Buy,,main
+2022-05-16 12:22:55,Credit Suisse,Outperform,,main
+2022-05-12 13:22:04,Mizuho,Buy,,main
+2022-04-28 11:02:27,B of A Securities,Buy,,init
+2022-04-19 08:31:59,Mizuho,Buy,,init

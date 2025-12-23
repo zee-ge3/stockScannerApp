@@ -1,0 +1,44 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-30 11:22:16,Piper Sandler,Neutral,Neutral,main
+2024-07-29 16:04:44,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-07-29 14:02:16,DA Davidson,Buy,Buy,main
+2024-07-29 11:15:42,Stephens & Co.,Overweight,Overweight,main
+2024-05-22 11:03:42,Piper Sandler,Neutral,Neutral,main
+2024-01-29 18:55:41,Piper Sandler,Neutral,Neutral,main
+2023-10-26 16:32:07,Piper Sandler,Neutral,Neutral,main
+2023-07-26 14:29:28,Stephens & Co.,Overweight,Overweight,main
+2023-07-25 12:10:26,Stephens & Co.,Overweight,Overweight,reit
+2023-06-26 10:33:53,DA Davidson,Buy,Neutral,up
+2023-04-25 13:17:37,Stephens & Co.,Overweight,,reit
+2023-04-06 14:20:01,"Keefe, Bruyette & Woods",Market Perform,,main
+2023-04-04 08:48:40,Stephens & Co.,Overweight,,init
+2023-02-01 10:16:51,Piper Sandler,Neutral,Overweight,down
+2022-12-01 09:52:17,Janney Montgomery Scott,Buy,,init
+2022-04-25 12:23:27,Stephens & Co.,Equal-Weight,,main
+2022-04-25 09:07:32,Piper Sandler,Overweight,Neutral,up
+2021-10-25 16:01:52,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2021-08-20 10:39:26,Seaport Global,Neutral,,init
+2021-08-06 11:41:32,Stephens & Co.,Equal-Weight,,main
+2021-03-11 12:34:59,DA Davidson,Neutral,Buy,down
+2021-03-04 17:27:29,Boenning & Scattergood,Neutral,Outperform,down
+2021-03-01 11:38:56,Piper Sandler,Neutral,Overweight,down
+2020-10-26 13:21:55,Piper Sandler,Overweight,,main
+2020-09-28 14:05:03,Piper Sandler,Overweight,,main
+2020-08-12 14:26:44,Piper Sandler,Overweight,,main
+2020-04-29 14:40:55,Piper Sandler,Overweight,,main
+2020-01-28 12:13:38,Stephens & Co.,Equal-Weight,,main
+2019-10-23 10:36:34,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2019-07-16 10:59:18,Piper Sandler,Neutral,,init
+2018-10-11 13:16:44,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
+2018-01-26 17:37:43,Merion Capital,Neutral,Neutral,main
+2017-05-01 10:54:15,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2017-03-06 23:11:46,DA Davidson,Buy,,init
+2016-10-31 04:00:00,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
+2016-08-01 14:00:57,"Keefe, Bruyette & Woods",Market Perform,,main
+2015-07-28 15:00:00,"Keefe, Bruyette & Woods",Market Perform,,main
+2015-05-20 13:00:00,"Keefe, Bruyette & Woods",Market Perform,,main
+2014-11-03 13:29:07,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2014-07-28 12:58:38,Piper Sandler,Buy,Hold,up
+2014-04-29 10:25:19,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
+2013-02-04 13:55:56,Janney Montgomery Scott,Neutral,Buy,down
+2012-07-30 13:36:00,Piper Sandler,Hold,Buy,down

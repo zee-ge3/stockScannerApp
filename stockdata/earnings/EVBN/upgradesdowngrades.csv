@@ -1,0 +1,12 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-01 14:04:47,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-05-01 13:56:13,Piper Sandler,Neutral,Neutral,main
+2024-02-02 12:48:00,Piper Sandler,Neutral,Overweight,down
+2023-11-14 15:59:24,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2023-10-27 16:27:49,Piper Sandler,Overweight,Overweight,main
+2023-04-06 13:30:34,"Keefe, Bruyette & Woods",Market Perform,,main
+2022-01-10 16:16:38,"Keefe, Bruyette & Woods",Market Perform,,init
+2020-09-28 12:54:06,Piper Sandler,Overweight,,main
+2018-08-27 12:37:24,Hovde Group,Market Perform,Outperform,down
+2017-09-29 13:48:16,Hovde Group,Market Perform,Outperform,down
+2015-04-20 13:00:00,Barclays,Overweight,,main

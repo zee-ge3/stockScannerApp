@@ -1,0 +1,47 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-29 12:16:21,JP Morgan,Overweight,Overweight,main
+2024-05-13 14:45:56,JP Morgan,Overweight,Overweight,main
+2023-09-11 14:46:59,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-08-08 12:45:26,JP Morgan,Overweight,Neutral,up
+2023-08-04 14:47:32,Citigroup,Buy,Neutral,up
+2023-07-25 12:47:27,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-07-17 11:10:21,Citigroup,Neutral,Buy,down
+2023-02-07 14:36:53,Morgan Stanley,Equal-Weight,,main
+2022-11-08 14:05:56,JP Morgan,Neutral,Underweight,up
+2022-11-07 11:14:18,Raymond James,Market Perform,Strong Buy,down
+2022-08-08 11:31:26,Raymond James,Strong Buy,,main
+2022-05-09 11:16:18,Raymond James,Strong Buy,,main
+2022-04-19 10:22:56,Morgan Stanley,Equal-Weight,Overweight,down
+2022-02-22 12:19:17,Raymond James,Strong Buy,,main
+2022-02-07 13:44:56,Morgan Stanley,Overweight,,main
+2021-08-09 13:13:57,Raymond James,Strong Buy,,main
+2021-08-02 09:36:51,JP Morgan,Underweight,Neutral,down
+2021-02-22 13:18:32,Raymond James,Strong Buy,,main
+2021-02-22 12:52:23,JP Morgan,Neutral,Overweight,down
+2021-01-14 14:50:38,Morgan Stanley,Overweight,,main
+2020-11-09 12:30:51,Raymond James,Strong Buy,,main
+2020-08-31 12:32:20,Citigroup,Buy,,main
+2020-08-27 12:03:42,Morgan Stanley,Overweight,,main
+2020-08-10 14:03:20,Raymond James,Strong Buy,,main
+2020-07-08 13:08:34,Morgan Stanley,Overweight,,main
+2020-05-14 11:21:34,B. Riley Securities,Buy,,main
+2020-04-22 13:03:34,Raymond James,Strong Buy,,main
+2020-04-09 12:35:43,Morgan Stanley,Overweight,,main
+2020-03-27 15:29:32,JP Morgan,Overweight,,main
+2020-03-02 13:07:14,Citigroup,Buy,,main
+2019-11-04 13:45:57,Raymond James,Strong Buy,Outperform,up
+2019-11-04 11:20:15,JP Morgan,Overweight,Neutral,up
+2019-08-05 10:55:20,JP Morgan,Neutral,Underweight,up
+2019-06-18 10:43:45,Morgan Stanley,Overweight,Equal-Weight,up
+2018-11-06 17:07:40,Raymond James,Outperform,Outperform,main
+2018-08-08 12:02:43,Citigroup,Buy,Buy,main
+2018-07-11 11:42:55,JP Morgan,Underweight,Neutral,down
+2018-05-02 11:56:24,Raymond James,Outperform,Market Perform,up
+2017-02-27 12:25:37,Raymond James,Market Perform,Strong Buy,down
+2016-01-04 10:58:09,JP Morgan,Neutral,Overweight,down
+2014-08-05 10:25:25,Raymond James,Strong Buy,Outperform,up
+2014-05-30 10:17:03,Morgan Stanley,Equal-Weight,,up
+2014-03-03 13:00:00,JP Morgan,Overweight,Neutral,up
+2012-12-20 14:43:46,Drexel Hamilton,Buy,,init
+2012-11-12 13:11:00,Citigroup,Buy,Neutral,up
+2012-11-08 15:39:00,Raymond James,Outperform,Market Perform,up

@@ -1,0 +1,268 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-25 19:38:10,TD Cowen,Hold,Hold,main
+2024-07-25 17:19:02,Benchmark,Hold,,reit
+2024-07-25 17:10:25,Raymond James,Outperform,Outperform,main
+2024-07-25 15:53:28,BMO Capital,Outperform,Outperform,main
+2024-07-25 14:02:09,JP Morgan,Neutral,Neutral,main
+2024-07-25 11:29:54,Baird,Outperform,Outperform,main
+2024-07-22 16:57:04,B of A Securities,Neutral,Neutral,main
+2024-07-08 17:45:14,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2024-06-25 10:39:17,Evercore ISI Group,In-Line,Outperform,down
+2024-06-24 14:18:21,Raymond James,Outperform,Outperform,main
+2024-06-12 12:16:33,Susquehanna,Positive,Positive,main
+2024-06-12 10:02:51,Barclays,Equal-Weight,Equal-Weight,main
+2024-06-07 14:24:31,Wells Fargo,Underweight,,init
+2024-06-06 12:49:22,B of A Securities,Neutral,Neutral,main
+2024-06-05 12:04:12,BMO Capital,Outperform,,init
+2024-05-08 09:29:46,Baird,Outperform,Neutral,up
+2024-04-29 16:57:28,Vertical Research,Hold,Sell,up
+2024-04-25 18:29:14,Barclays,Equal-Weight,Equal-Weight,main
+2024-04-25 17:46:27,JP Morgan,Neutral,Neutral,main
+2024-04-25 16:50:51,B of A Securities,Neutral,Neutral,main
+2024-04-25 15:08:16,UBS,Neutral,Neutral,main
+2024-04-25 14:16:02,Evercore ISI Group,Outperform,Outperform,main
+2024-04-15 17:20:12,Raymond James,Outperform,Outperform,main
+2024-04-09 13:09:28,JP Morgan,Neutral,Neutral,main
+2024-04-04 14:11:16,Barclays,Equal-Weight,Equal-Weight,main
+2024-03-11 10:49:39,Barclays,Equal-Weight,Equal-Weight,main
+2024-03-11 09:45:07,JP Morgan,Neutral,,init
+2024-03-06 16:36:52,B of A Securities,Neutral,Buy,down
+2024-02-08 15:48:11,Goldman Sachs,Neutral,Neutral,main
+2024-02-08 14:21:29,Susquehanna,Positive,Positive,main
+2024-01-10 15:43:09,Stifel,Buy,Buy,main
+2024-01-08 13:35:09,Susquehanna,Positive,Neutral,up
+2023-12-11 15:41:06,Raymond James,Outperform,Outperform,main
+2023-11-27 11:19:03,Deutsche Bank,Hold,Buy,down
+2023-10-27 13:38:48,Raymond James,Outperform,Outperform,main
+2023-10-27 09:25:19,Stifel,Buy,Hold,up
+2023-10-26 15:19:24,Citigroup,Neutral,Neutral,main
+2023-10-26 14:20:50,Susquehanna,Neutral,Neutral,main
+2023-10-26 13:05:09,Wells Fargo,Overweight,Overweight,main
+2023-10-26 12:30:48,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-10-26 12:08:08,Barclays,Equal-Weight,Equal-Weight,main
+2023-10-04 13:50:17,Susquehanna,Neutral,Neutral,main
+2023-10-02 14:53:16,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-08-21 11:52:22,Stephens & Co.,Overweight,Overweight,reit
+2023-07-28 10:32:24,Barclays,Equal-Weight,Equal-Weight,main
+2023-07-27 16:45:56,Morgan Stanley,Equal-Weight,Equal-Weight,reit
+2023-07-27 16:15:41,Stephens & Co.,Overweight,Overweight,main
+2023-07-27 13:15:36,Credit Suisse,Underperform,Underperform,main
+2023-07-27 13:12:03,Goldman Sachs,Neutral,Neutral,main
+2023-07-27 11:39:02,Raymond James,Outperform,Outperform,main
+2023-07-17 10:06:35,Barclays,Equal-Weight,,init
+2023-07-13 12:42:21,Wells Fargo,Overweight,Overweight,main
+2023-07-07 11:29:30,Raymond James,Outperform,Outperform,main
+2023-07-06 14:04:45,Morgan Stanley,Equal-Weight,Equal-Weight,reit
+2023-06-30 14:14:36,Citigroup,Neutral,Neutral,main
+2023-06-28 09:20:03,B of A Securities,Buy,Neutral,up
+2023-06-16 14:10:12,Susquehanna,Neutral,Neutral,main
+2023-06-12 09:44:28,Jefferies,Hold,,init
+2023-06-06 11:43:54,Stephens & Co.,Overweight,Overweight,reit
+2023-05-17 10:51:31,Evercore ISI Group,Outperform,In-Line,up
+2023-04-28 14:05:36,Deutsche Bank,Buy,Hold,up
+2023-04-27 16:59:55,Citigroup,Neutral,,main
+2023-04-27 13:56:23,Stephens & Co.,Overweight,,main
+2023-04-27 13:52:12,Deutsche Bank,Hold,,main
+2023-04-27 12:44:03,Morgan Stanley,Equal-Weight,,main
+2023-04-27 12:13:08,Wells Fargo,Overweight,,main
+2023-04-27 11:19:19,Baird,Neutral,,main
+2023-04-27 11:17:06,Raymond James,Outperform,,main
+2023-04-27 10:54:39,Credit Suisse,Underperform,,main
+2023-04-12 12:53:20,Wells Fargo,Overweight,,main
+2023-04-10 14:07:55,Susquehanna,Neutral,,main
+2023-04-04 12:33:39,Morgan Stanley,Equal-Weight,,main
+2023-03-20 16:05:12,Deutsche Bank,Hold,,main
+2023-02-13 13:48:22,Morgan Stanley,Equal-Weight,,main
+2023-02-08 13:45:51,Raymond James,Outperform,,main
+2023-02-02 15:54:36,Deutsche Bank,Hold,,main
+2023-02-02 14:54:14,Baird,Neutral,,main
+2023-02-02 14:34:47,Susquehanna,Neutral,,main
+2023-02-02 14:32:03,Cowen & Co.,Market Perform,,main
+2023-02-02 13:41:45,Citigroup,Neutral,,main
+2023-02-02 13:36:11,Credit Suisse,Underperform,,main
+2023-02-02 12:32:38,Wells Fargo,Overweight,,main
+2023-02-02 09:27:00,Keybanc,Overweight,,main
+2023-01-30 10:17:26,Credit Suisse,Underperform,Neutral,down
+2023-01-20 12:33:34,Raymond James,Outperform,,main
+2023-01-17 13:57:22,B of A Securities,Neutral,Underperform,up
+2023-01-04 13:23:01,Wells Fargo,Overweight,,main
+2022-11-29 11:35:16,Deutsche Bank,Hold,,main
+2022-10-27 13:57:52,Wells Fargo,Overweight,,main
+2022-10-27 13:05:19,Credit Suisse,Neutral,,main
+2022-10-27 11:19:27,Raymond James,Outperform,,main
+2022-10-14 11:42:28,Raymond James,Outperform,,main
+2022-10-07 11:06:15,Citigroup,Neutral,,main
+2022-10-03 13:46:09,Morgan Stanley,Equal-Weight,,main
+2022-08-17 13:33:19,Vertical Research,Sell,Hold,down
+2022-08-12 12:18:35,Morgan Stanley,Equal-Weight,,main
+2022-07-28 14:19:25,Raymond James,Outperform,,main
+2022-07-28 13:54:07,UBS,Neutral,,main
+2022-07-28 12:56:35,Credit Suisse,Neutral,,main
+2022-07-28 12:30:44,Wells Fargo,Overweight,,main
+2022-07-15 12:17:45,Wells Fargo,Overweight,,main
+2022-07-15 11:57:38,Raymond James,Outperform,,main
+2022-07-12 13:51:10,Evercore ISI Group,In-Line,,main
+2022-07-12 11:14:17,Wolfe Research,Underperform,Peer Perform,down
+2022-06-28 09:54:52,Credit Suisse,Neutral,,init
+2022-06-27 10:12:48,Wells Fargo,Overweight,Equal-Weight,up
+2022-05-19 12:18:24,Citigroup,Neutral,,main
+2022-05-18 12:17:53,Morgan Stanley,Equal-Weight,,main
+2022-04-28 15:06:39,Wells Fargo,Equal-Weight,,main
+2022-04-28 13:47:05,Susquehanna,Neutral,,main
+2022-04-28 08:34:32,Keybanc,Overweight,,main
+2022-04-20 11:47:42,Raymond James,Outperform,,main
+2022-04-04 12:48:19,Morgan Stanley,Equal-Weight,,main
+2022-02-14 13:22:27,Morgan Stanley,Equal-Weight,,main
+2022-02-04 13:08:25,Raymond James,Outperform,,main
+2022-02-03 15:08:11,Wells Fargo,Equal-Weight,,main
+2022-01-11 12:16:42,Evercore ISI Group,In-Line,Outperform,down
+2021-12-30 12:30:15,Raymond James,Market Outperform,,main
+2021-12-09 12:27:44,Susquehanna,Neutral,,init
+2021-12-03 11:26:12,Benchmark,Hold,,init
+2021-11-30 09:27:23,Keybanc,Overweight,,main
+2021-11-16 11:44:38,UBS,Neutral,Buy,down
+2021-10-28 14:59:31,Citigroup,Neutral,,main
+2021-10-28 08:36:10,Keybanc,Overweight,,main
+2021-10-19 14:21:21,B of A Securities,Underperform,,main
+2021-10-14 12:39:50,Wells Fargo,Equal-Weight,,main
+2021-10-04 12:05:30,Morgan Stanley,Overweight,,main
+2021-09-29 11:58:32,Raymond James,Outperform,,main
+2021-09-02 08:32:59,Keybanc,Overweight,,main
+2021-08-19 08:40:28,Keybanc,Overweight,,main
+2021-08-12 12:00:42,Morgan Stanley,Overweight,,main
+2021-08-03 08:54:06,Goldman Sachs,Neutral,Buy,down
+2021-07-29 11:32:53,Wells Fargo,Equal-Weight,,main
+2021-07-29 11:24:54,Credit Suisse,Neutral,,main
+2021-07-15 10:41:05,Wolfe Research,Peer Perform,Outperform,down
+2021-07-13 11:44:46,Raymond James,Outperform,Market Perform,up
+2021-05-28 10:01:50,Keybanc,Overweight,,main
+2021-05-27 13:46:27,Morgan Stanley,Overweight,,main
+2021-04-23 14:57:24,Deutsche Bank,Hold,,main
+2021-04-23 10:11:22,Keybanc,Overweight,,main
+2021-04-07 13:35:45,Stephens & Co.,Overweight,,main
+2021-04-06 13:07:01,Morgan Stanley,Overweight,,main
+2021-03-22 13:41:00,Deutsche Bank,Hold,,main
+2021-03-10 12:15:34,Goldman Sachs,Buy,Neutral,up
+2021-03-03 13:01:30,Credit Suisse,Neutral,,main
+2021-02-17 12:52:22,Morgan Stanley,Overweight,,main
+2021-02-05 15:07:41,Credit Suisse,Neutral,,main
+2021-01-19 16:54:22,UBS,Buy,,init
+2021-01-14 12:44:43,Stifel,Hold,Sell,up
+2021-01-14 12:24:50,Goldman Sachs,Neutral,Sell,up
+2020-12-10 14:41:31,Morgan Stanley,Overweight,,main
+2020-12-04 13:28:54,Evercore ISI Group,Outperform,,init
+2020-11-11 13:09:02,Morgan Stanley,Overweight,,main
+2020-10-28 14:59:26,Wells Fargo,Equal-Weight,,main
+2020-10-15 14:52:02,B of A Securities,Underperform,,main
+2020-10-05 13:58:25,Morgan Stanley,Overweight,,main
+2020-09-24 10:25:21,Wells Fargo,Equal-Weight,,init
+2020-08-31 12:51:44,Morgan Stanley,Overweight,,main
+2020-08-25 10:40:27,Stifel,Sell,Hold,down
+2020-08-24 08:50:43,Keybanc,Overweight,,main
+2020-08-05 12:55:04,Deutsche Bank,Hold,,main
+2020-08-03 13:51:39,Morgan Stanley,Overweight,,main
+2020-07-31 13:33:49,Credit Suisse,Neutral,,main
+2020-07-31 08:48:03,Keybanc,Overweight,,main
+2020-07-16 08:44:47,Keybanc,Overweight,,main
+2020-07-08 11:10:36,Citigroup,Neutral,,main
+2020-05-22 09:03:02,Keybanc,Overweight,,main
+2020-05-11 13:26:47,Morgan Stanley,Overweight,,main
+2020-04-27 12:37:13,Deutsche Bank,Hold,,main
+2020-04-24 17:48:32,Stephens & Co.,Overweight,,main
+2020-04-24 12:36:36,Credit Suisse,Neutral,,main
+2020-04-24 10:13:50,Keybanc,Overweight,,main
+2020-04-22 16:35:36,Citigroup,Neutral,,main
+2020-04-08 12:42:08,Morgan Stanley,Overweight,,main
+2020-04-08 11:21:58,B of A Securities,Underperform,Neutral,down
+2020-04-07 08:58:38,Keybanc,Overweight,,main
+2020-03-25 13:27:08,Morgan Stanley,Overweight,,main
+2020-03-23 09:46:35,Morgan Stanley,Overweight,Equal-Weight,up
+2020-03-20 13:40:09,Stifel,Hold,Sell,up
+2020-03-17 14:54:39,B of A Securities,Neutral,Underperform,up
+2020-03-12 13:21:28,Deutsche Bank,Hold,,main
+2020-02-20 09:44:59,Keybanc,Overweight,,main
+2020-02-12 14:29:01,Morgan Stanley,Equal-Weight,,main
+2020-02-11 12:53:00,Morgan Stanley,Equal-Weight,,main
+2020-02-07 10:24:07,Keybanc,Overweight,,main
+2019-12-05 12:35:15,Goldman Sachs,Sell,,init
+2019-12-04 13:12:06,B of A Securities,Underperform,,reit
+2019-11-07 14:01:49,Morgan Stanley,Equal-Weight,,main
+2019-10-25 10:56:22,Stifel,Sell,Hold,down
+2019-10-25 09:42:36,Keybanc,Overweight,,main
+2019-09-27 11:05:27,B of A Securities,Underperform,Neutral,down
+2019-07-26 13:28:10,Credit Suisse,Neutral,,main
+2019-07-26 10:08:59,Keybanc,Overweight,,main
+2019-07-11 12:39:28,Credit Suisse,Neutral,Outperform,down
+2019-06-06 11:49:41,B of A Securities,Neutral,,main
+2019-04-11 13:28:40,Citigroup,Neutral,Neutral,main
+2019-02-26 12:25:39,B of A Securities,Neutral,Buy,down
+2018-10-30 10:27:09,B of A Securities,Buy,Neutral,up
+2018-10-29 14:54:38,Argus Research,Buy,Buy,main
+2018-10-26 16:03:49,Buckingham Research,Neutral,Neutral,main
+2018-10-26 15:43:46,Credit Suisse,Outperform,Outperform,main
+2018-10-26 13:40:00,Keybanc,Overweight,Overweight,main
+2018-10-25 10:07:18,Deutsche Bank,Hold,Sell,up
+2018-10-22 11:47:36,Morgan Stanley,Equal-Weight,Overweight,down
+2018-10-12 12:38:07,Buckingham Research,Neutral,Neutral,main
+2018-10-09 13:22:49,Morgan Stanley,Overweight,Overweight,main
+2018-08-30 13:02:59,B of A Securities,Underperform,Underperform,main
+2018-07-27 15:46:35,Morgan Stanley,Overweight,Overweight,main
+2018-07-27 13:16:10,Buckingham Research,Neutral,Neutral,main
+2018-07-02 10:38:17,Keybanc,Overweight,Overweight,main
+2018-05-23 11:59:30,Argus Research,Buy,,init
+2018-04-10 12:38:01,Goldman Sachs,Neutral,,init
+2018-03-08 14:45:53,B of A Securities,Underperform,Underperform,main
+2018-02-21 14:29:13,Morgan Stanley,Overweight,Overweight,main
+2018-02-09 13:50:30,Buckingham Research,Neutral,Neutral,main
+2017-12-05 22:36:00,Keybanc,Overweight,Overweight,main
+2017-12-04 12:18:18,Deutsche Bank,Sell,Hold,down
+2017-10-27 15:37:01,Buckingham Research,Neutral,,main
+2017-10-27 12:54:15,Citigroup,Neutral,,main
+2017-10-10 13:05:29,B of A Securities,Underperform,Neutral,down
+2017-10-05 12:41:50,Morgan Stanley,Overweight,,main
+2017-08-21 12:18:24,Buckingham Research,Neutral,,init
+2017-07-31 10:09:21,Deutsche Bank,Hold,Buy,down
+2017-07-10 09:19:59,Morgan Stanley,Overweight,,main
+2017-06-06 11:08:40,B of A Securities,Neutral,Underperform,up
+2016-11-29 19:48:03,Keybanc,Overweight,,main
+2016-11-01 23:17:13,Deutsche Bank,Buy,,init
+2016-10-28 04:00:00,B of A Securities,Underperform,Neutral,down
+2016-07-29 15:57:15,Deutsche Bank,Hold,,main
+2016-04-28 13:07:56,Stifel,Hold,Buy,down
+2016-03-03 17:38:37,Credit Suisse,Outperform,,main
+2016-03-02 23:14:20,Credit Suisse,Outperform,,main
+2016-01-11 19:19:24,Deutsche Bank,Hold,,main
+2016-01-07 11:28:59,RBC Capital,Sector Perform,Outperform,down
+2015-12-21 13:08:10,Evercore ISI Group,Hold,,init
+2015-12-02 11:52:39,B of A Securities,Neutral,Buy,down
+2015-10-07 10:07:36,Citigroup,Neutral,Buy,down
+2015-07-31 17:12:46,Credit Suisse,Outperform,,main
+2015-06-29 10:50:35,Stifel,Buy,Hold,up
+2015-06-02 13:00:00,Deutsche Bank,Hold,,main
+2015-02-06 14:00:00,Deutsche Bank,Hold,,main
+2015-01-15 14:00:00,Deutsche Bank,Hold,,main
+2014-11-11 13:35:17,Citigroup,Buy,,main
+2014-10-31 13:00:00,Deutsche Bank,Hold,,main
+2014-10-17 10:12:11,Longbow Research,Buy,Neutral,up
+2014-09-03 13:00:00,Credit Suisse,Outperform,,main
+2014-07-07 10:15:00,Deutsche Bank,Hold,Buy,down
+2014-05-29 02:26:54,Deutsche Bank,Buy,,main
+2014-04-25 04:03:40,Deutsche Bank,Buy,,main
+2014-02-19 11:31:46,Wunderlich Securities,Hold,,main
+2013-12-16 11:48:29,Deutsche Bank,Buy,Hold,up
+2013-12-10 21:00:00,Longbow Research,Neutral,Buy,down
+2013-12-04 14:36:46,Citigroup,Buy,,main
+2013-09-27 11:23:45,Wunderlich Securities,Hold,,main
+2013-08-06 13:35:36,RBC Capital,Outperform,Sector Perform,up
+2013-07-26 17:03:58,Wunderlich Securities,Hold,,main
+2013-04-16 10:16:37,JP Morgan,Overweight,Neutral,up
+2013-04-10 11:31:47,Deutsche Bank,Hold,,main
+2013-03-25 10:21:13,Citigroup,Buy,,main
+2013-01-18 12:24:38,Credit Suisse,Outperform,,main
+2013-01-14 13:12:22,Deutsche Bank,Hold,Buy,down
+2012-12-06 12:51:38,Deutsche Bank,Buy,,main
+2012-11-21 12:46:00,Wunderlich Securities,Hold,,init
+2012-10-31 09:46:00,Goldman Sachs,Buy,,init
+2012-10-26 12:10:00,Deutsche Bank,Buy,,main
+2012-04-16 13:13:00,Deutsche Bank,Buy,,main
+2012-03-21 10:44:00,Morgan Stanley,Overweight,,main

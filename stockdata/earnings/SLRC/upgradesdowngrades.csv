@@ -1,0 +1,80 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-29 11:56:03,JP Morgan,Underweight,Neutral,down
+2024-07-26 12:40:09,Wells Fargo,Underweight,Underweight,main
+2024-05-23 13:00:32,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-05-10 14:03:36,B. Riley Securities,Neutral,Neutral,reit
+2024-02-29 17:50:39,B. Riley Securities,Neutral,Neutral,main
+2024-02-29 16:41:42,JP Morgan,Neutral,Neutral,main
+2023-10-23 10:00:20,JP Morgan,Neutral,Neutral,main
+2023-08-10 16:43:40,JP Morgan,Neutral,Neutral,main
+2023-08-10 14:02:16,Wells Fargo,Underweight,Underweight,main
+2023-07-28 09:54:58,B. Riley Securities,Neutral,,init
+2023-05-30 12:56:07,Compass Point,Neutral,Neutral,main
+2023-04-18 12:28:54,Wells Fargo,Underweight,,main
+2023-03-02 13:33:47,Wells Fargo,Underweight,,main
+2023-02-06 10:49:23,Compass Point,Neutral,Buy,down
+2022-11-09 14:17:56,Compass Point,Buy,Neutral,up
+2022-11-04 16:03:37,Wells Fargo,Underweight,,main
+2022-10-24 12:42:37,Wells Fargo,Underweight,,main
+2022-08-04 10:03:08,Raymond James,Outperform,,main
+2022-08-03 19:26:26,Oppenheimer,Perform,Outperform,down
+2022-07-25 11:08:39,Wells Fargo,Underweight,Equal-Weight,down
+2022-07-11 14:20:38,"Keefe, Bruyette & Woods",Market Perform,Outperform,down
+2022-05-05 12:39:21,Raymond James,Outperform,,main
+2022-05-05 11:21:54,Wells Fargo,Equal-Weight,,main
+2022-04-25 13:37:39,Maxim Group,Buy,,init
+2022-04-25 12:53:24,Wells Fargo,Equal-Weight,,main
+2022-03-03 12:30:44,Wells Fargo,Equal-Weight,,main
+2021-12-03 12:40:21,Wells Fargo,Equal-Weight,,main
+2021-11-11 16:07:31,Compass Point,Neutral,Buy,down
+2021-11-05 13:52:49,Oppenheimer,Outperform,,main
+2021-02-26 11:36:32,JP Morgan,Neutral,Overweight,down
+2020-11-24 12:42:05,Compass Point,Neutral,Buy,down
+2020-11-10 13:05:50,Wells Fargo,Equal-Weight,Overweight,down
+2020-08-07 16:22:05,Ladenburg Thalmann,Buy,Neutral,up
+2020-08-06 18:51:08,Wells Fargo,Overweight,,main
+2020-05-11 15:06:29,Wells Fargo,Overweight,,main
+2020-05-11 14:32:09,JMP Securities,Market Outperform,,main
+2020-05-11 12:12:53,Deutsche Bank,Buy,,main
+2020-05-04 13:45:16,JP Morgan,Overweight,,main
+2020-04-27 13:52:32,Wells Fargo,Overweight,,main
+2020-04-13 13:22:22,Oppenheimer,Outperform,,main
+2020-03-25 10:03:24,Wells Fargo,Overweight,Equal-Weight,up
+2020-02-24 13:15:30,JP Morgan,Overweight,,main
+2020-02-24 13:15:02,Deutsche Bank,Buy,,main
+2020-02-24 12:08:58,Ladenburg Thalmann,Neutral,Buy,down
+2020-02-21 11:14:35,Compass Point,Neutral,Buy,down
+2020-02-03 10:20:49,JP Morgan,Overweight,Neutral,up
+2019-04-17 10:56:01,Raymond James,Outperform,,init
+2019-02-26 13:03:08,Wells Fargo,Market Perform,Market Perform,main
+2018-11-28 15:33:03,Oppenheimer,Outperform,,init
+2018-10-04 12:41:52,Wells Fargo,Market Perform,Outperform,down
+2018-01-16 13:20:48,JMP Securities,Market Outperform,Market Perform,up
+2018-01-12 12:04:26,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
+2017-11-06 12:49:45,Ladenburg Thalmann,Buy,Neutral,up
+2017-05-01 11:31:06,JP Morgan,Neutral,Overweight,down
+2017-02-24 15:55:40,Ladenburg Thalmann,Neutral,Buy,down
+2017-01-03 18:10:41,Compass Point,Buy,,init
+2016-08-16 14:56:15,Citigroup,Neutral,,main
+2016-08-04 16:57:03,Deutsche Bank,Buy,,main
+2016-08-03 17:57:58,"Keefe, Bruyette & Woods",Market Perform,,main
+2016-03-30 17:10:09,Citigroup,Neutral,,main
+2016-02-25 11:07:25,Deutsche Bank,Buy,,main
+2015-11-04 18:02:24,Deutsche Bank,Buy,,main
+2015-09-29 20:49:23,DA Davidson,Buy,,init
+2015-05-07 13:00:00,"Keefe, Bruyette & Woods",Market Perform,,main
+2015-02-26 20:06:09,Wells Fargo,Outperform,,up
+2015-02-26 14:00:00,Deutsche Bank,Buy,,main
+2014-08-13 13:00:00,Citigroup,Neutral,,main
+2014-08-06 02:51:56,Deutsche Bank,Buy,,main
+2014-08-04 18:05:59,JP Morgan,Overweight,Neutral,up
+2014-04-17 03:11:44,JP Morgan,Neutral,,main
+2013-11-01 11:10:25,Wells Fargo,Market Perform,Outperform,down
+2013-08-05 20:00:00,JMP Securities,Market Perform,Market Outperform,down
+2013-07-24 17:32:56,Ladenburg Thalmann,Neutral,Buy,down
+2013-06-14 11:28:18,Wells Fargo,Outperform,Market Perform,up
+2013-04-05 14:15:56,National Securities Corporation,Buy,,init
+2012-11-23 14:35:00,Citigroup,Neutral,,main
+2012-10-24 14:36:00,JMP Securities,Market Outperform,,init
+2012-05-02 18:32:00,Ladenburg Thalmann,Buy,,main
+2012-05-02 10:29:00,Deutsche Bank,Buy,,main

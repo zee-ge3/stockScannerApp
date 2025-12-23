@@ -1,0 +1,28 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-08 15:59:53,Craig-Hallum,Buy,Buy,main
+2024-05-16 09:33:07,Needham,Buy,Buy,reit
+2024-05-09 18:08:34,Needham,Buy,Buy,reit
+2024-02-29 14:59:18,Goldman Sachs,Neutral,Neutral,main
+2024-02-29 13:34:39,Needham,Buy,Buy,reit
+2023-10-30 14:27:24,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-09-20 11:03:16,Needham,Buy,Buy,reit
+2023-08-14 12:55:24,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-08-14 12:26:43,Benchmark,Buy,Buy,main
+2023-08-14 12:14:05,Goldman Sachs,Neutral,Neutral,main
+2023-08-11 17:11:00,Needham,Buy,Buy,main
+2023-08-11 13:46:57,Craig-Hallum,Buy,Buy,main
+2023-07-17 14:30:57,Benchmark,Buy,Buy,main
+2023-07-13 10:03:17,WestPark Capital,Hold,Buy,down
+2023-06-26 10:16:35,Needham,Buy,Buy,main
+2023-05-12 13:02:41,Needham,Buy,Buy,reit
+2023-04-26 10:56:57,Morgan Stanley,Equal-Weight,,init
+2023-03-31 12:11:10,Benchmark,Buy,,reit
+2023-03-31 10:31:03,Needham,Buy,,reit
+2023-03-21 11:53:37,Benchmark,Buy,,reit
+2022-11-16 14:12:04,Benchmark,Buy,,main
+2022-08-16 12:46:13,Goldman Sachs,Neutral,,main
+2022-06-08 08:40:33,Needham,Buy,,init
+2022-05-19 11:56:07,Goldman Sachs,Neutral,,main
+2022-05-17 14:40:55,Benchmark,Buy,,main
+2021-12-17 13:15:19,Goldman Sachs,Neutral,,main
+2021-11-22 09:51:28,Goldman Sachs,Neutral,,init

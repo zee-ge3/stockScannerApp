@@ -1,0 +1,42 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-01-22 16:45:33,Baird,Outperform,Outperform,reit
+2023-06-30 13:47:17,Baird,Outperform,Outperform,reit
+2022-11-02 12:59:27,BMO Capital,Outperform,,main
+2022-10-27 10:12:44,William Blair,Market Perform,Outperform,down
+2022-04-27 14:07:46,B of A Securities,Underperform,,main
+2022-02-24 14:40:40,Wells Fargo,Overweight,,main
+2022-01-10 13:40:21,Wells Fargo,Overweight,,main
+2021-10-04 09:15:52,JP Morgan,Neutral,Underweight,up
+2021-05-26 10:32:56,Baird,Outperform,Neutral,up
+2021-04-28 12:30:27,Wells Fargo,Overweight,,main
+2021-02-24 16:49:11,Wells Fargo,Overweight,,main
+2021-02-24 14:46:51,Baird,Neutral,,main
+2021-02-05 16:21:06,Baird,Neutral,,main
+2020-05-01 14:17:19,Wells Fargo,Overweight,,main
+2020-03-16 13:10:08,Wells Fargo,Overweight,,main
+2019-10-10 12:45:05,JP Morgan,Underweight,,main
+2019-05-01 14:56:16,Wells Fargo,Outperform,Outperform,main
+2019-02-27 13:06:06,Wells Fargo,Outperform,Outperform,main
+2018-12-07 13:27:52,Wells Fargo,Outperform,Outperform,main
+2018-11-02 17:49:00,Baird,Neutral,Neutral,main
+2018-09-21 12:26:59,JP Morgan,Underweight,Neutral,down
+2018-07-31 13:22:58,BMO Capital,Outperform,Outperform,main
+2018-05-09 14:11:09,BMO Capital,Outperform,Outperform,main
+2018-05-04 15:24:43,B of A Securities,Underperform,Underperform,main
+2018-04-23 12:58:34,Baird,Neutral,Outperform,down
+2018-03-05 12:43:59,BMO Capital,Outperform,Outperform,main
+2018-02-28 14:43:39,Wells Fargo,Outperform,Outperform,main
+2017-12-08 14:22:26,B of A Securities,Underperform,Neutral,down
+2017-10-25 12:54:37,Baird,Outperform,,main
+2017-06-02 10:31:45,JP Morgan,Neutral,,init
+2017-04-12 12:18:19,CL King,Buy,,up
+2017-04-10 11:44:03,BMO Capital,Outperform,,init
+2017-03-13 12:29:58,Wells Fargo,Outperform,,init
+2017-03-13 12:28:35,Baird,Outperform,,init
+2017-02-28 16:29:13,Sidoti & Co.,Buy,Neutral,up
+2016-06-17 13:47:15,BB&T Capital,Buy,,init
+2016-04-19 10:58:56,William Blair,Outperform,,init
+2015-05-01 13:27:45,Seaport Global,Buy,Speculative Buy,up
+2013-10-31 14:50:37,CJS Securities,Market Perform,Market Outperform,down
+2013-08-20 12:56:06,Global Hunter Securities,Speculative Buy,,init
+2012-10-23 14:23:00,Janney Montgomery Scott,Neutral,Buy,down

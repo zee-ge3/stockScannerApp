@@ -1,0 +1,89 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-06-26 10:55:15,Needham,Buy,,init
+2024-06-25 16:16:17,Guggenheim,Buy,Buy,reit
+2024-06-07 16:50:46,DA Davidson,Buy,Buy,main
+2024-06-06 18:13:06,Wells Fargo,Overweight,Overweight,main
+2024-06-06 15:03:43,Barclays,Equal-Weight,Equal-Weight,main
+2024-06-06 13:29:08,Oppenheimer,Outperform,Outperform,main
+2024-06-06 13:20:52,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2024-06-06 13:06:16,Goldman Sachs,Sell,Neutral,down
+2024-06-06 12:36:25,Baird,Outperform,Outperform,main
+2024-06-06 12:33:14,RBC Capital,Outperform,Outperform,main
+2024-05-22 13:19:36,UBS,Neutral,,init
+2024-03-07 10:44:19,Goldman Sachs,Neutral,Neutral,main
+2024-03-06 17:29:03,DA Davidson,Buy,Buy,main
+2024-03-06 14:57:32,RBC Capital,Outperform,Outperform,main
+2024-03-06 13:50:46,Oppenheimer,Outperform,Outperform,main
+2024-03-06 13:16:06,Stifel,Buy,Buy,main
+2024-03-06 13:04:29,Baird,Outperform,Outperform,main
+2024-03-06 12:30:10,Barclays,Equal-Weight,Equal-Weight,main
+2024-03-06 11:56:17,Guggenheim,Buy,Buy,main
+2024-03-06 11:42:27,Wells Fargo,Overweight,Overweight,main
+2024-03-05 11:58:11,Wells Fargo,Overweight,Overweight,main
+2024-02-20 10:35:50,Barclays,Equal-Weight,Overweight,down
+2024-01-12 10:12:27,Barclays,Overweight,Overweight,main
+2023-12-14 15:27:31,RBC Capital,Outperform,Outperform,reit
+2023-12-11 13:25:01,Barclays,Overweight,Overweight,main
+2023-12-07 17:57:26,Stifel,Buy,Buy,main
+2023-12-07 17:02:42,RBC Capital,Outperform,Outperform,main
+2023-12-07 12:56:35,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-09-13 12:52:51,RBC Capital,Outperform,Outperform,reit
+2023-09-07 11:58:07,RBC Capital,Outperform,Outperform,reit
+2023-08-18 10:30:49,Barclays,Overweight,Overweight,main
+2023-06-07 15:35:09,Oppenheimer,Outperform,Outperform,reit
+2023-06-07 15:32:43,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-06-07 13:15:24,RBC Capital,Outperform,Outperform,reit
+2023-06-07 12:26:02,Wedbush,Neutral,Neutral,reit
+2023-06-07 11:54:36,Stifel,Buy,Buy,main
+2023-06-07 11:51:06,Baird,Outperform,Outperform,main
+2023-06-07 10:20:32,Barclays,Overweight,Overweight,main
+2023-06-05 12:35:36,RBC Capital,Outperform,Outperform,main
+2023-03-08 14:25:21,Stifel,Buy,,main
+2023-03-08 13:05:43,Baird,Outperform,,main
+2023-03-08 13:03:23,Guggenheim,Buy,,reit
+2023-03-08 12:30:19,Morgan Stanley,Equal-Weight,,main
+2023-03-08 12:28:58,RBC Capital,Outperform,,main
+2023-02-15 13:25:07,Barclays,Overweight,,main
+2023-01-27 09:53:26,Guggenheim,Buy,,init
+2023-01-10 13:09:47,Barclays,Overweight,,main
+2022-12-15 10:27:51,Wedbush,Neutral,,init
+2022-12-07 13:40:16,Goldman Sachs,Neutral,,main
+2022-12-07 13:19:07,RBC Capital,Outperform,,main
+2022-12-07 13:01:51,Barclays,Overweight,,main
+2022-11-21 13:44:38,Morgan Stanley,Equal-Weight,,main
+2022-11-18 11:48:40,Barclays,Overweight,,main
+2022-10-18 11:43:21,Barclays,Overweight,,main
+2022-09-08 12:46:39,Morgan Stanley,Equal-Weight,,main
+2022-09-08 11:13:39,Baird,Outperform,,main
+2022-09-08 11:08:52,Barclays,Overweight,,main
+2022-08-16 14:08:33,Barclays,Overweight,,main
+2022-06-15 08:20:55,DA Davidson,Buy,,init
+2022-06-10 13:22:47,Baird,Outperform,,main
+2022-06-09 12:58:46,Stifel,Buy,,main
+2022-06-09 12:56:52,Morgan Stanley,Equal-Weight,,main
+2022-06-09 11:56:46,Oppenheimer,Outperform,,main
+2022-06-09 10:49:39,Goldman Sachs,Neutral,,main
+2022-06-06 10:45:41,RBC Capital,Outperform,,main
+2022-05-20 12:24:13,Barclays,Overweight,,main
+2022-05-19 12:37:34,Morgan Stanley,Equal-Weight,,main
+2022-04-14 11:40:17,Goldman Sachs,Neutral,,main
+2022-03-10 15:33:59,Barclays,Overweight,,main
+2022-03-10 14:39:18,Stifel,Buy,,main
+2022-03-10 12:37:10,Morgan Stanley,Equal-Weight,,main
+2022-03-10 12:09:12,RBC Capital,Outperform,,main
+2022-02-23 13:17:34,Morgan Stanley,Equal-Weight,,main
+2022-01-12 12:34:53,Barclays,Overweight,,main
+2021-12-09 11:45:45,Goldman Sachs,Neutral,,main
+2021-12-08 12:05:20,Barclays,Overweight,,main
+2021-12-08 11:34:59,Goldman Sachs,Neutral,,main
+2021-12-08 11:30:25,Oppenheimer,Outperform,,main
+2021-09-09 12:12:17,Morgan Stanley,Equal-Weight,,main
+2021-09-09 11:24:27,Barclays,Overweight,,main
+2021-09-09 11:03:16,Oppenheimer,Outperform,,main
+2021-08-16 12:19:49,William Blair,Outperform,,init
+2021-08-16 11:41:30,Morgan Stanley,Equal-Weight,,init
+2021-08-16 11:30:16,Stifel,Buy,,init
+2021-08-16 10:23:24,Goldman Sachs,Neutral,,init
+2021-08-16 09:13:14,RBC Capital,Outperform,,init
+2021-08-16 09:11:46,Baird,Outperform,,init
+2021-08-16 09:03:34,Barclays,Overweight,,init

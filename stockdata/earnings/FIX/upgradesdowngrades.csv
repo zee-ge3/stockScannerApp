@@ -1,0 +1,31 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-02-28 20:11:37,DA Davidson,Buy,Buy,main
+2024-02-15 16:56:05,UBS,Neutral,Neutral,main
+2024-01-10 12:50:30,Keybanc,Sector Weight,,init
+2023-07-28 17:24:11,DA Davidson,Buy,Buy,main
+2023-06-01 08:54:31,UBS,Neutral,,init
+2023-04-28 15:23:20,DA Davidson,Buy,,main
+2023-02-24 14:54:00,DA Davidson,Buy,,main
+2022-02-25 12:58:43,DA Davidson,Buy,Neutral,up
+2020-06-02 13:46:14,Sidoti & Co.,Neutral,,main
+2020-04-29 11:32:09,DA Davidson,Neutral,Buy,down
+2019-07-29 12:58:39,DA Davidson,Buy,Neutral,up
+2019-03-12 12:49:52,Sidoti & Co.,Neutral,Buy,down
+2019-02-25 15:05:53,DA Davidson,Neutral,Neutral,main
+2019-01-02 15:50:00,Sidoti & Co.,Buy,Neutral,up
+2018-04-30 13:06:47,DA Davidson,Neutral,Neutral,main
+2017-11-10 12:58:10,Guggenheim,Neutral,Buy,down
+2017-04-11 16:30:22,Guggenheim,Buy,,init
+2016-08-12 13:08:23,Sidoti & Co.,Buy,Neutral,up
+2016-07-12 12:50:17,Sidoti & Co.,Neutral,Buy,down
+2015-08-11 13:38:33,Sidoti & Co.,Neutral,Buy,down
+2015-02-06 14:03:59,DA Davidson,Neutral,Buy,down
+2014-12-01 05:00:00,BB&T Capital,Buy,Hold,up
+2014-04-21 12:03:31,DA Davidson,Buy,Neutral,up
+2013-11-25 13:13:45,Keybanc,Hold,Buy,down
+2013-08-02 10:53:07,DA Davidson,Neutral,,main
+2013-07-09 12:35:48,DA Davidson,Neutral,,main
+2013-06-25 21:46:57,Keybanc,Buy,Hold,up
+2013-02-04 13:57:16,BB&T Capital,Hold,Buy,down
+2013-01-10 18:11:19,Gilford Securities,Neutral,,main
+2012-08-02 17:54:00,DA Davidson,Neutral,,main

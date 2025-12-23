@@ -1,0 +1,37 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-08 16:00:42,Craig-Hallum,Buy,Buy,main
+2024-08-08 14:35:29,Roth MKM,Buy,Buy,main
+2024-08-07 11:31:51,WestPark Capital,Hold,,reit
+2024-05-08 15:34:33,Craig-Hallum,Buy,Buy,main
+2024-03-19 14:01:19,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2024-03-06 13:42:39,Oppenheimer,Outperform,Outperform,main
+2024-01-10 18:36:21,Roth MKM,Buy,Buy,main
+2023-11-09 13:50:00,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-10-30 14:09:03,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-09-27 14:08:41,Roth MKM,Buy,Buy,reit
+2023-08-09 12:24:54,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-08-09 08:32:22,Piper Sandler,Neutral,Neutral,reit
+2023-05-11 14:42:33,Oppenheimer,Outperform,Outperform,reit
+2023-05-11 12:16:18,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-05-11 08:33:03,Piper Sandler,Neutral,,reit
+2023-03-28 14:21:34,Piper Sandler,Neutral,,main
+2023-03-24 10:40:22,Baird,Outperform,,main
+2022-11-09 12:57:08,Morgan Stanley,Equal-Weight,,main
+2022-11-09 09:30:30,Piper Sandler,Neutral,,main
+2022-11-02 13:40:58,WestPark Capital,Hold,,init
+2022-08-04 12:25:42,Piper Sandler,Neutral,,main
+2022-07-18 10:12:47,Piper Sandler,Neutral,Overweight,down
+2022-05-05 10:11:15,Piper Sandler,Overweight,,main
+2022-04-14 09:10:44,Credit Suisse,Outperform,,init
+2022-02-24 13:15:51,Morgan Stanley,Equal-Weight,,main
+2022-02-24 09:28:13,Piper Sandler,Overweight,,main
+2022-01-13 12:31:18,Piper Sandler,Overweight,,main
+2021-07-19 10:10:48,Morgan Stanley,Equal-Weight,,init
+2021-07-07 15:27:36,New Street Research,Buy,,init
+2021-05-14 10:45:59,Piper Sandler,Overweight,,main
+2021-04-01 10:55:35,Baird,Outperform,,init
+2021-03-19 12:22:26,Oppenheimer,Outperform,,init
+2021-03-18 20:10:33,Oppenheimer,Outperform,,init
+2021-03-18 12:15:53,Piper Sandler,Overweight,,init
+2021-03-17 13:25:58,Craig-Hallum,Buy,,init
+2021-03-17 11:25:25,Roth Capital,Buy,,init

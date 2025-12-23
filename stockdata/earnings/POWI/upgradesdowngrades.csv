@@ -1,0 +1,75 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-08 12:27:36,Susquehanna,Positive,Positive,main
+2024-08-07 21:23:17,TD Cowen,Hold,Hold,main
+2024-08-07 19:11:55,Benchmark,Buy,Buy,main
+2024-08-07 17:38:02,Deutsche Bank,Hold,Hold,main
+2024-08-05 13:29:20,Stifel,Buy,Buy,reit
+2024-06-07 13:28:47,Benchmark,Buy,Buy,reit
+2024-02-12 12:08:37,Northland Capital Markets,Underperform,Market Perform,down
+2024-02-09 19:29:03,Benchmark,Buy,Buy,main
+2024-01-02 19:54:30,Stifel,Buy,Buy,main
+2023-12-18 11:54:45,Susquehanna,Positive,Positive,main
+2023-11-08 21:12:35,Stifel,Buy,Buy,main
+2023-11-08 20:43:53,Susquehanna,Positive,Positive,main
+2023-10-24 15:21:18,Susquehanna,Positive,Positive,main
+2023-08-04 16:52:44,Susquehanna,Positive,Positive,main
+2023-07-25 11:20:14,Susquehanna,Positive,Positive,main
+2023-07-20 16:26:30,Stifel,Buy,Buy,main
+2023-07-17 13:31:17,Northland Capital Markets,Market Perform,Outperform,down
+2023-05-01 12:37:38,Northland Capital Markets,Outperform,Market Perform,up
+2023-04-25 14:03:10,Susquehanna,Positive,,main
+2023-02-08 12:45:07,Benchmark,Buy,,main
+2023-02-07 14:52:16,Deutsche Bank,Hold,,main
+2023-02-07 12:48:58,Cowen & Co.,Market Perform,,main
+2022-11-21 14:35:32,Northland Capital Markets,Market Perform,Outperform,down
+2022-11-03 08:39:40,Cowen & Co.,Market Perform,Outperform,down
+2022-10-18 12:55:11,Deutsche Bank,Hold,,main
+2022-08-05 14:43:20,Susquehanna,Positive,,main
+2022-07-20 13:06:11,Deutsche Bank,Hold,,main
+2022-03-07 13:37:50,Susquehanna,Positive,,main
+2022-02-07 12:56:48,Susquehanna,Positive,Neutral,up
+2022-02-04 13:41:00,Susquehanna,Neutral,,main
+2021-08-19 11:44:48,Benchmark,Buy,,init
+2021-07-30 15:32:14,Northland Capital Markets,Outperform,Market Perform,up
+2021-02-03 17:32:21,Cowen & Co.,Outperform,,main
+2020-08-20 11:33:42,Northland Capital Markets,Market Perform,Underperform,up
+2020-05-08 15:44:28,Deutsche Bank,Hold,,main
+2020-04-30 13:07:58,Stifel,Buy,,main
+2019-10-25 11:45:49,Loop Capital,Buy,Hold,up
+2019-07-29 11:21:33,Northland Capital Markets,Underperform,Market Perform,down
+2019-07-18 10:31:04,Stifel,Buy,Hold,up
+2018-10-26 10:36:11,Loop Capital,Hold,Buy,down
+2018-09-12 11:06:03,Stifel,Hold,Buy,down
+2018-06-22 11:48:58,Loop Capital,Buy,,init
+2017-12-13 13:48:52,Susquehanna,Neutral,,init
+2017-07-25 10:06:27,Deutsche Bank,Hold,Buy,down
+2016-12-22 13:11:42,Drexel Hamilton,Buy,,init
+2016-07-29 16:58:39,Deutsche Bank,Buy,,main
+2016-06-23 13:45:54,Sidoti & Co.,Neutral,Buy,down
+2016-02-05 10:01:00,Stifel,Buy,,main
+2016-02-05 10:00:58,Deutsche Bank,Buy,,main
+2016-01-08 15:09:06,Sidoti & Co.,Buy,Neutral,up
+2015-11-23 15:06:16,Sidoti & Co.,Neutral,Buy,down
+2015-07-30 15:00:00,Stifel,Buy,,main
+2015-05-01 13:00:00,Stifel,Buy,,main
+2015-03-27 10:36:56,Raymond James,Market Perform,Outperform,down
+2014-07-30 05:53:43,Deutsche Bank,Buy,,main
+2014-06-07 02:30:08,Raymond James,Outperform,,main
+2014-04-30 20:00:00,Deutsche Bank,Buy,Hold,up
+2014-02-04 12:10:44,Stifel,Buy,,main
+2014-01-22 13:00:00,Raymond James,Outperform,Market Perform,up
+2013-11-08 14:44:32,Stifel,Buy,,main
+2013-10-31 12:45:59,Deutsche Bank,Hold,,main
+2013-05-03 11:59:19,Deutsche Bank,Hold,,main
+2013-03-28 12:09:49,Stifel,Buy,,main
+2013-02-11 11:29:05,Deutsche Bank,Hold,Buy,down
+2013-02-05 13:34:59,Deutsche Bank,Buy,,main
+2013-02-05 12:55:37,Stifel,Buy,,main
+2012-10-23 09:54:00,Sterne Agee,Buy,Neutral,up
+2012-10-22 13:50:00,ISI Group,Hold,,main
+2012-10-10 11:07:00,Deutsche Bank,Buy,,main
+2012-10-08 11:52:00,ISI Group,Hold,Buy,down
+2012-08-07 11:57:00,Piper Sandler,Neutral,,main
+2012-08-07 10:04:00,Deutsche Bank,Buy,,main
+2012-05-04 12:25:00,Stifel,Buy,,main
+2012-05-04 10:45:00,Deutsche Bank,Buy,,main

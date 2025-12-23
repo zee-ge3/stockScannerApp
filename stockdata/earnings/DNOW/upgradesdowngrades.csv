@@ -1,0 +1,51 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-18 15:22:37,Stifel,Buy,Buy,main
+2024-07-11 12:40:31,Susquehanna,Neutral,Neutral,main
+2024-05-13 11:42:36,Susquehanna,Neutral,Neutral,main
+2024-04-08 11:49:28,Susquehanna,Neutral,Neutral,main
+2024-03-28 16:40:01,Stifel,Buy,Buy,main
+2024-02-16 15:15:58,Stifel,Buy,Buy,main
+2024-02-16 13:47:20,Susquehanna,Neutral,Neutral,main
+2023-10-04 13:42:53,Susquehanna,Neutral,Neutral,main
+2023-09-28 11:02:46,Stifel,Buy,Buy,main
+2023-04-17 14:31:25,Stifel,Buy,,main
+2023-03-14 13:51:24,Susquehanna,Neutral,,reit
+2023-02-17 12:41:30,Susquehanna,Neutral,,main
+2022-07-08 09:00:30,Benchmark,Buy,,init
+2021-11-04 11:03:09,Stephens & Co.,Overweight,Equal-Weight,up
+2021-07-16 08:55:30,Stifel,Buy,Hold,up
+2021-02-19 10:53:46,JP Morgan,Underweight,Neutral,down
+2020-04-14 11:55:17,Cowen & Co.,Outperform,Market Perform,up
+2020-04-03 11:19:10,Stephens & Co.,Overweight,,reit
+2020-03-20 10:51:18,Keybanc,Overweight,,main
+2020-02-20 11:32:32,Stephens & Co.,Overweight,,main
+2019-07-15 15:54:51,Stifel,Hold,,main
+2018-12-19 11:32:15,Stifel,Hold,Buy,down
+2018-11-02 17:41:27,Baird,Neutral,Neutral,main
+2018-08-03 11:53:18,Stifel,Buy,Buy,main
+2018-07-31 11:52:20,Northcoast Research,Neutral,,init
+2018-05-03 11:42:38,Stifel,Buy,Buy,main
+2018-02-27 13:22:17,Credit Suisse,Neutral,Neutral,main
+2018-02-15 15:04:27,JP Morgan,Neutral,Neutral,main
+2018-02-15 13:58:59,Keybanc,Overweight,Overweight,main
+2018-02-15 12:55:12,Seaport Global,Buy,Neutral,up
+2017-11-03 15:22:11,Credit Suisse,Neutral,,main
+2017-11-02 12:15:29,Susquehanna,Neutral,Positive,down
+2017-10-13 11:12:16,Baird,Neutral,Outperform,down
+2017-09-12 12:00:06,JP Morgan,Neutral,,main
+2017-06-21 12:09:53,Seaport Global,Neutral,Buy,down
+2017-06-06 10:29:31,Stifel,Buy,,init
+2017-05-26 10:57:26,Keybanc,Overweight,,init
+2017-05-04 13:46:59,Seaport Global,Buy,Neutral,up
+2017-04-26 11:55:29,Baird,Outperform,Neutral,up
+2017-01-10 11:13:42,Susquehanna,Positive,Neutral,up
+2016-09-16 10:18:04,Cowen & Co.,Market Perform,,init
+2016-05-05 08:12:52,JP Morgan,Neutral,,main
+2016-02-24 17:39:57,JP Morgan,Neutral,,main
+2015-12-29 15:50:40,Capital One,Equal-Weight,,init
+2015-08-06 11:25:19,Stephens & Co.,Equal-Weight,Overweight,down
+2015-05-29 10:23:19,JP Morgan,Neutral,,init
+2014-10-16 12:30:00,ISI Group,Hold,,init
+2014-10-09 12:30:00,Seaport Global,Neutral,,init
+2014-09-02 21:05:50,Raymond James,Market Perform,,init
+2014-06-26 12:18:57,Credit Suisse,Neutral,,init

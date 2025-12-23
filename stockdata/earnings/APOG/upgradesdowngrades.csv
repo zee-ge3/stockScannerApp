@@ -1,0 +1,18 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-06-28 15:29:39,DA Davidson,Neutral,Neutral,main
+2023-04-13 13:44:31,Craig-Hallum,Hold,,main
+2022-06-24 14:32:54,Craig-Hallum,Hold,,main
+2022-04-08 11:56:36,Craig-Hallum,Hold,Buy,down
+2020-05-13 13:43:29,Sidoti & Co.,Neutral,,main
+2019-12-20 15:37:25,DA Davidson,Neutral,,main
+2018-06-29 11:05:31,DA Davidson,Neutral,Buy,down
+2018-04-04 12:37:19,Goldman Sachs,Sell,Neutral,down
+2017-01-19 14:07:29,Craig-Hallum,Buy,,init
+2016-07-12 09:59:21,Goldman Sachs,Neutral,Buy,down
+2015-06-26 10:54:22,Northland Capital Markets,Market Perform,Outperform,down
+2015-06-15 12:06:07,DA Davidson,Buy,,main
+2014-11-17 14:00:00,DA Davidson,Buy,,main
+2014-09-23 13:51:00,Northland Capital Markets,Outperform,Market Perform,up
+2014-05-19 13:37:23,DA Davidson,Buy,Neutral,up
+2013-12-20 21:00:00,Northland Capital Markets,Market Perform,Outperform,down
+2013-10-01 10:49:15,Goldman Sachs,Buy,,init

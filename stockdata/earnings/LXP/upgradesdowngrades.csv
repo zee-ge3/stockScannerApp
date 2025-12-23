@@ -1,0 +1,54 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-06-07 17:22:58,Jefferies,Buy,Buy,main
+2023-12-13 10:34:58,Keybanc,Overweight,Overweight,main
+2023-05-15 07:56:23,Keybanc,Overweight,Sector Weight,up
+2023-04-18 09:31:55,JMP Securities,Market Perform,,init
+2022-06-30 14:41:17,Jefferies,Buy,,main
+2022-04-11 11:16:19,Keybanc,Sector Weight,Overweight,down
+2021-11-19 09:33:27,Keybanc,Overweight,,main
+2021-11-18 14:08:46,Evercore ISI Group,In-Line,Outperform,down
+2021-10-08 08:29:08,Keybanc,Overweight,Sector Weight,up
+2021-09-08 11:58:50,Wells Fargo,Overweight,,main
+2020-12-10 12:36:51,Wells Fargo,Overweight,Equal-Weight,up
+2020-11-25 14:26:04,Evercore ISI Group,Outperform,In-Line,up
+2020-06-08 10:13:44,Evercore ISI Group,In-Line,Outperform,down
+2020-04-02 12:50:45,Wells Fargo,Equal-Weight,,main
+2020-01-08 11:50:30,Stifel,Hold,Buy,down
+2019-12-18 13:56:30,JP Morgan,Neutral,,main
+2019-08-26 11:03:59,Wells Fargo,Market Perform,Outperform,down
+2019-08-08 10:24:24,Stifel,Buy,Hold,up
+2019-05-28 10:46:36,Stifel,Hold,Sell,up
+2019-01-22 13:12:59,DA Davidson,Buy,Neutral,up
+2018-10-12 13:33:07,Jefferies,Buy,Hold,up
+2018-09-27 12:08:24,Wells Fargo,Outperform,Market Perform,up
+2018-05-09 11:36:48,Stifel,Sell,Hold,down
+2018-04-10 13:46:48,JP Morgan,Neutral,Neutral,main
+2018-03-20 15:55:07,Barclays,Underweight,Underweight,main
+2018-03-19 12:52:17,Wells Fargo,Market Perform,Market Perform,main
+2017-12-11 14:18:55,Evercore ISI Group,In-Line,Outperform,down
+2017-09-25 10:59:20,DA Davidson,Neutral,,init
+2017-05-25 11:50:09,Evercore ISI Group,Outperform,Hold,up
+2017-01-23 10:56:50,Barclays,Underweight,Equal-Weight,down
+2016-07-19 10:47:20,Jefferies,Hold,Buy,down
+2016-06-13 13:06:10,Evercore ISI Group,Hold,Buy,down
+2016-05-19 11:18:21,Ladenburg Thalmann,Neutral,Buy,down
+2016-03-29 11:07:54,B of A Securities,Underperform,Neutral,down
+2015-09-08 15:07:21,Evercore ISI Group,Buy,,main
+2015-07-02 03:49:48,Jefferies,Buy,,main
+2015-06-25 13:13:59,B of A Securities,Neutral,Buy,down
+2015-06-17 10:44:56,Keybanc,Sector Weight,Underweight,up
+2015-03-17 11:22:26,Ladenburg Thalmann,Buy,Neutral,up
+2015-01-22 14:00:00,Barclays,Equal-Weight,,main
+2014-10-21 12:30:00,Barclays,Equal-Weight,,main
+2014-08-15 20:00:00,Ladenburg Thalmann,Neutral,Buy,down
+2013-10-16 12:22:30,Stifel,Hold,Buy,down
+2013-06-13 13:17:32,Keybanc,Underweight,Hold,down
+2013-04-18 17:00:43,Barclays,Equal-Weight,,main
+2013-04-09 12:08:05,JP Morgan,Neutral,,main
+2013-03-08 12:42:08,Evercore ISI Group,Overweight,Equal-Weight,up
+2013-02-22 12:51:58,Jefferies,Buy,,main
+2012-12-21 20:05:16,B of A Securities,Buy,,main
+2012-12-20 11:27:33,Jefferies,Buy,,init
+2012-12-12 13:06:01,Stifel,Buy,Hold,up
+2012-10-24 14:34:00,Evercore ISI Group,Equal-Weight,,init
+2012-08-09 12:35:00,Stifel,Hold,Buy,down

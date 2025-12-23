@@ -1,0 +1,38 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-02 22:00:36,Barrington Research,Outperform,Outperform,main
+2024-07-29 12:07:52,Benchmark,Buy,Buy,reit
+2024-07-08 14:58:32,B. Riley Securities,Buy,Buy,main
+2024-05-06 16:25:19,Barrington Research,Outperform,Outperform,main
+2024-04-22 14:58:57,Barrington Research,Outperform,Outperform,main
+2024-03-05 14:28:14,Benchmark,Buy,Buy,reit
+2024-03-01 15:53:03,Barrington Research,Outperform,Outperform,reit
+2024-01-02 16:15:08,B. Riley Securities,Buy,Buy,main
+2023-05-09 16:44:40,Barrington Research,Outperform,,main
+2023-04-10 13:30:55,B. Riley Securities,Buy,,main
+2023-03-14 14:35:44,Barrington Research,Outperform,,reit
+2023-03-06 13:22:54,Benchmark,Buy,,reit
+2022-12-05 14:31:01,B. Riley Securities,Buy,,main
+2022-10-07 12:12:34,Benchmark,Buy,,main
+2022-06-21 13:17:33,B. Riley Securities,Buy,,main
+2021-11-24 09:51:30,JP Morgan,Neutral,,init
+2020-11-10 12:42:16,Barrington Research,Outperform,Market Perform,up
+2020-10-26 16:18:49,Barrington Research,Market Perform,Outperform,down
+2020-07-06 11:06:15,B. Riley Securities,Buy,Neutral,up
+2020-05-06 11:52:05,B. Riley Securities,Neutral,,main
+2020-04-01 12:19:58,B. Riley Securities,Neutral,,main
+2020-03-23 14:04:52,Benchmark,Hold,Buy,down
+2020-03-18 11:06:34,B. Riley Securities,Neutral,,main
+2019-11-22 11:23:05,B. Riley Securities,Neutral,Buy,down
+2019-04-26 10:36:37,B. Riley Securities,Buy,Neutral,up
+2018-08-15 11:34:10,B. Riley Securities,Neutral,Buy,down
+2018-07-23 12:12:53,B. Riley Securities,Buy,Buy,main
+2017-10-18 11:22:42,B. Riley Securities,Buy,,main
+2015-12-18 18:18:42,B. Riley Securities,Buy,,main
+2015-10-15 11:43:04,Gabelli & Co.,Buy,,init
+2015-08-24 13:46:50,B. Riley Securities,Buy,,main
+2015-07-24 10:44:12,B. Riley Securities,Buy,Neutral,up
+2015-04-13 12:17:43,B. Riley Securities,Neutral,Buy,down
+2014-09-10 10:06:08,B. Riley Securities,Buy,Neutral,up
+2014-06-24 12:15:07,Barrington Research,Outperform,,init
+2013-04-12 11:56:57,B. Riley Securities,Buy,,init
+2013-02-06 15:32:05,Baird,Neutral,Outperform,down

@@ -1,0 +1,24 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-20 13:23:58,RBC Capital,Outperform,Outperform,main
+2024-05-10 17:13:40,Truist Securities,Buy,Buy,main
+2024-04-16 15:56:58,Raymond James,Outperform,Outperform,main
+2024-04-10 13:28:02,Goldman Sachs,Buy,Buy,main
+2024-03-21 14:00:11,JP Morgan,Neutral,Neutral,main
+2024-03-11 14:54:53,Truist Securities,Buy,Buy,main
+2024-03-11 13:10:58,Goldman Sachs,Buy,Buy,main
+2024-03-08 16:20:50,RBC Capital,Outperform,Outperform,reit
+2024-03-08 15:38:22,Stifel,Buy,Buy,main
+2024-03-08 13:24:51,JP Morgan,Neutral,Overweight,down
+2024-01-30 14:00:55,Raymond James,Outperform,Outperform,main
+2023-12-20 16:25:31,Truist Securities,Buy,Buy,main
+2023-11-13 18:14:21,Truist Securities,Buy,Buy,main
+2023-09-05 12:24:29,RBC Capital,Outperform,Outperform,reit
+2023-08-14 11:19:59,Barclays,Equal-Weight,Equal-Weight,main
+2023-08-11 12:22:38,Raymond James,Outperform,Outperform,main
+2023-07-24 11:54:09,Raymond James,Outperform,,init
+2023-07-24 11:50:38,Stifel,Buy,,init
+2023-07-24 11:49:29,Truist Securities,Buy,,init
+2023-07-24 11:35:32,JP Morgan,Overweight,,init
+2023-07-24 11:27:17,RBC Capital,Outperform,,init
+2023-07-24 11:23:04,Barclays,Equal-Weight,,init
+2023-07-24 08:51:50,Goldman Sachs,Buy,,init

@@ -1,0 +1,110 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-05 16:51:15,Roth MKM,Buy,Buy,main
+2024-08-02 15:37:05,Keybanc,Overweight,Overweight,main
+2024-08-02 12:52:47,Truist Securities,Buy,Buy,main
+2024-05-03 17:44:33,Keybanc,Overweight,Overweight,main
+2024-05-03 14:18:44,Roth MKM,Buy,Buy,reit
+2024-05-03 13:50:29,Truist Securities,Buy,Buy,main
+2024-01-23 19:55:33,Citigroup,Buy,Buy,main
+2024-01-17 13:43:07,Stephens & Co.,Overweight,Overweight,reit
+2024-01-12 09:33:45,Keybanc,Overweight,Overweight,main
+2024-01-09 15:37:36,Truist Securities,Buy,Buy,main
+2023-12-13 10:01:09,Roth MKM,Buy,,init
+2023-11-03 10:56:46,Keybanc,Overweight,Overweight,main
+2023-10-17 10:42:34,Citigroup,Buy,Buy,main
+2023-09-21 08:28:08,Keybanc,Overweight,Overweight,main
+2023-09-15 13:31:12,Truist Securities,Buy,Buy,main
+2023-09-01 10:45:14,Citigroup,Buy,,init
+2023-08-07 15:43:56,JP Morgan,Overweight,Overweight,main
+2023-08-07 10:27:20,Truist Securities,Buy,Hold,up
+2023-07-25 13:57:27,Northcoast Research,Buy,Neutral,up
+2023-07-18 10:33:25,Raymond James,Market Perform,Outperform,down
+2023-07-17 08:06:13,Keybanc,Overweight,Overweight,main
+2023-06-30 11:57:56,DA Davidson,Buy,Neutral,up
+2023-05-24 12:20:15,BMO Capital,Outperform,Market Perform,up
+2023-05-04 08:35:03,Keybanc,Overweight,,main
+2023-05-03 12:43:59,Stephens & Co.,Overweight,,reit
+2023-02-23 12:34:37,BMO Capital,Market Perform,,main
+2023-02-23 12:13:13,Raymond James,Outperform,,main
+2023-02-22 13:03:55,Stephens & Co.,Overweight,,reit
+2022-11-03 14:20:35,JP Morgan,Overweight,,main
+2022-11-03 11:29:36,Raymond James,Outperform,,main
+2022-09-23 14:15:35,Truist Securities,Hold,,main
+2022-08-04 11:44:41,Raymond James,Outperform,,main
+2022-07-25 11:24:13,Raymond James,Outperform,,main
+2022-05-26 10:59:44,Truist Securities,Hold,Hold,main
+2022-05-05 10:16:38,Raymond James,Outperform,,main
+2022-04-13 09:03:54,DA Davidson,Neutral,,init
+2022-03-02 12:01:14,Truist Securities,Hold,Buy,down
+2022-02-24 12:11:21,Raymond James,Outperform,,main
+2021-11-04 11:23:52,Raymond James,Outperform,,main
+2021-11-03 11:04:24,Truist Securities,Buy,Buy,main
+2021-09-17 11:08:23,Truist Securities,Buy,Buy,main
+2021-08-04 11:55:21,Baird,Outperform,Neutral,up
+2021-08-04 11:25:00,Raymond James,Outperform,,main
+2021-07-02 09:19:16,Raymond James,Outperform,,init
+2021-06-17 11:34:45,Northcoast Research,Neutral,Buy,down
+2021-05-28 11:15:29,Truist Securities,Buy,Buy,main
+2021-05-05 11:13:29,Truist Securities,Buy,Buy,main
+2021-03-11 12:26:53,BMO Capital,Outperform,Market Perform,up
+2021-02-24 12:10:45,Truist Securities,Buy,Buy,main
+2020-11-03 12:38:45,Credit Suisse,Neutral,,main
+2020-09-08 09:33:52,JP Morgan,Overweight,Neutral,up
+2020-09-03 14:52:28,Truist Securities,Buy,,init
+2020-08-06 15:22:28,BMO Capital,Market Perform,,main
+2020-07-29 17:36:09,JP Morgan,Neutral,,main
+2020-05-12 14:51:47,BMO Capital,Market Perform,,main
+2020-03-23 13:10:02,Baird,Neutral,,main
+2020-03-02 12:44:13,Wells Fargo,Equal-Weight,,main
+2020-01-14 13:13:26,Northcoast Research,Buy,Neutral,up
+2019-11-25 15:39:11,Citigroup,Buy,,main
+2019-09-04 11:33:11,B of A Securities,Underperform,,main
+2019-08-15 12:11:14,Northcoast Research,Neutral,Buy,down
+2019-08-09 13:32:09,BMO Capital,Market Perform,,main
+2019-08-08 10:31:20,JP Morgan,Neutral,Overweight,down
+2019-07-26 11:35:27,Baird,Neutral,Outperform,down
+2019-06-07 10:54:46,BMO Capital,Market Perform,Outperform,down
+2019-05-17 10:19:43,Keybanc,Sector Weight,Overweight,down
+2019-05-09 11:53:28,B of A Securities,Underperform,Neutral,down
+2019-03-28 13:06:49,Jefferies,Hold,,init
+2019-03-19 10:39:19,Goldman Sachs,Neutral,Buy,down
+2019-03-15 13:54:58,BMO Capital,Outperform,Outperform,main
+2019-03-08 13:25:17,Credit Suisse,Neutral,Neutral,main
+2019-03-08 13:08:09,Wells Fargo,Market Perform,Outperform,down
+2019-03-01 13:15:12,Credit Suisse,Neutral,Outperform,down
+2018-08-21 14:41:34,BMO Capital,Outperform,Outperform,main
+2018-05-09 13:58:02,BMO Capital,Outperform,Outperform,main
+2018-05-09 12:12:12,Credit Suisse,Outperform,Outperform,main
+2018-05-09 11:15:41,Keybanc,Overweight,Overweight,main
+2018-04-10 14:41:37,Wells Fargo,Outperform,Outperform,main
+2018-03-01 14:08:31,BMO Capital,Outperform,Outperform,main
+2018-02-28 15:00:52,Credit Suisse,Outperform,Outperform,main
+2018-02-23 14:13:35,Credit Suisse,Outperform,Outperform,main
+2018-01-26 14:02:23,Northcoast Research,Buy,,init
+2017-11-14 13:34:40,B of A Securities,Buy,,main
+2017-10-31 17:10:57,B of A Securities,Buy,,main
+2017-10-30 16:55:07,BMO Capital,Outperform,,main
+2017-09-27 12:04:45,Credit Suisse,Outperform,,main
+2017-08-14 13:16:46,BMO Capital,Outperform,,main
+2017-08-11 16:42:29,Credit Suisse,Outperform,,main
+2017-08-11 15:43:38,Baird,Outperform,,main
+2017-08-07 11:45:00,"Monness, Crespi, Hardt",Buy,,init
+2017-07-13 10:25:38,JP Morgan,Overweight,Neutral,up
+2017-06-21 11:19:52,BMO Capital,Outperform,,init
+2017-06-09 11:14:50,Goldman Sachs,Buy,Neutral,up
+2017-03-02 12:26:20,Keybanc,Sector Weight,Overweight,down
+2016-11-02 13:38:17,Stephens & Co.,Overweight,,init
+2016-11-01 04:00:00,B of A Securities,Buy,,init
+2014-07-10 11:14:50,Stifel,Buy,Hold,up
+2014-06-13 11:42:41,Stifel,Hold,Sell,up
+2014-04-22 11:11:50,Stifel,Sell,Hold,down
+2014-03-19 18:27:16,RBC Capital,Underperform,Sector Perform,down
+2013-12-17 12:09:15,Stifel,Hold,Sell,up
+2013-08-12 12:43:41,Stifel,Sell,Hold,down
+2013-08-12 11:49:24,Stifel,Sell,Hold,down
+2013-04-01 13:52:06,Stifel,Hold,Sell,up
+2013-03-12 10:59:12,Citigroup,Sell,,main
+2013-03-07 13:33:49,Stifel,Sell,Hold,down
+2013-03-07 13:07:33,Stifel,Sell,Hold,down
+2013-02-28 13:28:27,Stifel,Hold,Sell,up
+2012-08-09 12:35:00,Stifel,Sell,Hold,down

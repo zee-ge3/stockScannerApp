@@ -1,0 +1,53 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2018-01-16 11:40:59,Mizuho,Neutral,Buy,down
+2017-06-21 12:37:07,Seaport Global,Neutral,Buy,down
+2017-04-26 12:18:26,Mizuho,Buy,,init
+2015-07-28 11:54:41,Wunderlich Securities,Hold,Sell,up
+2015-05-12 13:00:00,Stephens & Co.,Overweight,,main
+2015-03-18 09:19:45,Seaport Global,Sell,Neutral,down
+2015-03-02 13:19:25,KLR Group,Sell,Hold,down
+2015-01-14 05:00:00,Barclays,Underweight,Equal-Weight,down
+2015-01-06 05:00:00,Raymond James,Underperform,Market Perform,down
+2014-12-16 14:00:00,Barclays,Equal-Weight,,main
+2014-12-16 05:00:00,Wunderlich Securities,Sell,Hold,down
+2014-10-22 09:44:24,Wunderlich Securities,Hold,,main
+2014-10-15 20:00:00,Credit Suisse,Underperform,Neutral,down
+2014-10-09 13:00:00,Barclays,Equal-Weight,,main
+2014-09-02 09:57:40,Stifel,Buy,Hold,up
+2014-08-11 13:33:57,KLR Group,Reduce,Sell,up
+2014-08-07 20:00:00,UBS,Neutral,,main
+2014-08-07 13:04:54,Seaport Global,Neutral,Accumulate,down
+2014-07-24 00:44:20,Barclays,Equal-Weight,,main
+2014-07-19 01:21:14,Deutsche Bank,Hold,,main
+2014-03-07 13:00:00,Stephens & Co.,Overweight,Equal-Weight,up
+2014-03-03 13:00:00,Seaport Global,Accumulate,Neutral,up
+2013-09-24 11:58:37,Goldman Sachs,Neutral,Sell,up
+2013-07-24 13:38:02,KLR Group,Sell,,init
+2013-03-07 13:11:34,Canaccord Genuity,Sell,,main
+2013-03-07 12:45:04,BMO Capital,Underperform,Market Perform,down
+2013-03-04 12:40:03,Canaccord Genuity,Sell,,main
+2013-03-04 11:43:00,Wunderlich Securities,Hold,,main
+2013-03-01 15:45:02,Tudor Pickering,Sell,Hold,down
+2013-03-01 13:49:55,Stifel,Hold,Buy,down
+2013-03-01 12:57:34,Deutsche Bank,Hold,,main
+2013-02-15 17:26:43,Barclays,Equal-Weight,,main
+2013-02-13 12:15:36,Credit Suisse,Neutral,,init
+2013-02-05 11:48:03,JP Morgan,Underweight,Overweight,down
+2013-02-04 14:08:28,Ladenburg Thalmann,Neutral,Buy,down
+2013-01-02 12:38:34,Wunderlich Securities,Hold,Buy,down
+2012-12-20 12:55:59,Keybanc,Hold,Buy,down
+2012-12-19 17:10:15,Citigroup,Neutral,Buy,down
+2012-12-17 10:53:23,Canaccord Genuity,Sell,Hold,down
+2012-11-13 12:30:00,Deutsche Bank,Hold,,main
+2012-11-12 13:51:00,Global Hunter Securities,Neutral,Buy,down
+2012-11-12 13:04:00,Canaccord Genuity,Hold,,main
+2012-11-09 18:07:00,UBS,Neutral,,main
+2012-11-09 13:55:00,Stifel,Buy,,main
+2012-07-16 11:58:00,Deutsche Bank,Hold,,main
+2012-07-02 17:40:00,Barclays,Equal-Weight,,main
+2012-05-29 10:45:00,Goldman Sachs,Sell,,main
+2012-05-16 09:57:00,Canaccord Genuity,Hold,Sell,up
+2012-05-04 14:49:00,UBS,Neutral,,main
+2012-04-30 10:22:00,JP Morgan,Overweight,Neutral,up
+2012-03-01 13:35:00,Canaccord Genuity,Sell,Hold,down
+2012-02-13 12:27:00,Stifel,Buy,Hold,up

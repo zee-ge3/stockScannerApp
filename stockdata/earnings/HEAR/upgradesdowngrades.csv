@@ -1,0 +1,33 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-08 15:11:42,Wedbush,Outperform,Outperform,reit
+2024-05-01 14:02:59,Wedbush,Outperform,Outperform,reit
+2024-03-18 13:40:50,Lake Street,Buy,Buy,main
+2024-03-15 15:10:49,Maxim Group,Buy,Buy,main
+2024-03-14 15:22:16,Roth MKM,Buy,Buy,main
+2024-03-06 16:15:19,Wedbush,Outperform,Outperform,reit
+2023-08-08 13:14:04,Wedbush,Outperform,Outperform,reit
+2023-03-14 12:09:13,Wedbush,Outperform,,reit
+2022-11-28 13:46:47,Roth Capital,Buy,,init
+2022-08-09 14:21:57,Wedbush,Outperform,,main
+2022-08-09 12:24:02,DA Davidson,Neutral,Buy,down
+2022-08-09 11:11:19,Oppenheimer,Perform,Outperform,down
+2022-07-06 13:10:23,DA Davidson,Buy,,main
+2022-05-17 12:32:28,Wedbush,Outperform,Neutral,up
+2022-03-04 12:57:54,Stifel,Buy,,main
+2022-03-01 13:08:59,Wedbush,Neutral,Outperform,down
+2020-11-02 12:13:52,Wedbush,Outperform,Neutral,up
+2020-09-30 10:00:20,Stifel,Buy,,init
+2020-04-29 11:25:46,Wedbush,Neutral,Outperform,down
+2019-03-15 13:00:10,Wedbush,Outperform,Outperform,main
+2018-08-07 12:03:10,Oppenheimer,Outperform,Outperform,main
+2018-08-02 13:04:43,Wedbush,Outperform,Outperform,main
+2018-07-09 21:19:26,DA Davidson,Buy,,init
+2016-11-14 11:02:53,B. Riley Securities,Neutral,Buy,down
+2016-03-28 11:00:52,Cowen & Co.,Market Perform,Outperform,down
+2016-01-21 16:12:23,B. Riley Securities,Buy,,main
+2015-09-28 12:24:45,Oppenheimer,Outperform,,init
+2015-06-25 10:39:26,B. Riley Securities,Buy,,init
+2015-03-31 10:54:14,Wunderlich Securities,Hold,,init
+2014-11-11 22:51:28,Northland Capital Markets,Market Perform,Outperform,down
+2014-06-26 11:08:50,Northland Capital Markets,Outperform,,init
+2014-05-06 10:41:38,Wedbush,Outperform,,init

@@ -1,0 +1,43 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-10 12:32:33,Telsey Advisory Group,Outperform,Outperform,main
+2024-05-03 12:20:00,Telsey Advisory Group,Outperform,Outperform,reit
+2024-04-29 11:00:21,Keybanc,Overweight,Overweight,main
+2024-03-15 11:54:47,TD Cowen,Market Perform,Market Perform,main
+2024-03-15 09:40:59,Telsey Advisory Group,Outperform,Outperform,reit
+2024-03-11 09:07:36,Telsey Advisory Group,Outperform,Outperform,reit
+2024-01-24 11:41:31,TD Cowen,Market Perform,Outperform,down
+2023-11-10 12:25:04,Telsey Advisory Group,Outperform,Outperform,main
+2023-08-10 09:11:02,Telsey Advisory Group,Outperform,Outperform,reit
+2023-08-03 09:27:25,Telsey Advisory Group,Outperform,Outperform,reit
+2023-05-25 09:17:34,Telsey Advisory Group,Outperform,Outperform,reit
+2023-05-12 09:12:11,Telsey Advisory Group,Outperform,Outperform,main
+2023-05-04 09:33:18,Telsey Advisory Group,Outperform,,reit
+2023-04-20 11:21:11,Raymond James,Market Perform,Outperform,down
+2023-03-16 12:46:53,JP Morgan,Neutral,,main
+2023-03-16 11:43:32,Credit Suisse,Outperform,,main
+2023-03-16 11:11:19,Raymond James,Outperform,,main
+2023-03-16 09:11:00,Telsey Advisory Group,Outperform,,reit
+2023-03-16 08:29:45,Keybanc,Overweight,,main
+2023-03-09 10:35:53,Telsey Advisory Group,Outperform,,main
+2023-01-30 09:33:19,Keybanc,Overweight,,main
+2023-01-06 11:02:44,Piper Sandler,Neutral,,main
+2023-01-03 11:52:05,JP Morgan,Neutral,Overweight,down
+2022-11-11 12:23:16,Raymond James,Outperform,,main
+2022-08-12 13:03:11,Credit Suisse,Outperform,,main
+2022-08-12 08:31:06,Keybanc,Overweight,,main
+2022-07-21 09:47:33,Keybanc,Overweight,,init
+2022-06-30 09:04:51,Raymond James,Outperform,,init
+2022-05-16 13:29:34,JP Morgan,Overweight,,main
+2022-05-13 11:00:52,Credit Suisse,Outperform,,main
+2022-05-13 09:24:54,Telsey Advisory Group,Outperform,,main
+2021-11-15 13:09:09,Credit Suisse,Outperform,,main
+2021-11-15 10:30:18,Telsey Advisory Group,Outperform,,main
+2021-11-15 09:30:54,Keybanc,Overweight,,main
+2021-10-18 12:49:48,William Blair,Outperform,,init
+2021-10-18 11:56:02,Credit Suisse,Outperform,,init
+2021-10-18 11:49:20,Cowen & Co.,Outperform,,init
+2021-10-18 09:30:45,JP Morgan,Overweight,,init
+2021-10-18 09:28:44,Jefferies,Buy,,init
+2021-10-18 09:26:04,Piper Sandler,Overweight,,init
+2021-10-18 09:18:51,Telsey Advisory Group,Outperform,,init
+2021-10-18 09:06:44,Keybanc,Overweight,,init

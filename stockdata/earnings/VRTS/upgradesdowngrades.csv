@@ -1,0 +1,123 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-29 16:30:23,Morgan Stanley,Underweight,Underweight,main
+2024-07-10 14:22:30,Piper Sandler,Overweight,Overweight,main
+2024-07-08 15:46:30,TD Cowen,Hold,Hold,main
+2024-05-29 13:25:45,Piper Sandler,Overweight,Overweight,main
+2024-04-29 17:15:18,TD Cowen,Hold,Hold,main
+2024-04-29 13:01:25,Piper Sandler,Overweight,Overweight,main
+2024-04-17 10:51:19,Morgan Stanley,Underweight,Underweight,main
+2024-04-08 21:08:11,TD Cowen,Hold,Buy,down
+2024-03-27 12:53:24,Piper Sandler,Overweight,Overweight,main
+2024-01-19 20:15:40,Morgan Stanley,Underweight,Underweight,main
+2024-01-04 18:42:21,TD Cowen,Outperform,,init
+2023-10-30 14:47:04,Morgan Stanley,Underweight,Underweight,main
+2023-10-23 13:55:41,Morgan Stanley,Underweight,Underweight,main
+2023-10-06 14:54:01,Morgan Stanley,Underweight,Underweight,main
+2023-08-01 16:07:07,Morgan Stanley,Underweight,Underweight,main
+2023-07-31 14:16:37,Morgan Stanley,Underweight,Underweight,main
+2023-07-25 12:58:57,Morgan Stanley,Underweight,Underweight,main
+2023-07-12 13:47:20,Morgan Stanley,Underweight,Underweight,main
+2023-03-27 09:56:17,Piper Sandler,Overweight,Neutral,up
+2023-02-06 10:10:33,Piper Sandler,Neutral,Overweight,down
+2023-01-19 13:57:15,Morgan Stanley,Underweight,,main
+2022-10-28 15:38:13,Morgan Stanley,Underweight,,main
+2022-10-03 13:58:56,Morgan Stanley,Underweight,,main
+2022-08-01 13:55:57,Morgan Stanley,Underweight,,main
+2022-07-25 12:49:02,Morgan Stanley,Underweight,,main
+2022-07-15 10:28:35,Piper Sandler,Overweight,,main
+2022-06-30 12:57:45,Morgan Stanley,Underweight,,main
+2022-06-16 11:01:40,Piper Sandler,Overweight,,main
+2022-05-18 11:15:38,Piper Sandler,Overweight,,main
+2022-05-02 14:39:15,Morgan Stanley,Underweight,,main
+2022-05-02 12:40:11,Piper Sandler,Overweight,,main
+2022-04-26 12:40:14,Morgan Stanley,Underweight,,main
+2022-04-08 11:02:41,Morgan Stanley,Underweight,Overweight,down
+2022-03-18 11:29:58,Piper Sandler,Overweight,,main
+2021-08-05 10:19:10,Morgan Stanley,Overweight,Equal-Weight,up
+2021-07-19 12:35:21,Morgan Stanley,Equal-Weight,,main
+2021-07-09 12:46:56,Morgan Stanley,Equal-Weight,,main
+2021-05-04 12:14:40,Morgan Stanley,Equal-Weight,,main
+2021-04-15 12:05:34,Morgan Stanley,Equal-Weight,,main
+2021-04-08 12:58:55,Morgan Stanley,Equal-Weight,,main
+2021-02-04 14:12:52,Morgan Stanley,Equal-Weight,,main
+2021-02-03 18:00:55,Barclays,Overweight,,main
+2021-01-20 16:43:45,Morgan Stanley,Equal-Weight,,main
+2021-01-11 14:28:57,Morgan Stanley,Equal-Weight,,main
+2020-10-27 11:57:01,Morgan Stanley,Equal-Weight,,main
+2020-10-26 12:10:07,Piper Sandler,Overweight,,main
+2020-10-09 12:20:26,Morgan Stanley,Equal-Weight,,main
+2020-07-28 12:14:15,Morgan Stanley,Equal-Weight,,main
+2020-07-27 13:59:34,Piper Sandler,Overweight,,main
+2020-07-15 15:01:06,Morgan Stanley,Equal-Weight,,main
+2020-07-10 16:57:17,B of A Securities,Buy,,main
+2020-07-02 12:07:26,Morgan Stanley,Equal-Weight,,main
+2020-05-06 13:24:22,Morgan Stanley,Equal-Weight,,main
+2020-05-04 14:19:17,Barclays,Overweight,,main
+2020-04-15 14:25:02,Morgan Stanley,Equal-Weight,,main
+2020-04-08 12:31:08,Morgan Stanley,Equal-Weight,,main
+2020-03-23 12:27:59,B of A Securities,Buy,,main
+2020-03-13 15:24:34,Morgan Stanley,Equal-Weight,,main
+2020-02-18 13:15:49,Piper Sandler,Overweight,,main
+2020-02-03 14:09:58,Morgan Stanley,Equal-Weight,,main
+2020-02-03 10:09:39,Barclays,Overweight,Equal-Weight,up
+2019-12-12 13:40:09,Morgan Stanley,Equal-Weight,,main
+2019-10-28 13:10:15,Morgan Stanley,Equal-Weight,,main
+2019-10-28 12:47:06,Barclays,Equal-Weight,,main
+2019-10-14 13:57:36,B of A Securities,Buy,Neutral,up
+2019-10-08 12:27:35,Morgan Stanley,Equal-Weight,,main
+2019-08-05 16:38:34,Morgan Stanley,Equal-Weight,,main
+2019-07-09 13:19:00,Morgan Stanley,Equal-Weight,,main
+2019-04-11 13:53:12,Barclays,Equal-Weight,Equal-Weight,main
+2019-02-19 13:56:54,Barclays,Equal-Weight,Equal-Weight,main
+2018-11-14 13:22:46,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-10-29 15:03:06,Barclays,Equal-Weight,Equal-Weight,main
+2018-10-09 13:28:56,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-07-30 12:56:53,Barclays,Equal-Weight,Equal-Weight,main
+2018-07-30 11:26:00,Credit Suisse,Outperform,Outperform,main
+2018-07-12 13:00:07,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-04-30 11:40:51,Barclays,Equal-Weight,Equal-Weight,main
+2018-04-23 16:35:07,Barclays,Equal-Weight,Equal-Weight,main
+2018-04-10 14:41:37,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-02-07 14:35:45,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2018-02-06 14:40:34,Credit Suisse,Outperform,Outperform,main
+2018-02-05 13:17:03,Barclays,Equal-Weight,Equal-Weight,main
+2018-01-09 13:22:31,Goldman Sachs,Neutral,Sell,up
+2017-10-30 16:47:40,Barclays,Equal-Weight,,main
+2017-10-23 14:21:34,Morgan Stanley,Equal-Weight,,main
+2017-10-10 17:00:00,Barclays,Equal-Weight,,main
+2017-10-09 15:13:54,B of A Securities,Neutral,Underperform,up
+2017-10-05 12:52:34,Morgan Stanley,Equal-Weight,,main
+2017-09-08 10:16:25,Barclays,Equal-Weight,,init
+2017-07-31 10:29:49,Credit Suisse,Outperform,Neutral,up
+2017-07-17 16:06:04,Morgan Stanley,Equal-Weight,,main
+2017-06-01 10:08:57,Morgan Stanley,Equal-Weight,,init
+2016-10-31 04:00:00,Credit Suisse,Neutral,Outperform,up
+2016-10-11 04:00:00,Jefferies,Hold,,main
+2016-08-08 15:13:43,Jefferies,Hold,,main
+2016-03-10 11:41:22,Jefferies,Hold,Buy,down
+2015-11-02 14:28:10,Piper Sandler,Hold,Sell,up
+2015-10-07 15:00:00,Jefferies,Buy,,main
+2015-08-04 11:44:18,Raymond James,Market Perform,Outperform,down
+2015-07-10 11:02:54,Goldman Sachs,Sell,Neutral,down
+2015-07-08 12:10:21,B of A Securities,Underperform,Neutral,down
+2015-06-08 10:17:36,Goldman Sachs,Neutral,,init
+2015-06-05 10:31:28,Jefferies,Buy,Hold,up
+2015-06-03 08:50:22,Credit Suisse,Neutral,,init
+2015-05-18 13:00:00,Raymond James,Outperform,,main
+2015-04-20 13:00:00,Raymond James,Outperform,,main
+2015-01-30 14:00:00,Jefferies,Hold,,main
+2015-01-07 14:00:00,Jefferies,Hold,,main
+2014-10-14 20:00:00,B of A Securities,Neutral,,main
+2014-10-08 13:00:00,Jefferies,Hold,,main
+2014-07-30 02:34:45,Raymond James,Outperform,,main
+2014-07-10 01:02:00,Jefferies,Hold,,main
+2014-05-05 12:49:00,Raymond James,Outperform,Market Perform,up
+2014-02-28 11:54:00,B of A Securities,Neutral,,init
+2014-02-10 21:00:00,Furey Research,Buy,,init
+2014-01-15 11:38:48,Morgan Stanley,Equal-Weight,,init
+2013-11-22 11:15:37,Goldman Sachs,Neutral,,init
+2013-10-31 12:34:02,Jefferies,Hold,,main
+2013-10-09 20:50:18,Jefferies,Hold,,init
+2013-07-10 11:56:09,Raymond James,Market Perform,Outperform,down
+2013-03-19 13:30:32,Piper Sandler,Hold,Buy,down
+2012-07-18 11:46:00,Raymond James,Outperform,,init

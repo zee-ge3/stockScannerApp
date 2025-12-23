@@ -1,0 +1,53 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-08-02 10:30:06,Needham,Buy,Buy,reit
+2024-07-19 19:02:31,Barclays,Overweight,Overweight,main
+2024-05-06 16:16:51,Barclays,Overweight,Overweight,main
+2024-05-03 18:49:47,Stephens & Co.,Overweight,Overweight,main
+2024-05-03 16:41:20,RBC Capital,Outperform,Outperform,main
+2024-05-03 12:19:39,Mizuho,Buy,Buy,main
+2024-05-03 10:13:35,Needham,Buy,Buy,main
+2024-04-03 12:15:58,Mizuho,Buy,Buy,main
+2024-03-14 12:07:52,B of A Securities,Buy,Neutral,up
+2024-03-04 16:02:54,DA Davidson,Neutral,Neutral,main
+2024-03-04 13:29:42,Truist Securities,Hold,Hold,main
+2024-03-01 15:07:19,Piper Sandler,Overweight,Overweight,main
+2024-03-01 11:27:56,Needham,Buy,Buy,main
+2024-03-01 10:41:28,DA Davidson,Neutral,,init
+2024-01-03 15:03:28,Needham,Buy,,init
+2023-12-20 16:57:59,Mizuho,Buy,,init
+2023-12-18 14:15:07,Piper Sandler,Overweight,Overweight,main
+2023-12-18 14:06:20,RBC Capital,Outperform,Outperform,main
+2023-11-10 16:23:23,Goldman Sachs,Neutral,Neutral,main
+2023-11-10 14:50:20,Truist Securities,Hold,Hold,main
+2023-10-25 11:37:13,Jefferies,Buy,,init
+2023-10-23 12:26:54,Stephens & Co.,Overweight,Equal-Weight,up
+2023-10-17 18:35:55,B of A Securities,Neutral,Neutral,main
+2023-10-12 18:48:22,Barclays,Overweight,Overweight,main
+2023-10-02 13:48:06,Piper Sandler,Overweight,Overweight,main
+2023-09-26 08:51:13,RBC Capital,Outperform,,init
+2023-09-25 08:14:25,Barclays,Overweight,Overweight,main
+2023-09-13 08:50:42,TD Cowen,Outperform,,init
+2023-03-30 12:07:23,Credit Suisse,Neutral,,reit
+2023-03-03 15:57:02,Goldman Sachs,Neutral,,main
+2022-10-10 13:34:22,Goldman Sachs,Neutral,,main
+2022-08-12 10:55:37,Stephens & Co.,Equal-Weight,,main
+2022-08-12 10:26:38,Goldman Sachs,Neutral,Buy,down
+2022-06-17 09:16:09,Goldman Sachs,Buy,Neutral,up
+2022-04-12 09:40:20,Credit Suisse,Neutral,Outperform,down
+2022-02-08 09:49:49,Oppenheimer,Perform,Outperform,down
+2022-01-19 14:24:59,Stephens & Co.,Equal-Weight,Overweight,down
+2022-01-14 12:21:56,Credit Suisse,Outperform,,main
+2022-01-05 15:39:00,B of A Securities,Neutral,,init
+2021-11-19 14:41:25,Citigroup,Buy,,main
+2021-11-16 13:15:58,Oppenheimer,Outperform,,main
+2021-11-02 12:04:25,Oppenheimer,Outperform,,main
+2021-08-24 13:47:36,Goldman Sachs,Neutral,,main
+2021-08-13 11:04:44,Stephens & Co.,Overweight,,main
+2021-03-23 11:23:02,Truist Securities,Hold,,init
+2021-02-03 16:00:42,DA Davidson,Neutral,Buy,down
+2021-01-20 14:46:06,Credit Suisse,Outperform,,main
+2021-01-20 12:07:31,Stephens & Co.,Overweight,,init
+2020-11-13 11:46:40,Piper Sandler,Overweight,Neutral,up
+2020-10-08 10:13:25,Oppenheimer,Outperform,,init
+2020-09-18 11:09:14,Citigroup,Buy,,init
+2020-09-16 09:26:17,Piper Sandler,Neutral,,init

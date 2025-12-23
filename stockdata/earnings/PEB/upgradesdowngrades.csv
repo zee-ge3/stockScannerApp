@@ -1,0 +1,118 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-30 13:08:47,Truist Securities,Hold,Hold,main
+2024-03-28 10:35:34,Compass Point,Neutral,Buy,down
+2024-01-18 19:51:27,Truist Securities,Hold,Hold,main
+2024-01-08 15:53:34,B of A Securities,Underperform,Neutral,down
+2023-12-22 13:45:33,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-12-08 12:27:43,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-11-13 14:59:25,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-11-07 13:53:34,Morgan Stanley,Underweight,Underweight,main
+2023-10-16 13:10:13,Morgan Stanley,Underweight,Underweight,main
+2023-10-03 12:31:22,Wedbush,Neutral,,init
+2023-09-28 09:16:12,Wolfe Research,Peer Perform,,init
+2023-09-22 15:18:19,Truist Securities,Hold,Hold,reit
+2023-08-25 14:33:01,Morgan Stanley,Underweight,Underweight,main
+2023-07-14 15:35:23,Citigroup,Neutral,Neutral,main
+2023-07-12 13:59:18,Wells Fargo,Equal-Weight,Equal-Weight,main
+2023-07-10 12:02:38,Truist Securities,Hold,Hold,reit
+2023-07-05 12:45:36,Barclays,Equal-Weight,Equal-Weight,main
+2023-06-27 12:44:32,Morgan Stanley,Underweight,Underweight,main
+2023-05-04 12:06:01,Wells Fargo,Equal-Weight,,main
+2023-05-01 12:00:16,Morgan Stanley,Underweight,,main
+2023-04-27 15:51:47,Stifel,Hold,,main
+2023-04-26 09:53:08,Barclays,Equal-Weight,,main
+2023-04-13 13:26:52,Truist Securities,Hold,,main
+2023-03-30 12:49:18,Wells Fargo,Equal-Weight,,main
+2023-02-07 14:33:21,Morgan Stanley,Underweight,,main
+2023-02-02 14:51:41,Wells Fargo,Equal-Weight,,main
+2023-02-01 14:27:39,Citigroup,Neutral,,main
+2023-01-18 14:29:56,Morgan Stanley,Underweight,,main
+2022-12-21 11:25:28,Barclays,Equal-Weight,,main
+2022-12-09 10:47:35,Raymond James,Market Perform,Outperform,down
+2022-12-05 13:28:06,Morgan Stanley,Underweight,,init
+2022-12-02 12:56:09,BMO Capital,Market Perform,Outperform,down
+2022-11-01 13:43:44,Raymond James,Outperform,,main
+2022-10-20 13:12:14,Truist Securities,Hold,,main
+2022-08-29 10:18:55,Wells Fargo,Equal-Weight,Overweight,down
+2022-07-07 10:44:13,Barclays,Equal-Weight,,main
+2022-03-23 13:26:33,SMBC Nikko,Outperform,,init
+2022-01-10 12:00:02,B of A Securities,Neutral,Buy,down
+2022-01-10 10:48:06,Raymond James,Outperform,Market Perform,up
+2022-01-07 12:51:52,BMO Capital,Outperform,Market Perform,up
+2021-10-06 16:46:40,Citigroup,Neutral,,main
+2021-06-14 12:57:26,Evercore ISI Group,In-Line,Underperform,up
+2021-03-01 15:40:37,Compass Point,Buy,Neutral,up
+2020-11-16 17:15:05,Wells Fargo,Equal-Weight,,main
+2020-10-05 11:27:15,Compass Point,Neutral,,init
+2020-09-30 13:50:36,B of A Securities,Buy,Neutral,main
+2020-09-29 11:34:48,B of A Securities,Buy,Neutral,up
+2020-07-22 15:43:28,Wells Fargo,Equal-Weight,,main
+2020-06-22 09:57:06,Barclays,Equal-Weight,Underweight,up
+2020-06-12 10:41:04,RBC Capital,Outperform,,main
+2020-06-08 10:06:14,Evercore ISI Group,Underperform,In-Line,down
+2020-06-05 13:22:58,Stifel,Hold,,main
+2020-05-18 13:03:49,SunTrust Robinson Humphrey,Hold,,main
+2020-04-29 16:47:47,SunTrust Robinson Humphrey,Hold,,main
+2020-04-29 14:39:06,Stifel,Hold,,main
+2020-04-07 12:09:50,Citigroup,Sell,Neutral,down
+2020-03-17 09:37:13,Stifel,Hold,Buy,down
+2020-02-25 16:42:04,Barclays,Underweight,,main
+2020-01-13 12:26:34,Capital One,Equal-Weight,Overweight,down
+2020-01-13 12:18:00,Capital One,Equal-Weight,Overweight,down
+2020-01-07 12:33:53,Raymond James,Market Perform,Outperform,down
+2019-11-11 11:37:48,Barclays,Underweight,Overweight,down
+2019-10-21 12:10:01,Raymond James,Outperform,,main
+2019-10-18 12:47:28,Wells Fargo,Market Perform,,main
+2019-10-17 11:49:05,BMO Capital,Market Perform,,init
+2019-08-15 10:59:37,BTIG,Neutral,Buy,down
+2019-07-17 11:41:11,B of A Securities,Neutral,Buy,down
+2019-06-25 12:18:50,Capital One,Overweight,,init
+2019-05-06 11:27:17,SunTrust Robinson Humphrey,Hold,,init
+2019-03-28 11:32:18,Citigroup,Neutral,,init
+2018-12-21 12:37:11,Raymond James,Outperform,Outperform,main
+2018-11-12 11:13:43,Stifel,Buy,Hold,up
+2018-05-01 13:41:04,Baird,Neutral,Neutral,main
+2017-10-25 18:05:24,Barclays,Overweight,,main
+2017-10-25 12:54:38,Baird,Neutral,,main
+2017-10-02 12:07:50,Baird,Neutral,Outperform,down
+2017-08-28 11:08:02,Evercore ISI Group,In-Line,Underperform,up
+2017-08-02 11:50:47,Goldman Sachs,Sell,Neutral,down
+2017-04-12 16:24:13,Boenning & Scattergood,Neutral,,init
+2017-04-10 16:49:30,Goldman Sachs,Neutral,,init
+2016-11-23 19:00:32,Barclays,Overweight,,main
+2016-08-25 08:06:06,BTIG,Neutral,,init
+2016-07-27 15:39:29,Barclays,Overweight,,main
+2016-07-26 11:09:59,Wells Fargo,Market Perform,Market Outperform,down
+2016-07-21 11:01:18,Credit Suisse,Neutral,Outperform,down
+2016-07-20 11:36:12,Evercore ISI Group,Hold,Buy,down
+2016-03-23 08:08:38,Credit Suisse,Outperform,,main
+2016-03-04 08:43:52,Barclays,Overweight,,main
+2016-02-23 16:08:25,Credit Suisse,Outperform,,main
+2016-02-16 11:24:49,Credit Suisse,Outperform,,main
+2016-01-19 12:53:37,Ladenburg Thalmann,Sell,Neutral,down
+2015-12-11 12:33:56,Credit Suisse,Outperform,Neutral,up
+2015-10-26 19:30:52,Barclays,Overweight,,main
+2015-10-26 10:34:38,Evercore ISI Group,Buy,Hold,up
+2015-09-17 16:40:05,Stifel,Buy,,main
+2015-09-08 02:10:24,Evercore ISI Group,Hold,,main
+2015-07-27 15:00:00,Barclays,Overweight,,main
+2015-07-21 07:59:04,Barclays,Overweight,,init
+2015-05-26 11:37:27,Credit Suisse,Outperform,Neutral,up
+2015-05-26 08:33:48,Baird,Outperform,Neutral,up
+2015-02-18 14:00:00,Stifel,Buy,,main
+2015-02-18 11:44:29,Credit Suisse,Neutral,Outperform,down
+2015-01-16 14:58:41,B of A Securities,Neutral,Buy,down
+2014-12-22 05:00:00,Evercore ISI Group,Hold,Buy,down
+2014-12-12 14:00:00,Stifel,Buy,,main
+2014-11-12 11:17:12,Credit Suisse,Outperform,,init
+2014-10-24 13:00:00,Stifel,Buy,,main
+2014-09-15 09:40:51,ISI Group,Buy,Neutral,up
+2014-07-25 06:16:28,Stifel,Buy,,main
+2014-06-09 23:53:54,Raymond James,Outperform,,main
+2014-04-25 11:33:15,Stifel,Buy,,main
+2013-10-14 12:27:07,ISI Group,Neutral,Buy,down
+2013-06-03 13:20:01,ISI Group,Buy,Neutral,up
+2013-02-06 15:26:12,Baird,Neutral,Outperform,down
+2012-12-19 16:14:21,Piper Sandler,Buy,,init
+2012-12-17 19:32:23,Baird,Outperform,Neutral,up
+2012-04-30 12:01:00,ISI Group,Hold,,main

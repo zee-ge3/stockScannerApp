@@ -1,0 +1,237 @@
+import pandas as pd
+import talib as ta
+import numpy as np
+import pandas_ta_classic as pta
+import os
+
+def StochRSI(series, period=13, smoothK=3, smoothD=5, periodStoch = 21):
+    # Calculate RSI
+    delta = series.diff().dropna()
+    ups = delta * 0
+    downs = ups.copy()
+    ups[delta > 0] = delta[delta > 0]
+    downs[delta < 0] = -delta[delta < 0]
+    ups[ups.index[period-1]] = np.mean( ups[:period] ) #first value is sum of avg gains
+    ups = ups.drop(ups.index[:(period-1)])
+    downs[downs.index[period-1]] = np.mean( downs[:period] ) #first value is sum of avg losses
+    downs = downs.drop(downs.index[:(period-1)])
+    rs = ups.ewm(com=period-1,min_periods=0,adjust=False,ignore_na=False).mean() / \
+         downs.ewm(com=period-1,min_periods=0,adjust=False,ignore_na=False).mean()
+    rsi = 100 - 100 / (1 + rs)
+
+    # Calculate StochRSI
+    stochrsi  = 100 * (rsi - rsi.rolling(periodStoch).min()) / (rsi.rolling(periodStoch).max() - rsi.rolling(periodStoch).min())
+    stochrsi_K = stochrsi.rolling(smoothK).mean()
+    stochrsi_D = stochrsi_K.rolling(smoothD).mean()
+
+    return stochrsi, stochrsi_K, stochrsi_D
+
+def get_values(stock_df: pd.DataFrame) -> pd.DataFrame:
+    df = stock_df.copy()
+    df['ma50'] = ta.SMA(df['Close'], timeperiod = 50)
+    df['ma150'] = ta.SMA(df['Close'],timeperiod=150)
+    df['ma200'] = ta.SMA(df['Close'],timeperiod=200)
+    df['ma5'] = ta.SMA(df['Close'],timeperiod=5)
+    df['ma13'] = ta.SMA(df['Close'],timeperiod=13)
+    
+    df['MACD'], df['MACD Signal'], df['MACD Hist'] = ta.MACDEXT(df['Close'], 8, 0, 13, 0, 5, 0)
+    df['StochRSI'], df['k'], df['d'] = StochRSI(df['Close'])
+    df['+DMI'] = ta.PLUS_DI(df['High'],df['Low'],df['Close'],timeperiod=5)
+    df['-DMI'] = ta.MINUS_DI(df['High'],df['Low'],df['Close'],timeperiod=5)
+
+    rng = np.absolute((df['Close'] - df['Close'].shift(1))/df['Close'].shift(1) * 100)
+    df['volatility'] = pta.rma(pta.median(rng,10),10)
+    return df
+
+def primary_screen(df: pd.DataFrame) -> bool:
+    if len(df) < 260:
+        return False
+
+    low_of_52week = round(min(df["Low"].iloc[-260:]), 2)
+    high_of_52week = round(max(df["High"].iloc[-260:]), 2)
+    
+    MAcondition = df['Close'].iloc[-1] > df['ma50'].iloc[-1] > df['ma150'].iloc[-1] > df['ma200'].iloc[-1]
+    MATrendUp = df['ma200'].iloc[-1] > df['ma200'].iloc[-21]
+    withinLow = df['Close'].iloc[-1] >= (1.3*low_of_52week)
+    withinHigh = df['Close'].iloc[-1] >= (.75*high_of_52week)
+    overbought = ta.RSI(df['Close'],13).iloc[-1] < 70 # filter out overbought
+    minervini = MAcondition and MATrendUp and withinLow and withinHigh and overbought
+
+    # should seek to filter out unsustainable 1 week/1 month uptrend, alert on 4month
+    if np.isnan(df['ma200'].iloc[-1]): # attempt to expose to IPOs?
+        if withinHigh and df['Close'].iloc[-1] > df['ma50'].iloc[-1] > df['ma150'].iloc[-1]:
+            if ta.RSI(df['Close'],13).iloc[-1] < 70: # filter out overbought
+                minervini = True
+    
+    return minervini
+
+def vcp_analysis(df: pd.DataFrame) -> dict | bool:
+    """
+    Analyzes the base pattern of a stock price, focusing on contractions and their decreasing nature.
+
+
+    Parameters:
+    df (pandas.DataFrame): DataFrame containing stock price data with columns ['Open', 'High', 'Low', 'Close', 'Volume'].
+
+    Returns:
+    dict: A dictionary containing analysis results such as contractions, breakout confirmation, etc.
+    """
+
+    if len(df) < 150: return False
+    # Parameters for analysis
+    percentage_threshold = 10  # Percentage drop to identify a peak after retracement
+
+    # 1. Identify the highest high in the last 126 days (approx. 6 months)
+    highestHigh = df['High'].iloc[-150]
+    highBar = -150
+    for i in range(-149, -5):
+        if df['High'].iloc[i] > highestHigh:
+            highestHigh = df['High'].iloc[i]
+            highBar = i
+
+    # 2. From the highest high, find the lowest low to define the base
+    lowestLow = df['Low'].iloc[highBar]
+    lowBar = highBar
+    for i in range(highBar, -1):
+        if df['Low'].iloc[i] < lowestLow:
+            lowestLow = df['Low'].iloc[i]
+            lowBar = i
+
+    # Compute the first contraction depth
+    first_contraction_depth = ((highestHigh - lowestLow) / highestHigh) * 100
+
+
+    # Computing Previous High
+    prevHigh = df['High'].iloc[(highBar-50):(highBar-10)].max()
+    prevHighBar = df['High'].iloc[(highBar-50):(highBar-10)].values.argmax() + highBar - 50
+
+    prevLow = df['Low'].iloc[(prevHighBar+1):(highBar-1)].min()
+    prevLowBar = df['Low'].iloc[(prevHighBar+1):(highBar-1)].values.argmin() + prevHighBar + 1
+
+    prev_contraction_depth = ((prevHigh - prevLow) / prevHigh) * 100
+    # Initialize contractions list with the first contraction
+
+    contractions = [{
+        'peak_index': prevHighBar,
+        'peak_price': prevHigh,
+        'trough_index': prevLowBar,
+        'trough_price': prevLow,
+        'depth': prev_contraction_depth
+    }]
+    
+    contractions.append({
+        'peak_index': highBar,
+        'peak_price': highestHigh,
+        'trough_index': lowBar,
+        'trough_price': lowestLow,
+        'depth': first_contraction_depth
+    })
+
+    # Set previous contraction depth
+    previous_contraction_depth = first_contraction_depth
+
+    # Start from the day after the first trough
+    current_index = lowBar + 1 if lowBar >= 0 else len(df) + lowBar + 1
+
+    # retracement_level remains constant at 50% retracement of initial contraction
+    retracement_level = lowestLow + 0.5 * (highestHigh - lowestLow)
+    searching_for_retracement = True
+
+    while current_index < len(df):
+        current_price = df['Close'].iloc[current_index]
+
+        if searching_for_retracement:
+            # Look for when price reaches the 50% retracement level
+            if current_price >= retracement_level:
+                retracement_index = current_index
+                highest_price_since_retracement = current_price
+                highest_price_index = current_index
+                # Set the price at which we consider a 5% drop
+                drop_trigger_price = highest_price_since_retracement -((highestHigh - lowestLow) * percentage_threshold / 100)
+                searching_for_retracement = False
+        else:
+            # Update the highest price since retracement
+            if df['High'].iloc[current_index] > highest_price_since_retracement:
+                highest_price_since_retracement = df['High'].iloc[current_index]
+                highest_price_index = current_index
+                # Update the drop trigger price based on the new high
+                drop_trigger_price = highest_price_since_retracement -((highestHigh - lowestLow) * percentage_threshold / 100)
+
+            # Check if price has dropped by the percentage threshold from the highest price
+            if current_price <= drop_trigger_price:
+                # Second peak found at highest_price_since_retracement
+                second_peak_price = highest_price_since_retracement
+                second_peak_index = highest_price_index
+
+                # Now, find the lowest low from the second peak to the current date
+                next_trough_price = df['Low'].iloc[second_peak_index]
+                next_trough_index = second_peak_index
+
+                for idx in range(second_peak_index + 1, len(df)):
+                    price = df['Low'].iloc[idx]
+                    if price < next_trough_price:
+                        next_trough_price = price
+                        next_trough_index = idx
+
+                # Calculate the contraction depth
+                contraction_depth = ((second_peak_price - next_trough_price) / second_peak_price) * 100
+
+                # Check if the contraction depth is smaller than the previous one
+                if contraction_depth < previous_contraction_depth:
+                    # Record the contraction with negative indices
+                    contractions.append({
+                        'peak_index': second_peak_index - len(df),
+                        'peak_price': second_peak_price,
+                        'trough_index': next_trough_index - len(df),
+                        'trough_price': next_trough_price,
+                        'depth': contraction_depth
+                    })
+                    # Update the previous contraction depth
+                    previous_contraction_depth = contraction_depth
+
+                    # Prepare for the next contraction
+                    current_index = next_trough_index
+                    # retracement_level remains constant
+                    searching_for_retracement = True
+                else:
+                    # Contraction is not smaller; stop the search
+                    break
+        current_index += 1
+
+    # Determine breakout_confirmed and breakout_date_index
+    breakout_confirmed = False
+    breakout_date_index = None
+
+    # Check for breakout 'positive'
+    for idx in range(highBar + 1, 0):
+        price = df['Close'].iloc[idx]
+        if price >= highestHigh:
+            breakout_confirmed = 'positive'
+            breakout_date_index = idx
+            break
+
+
+    # Adjust base_length_days
+    if breakout_confirmed:
+        # base_length_days is days between highBar and breakout_date_index
+        base_length_days = abs(breakout_date_index - highBar)
+    else:
+        # base_length_days is days between highBar and current day (-1)
+        base_length_days = abs(-1 - highBar)
+
+    # Compile the base analysis results
+    base_analysis = {
+        'contractions': contractions,
+        'highest_high': highestHigh,
+        'lowest_low': lowestLow,
+        'base_length_days': base_length_days,
+        'base_depth_percent': ((highestHigh - lowestLow) / highestHigh) * 100,
+        'breakout_confirmed': breakout_confirmed,
+        'breakout_date_index': breakout_date_index,
+        'current_price': df['Close'].iloc[-1]
+        # Additional analysis results can be added here
+    }
+    
+    return base_analysis
+
+

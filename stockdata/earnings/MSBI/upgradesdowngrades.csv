@@ -1,0 +1,18 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-30 13:33:24,Piper Sandler,Neutral,Neutral,main
+2024-07-29 15:09:20,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-04-30 15:46:38,Stephens & Co.,Equal-Weight,Equal-Weight,main
+2024-04-30 13:27:08,"Keefe, Bruyette & Woods",Market Perform,Market Perform,main
+2024-04-30 12:24:00,Piper Sandler,Neutral,Neutral,main
+2024-01-30 14:26:06,Piper Sandler,Neutral,Neutral,main
+2023-08-02 14:16:06,Stephens & Co.,Equal-Weight,Equal-Weight,main
+2023-08-01 16:54:03,DA Davidson,Neutral,Neutral,main
+2023-05-01 12:50:48,"Keefe, Bruyette & Woods",Market Perform,,main
+2022-10-24 14:13:58,Stephens & Co.,Equal-Weight,,main
+2022-09-01 11:20:23,Raymond James,Market Perform,,init
+2021-10-13 11:02:10,Stephens & Co.,Equal-Weight,Overweight,down
+2020-07-27 13:40:22,Piper Sandler,Neutral,,main
+2020-07-13 09:40:07,Piper Sandler,Neutral,Overweight,down
+2020-04-09 10:45:55,Stephens & Co.,Equal-Weight,Overweight,down
+2016-06-21 12:20:17,DA Davidson,Buy,,init
+2016-06-20 11:29:26,"Keefe, Bruyette & Woods",Outperform,,init

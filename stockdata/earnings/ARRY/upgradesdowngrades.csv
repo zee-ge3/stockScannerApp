@@ -1,0 +1,120 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-07-16 14:53:19,JP Morgan,Overweight,Overweight,main
+2024-07-08 15:42:19,Scotiabank,Sector Outperform,Sector Outperform,main
+2024-06-28 11:18:53,Susquehanna,Positive,,init
+2024-05-23 15:21:00,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2024-05-17 14:14:29,Wells Fargo,Equal-Weight,Equal-Weight,main
+2024-05-10 13:27:20,Piper Sandler,Neutral,Neutral,main
+2024-05-10 12:12:44,Oppenheimer,Outperform,Perform,up
+2024-05-09 13:10:12,Roth MKM,Buy,Buy,main
+2024-04-29 18:44:09,Scotiabank,Sector Outperform,Sector Outperform,main
+2024-04-19 17:31:20,Mizuho,Neutral,Neutral,main
+2024-04-11 11:41:38,Piper Sandler,Neutral,Neutral,main
+2024-04-05 13:49:37,Guggenheim,Buy,Buy,main
+2024-04-02 18:58:04,Barclays,Overweight,Equal-Weight,up
+2024-03-22 10:10:23,BMO Capital,Market Perform,,init
+2024-03-08 11:53:51,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2024-03-05 11:30:35,Keybanc,Sector Weight,,init
+2024-02-29 14:50:24,Goldman Sachs,Buy,Buy,main
+2024-02-29 14:05:27,Truist Securities,Buy,Buy,main
+2024-02-28 16:05:02,Cantor Fitzgerald,Overweight,Overweight,main
+2024-02-28 15:31:10,Piper Sandler,Neutral,Neutral,main
+2024-02-28 14:53:09,JP Morgan,Overweight,Overweight,main
+2024-02-28 13:54:28,Mizuho,Neutral,Neutral,reit
+2024-02-28 12:08:34,Exane BNP Paribas,Underperform,Neutral,down
+2024-01-23 16:57:36,Truist Securities,Buy,Buy,main
+2024-01-22 10:44:02,Barclays,Equal-Weight,Overweight,down
+2024-01-08 13:03:05,Wells Fargo,Equal-Weight,Overweight,down
+2024-01-03 20:13:23,Mizuho,Neutral,Neutral,main
+2023-12-19 12:09:47,Piper Sandler,Neutral,Overweight,down
+2023-12-15 10:06:40,Jefferies,Hold,,init
+2023-12-08 13:01:31,Morgan Stanley,Equal-Weight,Equal-Weight,main
+2023-11-21 09:03:05,Mizuho,Neutral,,init
+2023-11-09 21:28:34,Truist Securities,Buy,Buy,main
+2023-11-09 16:06:16,Goldman Sachs,Buy,Buy,main
+2023-11-08 20:26:18,Guggenheim,Buy,Buy,main
+2023-11-08 19:57:44,JP Morgan,Overweight,Overweight,main
+2023-11-08 13:30:11,Goldman Sachs,Buy,Buy,main
+2023-10-20 11:03:13,Exane BNP Paribas,Neutral,,init
+2023-10-19 18:43:17,JP Morgan,Overweight,Overweight,main
+2023-10-17 10:18:18,Morgan Stanley,Equal-Weight,Underweight,up
+2023-09-28 09:56:51,Barclays,Overweight,Overweight,main
+2023-09-12 15:46:47,Truist Securities,Buy,Buy,main
+2023-09-06 13:35:04,Morgan Stanley,Underweight,Underweight,main
+2023-08-11 14:14:55,Wells Fargo,Overweight,Overweight,main
+2023-08-10 13:15:26,Goldman Sachs,Buy,Buy,main
+2023-08-09 16:22:46,JP Morgan,Overweight,Overweight,main
+2023-07-25 12:55:40,Truist Securities,Buy,Buy,main
+2023-07-17 13:17:23,Morgan Stanley,Underweight,Underweight,main
+2023-06-28 13:32:54,Janney Montgomery Scott,Buy,,init
+2023-05-22 12:48:25,Piper Sandler,Overweight,Overweight,main
+2023-05-18 10:26:53,Seaport Global,Buy,,init
+2023-05-10 13:29:52,Piper Sandler,Overweight,Overweight,main
+2023-05-10 13:16:01,Truist Securities,Buy,Buy,main
+2023-05-10 11:22:11,Cantor Fitzgerald,Overweight,,main
+2023-05-10 09:45:13,Barclays,Overweight,,main
+2023-04-11 09:08:41,Wolfe Research,Outperform,,init
+2023-04-03 12:09:06,Morgan Stanley,Underweight,,main
+2023-03-28 10:51:40,Truist Securities,Buy,Hold,up
+2023-03-22 11:54:39,Guggenheim,Buy,,main
+2023-03-10 09:44:27,Citigroup,Neutral,,init
+2023-03-07 14:33:20,Piper Sandler,Overweight,,main
+2023-03-02 10:31:14,Scotiabank,Sector Outperform,,init
+2023-02-28 14:36:54,Truist Securities,Hold,,main
+2022-12-23 13:35:27,Cantor Fitzgerald,Overweight,,init
+2022-12-06 12:29:36,Wells Fargo,Overweight,,init
+2022-11-02 11:39:43,Morgan Stanley,Underweight,,main
+2022-10-20 13:49:26,JP Morgan,Overweight,,main
+2022-10-18 13:30:01,Truist Securities,Hold,,main
+2022-09-19 10:40:07,Piper Sandler,Overweight,Neutral,up
+2022-09-08 11:59:16,Goldman Sachs,Buy,,main
+2022-09-06 13:40:03,Guggenheim,Buy,,main
+2022-08-18 10:15:15,Morgan Stanley,Underweight,Equal-Weight,down
+2022-08-11 14:21:14,Credit Suisse,Outperform,,main
+2022-08-10 14:29:44,Truist Securities,Hold,,main
+2022-08-10 12:37:57,Goldman Sachs,Buy,,main
+2022-08-10 11:41:07,Barclays,Overweight,,main
+2022-08-08 14:14:01,JP Morgan,Overweight,,main
+2022-08-05 08:45:41,Barclays,Overweight,,init
+2022-07-25 13:11:37,Credit Suisse,Outperform,,main
+2022-07-20 14:18:53,JP Morgan,Overweight,,main
+2022-07-19 10:49:00,Piper Sandler,Neutral,,main
+2022-07-14 12:46:23,Truist Securities,Hold,,main
+2022-06-29 12:26:55,Morgan Stanley,Equal-Weight,,main
+2022-06-13 11:52:20,Morgan Stanley,Equal-Weight,,main
+2022-05-23 13:39:00,Northland Capital Markets,Outperform,,init
+2022-05-16 12:20:09,Credit Suisse,Outperform,,main
+2022-05-11 14:38:07,Goldman Sachs,Buy,,main
+2022-05-11 10:10:19,Roth Capital,Neutral,Buy,down
+2022-05-10 12:24:50,Morgan Stanley,Equal-Weight,,main
+2022-04-19 14:18:55,JP Morgan,Overweight,,main
+2022-04-07 13:42:01,Guggenheim,Buy,Neutral,up
+2022-04-06 13:07:22,Guggenheim,Buy,Neutral,up
+2022-01-24 15:21:03,Truist Securities,Hold,,main
+2022-01-13 14:19:23,Morgan Stanley,Equal-Weight,,main
+2022-01-10 15:32:25,Goldman Sachs,Buy,,main
+2021-12-02 13:01:23,Morgan Stanley,Equal-Weight,,main
+2021-10-20 13:31:35,Barclays,Underweight,Equal-Weight,down
+2021-10-20 10:34:49,Guggenheim,Neutral,Buy,down
+2021-10-15 09:19:06,Truist Securities,Hold,,init
+2021-09-08 11:17:55,Morgan Stanley,Equal-Weight,,main
+2021-08-10 10:08:50,Roth Capital,Buy,Neutral,up
+2021-07-20 12:55:07,Barclays,Equal-Weight,Underweight,up
+2021-05-24 11:26:43,Barclays,Underweight,,main
+2021-05-14 11:23:34,Morgan Stanley,Equal-Weight,,main
+2021-05-13 10:30:43,Credit Suisse,Outperform,Neutral,up
+2021-05-12 10:44:23,Roth Capital,Neutral,Buy,down
+2021-05-12 10:40:13,Barclays,Underweight,Overweight,down
+2021-05-12 10:35:48,Piper Sandler,Neutral,Overweight,down
+2021-04-22 12:28:14,Barclays,Overweight,Equal-Weight,up
+2021-04-16 10:05:33,UBS,Buy,Neutral,up
+2021-03-29 10:43:28,Morgan Stanley,Equal-Weight,Underweight,up
+2021-03-10 13:17:14,Morgan Stanley,Underweight,,main
+2021-01-20 14:49:09,Credit Suisse,Neutral,,main
+2021-01-08 11:06:04,Piper Sandler,Overweight,,init
+2020-12-09 10:41:15,JP Morgan,Overweight,Neutral,up
+2020-11-09 12:44:28,Credit Suisse,Neutral,,init
+2020-11-09 12:42:46,Cowen & Co.,Market Perform,,init
+2020-11-09 11:03:03,Barclays,Equal-Weight,,init
+2020-11-09 11:02:06,Morgan Stanley,Underweight,,init
+2020-11-09 10:11:17,JP Morgan,Neutral,,init

@@ -1,0 +1,30 @@
+GradeDate,Firm,ToGrade,FromGrade,Action
+2024-05-29 13:19:50,Stephens & Co.,Equal-Weight,Equal-Weight,reit
+2024-05-09 16:16:04,Barrington Research,Outperform,Outperform,main
+2024-03-14 14:14:25,Barrington Research,Outperform,Outperform,main
+2024-03-14 13:53:40,Stephens & Co.,Equal-Weight,Equal-Weight,reit
+2024-01-03 15:10:25,Barrington Research,Outperform,Outperform,main
+2023-11-03 16:03:34,Barrington Research,Outperform,Outperform,main
+2023-08-14 12:44:10,Barrington Research,Outperform,Market Perform,up
+2023-08-10 14:15:45,Stephens & Co.,Equal-Weight,Equal-Weight,main
+2023-05-31 11:59:44,Stephens & Co.,Equal-Weight,Equal-Weight,reit
+2023-04-14 12:04:09,Stephens & Co.,Equal-Weight,,reit
+2023-03-07 14:31:04,Barrington Research,Market Perform,Outperform,down
+2022-11-09 14:25:04,Barrington Research,Outperform,Market Perform,up
+2022-03-09 15:21:49,Stephens & Co.,Equal-Weight,Overweight,down
+2021-11-16 09:40:55,Stephens & Co.,Overweight,,init
+2021-07-16 12:04:45,UBS,Neutral,,init
+2020-12-16 12:33:42,Barrington Research,Outperform,Market Perform,up
+2020-01-21 14:14:38,Sidoti & Co.,Buy,Neutral,up
+2019-11-05 14:21:01,BWS Financial,Sell,,init
+2019-09-23 14:41:43,First Analysis,Outperform,Strong Buy,down
+2019-02-22 13:56:39,Sidoti & Co.,Neutral,Buy,down
+2018-07-27 13:43:13,Barrington Research,Outperform,Market Perform,up
+2018-06-20 11:49:11,First Analysis,Equal-Weight,Overweight,down
+2018-05-04 12:43:33,Barrington Research,Outperform,Market Perform,up
+2018-02-23 13:26:35,Barrington Research,Market Perform,Outperform,down
+2018-01-24 13:48:42,First Analysis,Overweight,Equal-Weight,up
+2016-04-27 13:34:20,Northland Capital Markets,Market Perform,Outperform,down
+2016-02-26 13:56:27,Northland Capital Markets,Outperform,,main
+2015-10-12 12:14:04,Barrington Research,Outperform,,init
+2015-08-28 11:29:50,First Analysis,Equal-Weight,,init
