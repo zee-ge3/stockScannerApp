@@ -4,6 +4,93 @@ import numpy as np
 import pandas_ta_classic as pta
 import os
 
+def avgNA(series):
+    series = series.copy()  # Create explicit copy
+    for i in range(1, len(series) - 1):
+        if pd.isna(series.iloc[i]):
+            idx = series.index[i]
+            series.loc[idx] = (series.iloc[i - 1] + series.iloc[i + 1]) / 2
+    return series
+
+def continuous_direction(series: pd.Series, decay=0.8, weigher=5):  # this is good for EPS, Sales, and NPM
+    # Sort with most recent first, handle missing data
+    sorted_series = series.sort_index(ascending=False).dropna()
+    if len(sorted_series) < 2:
+        return 0.0  # Insufficient data
+    max_abs = max(abs(sorted_series))
+    if max_abs == 0 or np.isnan(max_abs):
+        return 0.0
+
+    eps = sorted_series.values / max_abs  # Normalize to [-1, 1]
+    time_points = np.arange(len(eps))
+    
+    # 1. Recent Momentum (50% weight)
+    changes = -np.diff(eps)
+    weights = decay ** np.arange(len(changes))  # [1, 0.6, 0.36...]
+    weighted_momentum = np.sum(changes * weights[:len(changes)]) # / np.sum(weights[:len(changes)])
+    # should have a max/min of +-2?
+    
+    # 2. Acceleration Component (30% weight)
+    if len(changes) > 1:
+        accelerations = -np.diff(changes)
+        accel_weights = decay ** np.arange(len(accelerations))
+        weighted_accel = np.sum(accelerations * accel_weights[:len(accelerations)])# / np.sum(accel_weights[:len(accelerations)])
+        # should also be +-2 
+    else:
+        weighted_accel = 0.0
+
+    
+    # 3. Annual Growth (20% weight) - Only if 4 quarters available
+    annual_growth = (eps[0] - eps[3]) if len(eps)>=4 else 0.0
+    # also +-2
+    
+    # Combined score with nonlinear scaling
+    raw_score = weigher * (
+        0.5 * weighted_momentum +  # Scale momentum
+        0.3 * weighted_accel +      # Scale acceleration
+        0.2 * annual_growth/4             # Raw percentage
+    )
+    #print(weighted_momentum)
+    #print(weighted_accel)
+    #print(annual_growth)
+    return (np.tanh(raw_score)/(2) + 1/2)  # Bounded [0, 1]
+
+def eps_surprise_score(surprise_series: pd.Series, decay=0.5): # need to tweak the formula
+    """Calculate EPS surprise score (0-1 scale) considering magnitude and consistency"""
+    # Get last 4 quarters sorted oldest-first
+    sorted_surprises = surprise_series.sort_index(ascending=True).dropna().tail(4)
+    if len(sorted_surprises) < 1:
+        return 0.0
+    
+    # Calculate decaying weights [1.0, decay, decay², decay³]
+    weights = decay ** np.arange(len(sorted_surprises))
+    total_weights = weights.sum()
+    
+    # 1. Weighted magnitude component (base score)
+    weighted_avg = np.sum(sorted_surprises * weights) / total_weights # average EPS surprise
+    
+    # 2. Consecutive positive streak bonus
+    streak = 0
+    for s in sorted_surprises.values:
+        if np.sign(sorted_surprises.iloc[0]) * s > 0:
+            streak += 1
+        else:
+            break
+    
+    # Apply streak multiplier (10% bonus per consecutive positive)
+    streak_factor = 1 + 0.025 * (streak**2)
+
+    cons_scorer = weighted_avg * streak_factor
+
+    # 1. Recent Momentum (50% weight)
+    changes = -np.diff(sorted_surprises)
+    weights = decay ** np.arange(len(changes))  # [1, 0.6, 0.36...]
+    weighted_momentum = np.sum(changes * weights[:len(changes)]) / np.sum(weights[:len(changes)]) # average change in EPS surprise
+
+    formula = 1.08 * (cons_scorer * 8 + weighted_momentum * 4) # a .1 and .05 = 1
+    # Final score bounded [0,1]
+    return (np.tanh(formula)+1)/2
+
 def StochRSI(series, period=13, smoothK=3, smoothD=5, periodStoch = 21):
     # Calculate RSI
     delta = series.diff().dropna()
@@ -64,6 +151,35 @@ def primary_screen(df: pd.DataFrame) -> bool:
                 minervini = True
     
     return minervini
+
+def fundamental_screen(df_fin: pd.DataFrame, df_surprise: pd.DataFrame) -> None | dict:
+    if len(df_fin) < 4 or df_surprise is None or len(df_surprise) < 3:
+        return None
+
+    ni = avgNA(df_fin["net_income"])
+    sales = avgNA(df_fin["revenue"])
+    eps = avgNA(df_fin["eps"])
+    npm = ni / sales.replace(0,1)
+    surprise_series = avgNA(df_surprise["surprise_percent"])
+
+    eps_score = continuous_direction(eps)
+    npm_score = continuous_direction(npm)
+    sales_score = continuous_direction(sales, weigher = 10)
+    surprise_score = eps_surprise_score(surprise_series)
+
+    total_score = (eps_score * 52 + 
+                  npm_score * 21 + 
+                  sales_score * 21 + 
+                  surprise_score * 6)
+    return {
+        'total_score': total_score,
+        'components': {
+            'eps': eps_score,
+            'npm': npm_score,
+            'sales': sales_score,
+            'surprise': surprise_score
+        }
+    }
 
 def vcp_analysis(df: pd.DataFrame) -> dict | bool:
     """

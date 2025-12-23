@@ -1,9 +1,9 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
 from database import get_session
-from models import StockPrice
-from scanner_logic import get_values, primary_screen
+from models import StockPrice, QuarterlyFinancials, EarningsSurprise
+from scanner_logic import get_values, primary_screen, fundamental_screen
 import pandas as pd
 
 app = FastAPI()
@@ -21,53 +21,114 @@ app.add_middleware(
 def run_scan(session: Session = Depends(get_session)):
     passed_stocks = []
     
-    # 1. Get a list of unique symbols
-    # (In the future, we will have a Ticker table for this to be faster)
-    print("Fetching symbols...")
+    # 1. Fetch Symbols
     statement = select(StockPrice.symbol).distinct()
     symbols = session.exec(statement).all()
     
-    # LIMIT to 50 for testing speed right now
-    # If you remove this, it will scan all 500+ stocks
-    test_symbols = symbols[:50] 
-
-    for symbol in test_symbols:
-        # 2. Query the DB for this specific stock
-        statement = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
-        results = session.exec(statement).all()
-        
-        if not results:
-            continue
-            
-        # 3. Convert SQL objects to a Pandas DataFrame
-        # We convert the list of objects [StockPrice(...), StockPrice(...)] to a dict
-        data = [r.model_dump() for r in results]
-        df = pd.DataFrame(data)
-        
-        # 4. FIX: Rename columns to match what scanner_logic expects
-        # SQL is lowercase, Logic expects Title Case
-        df.rename(columns={
-            "open": "Open", 
-            "high": "High", 
-            "low": "Low", 
-            "close": "Close", 
-            "volume": "Volume"
-        }, inplace=True)
-        
-        # Set the Date as the index (required by your logic)
-        df.set_index('date', inplace=True)
-
-        # 5. Run Your Logic
+    # Limit to 50 for speed during testing
+    for symbol in symbols:
         try:
-            df = get_values(df) # Calculate indicators
-            if primary_screen(df): # Check Minervini conditions
-                passed_stocks.append(symbol)
+            # --- STEP A: Technical Screen (Prices) ---
+            statement_price = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
+            results_price = session.exec(statement_price).all()
+            
+            if not results_price: continue
+            
+            df_price = pd.DataFrame([r.model_dump() for r in results_price])
+            df_price.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
+            df_price.set_index('date', inplace=True)
+
+            if len(df_price) < 200:
+                continue
+
+            # Run Technical Analysis
+            df_price = get_values(df_price)
+            if not primary_screen(df_price):
+                continue # Failed technicals, skip
+
+            # --- STEP B: Fundamental Screen (Financials) ---
+            # If it passed technicals, we fetch the data needed for the Score
+            
+            # 1. Fetch Financials
+            statement_fin = select(QuarterlyFinancials).where(QuarterlyFinancials.symbol == symbol).order_by(QuarterlyFinancials.date)
+            results_fin = session.exec(statement_fin).all()
+            
+            # 2. Fetch Surprise
+            statement_surprise = select(EarningsSurprise).where(EarningsSurprise.symbol == symbol).order_by(EarningsSurprise.date)
+            results_surprise = session.exec(statement_surprise).all()
+
+            # 3. Calculate Score
+            score = 0
+            if results_fin and results_surprise:
+                df_fin = pd.DataFrame([r.model_dump() for r in results_fin])
+                df_fin.set_index('date', inplace=True)
+                
+                df_surprise = pd.DataFrame([r.model_dump() for r in results_surprise])
+                df_surprise.set_index('date', inplace=True)
+                
+                # Run your custom scoring logic
+                score_result = fundamental_screen(df_fin, df_surprise)
+                
+                # fundamental_screen returns a DICT or None
+                if score_result:
+                    score = score_result['total_score']
+            
+            # --- STEP C: Add to Results ---
+            # We append the OBJECT (Dictionary), not just the string
+            passed_stocks.append({
+                "symbol": symbol,
+                "score": int(score) # Ensure it's a number
+            })
+
         except Exception as e:
             print(f"Error analyzing {symbol}: {e}")
 
-    return {"passed_stocks": passed_stocks, "scanned_count": len(test_symbols)}
+    # Sort by Score (Highest First)
+    passed_stocks.sort(key=lambda x: x['score'], reverse=True)
 
+    return {"passed_stocks": passed_stocks, "scanned_count": len(symbols)}
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Stock Scanner API"}
+
+@app.get("/stock/{symbol}")
+def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
+    symbol = symbol.upper() 
+
+    # 1. Fetch Financials
+    statement_fin = select(QuarterlyFinancials).where(QuarterlyFinancials.symbol == symbol).order_by(QuarterlyFinancials.date)
+    results_fin = session.exec(statement_fin).all()
+    
+    if not results_fin:
+        raise HTTPException(status_code=404, detail="Financial data not found")
+
+    # 2. Fetch Surprise
+    statement_surprise = select(EarningsSurprise).where(EarningsSurprise.symbol == symbol).order_by(EarningsSurprise.date)
+    results_surprise = session.exec(statement_surprise).all()
+    
+    # 3. Calculate Score
+    # We reconstruct the DataFrames just like in the scanner
+    df_fin = pd.DataFrame([r.model_dump() for r in results_fin])
+    df_fin.set_index('date', inplace=True)
+    
+    df_surprise = pd.DataFrame()
+    if results_surprise:
+        df_surprise = pd.DataFrame([r.model_dump() for r in results_surprise])
+        df_surprise.set_index('date', inplace=True)
+    
+    # Use your custom logic function
+    score_dict = fundamental_screen(df_fin, df_surprise)
+
+    if score_dict is None:
+        raise HTTPException(status_code=404, detail="Fundamental data not found")
+
+    # 4. Return everything needed for the UI
+    return {
+        "symbol": symbol,
+        "total_score": score_dict.get("total_score"),
+        "components": score_dict.get("components"),
+        # We send the raw records so the frontend can display a table of the last 4 quarters
+        "financials": [r.model_dump() for r in results_fin[-4:]], # Last 4 quarters
+        "surprises": [r.model_dump() for r in results_surprise[-4:]] if results_surprise else []
+    }

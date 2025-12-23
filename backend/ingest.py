@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from sqlmodel import Session
 from database import engine, create_db_and_tables
-from models import StockPrice
+from models import StockPrice, QuarterlyFinancials, EarningsSurprise
 
 # UPDATE THIS PATH if your folder is somewhere else
 DATA_DIR = "/home/g30rgez/stockScannerApp/stockdata"
@@ -70,5 +70,103 @@ def ingest_data():
         session.commit()
         print("Ingestion Complete! stocks.db is ready.")
 
+def ingest_earnings():
+    print("Starting Earnings Ingestion...")
+    EARNINGS_DIR = os.path.join(DATA_DIR, "earnings")
+    
+    if not os.path.exists(EARNINGS_DIR):
+        print(f"Error: Could not find {EARNINGS_DIR}")
+        return
+
+    # Get all ticker folders inside 'earnings/'
+    ticker_folders = [f for f in os.listdir(EARNINGS_DIR) if os.path.isdir(os.path.join(EARNINGS_DIR, f))]
+    
+    with Session(engine) as session:
+        for ticker in ticker_folders:
+            print(f"Processing financials for {ticker}...")
+            folder_path = os.path.join(EARNINGS_DIR, ticker)
+            
+            # 1. READ FINANCIALS (Revenue, Net Income, EPS)
+            fin_path = os.path.join(folder_path, "financials.csv")
+            if os.path.exists(fin_path):
+                try:
+                    # This file likely has Dates as COLUMNS and Metrics as ROWS
+                    df_fin = pd.read_csv(fin_path, index_col=0)
+                    
+                    # TRANSPOSE: Flip it so Dates are rows
+                    df_fin = df_fin.T 
+                    
+                    # Convert index to datetime
+                    df_fin.index = pd.to_datetime(df_fin.index, errors='coerce')
+                    
+                    # Iterate through the dates
+                    for date, row in df_fin.iterrows():
+                        if pd.isna(date): continue
+
+                        # Create the object
+                        # We use .get() because column names might vary slightly
+                        fin_entry = QuarterlyFinancials(
+                            symbol=ticker,
+                            date=date,
+                            revenue=row.get("Total Revenue"),
+                            net_income=row.get("Net Income"),
+                            eps=row.get("Basic EPS")
+                        )
+                        session.add(fin_entry)
+                        
+                except Exception as e:
+                    print(f"Error reading financials for {ticker}: {e}")
+
+        session.commit()
+    print("Earnings Ingestion Complete.")
+
+def ingest_earnings_dates():
+    EARNINGS_DIR = os.path.join(DATA_DIR, "earnings")
+    print(f"Scanning earnings dates in: {EARNINGS_DIR}")
+    
+    ticker_folders = [f for f in os.listdir(EARNINGS_DIR) if os.path.isdir(os.path.join(EARNINGS_DIR, f))]
+    
+    with Session(engine) as session:
+        for ticker in ticker_folders:
+            folder_path = os.path.join(EARNINGS_DIR, ticker)
+            dates_path = os.path.join(folder_path, "earningsdates.csv")
+            
+            if os.path.exists(dates_path):
+                try:
+                    # 1. READ: index_col=0 is usually the Date
+                    df = pd.read_csv(dates_path, index_col=0)
+                    
+                    # 2. CLEAN DATES: Convert index to datetime
+                    df.index = pd.to_datetime(df.index, errors='coerce', utc=True)
+
+                    # 3. ITERATE
+                    for date, row in df.iterrows():
+                        if pd.isna(date): 
+                            continue
+                        
+                        # Skip rows where surprisePercent is missing (usually future dates)
+                        if pd.isna(row.get("surprisePercent")): 
+                            continue
+
+                        surprise_entry = EarningsSurprise(
+                            symbol=ticker,
+                            date=date,
+                            eps_estimate=row.get("epsEstimate"),
+                            eps_actual=row.get("epsActual"),
+                            surprise_percent=row.get("surprisePercent")
+                        )
+                        session.add(surprise_entry)
+                        
+                    print(f"Ingested surprises for {ticker}")
+
+                except Exception as e:
+                    print(f"Error on {ticker} dates: {e}")
+        
+        session.commit()
+    print("Earnings Surprise Ingestion Complete.")
+
 if __name__ == "__main__":
-    ingest_data()
+    create_db_and_tables()
+    # ingest_data()       # Price History
+    # ingest_earnings()   # Quarterly Financials
+    ingest_earnings_dates()
