@@ -1,9 +1,0 @@
-GradeDate,Firm,ToGrade,FromGrade,Action
-2024-03-22 15:21:02,Wells Fargo,Equal-Weight,Equal-Weight,main
-2023-11-30 13:02:26,Jefferies,Hold,,init
-2023-08-15 14:55:52,B. Riley Securities,Buy,Buy,main
-2023-03-22 11:31:56,B. Riley Securities,Buy,,main
-2022-10-04 10:11:03,B. Riley Securities,Buy,,init
-2022-08-11 10:10:07,Wells Fargo,Equal-Weight,Overweight,down
-2022-05-31 12:04:20,Evercore ISI Group,Outperform,,init
-2022-04-14 10:56:54,Wells Fargo,Overweight,,init

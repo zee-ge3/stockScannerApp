@@ -1,7 +1,0 @@
-GradeDate,Firm,ToGrade,FromGrade,Action
-2023-05-12 13:05:21,Craig-Hallum,Buy,Buy,main
-2022-11-22 10:31:43,Cowen & Co.,Market Perform,Outperform,down
-2022-08-11 10:48:08,B of A Securities,Underperform,Neutral,down
-2022-02-04 12:56:58,B of A Securities,Neutral,,init
-2022-01-12 13:53:50,Craig-Hallum,Buy,,init
-2022-01-10 15:41:26,Cowen & Co.,Outperform,,init
