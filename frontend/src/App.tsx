@@ -2,6 +2,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
+// Configure API URL - change this if backend is on a different port/host
+const API_URL = 'http://localhost:8000';
+
 function App() {
   // Tabs State: 'scan', 'lookup', 'manage'
   const [activeTab, setActiveTab] = useState('scan')
@@ -28,7 +31,7 @@ function App() {
     setScanning(true)
     setScanResults([]) // Clear previous
     try {
-      const response = await axios.get('http://localhost:8000/scan')
+      const response = await axios.get(`${API_URL}/scan`)
       setScanResults(response.data.passed_stocks)
       setScannedCount(response.data.scanned_count)
     } catch (e) { alert("Scan failed. Is backend running?") }
@@ -40,7 +43,7 @@ function App() {
     setLookingUp(true)
     setStockReport(null) // Clear previous
     try {
-      const response = await axios.get(`http://localhost:8000/stock/${tickerSearch}`)
+      const response = await axios.get(`${API_URL}/stock/${tickerSearch}`)
       setStockReport(response.data)
     } catch (e) { 
         console.error(e)

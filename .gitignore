@@ -5,6 +5,7 @@ __pycache__/
 .Python
 env/
 venv/
+venv_new/
 .venv
 *.egg-info/
 dist/
@@ -13,3 +14,4 @@ build/
 .env
 stockdata/
 backend/stocks.db
+backend/stockdata/

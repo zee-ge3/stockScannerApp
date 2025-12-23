@@ -1,0 +1,7 @@
+fastapi
+sqlmodel
+pandas
+numpy
+pandas_ta_classic
+httpx
+pytest
