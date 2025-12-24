@@ -165,8 +165,24 @@ def ingest_earnings_dates():
         session.commit()
     print("Earnings Surprise Ingestion Complete.")
 
+def reset_earnings_data():
+    """Delete all earnings and surprise data from the database"""
+    print("Resetting earnings data...")
+    with Session(engine) as session:
+        # Delete all earnings surprises
+        session.exec(EarningsSurprise).delete()
+        print("  Deleted all EarningsSurprise records")
+        
+        # Delete all quarterly financials
+        session.exec(QuarterlyFinancials).delete()
+        print("  Deleted all QuarterlyFinancials records")
+        
+        session.commit()
+    print("Earnings data reset complete.\n")
+
 if __name__ == "__main__":
     create_db_and_tables()
     # ingest_data()       # Price History
-    # ingest_earnings()   # Quarterly Financials
+    ingest_earnings()   # Quarterly Financials
     ingest_earnings_dates()
+    # reset_earnings_data()

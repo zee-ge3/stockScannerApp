@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
 from database import get_session
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
-from scanner_logic import get_values, primary_screen, fundamental_screen
+from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis
 import pandas as pd
 from update import update_prices, update_fundamentals_full
 
@@ -12,7 +12,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     # This is the "Guest List". Only requests from this URL are allowed.
-    allow_origins=["http://localhost:5173"], 
+    allow_origins=["http://localhost:5173", "http://192.168.1.125:5173"], 
     allow_credentials=True,
     allow_methods=["*"], # Allow all types of requests (GET, POST, etc.)
     allow_headers=["*"],
@@ -134,7 +134,43 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
     if score_dict is None:
         raise HTTPException(status_code=404, detail="Fundamental data not found")
 
-    # 4. Return everything needed for the UI
+    # 4. Run VCP Analysis
+    df_price = pd.DataFrame(price_data)
+    df_price.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
+    df_price.set_index('date', inplace=True)
+    
+    vcp_data = vcp_analysis(df_price)
+    if vcp_data and isinstance(vcp_data, dict):
+        # Convert negative indices to dates for the frontend
+        contractions_with_dates = []
+        for c in vcp_data.get('contractions', []):
+            peak_idx = c['peak_index']
+            trough_idx = c['trough_index']
+            
+            # Get actual dates from the dataframe
+            peak_date = df_price.index[peak_idx].strftime('%Y-%m-%d') if isinstance(df_price.index[peak_idx], pd.Timestamp) else str(df_price.index[peak_idx]).split('T')[0]
+            trough_date = df_price.index[trough_idx].strftime('%Y-%m-%d') if isinstance(df_price.index[trough_idx], pd.Timestamp) else str(df_price.index[trough_idx]).split('T')[0]
+            
+            contractions_with_dates.append({
+                'peak_date': peak_date,
+                'peak_price': c['peak_price'],
+                'trough_date': trough_date,
+                'trough_price': c['trough_price'],
+                'depth': c['depth']
+            })
+        vcp_result = {
+            'contractions': contractions_with_dates,
+            'highest_high': vcp_data.get('highest_high'),
+            'lowest_low': vcp_data.get('lowest_low'),
+            'base_length_days': vcp_data.get('base_length_days'),
+            'base_depth_percent': vcp_data.get('base_depth_percent'),
+            'breakout_confirmed': vcp_data.get('breakout_confirmed'),
+            'current_price': vcp_data.get('current_price')
+        }
+    else:
+        vcp_result = None
+
+    # 5. Return everything needed for the UI
     return {
         "symbol": symbol,
         "total_score": score_dict.get("total_score"),
@@ -142,7 +178,8 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
         # We send the raw records so the frontend can display a table of the last 4 quarters
         "financials": [r.model_dump() for r in results_fin[-4:]], # Last 4 quarters
         "surprises": [r.model_dump() for r in results_surprise[-4:]] if results_surprise else [],
-        "prices": price_data
+        "prices": price_data,
+        "vcp_analysis": vcp_result
     }
 
 @app.post("/update")

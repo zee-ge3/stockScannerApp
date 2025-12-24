@@ -152,6 +152,8 @@ def primary_screen(df: pd.DataFrame) -> bool:
     
     return minervini
 
+
+# this should probably be changed to relative ranks within the industry
 def fundamental_screen(df_fin: pd.DataFrame, df_surprise: pd.DataFrame) -> None | dict:
     if len(df_fin) < 4 or df_surprise is None or len(df_surprise) < 3:
         return None

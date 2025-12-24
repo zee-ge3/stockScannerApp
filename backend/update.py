@@ -169,7 +169,6 @@ def ticker_earnings(tickers):
     
     # Create base directory if not exists
     os.makedirs('stockdata/earnings', exist_ok=True)
-
     try:
         for i, ticker in enumerate(tickers):
             print(f"[{i+1}/{len(tickers)}] Downloading {ticker}...")
@@ -177,11 +176,8 @@ def ticker_earnings(tickers):
                 t = yf.Ticker(ticker)
                 
                 # Check 1: Earnings History (Dates & Surprise)
-                # Note: yfinance attribute might be 'earnings_dates' or 'earnings_history' depending on version
-                try:
-                    earnings = t.earnings_dates 
-                except:
-                    earnings = t.earnings_history
+
+                earnings = t.earnings_history.iloc[::-1]
 
                 if earnings is not None and not earnings.empty:
                      # Standardize index to avoid timezone issues
@@ -205,7 +201,7 @@ def ticker_earnings(tickers):
                     failed_list.append(ticker)
                     
                 # Rate Limit Sleep (Crucial for heavy downloads)
-                time.sleep(0.5) 
+                time.sleep(0.1)
 
             except Exception:
                 # print(f"yfinance overload on {ticker}")
@@ -239,5 +235,5 @@ def update_fundamentals_full():
 
 if __name__ == "__main__":
     with Session(engine) as session:
-        update_prices(session)
-        # update_fundamentals_full()
+        # update_prices(session)
+        update_fundamentals_full()
