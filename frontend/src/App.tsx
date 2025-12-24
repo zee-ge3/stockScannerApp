@@ -34,6 +34,7 @@ function App() {
   const [tickerSearch, setTickerSearch] = useState('')
   const [stockReport, setStockReport] = useState<any>(null)
   const [lookingUp, setLookingUp] = useState(false)
+  const [refreshing, setRefreshing] = useState(false)
 
   // Manage State
   const [updating, setUpdating] = useState(false)
@@ -66,6 +67,26 @@ function App() {
         alert("Stock not found or DB empty") 
     }
     setLookingUp(false)
+  }
+
+  const handleRefreshStock = async () => {
+    if (!stockReport?.symbol) return
+    setRefreshing(true)
+    try {
+      const response = await axios.post(`${API_BASE_URL}/refresh-stock/${stockReport.symbol}`)
+      if (response.data.status === 'success') {
+        // After refresh, reload the stock data
+        const updatedStock = await axios.get(`${API_BASE_URL}/stock/${stockReport.symbol}`)
+        setStockReport(updatedStock.data)
+        alert(`✅ ${response.data.message}`)
+      } else {
+        alert(`❌ ${response.data.message}`)
+      }
+    } catch (e) {
+      console.error(e)
+      alert("Failed to refresh stock data")
+    }
+    setRefreshing(false)
   }
 
   const handleUpdate = async () => {
@@ -114,7 +135,7 @@ function App() {
           Scanner
         </button>
         <button onClick={() => setActiveTab('lookup')} style={{ flex: 1, background: activeTab === 'lookup' ? '#646cff' : '#333' }}>
-          Scorecard Lookup
+          Stock Lookup
         </button>
         <button onClick={() => setActiveTab('manage')} style={{ flex: 1, background: activeTab === 'manage' ? '#646cff' : '#333' }}>
           Manage Data
@@ -168,15 +189,37 @@ function App() {
                 marginBottom: '10px',
                 padding: '0 20px'
               }}>
-                <h2 style={{ margin: 0 }}>{stockReport.symbol}</h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  <h2 style={{ margin: 0 }}>{stockReport.symbol}</h2>
+                  <button 
+                    onClick={handleRefreshStock}
+                    disabled={refreshing}
+                    style={{
+                      padding: '6px 12px',
+                      fontSize: '14px',
+                      background: refreshing ? '#555' : '#2196f3',
+                      border: 'none',
+                      borderRadius: '5px',
+                      cursor: refreshing ? 'not-allowed' : 'pointer',
+                      color: 'white',
+                      fontWeight: '500',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '5px'
+                    }}
+                    title="Refresh stock data from Yahoo Finance"
+                  >
+                    {refreshing ? '⟳ Updating...' : '⟳ Update All Data'}
+                  </button>
+                </div>
                 <div style={{ fontSize: '24px', fontWeight: 'bold', color: stockReport.total_score > 70 ? '#4caf50' : '#ffa726' }}>
                     Score: {stockReport.total_score}
                 </div>
               </div>
 
-              {/* CHART - Full Width Edge to Edge */}
+              {/* CHART - Full Width with Slight Padding */}
               {stockReport.prices && stockReport.prices.length > 0 && (
-                <div style={{ margin: '0 -2rem', marginBottom: '20px' }}>
+                <div style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginBottom: '40px', padding: '0 10px', boxSizing: 'border-box' }}>
                   <TVChart 
                     data={stockReport.prices} 
                     symbol={stockReport.symbol}
@@ -197,22 +240,29 @@ function App() {
                         <th style={{ padding: '8px' }}>Date</th>
                         <th style={{ padding: '8px' }}>Revenue</th>
                         <th style={{ padding: '8px' }}>Net Income</th>
+                        <th style={{ padding: '8px' }}>NPM</th>
                         <th style={{ padding: '8px' }}>EPS</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {stockReport.financials.map((row: any) => (
-                        <tr key={row.date} style={{ borderBottom: '1px solid #333' }}>
-                          <td style={{ padding: '8px', color: '#888', fontSize: '12px' }}>
-                            {new Date(row.date).toLocaleDateString()}
-                          </td>
-                          <td style={{ padding: '8px' }}>{formatCurrency(row.revenue)}</td>
-                          <td style={{ padding: '8px', color: row.net_income >= 0 ? '#4caf50' : '#f44336' }}>
-                            {formatCurrency(row.net_income)}
-                          </td>
-                          <td style={{ padding: '8px' }}>{row.eps}</td>
-                        </tr>
-                      ))}
+                      {stockReport.financials.map((row: any) => {
+                        const npm = row.revenue !== 0 ? (row.net_income / row.revenue) * 100 : 0;
+                        return (
+                          <tr key={row.date} style={{ borderBottom: '1px solid #333' }}>
+                            <td style={{ padding: '8px', color: '#888', fontSize: '12px' }}>
+                              {new Date(row.date).toLocaleDateString()}
+                            </td>
+                            <td style={{ padding: '8px' }}>{formatCurrency(row.revenue)}</td>
+                            <td style={{ padding: '8px', color: row.net_income >= 0 ? '#4caf50' : '#f44336' }}>
+                              {formatCurrency(row.net_income)}
+                            </td>
+                            <td style={{ padding: '8px', color: npm >= 0 ? '#4caf50' : '#f44336' }}>
+                              {npm.toFixed(1)}%
+                            </td>
+                            <td style={{ padding: '8px' }}>{row.eps}</td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
 

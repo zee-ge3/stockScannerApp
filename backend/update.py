@@ -233,6 +233,67 @@ def update_fundamentals_full():
     ingest_earnings_dates() # From ingest.py
     print("--- Fundamentals Update Complete ---")
 
+def update_specific_ticker(session: Session, ticker: str):
+    """
+    Downloads ALL available price data for a specific ticker using yfinance
+    and updates the database. This will get the complete historical data available.
+    
+    Args:
+        session: Database session
+        ticker: Stock ticker symbol (e.g., 'AAPL', 'MSFT')
+    
+    Returns:
+        Number of rows added/updated, or None if failed
+    """
+    print(f"Downloading all available price data for {ticker}...")
+    
+    try:
+        # Download all available historical data using period='max'
+        df = yf.download(ticker, period='max', progress=False)
+        
+        if df.empty:
+            print(f"No data available for {ticker}")
+            return None
+        
+        print(f"Downloaded {len(df)} days of data for {ticker}")
+        
+        # Delete existing data for this ticker to avoid duplicates
+        delete_statement = delete(StockPrice).where(StockPrice.symbol == ticker)
+        session.exec(delete_statement)
+        
+        # Add all downloaded data to DB
+        new_rows = []
+        for date, row in df.iterrows():
+            # Safe access for yfinance multi-index
+            def get_val(col_name):
+                val = row[col_name]
+                return float(val.iloc[0]) if isinstance(val, pd.Series) else float(val)
+
+            price = StockPrice(
+                symbol=ticker,
+                date=date,
+                open=get_val('Open'),
+                high=get_val('High'),
+                low=get_val('Low'),
+                close=get_val('Close'),
+                volume=get_val('Volume')
+            )
+            new_rows.append(price)
+        
+        if new_rows:
+            session.add_all(new_rows)
+            session.commit()
+            print(f"Successfully updated {ticker}: {len(new_rows)} days of data")
+            return len(new_rows)
+        else:
+            print(f"No valid rows to add for {ticker}")
+            return 0
+            
+    except Exception as e:
+        print(f"Failed to update {ticker}: {e}")
+        session.rollback()
+        return None
+
 if __name__ == "__main__":
     with Session(engine) as session:
         # update_prices(session)

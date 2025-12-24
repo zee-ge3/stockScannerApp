@@ -63,7 +63,7 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
         horzLines: { color: 'rgba(42, 46, 57, 0.2)', visible: true },
       },
       width: chartContainerRef.current.clientWidth,
-      height: 400, // Taller height for better viewing
+      height: chartContainerRef.current.clientHeight,
       crosshair: {
         mode: CrosshairMode.Normal,
       },
@@ -205,7 +205,7 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
       }
 
       // Add highest high and lowest low lines across the entire chart
-      if (vcpAnalysis.highest_high) {
+      {/*if (vcpAnalysis.highest_high) {
         const highestHighLine = chart.addSeries(LineSeries, {
           color: '#4caf50',
           lineWidth: 2,
@@ -222,7 +222,7 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
         highestHighLine.setData(highLineData);
       }
 
-      if (vcpAnalysis.lowest_low) {
+      *if (vcpAnalysis.lowest_low) {
         const lowestLowLine = chart.addSeries(LineSeries, {
           color: '#f44336',
           lineWidth: 2,
@@ -237,11 +237,29 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
           value: vcpAnalysis.lowest_low
         }));
         lowestLowLine.setData(lowLineData);
-      }
+      }*/}
     }
     
-    // Fit the content to the screen initially
-    chart.timeScale().fitContent();
+    // Set visible range to the last year of data (or less if not enough data)
+    // This is more efficient than fitContent() + setVisibleRange()
+    if (formattedData.length > 0) {
+      const lastDate = formattedData[formattedData.length - 1].time;
+      
+      // Calculate approximately 252 trading days ago (1 year)
+      // This is faster than date calculations and findIndex searches
+      const tradingDaysInYear = 252;
+      const fromIndex = Math.max(0, formattedData.length - tradingDaysInYear);
+      const fromDate = formattedData[fromIndex].time;
+      
+      // Set the visible range to show last year
+      chart.timeScale().setVisibleRange({
+        from: fromDate as any,
+        to: lastDate as any,
+      });
+    } else {
+      // Fallback to fitContent if no data
+      chart.timeScale().fitContent();
+    }
 
     // 7. Add resize handler to make it responsive
     const handleResize = () => {
@@ -308,7 +326,7 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
             {symbol}
         </div>
       {/* The chart attaches here */}
-      <div ref={chartContainerRef} style={{ width: '100%', height: '400px' }} />
+      <div ref={chartContainerRef} style={{ width: '100%', height: '100vh' }} />
     </div>
   );
 };

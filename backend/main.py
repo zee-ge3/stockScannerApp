@@ -5,7 +5,7 @@ from database import get_session
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
 from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis
 import pandas as pd
-from update import update_prices, update_fundamentals_full
+from update import update_prices, update_fundamentals_full, update_specific_ticker
 
 app = FastAPI()
 
@@ -19,14 +19,13 @@ app.add_middleware(
 )
 
 @app.get("/scan")
-def run_scan(session: Session = Depends(get_session)):
+def run_primary_scan(session: Session = Depends(get_session)):
     passed_stocks = []
     
     # 1. Fetch Symbols
     statement = select(StockPrice.symbol).distinct()
     symbols = session.exec(statement).all()
     
-    # Limit to 50 for speed during testing
     for symbol in symbols:
         try:
             # --- STEP A: Technical Screen (Prices) ---
@@ -211,4 +210,30 @@ def trigger_earnings_update():
         return {"status": "success", "message": "Earnings data updated successfully"}
     except Exception as e:
         print(f"Earnings update failed: {e}")
+        return {"status": "error", "message": str(e)}
+
+@app.post("/refresh-stock/{symbol}")
+def refresh_specific_stock(symbol: str, session: Session = Depends(get_session)):
+    """
+    Refreshes price data for a specific stock ticker.
+    Downloads all available historical data from Yahoo Finance.
+    """
+    try:
+        symbol = symbol.upper()
+        print(f"Refreshing data for {symbol}...")
+        rows_added = update_specific_ticker(session, symbol)
+        
+        if rows_added is not None:
+            return {
+                "status": "success", 
+                "message": f"Successfully updated {symbol} with {rows_added} days of data",
+                "rows_added": rows_added
+            }
+        else:
+            return {
+                "status": "error", 
+                "message": f"Failed to update {symbol}. Stock may not exist or no data available."
+            }
+    except Exception as e:
+        print(f"Refresh failed for {symbol}: {e}")
         return {"status": "error", "message": str(e)}
