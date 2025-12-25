@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import axios from 'axios'
 import { createChart, ColorType, CrosshairMode, type IChartApi, CandlestickSeries, LineSeries, LineStyle, createSeriesMarkers } from 'lightweight-charts';
 
 // Define the shape of the data coming from the backend
@@ -42,6 +43,27 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
   const chartRef = useRef<IChartApi | null>(null);
   // Toggle state for VCP overlay
   const [showVCP, setShowVCP] = useState(true);
+  const [showMarkers, setShowMarkers] = useState(true);
+  const [backtestMarkers, setBacktestMarkers] = useState<any[] | null>(null);
+  const API_BASE_URL = 'http://192.168.1.125:8000'
+  const backtestInterval = 1; // days
+
+  // Fetch backtest markers for the current symbol
+  useEffect(() => {
+    if (!symbol) return;
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const resp = await axios.get(`${API_BASE_URL}/stock/${symbol}/markers/${backtestInterval}`);
+        if (!cancelled) setBacktestMarkers(resp.data.markers || []);
+      } catch (e) {
+        if (!cancelled) setBacktestMarkers([]);
+      }
+    })();
+
+    return () => { cancelled = true };
+  }, [symbol]);
 
   useEffect(() => {
     // 1. Basic validations
@@ -57,6 +79,7 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
       layout: {
         background: { type: ColorType.Solid, color: '#1a1a1a' }, // Match your dark theme
         textColor: '#d1d4dc',
+        attributionLogo: false,
       },
       grid: {
         vertLines: { color: 'rgba(42, 46, 57, 0)', visible: false },
@@ -204,6 +227,50 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
         createSeriesMarkers(candlestickSeries, markers);
       }
 
+    // 6b. Apply backtest markers if available
+    if (backtestMarkers && backtestMarkers.length > 0 && showMarkers) {
+      // Determine mapping: pink up-arrow for pass; yellow down-arrow for the first no-pass after each pass
+      // Ensure markers are sorted chronologically
+      const sorted = [...backtestMarkers].sort((a,b) => a.time < b.time ? -1 : (a.time > b.time ? 1 : 0));
+
+      const mapped: any[] = [];
+      // Track whether the last checked date was a pass (used to find first no-pass after a pass)
+      let lastCheckedWasPass = false;
+      // Track whether we've already plotted a pass in the current consecutive pass-run
+      let plottedPassInRun = false;
+
+      for (const m of sorted) {
+        // Find the next available candle after the checked date
+        let nextIdx = formattedData.findIndex(d => d.time > m.time);
+        if (nextIdx === -1) {
+          // No next candle available (checked date at or after last candle) -> put marker on last candle
+          nextIdx = formattedData.length - 1;
+        }
+        const markerTime = formattedData[nextIdx].time;
+
+        if (m.pass) {
+          // Only plot the first pass in a consecutive run
+          if (!plottedPassInRun) {
+            // Pass should originate from the low: belowBar arrow up (pink)
+            mapped.push({ time: markerTime, position: 'belowBar', color: '#ff69b4', shape: 'arrowUp', text: 'PASS' });
+            plottedPassInRun = true;
+          }
+          lastCheckedWasPass = true;
+        } else {
+          // If the previous checked date was a pass, this is the first no-pass after it
+          if (lastCheckedWasPass) {
+            // No arrow should come from the high: aboveBar arrow down (yellow)
+            mapped.push({ time: markerTime, position: 'aboveBar', color: '#ffd54f', shape: 'arrowDown', text: 'NO' });
+          }
+          // Reset run tracking
+          lastCheckedWasPass = false;
+          plottedPassInRun = false;
+        }
+      }
+
+      if (mapped.length > 0) createSeriesMarkers(candlestickSeries, mapped as any[]);
+    }
+
       // Add highest high and lowest low lines across the entire chart
       {/*if (vcpAnalysis.highest_high) {
         const highestHighLine = chart.addSeries(LineSeries, {
@@ -276,7 +343,7 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
       chart.remove();
       chartRef.current = null;
     };
-  }, [data, vcpAnalysis, showVCP]); // Re-run this effect if the 'data', 'vcpAnalysis', or 'showVCP' prop changes
+  }, [data, vcpAnalysis, showVCP, backtestMarkers, showMarkers]); // Re-run this effect when markers or toggle change too
 
   return (
     <div style={{ marginBottom: '20px', position: 'relative' }}>
@@ -310,6 +377,31 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
             {showVCP ? '✓ VCP' : 'VCP'}
           </button>
         )}
+          {/* Backtest Markers Toggle */}
+          <button
+            onClick={() => setShowMarkers(!showMarkers)}
+            style={{
+              position: 'absolute',
+              top: '10px',
+              left: '90px',
+              zIndex: 10,
+              padding: '4px 10px',
+              backgroundColor: showMarkers ? '#4caf50' : '#666',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '12px',
+              fontWeight: '500',
+              boxShadow: '0 2px 5px rgba(0,0,0,0.3)',
+              transition: 'background-color 0.3s ease',
+              marginLeft: '10px'
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = showMarkers ? '#45a049' : '#555'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = showMarkers ? '#4caf50' : '#666'; }}
+          >
+            {showMarkers ? '✓ Markers' : 'Markers'}
+          </button>
         
         {/* Watermark Overlay */}
         <div style={{

@@ -351,4 +351,46 @@ def vcp_analysis(df: pd.DataFrame) -> dict | bool:
     
     return base_analysis
 
+def backtest_primary_screen(df: pd.DataFrame, check_interval: int) -> pd.Series:
+    if len(df) < 260:
+        return None
+    
+    rsiSeries = ta.RSI(df['Close'],13)  # Precompute RSI for efficiency
 
+    low_of_52weekSeries = df["Low"].rolling(window=260).min().round(2)
+    high_of_52weekSeries = df["High"].rolling(window=260).max().round(2)
+
+    res = {}
+
+    check_indices = list(range(260, len(df), check_interval))
+    if len(df) - 1 not in check_indices:
+        check_indices.append(len(df) - 1)
+    for i in check_indices:
+        minervini = False
+
+        low_of_52week = low_of_52weekSeries.iloc[i]
+        high_of_52week = high_of_52weekSeries.iloc[i]
+        
+        if pd.isna(df['ma200'].iloc[i]):
+            if (df['Close'].iloc[i] >= (.75 * high_of_52weekSeries.iloc[i]) and
+                df['Close'].iloc[i] > df['ma50'].iloc[i] > df['ma150'].iloc[i] and
+                rsiSeries.iloc[i] < 70):
+                minervini = True
+
+        else:
+            MAcondition = df['Close'].iloc[i] > df['ma50'].iloc[i] > df['ma150'].iloc[i] > df['ma200'].iloc[i]
+            MATrendUp = df['ma200'].iloc[i] > df['ma200'].iloc[i-21]
+            withinLow = df['Close'].iloc[i] >= (1.3*low_of_52week)
+            withinHigh = df['Close'].iloc[i] >= (.75*high_of_52week)
+            overbought = rsiSeries.iloc[i] < 70 # filter out overbought
+            minervini = MAcondition and MATrendUp and withinLow and withinHigh and overbought
+
+        res[df.index[i]] = minervini
+        
+    return pd.Series(res, name="Primary_Screen_Result")
+
+if __name__ == "__main__":
+    #t = pd.read_csv("/home/g30rgez/stockScannerApp/stockdata/ADPT.csv")
+    #t = get_values(t)
+    #print(backtest_primary_screen(t, 5))
+    pass

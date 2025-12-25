@@ -219,7 +219,7 @@ function App() {
 
               {/* CHART - Full Width with Slight Padding */}
               {stockReport.prices && stockReport.prices.length > 0 && (
-                <div style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginBottom: '40px', padding: '0 10px', boxSizing: 'border-box' }}>
+                <div style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginBottom: '40px', padding: '0 20px', boxSizing: 'border-box' }}>
                   <TVChart 
                     data={stockReport.prices} 
                     symbol={stockReport.symbol}

@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
 from database import get_session
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
-from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis
+from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis, backtest_primary_screen
 import pandas as pd
 from update import update_prices, update_fundamentals_full, update_specific_ticker
 
@@ -180,6 +180,60 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
         "prices": price_data,
         "vcp_analysis": vcp_result
     }
+
+
+@app.get("/stock/{symbol}/markers/{interval}")
+def get_markers(symbol: str, interval: int = 5, session: Session = Depends(get_session)):
+    """Return primary screen backtest markers for a symbol.
+
+    Query params:
+    - symbol: ticker symbol
+    - interval: check interval (days) used when backtesting (default 5)
+
+    Returns a list of objects: { time: 'YYYY-MM-DD', pass: bool, label?: str, color?: str }
+    """
+    symbol = symbol.upper()
+
+    # get stock price history
+    statement_price = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
+    results_price = session.exec(statement_price).all()
+
+    if not results_price:
+        raise HTTPException(status_code=404, detail="Price data not found")
+
+    price_data = [r.model_dump() for r in results_price]
+
+    # Build DataFrame like other endpoints
+    df_price = pd.DataFrame(price_data)
+    df_price.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
+    df_price.set_index('date', inplace=True)
+
+    # Ensure indicators are present
+    df_price = get_values(df_price)
+
+    # Run backtest
+    try:
+        series = backtest_primary_screen(df_price, int(interval))
+    except Exception as e:
+        print(f"Backtest failed for {symbol}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+    markers = []
+    # series may be empty dict or Series
+    if isinstance(series, pd.Series):
+        for idx, val in series.items():
+            # Normalize index to YYYY-MM-DD
+            if isinstance(idx, pd.Timestamp):
+                time_str = idx.strftime('%Y-%m-%d')
+            else:
+                time_str = str(idx).split('T')[0]
+
+            markers.append({
+                'time': time_str,
+                'pass': bool(val)
+            })
+
+    return { 'symbol': symbol, 'markers': markers }
 
 @app.post("/update")
 def trigger_update(session: Session = Depends(get_session)):
