@@ -33,6 +33,8 @@ function App() {
   // Lookup State
   const [tickerSearch, setTickerSearch] = useState('')
   const [stockReport, setStockReport] = useState<any>(null)
+  const [profitReport, setProfitReport] = useState<any>(null)
+  const [backtestMarkers, setBacktestMarkers] = useState<any[] | null>(null)
   const [lookingUp, setLookingUp] = useState(false)
   const [refreshing, setRefreshing] = useState(false)
 
@@ -62,6 +64,24 @@ function App() {
     try {
       const response = await axios.get(`${API_BASE_URL}/stock/${tickerSearch}`)
       setStockReport(response.data)
+      // Fetch profitability report (interval=1 day, default capital)
+      try {
+        const prof = await axios.get(`${API_BASE_URL}/stock/${response.data.symbol}/profitability/1`)
+        setProfitReport(prof.data)
+      } catch (pe) {
+        console.warn('Profitability fetch failed', pe)
+        setProfitReport(null)
+      }
+
+      // Fetch markers for backtest plotting and store
+      try {
+        const mk = await axios.get(`${API_BASE_URL}/stock/${response.data.symbol}/markers/1`)
+        setBacktestMarkers(mk.data.markers || [])
+      } catch (me) {
+        console.warn('Markers fetch failed', me)
+        setBacktestMarkers([])
+      }
+
     } catch (e) { 
         console.error(e)
         alert("Stock not found or DB empty") 
@@ -224,6 +244,7 @@ function App() {
                     data={stockReport.prices} 
                     symbol={stockReport.symbol}
                     vcpAnalysis={stockReport.vcp_analysis}
+                    markers={backtestMarkers}
                   />
                 </div>
               )}
@@ -407,6 +428,26 @@ function App() {
                             {stockReport.total_score.toFixed(1)} / 100
                           </span>
                         </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* PROFITABILITY REPORT (Under Score Breakdown) */}
+                  {profitReport && (
+                    <div style={{ marginTop: '18px', borderTop: '1px solid #333', paddingTop: '12px' }}>
+                      <h4 style={{ margin: '6px 0' }}>Backtest Profitability (1d interval)</h4>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '10px', fontSize: '14px' }}>
+                        <div>Trades: <strong>{profitReport.summary.total_trades}</strong></div>
+                        <div>Win Rate: <strong>{(profitReport.summary.win_rate*100).toFixed(1)}%</strong></div>
+                        <div>Final Capital: <strong style={{ color: profitReport.summary.final_capital < 100000 ? '#f44336' : 'inherit' }}>{formatCurrency(profitReport.summary.final_capital)}</strong></div>
+                      </div>
+                      <div style={{ marginTop: '8px', maxHeight: '160px', overflowY: 'auto' }}>
+                        {profitReport.trades.map((t: any, idx: number) => (
+                          <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px dashed #2a2a2a' }}>
+                            <div style={{ color: '#aaa' }}>{t.entry_date} → {t.exit_date}</div>
+                            <div style={{ fontWeight: 'bold', color: t.pnl_pct > 0 ? '#4caf50' : '#f44336' }}>{(t.pnl_pct*100).toFixed(2)}%</div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   )}

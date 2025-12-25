@@ -185,6 +185,7 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
 @app.get("/stock/{symbol}/markers/{interval}")
 def get_markers(symbol: str, interval: int = 5, session: Session = Depends(get_session)):
     """Return primary screen backtest markers for a symbol.
+    Changes markers to only show points where the pass/fail status changes.
 
     Query params:
     - symbol: ticker symbol
@@ -220,20 +221,189 @@ def get_markers(symbol: str, interval: int = 5, session: Session = Depends(get_s
 
     markers = []
     # series may be empty dict or Series
-    if isinstance(series, pd.Series):
-        for idx, val in series.items():
-            # Normalize index to YYYY-MM-DD
-            if isinstance(idx, pd.Timestamp):
-                time_str = idx.strftime('%Y-%m-%d')
-            else:
-                time_str = str(idx).split('T')[0]
+    if isinstance(series, pd.Series) and not series.empty:
+        # 1. Identify where the current value is different from the previous value
+        # We also keep the first row (index 0) because it's the start of the sequence
+        change_mask = series != series.shift()
+        
+        # 2. Filter the series to only include these change points
+        filtered_series = series[change_mask]
 
+        # 3. Format the result
+        for idx, val in filtered_series.items():
+            time_str = idx.strftime('%Y-%m-%d') if isinstance(idx, pd.Timestamp) else str(idx).split('T')[0]
             markers.append({
                 'time': time_str,
                 'pass': bool(val)
             })
 
     return { 'symbol': symbol, 'markers': markers }
+
+@app.get("/stock/{symbol}/profitability/{interval}")
+def get_profitability(symbol: str, interval: int = 1, capital: int = 100000, session: Session = Depends(get_session)) -> dict:
+    """This should return the trades taken for a stock based on the primary screen backtest.
+    for the past year (252 trading days). It also includes the winrate, trades taken,
+    longest and average trade length, final capital, average profit per winning/losing trade"""
+    """Should scale this to not only be primary screens"""
+
+    symbol = symbol.upper()
+    # get stock price history
+    statement_price = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
+    results_price = session.exec(statement_price).all()
+    if not results_price:
+        raise HTTPException(status_code=404, detail="Price data not found")
+    price_data = [r.model_dump() for r in results_price]
+
+    # Build DataFrame like other endpoints
+    df_price = pd.DataFrame(price_data)
+    df_price.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
+    df_price.set_index('date', inplace=True)
+    # Ensure indicators are present
+    df_price = get_values(df_price)
+
+    # get backtest markers
+    try:
+        series = backtest_primary_screen(df_price, int(interval))
+    except Exception as e:
+        print(f"Backtest failed for {symbol}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+    
+    markers = []
+    # series may be empty dict or Series
+    if isinstance(series, pd.Series) and not series.empty:
+        # 1. Identify where the current value is different from the previous value
+        # We also keep the first row (index 0) because it's the start of the sequence
+        change_mask = series != series.shift()
+        
+        # 2. Filter the series to only include these change points
+        filtered_series = series[change_mask]
+
+        # 3. Format the result
+        for idx, val in filtered_series.items():
+            time_str = idx.strftime('%Y-%m-%d') if isinstance(idx, pd.Timestamp) else str(idx).split('T')[0]
+            markers.append({
+                'time': time_str,
+                'pass': bool(val)
+            })
+    
+    # truncate to last 252 days of data for the markers
+    # Find the first pass mark: then take the open of the next day as entry
+    # exit is when it fails the primary screen again: take close of that day as exit
+    # calculate profit/loss for each trade
+    # return trades taken, winrate, longest and average trade length, final capital,
+    # average profit per winning/losing trade
+
+    markers = [m for m in markers if m['time'] >= df_price.index[-252].strftime('%Y-%m-%d')]
+    PCT_ALLOC = 1 # 100% allocation per trade
+    trades = []
+    in_trade = False
+    entry_price = 0.0
+    entry_date = ""
+
+    # Helper to find the next available trading index after a date string
+    def next_trading_index(date_str):
+        # find first index strictly greater than date_str
+        for i in range(len(df_price)):
+            idx = df_price.index[i]
+            idx_str = idx.strftime('%Y-%m-%d') if isinstance(idx, pd.Timestamp) else str(idx).split('T')[0]
+            if idx_str > date_str:
+                return i
+        return None
+
+    # Process markers sequentially to build trades
+    for m in markers:
+        if not in_trade and m['pass']:
+            # Entry: use the open price of the next trading day after marker time
+            next_idx = next_trading_index(m['time'])
+            if next_idx is None or next_idx >= len(df_price):
+                # no next day available
+                continue
+            entry_price = df_price['Open'].iloc[next_idx]
+            entry_date = df_price.index[next_idx].strftime('%Y-%m-%d') if isinstance(df_price.index[next_idx], pd.Timestamp) else str(df_price.index[next_idx]).split('T')[0]
+            in_trade = True
+        elif in_trade and not m['pass']:
+            # Exit: use the OPEN price of the next trading day after the marker time
+            next_idx = next_trading_index(m['time'])
+            if next_idx is None or next_idx >= len(df_price):
+                # no next day available
+                continue
+            exit_price = df_price['Open'].iloc[next_idx]
+            exit_date = df_price.index[next_idx].strftime('%Y-%m-%d') if isinstance(df_price.index[next_idx], pd.Timestamp) else str(df_price.index[next_idx]).split('T')[0]
+
+            # Compute P/L percent
+            pnl_pct = (exit_price - entry_price) / entry_price
+            trades.append({
+                'entry_date': entry_date,
+                'entry_price': float(entry_price),
+                'exit_date': exit_date,
+                'exit_price': float(exit_price),
+                'pnl_pct': float(pnl_pct)
+            })
+
+            in_trade = False
+
+    # If still in trade at the end, close at last available close
+    if in_trade:
+        exit_price = df_price['Close'].iloc[-1]
+        exit_date = df_price.index[-1].strftime('%Y-%m-%d') if isinstance(df_price.index[-1], pd.Timestamp) else str(df_price.index[-1]).split('T')[0]
+        pnl_pct = (exit_price - entry_price) / entry_price
+        trades.append({
+            'entry_date': entry_date,
+            'entry_price': float(entry_price),
+            'exit_date': exit_date,
+            'exit_price': float(exit_price),
+            'pnl_pct': float(pnl_pct)
+        })
+
+    # Summarize
+    total_trades = len(trades)
+    wins = [t for t in trades if t['pnl_pct'] > 0]
+    losses = [t for t in trades if t['pnl_pct'] <= 0]
+    win_rate = (len(wins) / total_trades) if total_trades > 0 else 0.0
+    avg_trade_length = 0
+    longest_trade = 0
+    avg_win = 0
+    avg_loss = 0
+
+    if total_trades > 0:
+        lengths = []
+        win_pnls = []
+        loss_pnls = []
+        for t in trades:
+            sd = pd.to_datetime(t['entry_date'])
+            ed = pd.to_datetime(t['exit_date'])
+            length = (ed - sd).days
+            lengths.append(length)
+            if t['pnl_pct'] > 0:
+                win_pnls.append(t['pnl_pct'])
+            else:
+                loss_pnls.append(t['pnl_pct'])
+
+        avg_trade_length = sum(lengths) / len(lengths) if lengths else 0
+        longest_trade = max(lengths) if lengths else 0
+        avg_win = sum(win_pnls) / len(win_pnls) if win_pnls else 0
+        avg_loss = sum(loss_pnls) / len(loss_pnls) if loss_pnls else 0
+
+    # Final capital assuming starting capital and PCT_ALLOC per trade compounded
+    capital_now = capital
+    for t in trades:
+        capital_now = capital_now * (1 + t['pnl_pct'] * PCT_ALLOC)
+
+    result = {
+        'symbol': symbol,
+        'trades': trades,
+        'summary': {
+            'total_trades': total_trades,
+            'win_rate': win_rate,
+            'longest_trade_days': longest_trade,
+            'avg_trade_length_days': avg_trade_length,
+            'final_capital': capital_now,
+            'avg_win_pct': avg_win,
+            'avg_loss_pct': avg_loss
+        }
+    }
+
+    return result
 
 @app.post("/update")
 def trigger_update(session: Session = Depends(get_session)):

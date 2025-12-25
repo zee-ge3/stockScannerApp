@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import axios from 'axios'
 import { createChart, ColorType, CrosshairMode, type IChartApi, CandlestickSeries, LineSeries, LineStyle, createSeriesMarkers } from 'lightweight-charts';
 
 // Define the shape of the data coming from the backend
@@ -34,9 +33,10 @@ interface Props {
   data: StockDataObj[];
   symbol: string;
   vcpAnalysis?: VCPAnalysis | null;
+  markers?: any[] | null;
 }
 
-const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
+const TVChart = ({ data, symbol, vcpAnalysis, markers }: Props) => {
   // We need a ref to the HTML div where the chart will live
   const chartContainerRef = useRef<HTMLDivElement>(null);
   // We keep track of the chart instance so we don't create duplicates
@@ -44,26 +44,8 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
   // Toggle state for VCP overlay
   const [showVCP, setShowVCP] = useState(true);
   const [showMarkers, setShowMarkers] = useState(true);
-  const [backtestMarkers, setBacktestMarkers] = useState<any[] | null>(null);
-  const API_BASE_URL = 'http://192.168.1.125:8000'
-  const backtestInterval = 1; // days
-
-  // Fetch backtest markers for the current symbol
-  useEffect(() => {
-    if (!symbol) return;
-    let cancelled = false;
-
-    (async () => {
-      try {
-        const resp = await axios.get(`${API_BASE_URL}/stock/${symbol}/markers/${backtestInterval}`);
-        if (!cancelled) setBacktestMarkers(resp.data.markers || []);
-      } catch (e) {
-        if (!cancelled) setBacktestMarkers([]);
-      }
-    })();
-
-    return () => { cancelled = true };
-  }, [symbol]);
+  // markers are provided by parent via props
+  const [backtestMarkers, setBacktestMarkers] = useState<any[] | null>(markers || null);
 
   useEffect(() => {
     // 1. Basic validations
@@ -110,7 +92,7 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
 
     // 5. Format Data for Lightweight Charts
     // It expects { time: 'YYYY-MM-DD', open: 1, high: 2, low: 0.5, close: 1.5 }
-    const formattedData = data.map((d) => ({
+    let formattedData = data.map((d) => ({
       time: d.date.split('T')[0], // Extract just YYYY-MM-DD
       open: d.open,
       high: d.high,
@@ -118,7 +100,28 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
       close: d.close,
     }));
 
-    candlestickSeries.setData(formattedData);
+    // Remove duplicates and ensure ascending order by time
+    // This prevents the "data must be asc ordered by time" error
+    const seenTimes = new Set<string>();
+    formattedData = formattedData.filter((d) => {
+      if (seenTimes.has(d.time)) {
+        return false; // Skip duplicate timestamps
+      }
+      seenTimes.add(d.time);
+      return true;
+    });
+
+    // Sort by time to ensure ascending order
+    formattedData.sort((a, b) => {
+      if (a.time < b.time) return -1;
+      if (a.time > b.time) return 1;
+      return 0;
+    });
+
+    // Only set data if we have valid candlestick data
+    if (formattedData.length > 0) {
+      candlestickSeries.setData(formattedData);
+    }
 
     // 6. Add VCP Contraction Zones if available
     if (showVCP && vcpAnalysis && vcpAnalysis.contractions && vcpAnalysis.contractions.length > 0) {
@@ -209,8 +212,12 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
             troughLineData.push({ time: formattedData[i].time, value: contraction.trough_price });
           }
           
-          peakLineSeries.setData(peakLineData);
-          troughLineSeries.setData(troughLineData);
+          if (peakLineData.length > 0) {
+            peakLineSeries.setData(peakLineData);
+          }
+          if (troughLineData.length > 0) {
+            troughLineSeries.setData(troughLineData);
+          }
         }
       });
 
@@ -220,56 +227,25 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
         if (a.time > b.time) return 1;
         return 0;
       });
-      vcpTrendLine.setData(trendLineData);
+
+      // Remove duplicates from trend line data
+      const uniqueTrendLineData = [];
+      const seenTrendTimes = new Set<string>();
+      for (const point of trendLineData) {
+        if (!seenTrendTimes.has(point.time)) {
+          seenTrendTimes.add(point.time);
+          uniqueTrendLineData.push(point);
+        }
+      }
+
+      if (uniqueTrendLineData.length > 0) {
+        vcpTrendLine.setData(uniqueTrendLineData);
+      }
 
       // Apply markers to candlestick series
       if (markers.length > 0) {
         createSeriesMarkers(candlestickSeries, markers);
       }
-
-    // 6b. Apply backtest markers if available
-    if (backtestMarkers && backtestMarkers.length > 0 && showMarkers) {
-      // Determine mapping: pink up-arrow for pass; yellow down-arrow for the first no-pass after each pass
-      // Ensure markers are sorted chronologically
-      const sorted = [...backtestMarkers].sort((a,b) => a.time < b.time ? -1 : (a.time > b.time ? 1 : 0));
-
-      const mapped: any[] = [];
-      // Track whether the last checked date was a pass (used to find first no-pass after a pass)
-      let lastCheckedWasPass = false;
-      // Track whether we've already plotted a pass in the current consecutive pass-run
-      let plottedPassInRun = false;
-
-      for (const m of sorted) {
-        // Find the next available candle after the checked date
-        let nextIdx = formattedData.findIndex(d => d.time > m.time);
-        if (nextIdx === -1) {
-          // No next candle available (checked date at or after last candle) -> put marker on last candle
-          nextIdx = formattedData.length - 1;
-        }
-        const markerTime = formattedData[nextIdx].time;
-
-        if (m.pass) {
-          // Only plot the first pass in a consecutive run
-          if (!plottedPassInRun) {
-            // Pass should originate from the low: belowBar arrow up (pink)
-            mapped.push({ time: markerTime, position: 'belowBar', color: '#ff69b4', shape: 'arrowUp', text: 'PASS' });
-            plottedPassInRun = true;
-          }
-          lastCheckedWasPass = true;
-        } else {
-          // If the previous checked date was a pass, this is the first no-pass after it
-          if (lastCheckedWasPass) {
-            // No arrow should come from the high: aboveBar arrow down (yellow)
-            mapped.push({ time: markerTime, position: 'aboveBar', color: '#ffd54f', shape: 'arrowDown', text: 'NO' });
-          }
-          // Reset run tracking
-          lastCheckedWasPass = false;
-          plottedPassInRun = false;
-        }
-      }
-
-      if (mapped.length > 0) createSeriesMarkers(candlestickSeries, mapped as any[]);
-    }
 
       // Add highest high and lowest low lines across the entire chart
       {/*if (vcpAnalysis.highest_high) {
@@ -305,6 +281,40 @@ const TVChart = ({ data, symbol, vcpAnalysis }: Props) => {
         }));
         lowestLowLine.setData(lowLineData);
       }*/}
+    }
+
+    // 6b. Plot backtest markers independently (outside VCP block)
+    // This ensures markers show even when there's no VCP analysis
+    if (backtestMarkers && backtestMarkers.length > 0 && showMarkers) {
+      const mapped = backtestMarkers.map((m: any) => {
+        // Find the candle that matches this marker date
+        // First try exact match, then find the next available date
+        let markerTime = m.time;
+        const exactMatch = formattedData.find((d) => d.time === m.time);
+        
+        if (!exactMatch) {
+          // If exact date not found, find the next available candle after marker date
+          const nextIdx = formattedData.findIndex((d) => d.time > m.time);
+          if (nextIdx !== -1) {
+            markerTime = formattedData[nextIdx].time;
+          } else {
+            // If no future date, use the last available date
+            markerTime = formattedData[formattedData.length - 1].time;
+          }
+        }
+
+        return {
+          time: markerTime,
+          position: m.pass ? 'belowBar' : 'aboveBar',
+          color: m.pass ? '#ff69b4' : '#ffd54f',
+          shape: m.pass ? 'arrowUp' : 'arrowDown',
+          text: m.pass ? 'PASS' : 'FAIL',
+        };
+      });
+
+      if (mapped.length > 0) {
+        createSeriesMarkers(candlestickSeries, mapped as any[]);
+      }
     }
     
     // Set visible range to the last year of data (or less if not enough data)
