@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { createChart, ColorType, CrosshairMode, type IChartApi, CandlestickSeries, LineSeries, LineStyle, createSeriesMarkers } from 'lightweight-charts';
+import { createChart, ColorType, CrosshairMode, type IChartApi, CandlestickSeries, LineSeries, LineStyle, HistogramSeries, createSeriesMarkers } from 'lightweight-charts';
 
 // Define the shape of the data coming from the backend
 interface StockDataObj {
@@ -34,9 +34,10 @@ interface Props {
   symbol: string;
   vcpAnalysis?: VCPAnalysis | null;
   markers?: any[] | null;
+  sepaMarkers?: any[] | null; // New prop for SEPA markers
 }
 
-const TVChart = ({ data, symbol, vcpAnalysis, markers }: Props) => {
+const TVChart = ({ data, symbol, vcpAnalysis, markers, sepaMarkers }: Props) => {
   // We need a ref to the HTML div where the chart will live
   const chartContainerRef = useRef<HTMLDivElement>(null);
   // We keep track of the chart instance so we don't create duplicates
@@ -46,6 +47,16 @@ const TVChart = ({ data, symbol, vcpAnalysis, markers }: Props) => {
   const [showMarkers, setShowMarkers] = useState(true);
   // markers are provided by parent via props
   const [backtestMarkers, setBacktestMarkers] = useState<any[] | null>(markers || null);
+  const [sepaBacktestMarkers, setSepaBacktestMarkers] = useState<any[] | null>(sepaMarkers || null);
+
+  // Update local state when props change
+  useEffect(() => {
+    setBacktestMarkers(markers || null);
+  }, [markers]);
+
+  useEffect(() => {
+    setSepaBacktestMarkers(sepaMarkers || null);
+  }, [sepaMarkers]);
 
   useEffect(() => {
     // 1. Basic validations
@@ -90,6 +101,30 @@ const TVChart = ({ data, symbol, vcpAnalysis, markers }: Props) => {
       wickDownColor: '#ef5350',
     });
 
+    // 4a. Create the Volume Series (Histogram overlay at the bottom)
+    const volumeSeries = chart.addSeries(HistogramSeries, {
+      priceFormat: {
+        type: 'volume',
+      },
+      priceScaleId: '', // set as an overlay by setting a blank priceScaleId
+    });
+
+    // Set the positioning of the volume series to the bottom 20% of the chart
+    volumeSeries.priceScale().applyOptions({
+      scaleMargins: {
+        top: 0.8, // highest point of the series will be 80% away from the top
+        bottom: 0, // lowest point will be at the very bottom
+      },
+    });
+
+    // Adjust the main candlestick series to not overlap with volume
+    candlestickSeries.priceScale().applyOptions({
+      scaleMargins: {
+        top: 0.1, // highest point will be 10% away from the top
+        bottom: 0.25, // lowest point will be 25% away from the bottom (to leave room for volume)
+      },
+    });
+
     // 5. Format Data for Lightweight Charts
     // It expects { time: 'YYYY-MM-DD', open: 1, high: 2, low: 0.5, close: 1.5 }
     let formattedData = data.map((d) => ({
@@ -98,6 +133,7 @@ const TVChart = ({ data, symbol, vcpAnalysis, markers }: Props) => {
       high: d.high,
       low: d.low,
       close: d.close,
+      volume: d.volume, // Include volume in formatted data
     }));
 
     // Remove duplicates and ensure ascending order by time
@@ -121,6 +157,18 @@ const TVChart = ({ data, symbol, vcpAnalysis, markers }: Props) => {
     // Only set data if we have valid candlestick data
     if (formattedData.length > 0) {
       candlestickSeries.setData(formattedData);
+      
+      // Format and set volume data for the histogram series
+      // Color bars based on whether price closed up (green) or down (red)
+      const volumeData = formattedData.map((d) => ({
+        time: d.time,
+        value: d.volume,
+        color: d.close >= d.open ? '#26a69a' : '#ef5350', // Green for up, red for down
+      }));
+      
+      if (volumeData.length > 0) {
+        volumeSeries.setData(volumeData);
+      }
     }
 
     // 6. Add VCP Contraction Zones if available
@@ -283,38 +331,86 @@ const TVChart = ({ data, symbol, vcpAnalysis, markers }: Props) => {
       }*/}
     }
 
-    // 6b. Plot backtest markers independently (outside VCP block)
-    // This ensures markers show even when there's no VCP analysis
-    if (backtestMarkers && backtestMarkers.length > 0 && showMarkers) {
+    // 6. Combine and Plot Markers
+    let allMarkers: any[] = [];
+
+    // A. Generic Backtest Markers (PASS/FAIL)
+    if (showMarkers && backtestMarkers && backtestMarkers.length > 0) {
       const mapped = backtestMarkers.map((m: any) => {
-        // Find the candle that matches this marker date
-        // First try exact match, then find the next available date
-        let markerTime = m.time;
-        const exactMatch = formattedData.find((d) => d.time === m.time);
+        // Ensure date is YYYY-MM-DD string
+        // Generic markers use 'time', SEPA uses 'date'. Handle both safely.
+        let markerTimeStr = m.time || m.date;
         
+        if (markerTimeStr && typeof markerTimeStr === 'string' && markerTimeStr.includes('T')) {
+             markerTimeStr = markerTimeStr.split('T')[0];
+        }
+        
+        // Align marker time
+        // We need to find the exact string match in formattedData
+        // If not found, find the next available date
+        let finalTime = markerTimeStr;
+        
+        const exactMatch = formattedData.find((d) => d.time === markerTimeStr);
         if (!exactMatch) {
-          // If exact date not found, find the next available candle after marker date
-          const nextIdx = formattedData.findIndex((d) => d.time > m.time);
-          if (nextIdx !== -1) {
-            markerTime = formattedData[nextIdx].time;
-          } else {
-            // If no future date, use the last available date
-            markerTime = formattedData[formattedData.length - 1].time;
-          }
+             const nextIdx = formattedData.findIndex((d) => d.time > markerTimeStr);
+             if (nextIdx !== -1) finalTime = formattedData[nextIdx].time;
+             else finalTime = formattedData[formattedData.length - 1].time;
         }
 
         return {
-          time: markerTime,
+          time: finalTime,
           position: m.pass ? 'belowBar' : 'aboveBar',
           color: m.pass ? '#ff69b4' : '#ffd54f',
           shape: m.pass ? 'arrowUp' : 'arrowDown',
           text: m.pass ? 'PASS' : 'FAIL',
         };
       });
+      allMarkers = [...allMarkers, ...mapped];
+    }
 
-      if (mapped.length > 0) {
-        createSeriesMarkers(candlestickSeries, mapped as any[]);
-      }
+    // B. SEPA Backtest Markers (Blue Buy Arrows)
+    if (showMarkers && sepaBacktestMarkers && sepaBacktestMarkers.length > 0) {
+        const sepaMapped = sepaBacktestMarkers.map((m: any) => {
+            // Ensure date is YYYY-MM-DD string
+            let markerTimeStr = m.date || m.time;
+            
+            if (markerTimeStr && typeof markerTimeStr === 'string' && markerTimeStr.includes('T')) {
+                markerTimeStr = markerTimeStr.split('T')[0];
+            }
+            
+            // Align marker time
+            let finalTime = markerTimeStr;
+            
+            const exactMatch = formattedData.find((d) => d.time === markerTimeStr);
+            if (!exactMatch) {
+                const nextIdx = formattedData.findIndex((d) => d.time > markerTimeStr);
+                if (nextIdx !== -1) finalTime = formattedData[nextIdx].time;
+                else finalTime = formattedData[formattedData.length - 1].time;
+            }
+            
+            return {
+                time: finalTime,
+                position: 'belowBar',
+                color: '#2196F3', // Blue for SEPA Buy
+                shape: 'arrowUp',
+                text: 'SEPA Buy',
+                size: 2,
+            }
+        });
+        allMarkers = [...allMarkers, ...sepaMapped];
+    }
+
+    // C. Set All Markers to Chart
+    if (allMarkers.length > 0) {
+        // Sort by time string
+        allMarkers.sort((a: any, b: any) => {
+            if (a.time < b.time) return -1;
+            if (a.time > b.time) return 1;
+            return 0;
+        });
+        
+        // Use createSeriesMarkers helper function as per documentation
+        createSeriesMarkers(candlestickSeries, allMarkers);
     }
     
     // Set visible range to the last year of data (or less if not enough data)

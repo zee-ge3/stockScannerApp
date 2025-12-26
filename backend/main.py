@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
 from database import get_session
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
-from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis, backtest_primary_screen
+from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis, backtest_primary_screen, run_sepa_backtest
 import pandas as pd
 from update import update_prices, update_fundamentals_full, update_specific_ticker
 
@@ -140,31 +140,31 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
     
     vcp_data = vcp_analysis(df_price)
     if vcp_data and isinstance(vcp_data, dict):
-        # Convert negative indices to dates for the frontend
+        # The new vcp_analysis returns dates directly
         contractions_with_dates = []
         for c in vcp_data.get('contractions', []):
-            peak_idx = c['peak_index']
-            trough_idx = c['trough_index']
+            # Ensure date format is YYYY-MM-DD
+            p_date = str(c['peak_date'])
+            if ' ' in p_date: p_date = p_date.split(' ')[0]
+            if 'T' in p_date: p_date = p_date.split('T')[0]
             
-            # Get actual dates from the dataframe
-            peak_date = df_price.index[peak_idx].strftime('%Y-%m-%d') if isinstance(df_price.index[peak_idx], pd.Timestamp) else str(df_price.index[peak_idx]).split('T')[0]
-            trough_date = df_price.index[trough_idx].strftime('%Y-%m-%d') if isinstance(df_price.index[trough_idx], pd.Timestamp) else str(df_price.index[trough_idx]).split('T')[0]
-            
+            t_date = str(c['trough_date'])
+            if ' ' in t_date: t_date = t_date.split(' ')[0]
+            if 'T' in t_date: t_date = t_date.split('T')[0]
+
             contractions_with_dates.append({
-                'peak_date': peak_date,
+                'peak_date': p_date,
                 'peak_price': c['peak_price'],
-                'trough_date': trough_date,
+                'trough_date': t_date,
                 'trough_price': c['trough_price'],
-                'depth': c['depth']
+                'depth': c.get('depth_pct', c.get('depth'))
             })
+            
         vcp_result = {
             'contractions': contractions_with_dates,
-            'highest_high': vcp_data.get('highest_high'),
-            'lowest_low': vcp_data.get('lowest_low'),
-            'base_length_days': vcp_data.get('base_length_days'),
-            'base_depth_percent': vcp_data.get('base_depth_percent'),
             'breakout_confirmed': vcp_data.get('breakout_confirmed'),
-            'current_price': vcp_data.get('current_price')
+            'base_depth_percent': vcp_data.get('base_depth', 0),
+            'base_length_days': 0 # Not calculated in new logic yet
         }
     else:
         vcp_result = None
@@ -461,3 +461,29 @@ def refresh_specific_stock(symbol: str, session: Session = Depends(get_session))
     except Exception as e:
         print(f"Refresh failed for {symbol}: {e}")
         return {"status": "error", "message": str(e)}
+
+@app.get("/backtest/{symbol}")
+def backtest_stock(symbol: str, session: Session = Depends(get_session)):
+    # Fetch data
+    statement = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
+    results = session.exec(statement).all()
+    
+    if not results:
+        raise HTTPException(status_code=404, detail="Stock not found")
+        
+    df = pd.DataFrame([r.model_dump() for r in results])
+    df.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
+    df.set_index('date', inplace=True)
+    
+    # Filter for last 2 years (approx 520 trading days)
+    # But we need 260 days prior for MA calculation, so we need ~780 days total if available
+    # Or we just run the backtest on the whole history and filter the RESULTS.
+    
+    # Run Backtest on full history to ensure MAs are correct
+    all_trades = run_sepa_backtest(df)
+    
+    # Filter trades to only those in the last 2 years
+    cutoff_date = pd.Timestamp.now() - pd.DateOffset(years=2)
+    recent_trades = [t for t in all_trades if t['date'] >= cutoff_date]
+    
+    return {"symbol": symbol, "trades": recent_trades}

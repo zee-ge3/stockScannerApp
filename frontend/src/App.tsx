@@ -34,6 +34,7 @@ function App() {
   const [tickerSearch, setTickerSearch] = useState('')
   const [stockReport, setStockReport] = useState<any>(null)
   const [profitReport, setProfitReport] = useState<any>(null)
+  const [sepaReport, setSepaReport] = useState<any>(null) // New state for SEPA report
   const [backtestMarkers, setBacktestMarkers] = useState<any[] | null>(null)
   const [lookingUp, setLookingUp] = useState(false)
   const [refreshing, setRefreshing] = useState(false)
@@ -80,6 +81,15 @@ function App() {
       } catch (me) {
         console.warn('Markers fetch failed', me)
         setBacktestMarkers([])
+      }
+
+      // Fetch SEPA Backtest
+      try {
+        const backtest = await axios.get(`${API_BASE_URL}/backtest/${response.data.symbol}`)
+        setSepaReport(backtest.data)
+      } catch (pe) {
+        console.warn('Backtest fetch failed', pe)
+        setSepaReport(null)
       }
 
     } catch (e) { 
@@ -245,6 +255,7 @@ function App() {
                     symbol={stockReport.symbol}
                     vcpAnalysis={stockReport.vcp_analysis}
                     markers={backtestMarkers}
+                    sepaMarkers={sepaReport?.trades} // SEPA markers
                   />
                 </div>
               )}
@@ -432,10 +443,10 @@ function App() {
                     </div>
                   )}
 
-                  {/* PROFITABILITY REPORT (Under Score Breakdown) */}
+                  {/* PROFITABILITY REPORT (Generic) */}
                   {profitReport && (
                     <div style={{ marginTop: '18px', borderTop: '1px solid #333', paddingTop: '12px' }}>
-                      <h4 style={{ margin: '6px 0' }}>Backtest Profitability (1d interval)</h4>
+                      <h4 style={{ margin: '6px 0' }}>Generic Profitability (1d interval)</h4>
                       <div style={{ display: 'flex', justifyContent: 'space-between', gap: '10px', fontSize: '14px' }}>
                         <div>Trades: <strong>{profitReport.summary.total_trades}</strong></div>
                         <div>Win Rate: <strong>{(profitReport.summary.win_rate*100).toFixed(1)}%</strong></div>
@@ -448,6 +459,59 @@ function App() {
                             <div style={{ fontWeight: 'bold', color: t.pnl_pct > 0 ? '#4caf50' : '#f44336' }}>{(t.pnl_pct*100).toFixed(2)}%</div>
                           </div>
                         ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* SEPA Backtest Report */}
+                  {sepaReport && sepaReport.trades && (
+                    <div className="card" style={{ marginTop: '1rem' }}>
+                      <h3>SEPA Backtest Report (Last 2 Years)</h3>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem' }}>
+                        <div className="stat-box">
+                          <label>Total Trades</label>
+                          <div className="value">{sepaReport.trades.length}</div>
+                        </div>
+                        <div className="stat-box">
+                          <label>Win Rate</label>
+                          <div className="value">
+                            {sepaReport.trades.length > 0 
+                              ? ((sepaReport.trades.filter((t:any) => t.result === 'Win').length / sepaReport.trades.length) * 100).toFixed(1) + '%' 
+                              : 'N/A'}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div style={{marginTop: '1rem', maxHeight: '200px', overflowY: 'auto'}}>
+                         <table style={{width: '100%', textAlign: 'left', fontSize: '0.9rem'}}>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Price</th>
+                                    <th>Stop</th>
+                                    <th>Target</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {sepaReport.trades.map((trade: any, idx: number) => (
+                                    <tr key={idx}>
+                                        <td>{new Date(trade.date).toLocaleDateString()}</td>
+                                        <td style={{color: trade.type === 'Buy' ? '#4caf50' : '#f44336'}}>{trade.type}</td>
+                                        <td>${trade.price.toFixed(2)}</td>
+                                        <td>${trade.stop_loss.toFixed(2)}</td>
+                                        <td>${trade.target.toFixed(2)}</td>
+                                        <td style={{
+                                            fontWeight: 'bold',
+                                            color: trade.result === 'Win' ? '#4caf50' : trade.result === 'Loss' ? '#f44336' : '#ffa726'
+                                        }}>
+                                            {trade.result} ({trade.return_pct ? trade.return_pct.toFixed(1) : 0}%)
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                         </table>
                       </div>
                     </div>
                   )}
