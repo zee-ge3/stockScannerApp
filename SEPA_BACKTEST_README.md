@@ -50,6 +50,6 @@ A new endpoint is available to run the backtest on a specific symbol:
 
 ## Notes
 
-*   **Financial Data**: Currently, the backtest focuses purely on Technical Analysis (Price & Volume) and excludes fundamental data (Earnings, Sales) as requested.
+*   **Financial Data**: Currently, the backtest focuses purely on Technical Analysis (Price & Volume) and excludes fundamental data (Earnings, Sales).
 *   **RS Rank**: The Relative Strength Ranking (0-99) is currently not implemented in the backtest as it requires market-wide comparative data at every historical time step.
 *   **Performance**: The backtest runs daily analysis on the requested stock. For long histories, it may take a few seconds.
