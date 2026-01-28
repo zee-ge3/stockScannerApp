@@ -3,15 +3,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
 from database import get_session
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
-from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis, backtest_primary_screen, run_sepa_backtest
+from scanner_logic import get_values, primary_screen, fundamental_screen, vcp_analysis, backtest_primary_screen, run_sepa_backtest, check_trend_template
 import pandas as pd
 from update import update_prices, update_fundamentals_full, update_specific_ticker
 
 app = FastAPI()
+# This is the core scanner logic. Base for the web backend, calls on algorithms in scanner_logic.
+
 
 app.add_middleware(
     CORSMiddleware,
-    # This is the "Guest List". Only requests from this URL are allowed.
+    # frontend port needs to be able to access
     allow_origins=["http://localhost:5173", "http://192.168.1.125:5173"], 
     allow_credentials=True,
     allow_methods=["*"], # Allow all types of requests (GET, POST, etc.)
@@ -20,6 +22,9 @@ app.add_middleware(
 
 @app.get("/scan")
 def run_primary_scan(session: Session = Depends(get_session)):
+    '''
+    Main scan.
+    '''
     passed_stocks = []
     
     # 1. Fetch Symbols
@@ -28,26 +33,25 @@ def run_primary_scan(session: Session = Depends(get_session)):
     
     for symbol in symbols:
         try:
-            # --- STEP A: Technical Screen (Prices) ---
+            # techincal screen, SQL query
             statement_price = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
             results_price = session.exec(statement_price).all()
             
             if not results_price: continue
             
             df_price = pd.DataFrame([r.model_dump() for r in results_price])
+            # rename to use legacy algorithm
             df_price.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
             df_price.set_index('date', inplace=True)
 
-            if len(df_price) < 200:
+            if len(df_price) < 260: # Need enough data for SEPA
                 continue
 
             # Run Technical Analysis
             df_price = get_values(df_price)
-            if not primary_screen(df_price):
-                continue # Failed technicals, skip
-
-            # --- STEP B: Fundamental Screen (Financials) ---
-            # If it passed technicals, we fetch the data needed for the Score
+            
+            # Financial screen
+            # filter by Score > 70 FIRST to save processing time
             
             # 1. Fetch Financials
             statement_fin = select(QuarterlyFinancials).where(QuarterlyFinancials.symbol == symbol).order_by(QuarterlyFinancials.date)
@@ -66,25 +70,66 @@ def run_primary_scan(session: Session = Depends(get_session)):
                 df_surprise = pd.DataFrame([r.model_dump() for r in results_surprise])
                 df_surprise.set_index('date', inplace=True)
                 
-                # Run your custom scoring logic
                 score_result = fundamental_screen(df_fin, df_surprise)
-                
-                # fundamental_screen returns a DICT or None
                 if score_result:
                     score = score_result['total_score']
             
-            # --- STEP C: Add to Results ---
-            # We append the OBJECT (Dictionary), not just the string
-            passed_stocks.append({
-                "symbol": symbol,
-                "score": int(score) # Ensure it's a number
-            })
+            # Filter: Must have Score >= 70
+            if score < 70:
+                continue
+
+            # SEPA VCP analysis
+            # We check if it broke out today, yesterday, or is setting up.
+            
+            # 1. Check Trend Template (Must be in Stage 2)
+            if not check_trend_template(df_price, index=-1):
+                continue
+
+            # 2. Check VCP Setup
+            setup = vcp_analysis(df_price, end_index=-1)
+            
+            status = None
+            pivot = 0.0
+            
+            if setup:
+                # It is currently in a setup (Pre-Breakout)
+                status = "Setting Up"
+                pivot = setup['pivot_point']
+            else:
+                # Check if it broke out TODAY
+                # We need to see if there was a valid setup YESTERDAY that triggered TODAY
+                setup_yesterday = vcp_analysis(df_price, end_index=-2)
+                if setup_yesterday:
+                    pivot_yest = setup_yesterday['pivot_point']
+                    if df_price['Close'].iloc[-1] > pivot_yest and df_price['Close'].iloc[-2] <= pivot_yest:
+                         status = "Breakout Today"
+                         pivot = pivot_yest
+                
+                # Check if it broke out YESTERDAY
+                if not status:
+                    setup_2days = vcp_analysis(df_price, end_index=-3)
+                    if setup_2days:
+                        pivot_2d = setup_2days['pivot_point']
+                        if df_price['Close'].iloc[-2] > pivot_2d and df_price['Close'].iloc[-3] <= pivot_2d:
+                            status = "Breakout Yesterday"
+                            pivot = pivot_2d
+
+            if status:
+                passed_stocks.append({
+                    "symbol": symbol,
+                    "score": int(score),
+                    "status": status,
+                    "pivot": pivot,
+                    "price": df_price['Close'].iloc[-1]
+                })
 
         except Exception as e:
             print(f"Error analyzing {symbol}: {e}")
 
-    # Sort by Score (Highest First)
-    passed_stocks.sort(key=lambda x: x['score'], reverse=True)
+    # Sort by Status (Breakouts first) then Score
+    # Custom sort order: Breakout Today > Breakout Yesterday > Setting Up
+    status_order = {"Breakout Today": 0, "Breakout Yesterday": 1, "Setting Up": 2}
+    passed_stocks.sort(key=lambda x: (status_order.get(x['status'], 99), -x['score']))
 
     return {"passed_stocks": passed_stocks, "scanned_count": len(symbols)}
 
@@ -94,6 +139,9 @@ def read_root():
 
 @app.get("/stock/{symbol}")
 def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
+    '''
+    Stock specific scanning.
+    '''
     symbol = symbol.upper() 
     
     # get stock price history
@@ -118,7 +166,7 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
     results_surprise = session.exec(statement_surprise).all()
     
     # 3. Calculate Score
-    # We reconstruct the DataFrames just like in the scanner
+    # reconstruct the DataFrames just like in the scanner
     df_fin = pd.DataFrame([r.model_dump() for r in results_fin])
     df_fin.set_index('date', inplace=True)
     
@@ -127,7 +175,6 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
         df_surprise = pd.DataFrame([r.model_dump() for r in results_surprise])
         df_surprise.set_index('date', inplace=True)
     
-    # Use your custom logic function
     score_dict = fundamental_screen(df_fin, df_surprise)
 
     if score_dict is None:
@@ -143,7 +190,6 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
         # The new vcp_analysis returns dates directly
         contractions_with_dates = []
         for c in vcp_data.get('contractions', []):
-            # Ensure date format is YYYY-MM-DD
             p_date = str(c['peak_date'])
             if ' ' in p_date: p_date = p_date.split(' ')[0]
             if 'T' in p_date: p_date = p_date.split('T')[0]
@@ -174,7 +220,7 @@ def get_stock_detail(symbol: str, session: Session = Depends(get_session)):
         "symbol": symbol,
         "total_score": score_dict.get("total_score"),
         "components": score_dict.get("components"),
-        # We send the raw records so the frontend can display a table of the last 4 quarters
+        # send the raw records so the frontend can display a table of the last 4 quarters
         "financials": [r.model_dump() for r in results_fin[-4:]], # Last 4 quarters
         "surprises": [r.model_dump() for r in results_surprise[-4:]] if results_surprise else [],
         "prices": price_data,
@@ -204,7 +250,6 @@ def get_markers(symbol: str, interval: int = 5, session: Session = Depends(get_s
 
     price_data = [r.model_dump() for r in results_price]
 
-    # Build DataFrame like other endpoints
     df_price = pd.DataFrame(price_data)
     df_price.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
     df_price.set_index('date', inplace=True)
@@ -254,7 +299,6 @@ def get_profitability(symbol: str, interval: int = 1, capital: int = 100000, ses
         raise HTTPException(status_code=404, detail="Price data not found")
     price_data = [r.model_dump() for r in results_price]
 
-    # Build DataFrame like other endpoints
     df_price = pd.DataFrame(price_data)
     df_price.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
     df_price.set_index('date', inplace=True)
@@ -411,9 +455,7 @@ def trigger_update(session: Session = Depends(get_session)):
     Triggers the Yahoo Finance download for all stocks.
     """
     try:
-        # We run the update logic inside the API call
-        # Note: For 500 stocks, this might take 1-2 minutes.
-        # Ideally this runs in a background task, but for a personal app, waiting is fine.
+        # should be in the background
         update_prices(session)
         return {"status": "success", "message": "Prices updated successfully"}
     except Exception as e:
@@ -428,8 +470,7 @@ def trigger_earnings_update():
     """
     try:
         print("Starting Earnings Update via API...")
-        # Note: This will block the server until finished. 
-        # For a local app, this is fine, but the UI will spin for a while.
+        # might block the app
         update_fundamentals_full()
         return {"status": "success", "message": "Earnings data updated successfully"}
     except Exception as e:
@@ -487,3 +528,94 @@ def backtest_stock(symbol: str, session: Session = Depends(get_session)):
     recent_trades = [t for t in all_trades if t['date'] >= cutoff_date]
     
     return {"symbol": symbol, "trades": recent_trades}
+
+@app.post("/backtest-portfolio")
+def backtest_portfolio(symbols: list[str], session: Session = Depends(get_session)):
+    """
+    Runs SEPA backtest on a list of symbols and calculates cumulative return.
+    Assumes $100,000 allocated to EACH stock independently (not a shared portfolio).
+    Ensures full historical data is available for each stock before running.
+    """
+    portfolio_results = []
+    total_initial_capital = len(symbols) * 100000
+    total_final_capital = 0
+    
+    for symbol in symbols:
+        symbol = symbol.upper()
+        try:
+            # 1. Ensure we have FULL history for this stock
+            # We check if we have data, and if the data starts reasonably long ago (e.g. > 2 years ago)
+            statement = select(StockPrice).where(StockPrice.symbol == symbol).order_by(StockPrice.date)
+            results = session.exec(statement).all()
+            
+            needs_update = False
+            if not results:
+                needs_update = True
+            else:
+                # Check if data is updated (last date < today - 3 days)
+                last_date = results[-1].date
+                if last_date.date() < (pd.Timestamp.now() - pd.Timedelta(days=3)).date():
+                    needs_update = True
+                
+                # Check if data is too short (start date > 2 years ago)
+                start_date = results[0].date
+                required_start = pd.Timestamp.now() - pd.DateOffset(years=3)
+                if start_date > required_start:
+                    needs_update = True
+
+            if needs_update:
+                print(f"Downloading full history for {symbol}...")
+                update_specific_ticker(session, symbol)
+                # Re-fetch after update
+                results = session.exec(statement).all()
+            
+            if not results:
+                print(f"Skipping {symbol}: No data found after update attempt.")
+                continue
+                
+            df = pd.DataFrame([r.model_dump() for r in results])
+            df.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}, inplace=True)
+            df.set_index('date', inplace=True)
+            
+            # Run Backtest
+            trades = run_sepa_backtest(df)
+            
+            # Calculate Performance for this stock
+            # Start with 100k
+            capital = 100000.0
+            
+            # Filter for last 2 years to match the single stock view 
+            cutoff_date = pd.Timestamp.now() - pd.DateOffset(years=2)
+            recent_trades = [t for t in trades if t['date'] >= cutoff_date]
+            
+            for t in recent_trades:
+                # return_pct is in percent (e.g. 7.5 for 7.5%)
+                # Capital grows by this percent
+                pct = t['return_pct'] / 100.0
+                capital = capital * (1 + pct)
+                
+            total_final_capital += capital
+            
+            portfolio_results.append({
+                "symbol": symbol,
+                "trades_count": len(recent_trades),
+                "final_capital": round(capital, 2),
+                "return_pct": round(((capital - 100000) / 100000) * 100, 2)
+            })
+            
+        except Exception as e:
+            print(f"Error backtesting {symbol}: {e}")
+            continue
+            
+    # Aggregate
+    total_return_pct = ((total_final_capital - total_initial_capital) / total_initial_capital) * 100 if total_initial_capital > 0 else 0
+    
+    return {
+        "summary": {
+            "total_initial_capital": total_initial_capital,
+            "total_final_capital": round(total_final_capital, 2),
+            "total_return_pct": round(total_return_pct, 2),
+            "stocks_tested": len(portfolio_results)
+        },
+        "details": portfolio_results
+    }

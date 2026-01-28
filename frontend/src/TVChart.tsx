@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { createChart, ColorType, CrosshairMode, type IChartApi, CandlestickSeries, LineSeries, LineStyle, HistogramSeries, createSeriesMarkers } from 'lightweight-charts';
 
+// Integration with LightweightCharts from TradingView
+
 // Define the shape of the data coming from the backend
 interface StockDataObj {
   date: string;
@@ -70,7 +72,7 @@ const TVChart = ({ data, symbol, vcpAnalysis, markers, sepaMarkers }: Props) => 
     // 3. Initialize Chart with TradingView-like styling
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { type: ColorType.Solid, color: '#1a1a1a' }, // Match your dark theme
+        background: { type: ColorType.Solid, color: '#1a1a1a' }, 
         textColor: '#d1d4dc',
         attributionLogo: false,
       },
@@ -126,18 +128,16 @@ const TVChart = ({ data, symbol, vcpAnalysis, markers, sepaMarkers }: Props) => 
     });
 
     // 5. Format Data for Lightweight Charts
-    // It expects { time: 'YYYY-MM-DD', open: 1, high: 2, low: 0.5, close: 1.5 }
     let formattedData = data.map((d) => ({
-      time: d.date.split('T')[0], // Extract just YYYY-MM-DD
+      time: d.date.split('T')[0],
       open: d.open,
       high: d.high,
       low: d.low,
       close: d.close,
-      volume: d.volume, // Include volume in formatted data
+      volume: d.volume,
     }));
 
     // Remove duplicates and ensure ascending order by time
-    // This prevents the "data must be asc ordered by time" error
     const seenTimes = new Set<string>();
     formattedData = formattedData.filter((d) => {
       if (seenTimes.has(d.time)) {

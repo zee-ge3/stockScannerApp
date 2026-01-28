@@ -4,12 +4,12 @@ from sqlmodel import Session
 from database import engine, create_db_and_tables
 from models import StockPrice, QuarterlyFinancials, EarningsSurprise
 
-# UPDATE THIS PATH if your folder is somewhere else
+# folder with past csvs
+# this project initially ran on csvs, first-time integration into SQLite
 DATA_DIR = "/home/g30rgez/stockScannerApp/stockdata"
 
 def ingest_data():
     # 1. SETUP: Create the empty table structure in the DB file
-    print("Creating database tables...")
     create_db_and_tables()
     
     # 2. EXTRACT: Get a list of all CSV files
@@ -17,8 +17,6 @@ def ingest_data():
     total_files = len(csv_files)
     print(f"Found {total_files} CSV files. Starting ingestion...")
     
-    # Open a single session for the entire job
-    # (You could also open one session per file, but this is fine for a script)
     with Session(engine) as session:
         
         for index, filename in enumerate(csv_files):
@@ -27,23 +25,19 @@ def ingest_data():
             
             try:
                 # Read the CSV
-                # index_col=0 assumes your Date is the index (standard for yfinance)
                 df = pd.read_csv(file_path, index_col=0)
                 
                 # TRANSFORM: Ensure the index is actually a datetime object
-                # If your CSV format is messy, this line fixes the dates
                 df.index = pd.to_datetime(df.index)
                 
                 # List to hold all the rows for this one stock
                 prices_to_add = []
                 
                 for date, row in df.iterrows():
-                    # Skip rows that are empty/NaN (common in financial data)
                     if pd.isna(row['Close']): 
                         continue
                     
-                    # Create the Object (The Blueprint)
-                    # Notice we do NOT pass 'id'. The DB handles that.
+                    # Create the Object
                     price_entry = StockPrice(
                         symbol=symbol,
                         date=date,
@@ -58,7 +52,7 @@ def ingest_data():
                 # LOAD: Add all 200+ price rows for this stock at once
                 session.add_all(prices_to_add)
                 
-                # Save progress every 10 stocks so we don't lose everything if it crashes
+                # Save progress every 10 stocks
                 if (index + 1) % 10 == 0:
                     session.commit()
                     print(f"Processed {index + 1}/{total_files} stocks...")
@@ -71,6 +65,9 @@ def ingest_data():
         print("Ingestion Complete! stocks.db is ready.")
 
 def ingest_earnings():
+    '''
+    Ingests earnings into SQLite database from CSVs. See update.py.
+    '''
     print("Starting Earnings Ingestion...")
     EARNINGS_DIR = os.path.join(DATA_DIR, "earnings")
     
@@ -90,10 +87,8 @@ def ingest_earnings():
             fin_path = os.path.join(folder_path, "financials.csv")
             if os.path.exists(fin_path):
                 try:
-                    # This file likely has Dates as COLUMNS and Metrics as ROWS
                     df_fin = pd.read_csv(fin_path, index_col=0)
                     
-                    # TRANSPOSE: Flip it so Dates are rows
                     df_fin = df_fin.T 
                     
                     # Convert index to datetime
@@ -104,7 +99,6 @@ def ingest_earnings():
                         if pd.isna(date): continue
 
                         # Create the object
-                        # We use .get() because column names might vary slightly
                         fin_entry = QuarterlyFinancials(
                             symbol=ticker,
                             date=date,
@@ -133,13 +127,10 @@ def ingest_earnings_dates():
             
             if os.path.exists(dates_path):
                 try:
-                    # 1. READ: index_col=0 is usually the Date
                     df = pd.read_csv(dates_path, index_col=0)
                     
-                    # 2. CLEAN DATES: Convert index to datetime
                     df.index = pd.to_datetime(df.index, errors='coerce', utc=True)
 
-                    # 3. ITERATE
                     for date, row in df.iterrows():
                         if pd.isna(date): 
                             continue
@@ -180,6 +171,7 @@ def reset_earnings_data():
         session.commit()
     print("Earnings data reset complete.\n")
 
+# Testing/One-time
 if __name__ == "__main__":
     create_db_and_tables()
     # ingest_data()       # Price History

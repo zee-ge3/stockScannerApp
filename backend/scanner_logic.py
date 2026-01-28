@@ -5,7 +5,7 @@ import pandas_ta_classic as pta
 import os
 
 def avgNA(series):
-    series = series.copy()  # Create explicit copy
+    series = series.copy()
     for i in range(1, len(series) - 1):
         if pd.isna(series.iloc[i]):
             idx = series.index[i]
@@ -115,6 +115,11 @@ def StochRSI(series, period=13, smoothK=3, smoothD=5, periodStoch = 21):
 
 def get_values(stock_df: pd.DataFrame) -> pd.DataFrame:
     df = stock_df.copy()
+    
+    # Remove duplicate indices if any
+    if df.index.duplicated().any():
+        df = df[~df.index.duplicated(keep='first')]
+        
     df['ma50'] = ta.SMA(df['Close'], timeperiod = 50)
     df['ma150'] = ta.SMA(df['Close'],timeperiod=150)
     df['ma200'] = ta.SMA(df['Close'],timeperiod=200)
@@ -187,7 +192,7 @@ def vcp_analysis(df: pd.DataFrame, end_index: int = -1) -> dict | bool:
     """
     Analyzes the stock for a Volatility Contraction Pattern (VCP) setup.
     
-    Refactored to prioritize contraction identification (The "V" in VCP).
+    Refactored to prioritize contraction identification. Iterate through high high and low lows
     
     Returns:
     dict: { 'pivot_point': float, 'tightness': float, 'contractions': list } if setup exists.
@@ -213,7 +218,7 @@ def vcp_analysis(df: pd.DataFrame, end_index: int = -1) -> dict | bool:
     base_high = lookback_window['High'].max()
     base_high_idx_rel = lookback_window['High'].argmax()
     
-    # 2. Identify Contractions (Wave Decomposition)
+    # 2. Identify Contractions (wave decomp)
     # We scan from the Base High to the present to find the series of contractions.
     contractions = []
     
@@ -303,11 +308,9 @@ def vcp_analysis(df: pd.DataFrame, end_index: int = -1) -> dict | bool:
         return False
 
     # 4. Validate the Pivot Point (The Setup)
-    # The pivot is the high of the LAST contraction (or the current price action if tight)
-    # Actually, in a VCP, the buy point is breaking above the peak of the *last* completed contraction
+    # the buy point is breaking above the peak of the last completed contraction
     # OR the high of the current tight handle.
     
-    # Let's look at the most recent price action (last 10 days)
     last_10 = subset.iloc[-10:]
     
     # Tightness Check: Average Daily Range < 5%
@@ -327,7 +330,6 @@ def vcp_analysis(df: pd.DataFrame, end_index: int = -1) -> dict | bool:
         
     # Define Pivot Point
     # It is the high of the most recent tight area.
-    # We can use the peak of the last contraction identified.
     pivot_point = contractions[-1]['peak_price']
     
     # If the last contraction is very fresh (trough was just a few days ago),
@@ -350,23 +352,6 @@ def vcp_analysis(df: pd.DataFrame, end_index: int = -1) -> dict | bool:
 def generic_backtest(df: pd.DataFrame, screen_func, check_interval: int, min_bars: int = 260) -> pd.Series:
     """
     Generic backtesting framework that applies any screen function across historical data.
-    
-    Parameters:
-    -----------
-    df : pd.DataFrame
-        DataFrame with OHLCV data and precomputed indicators
-    screen_func : callable
-        Function that takes (df, index) and returns bool. Must handle the index parameter
-        to check conditions at a specific point in time.
-    check_interval : int
-        How many bars to skip between checks (e.g., 5 = check every 5 days)
-    min_bars : int
-        Minimum number of bars required before backtesting starts (default 260)
-    
-    Returns:
-    --------
-    pd.Series
-        Series with dates as index and bool values indicating screen pass/fail
     """
     if len(df) < min_bars:
         return None
@@ -388,6 +373,7 @@ def _primary_screen_at_index(df: pd.DataFrame, index: int) -> bool:
     """
     Helper function for backtesting primary_screen at a specific index.
     Extracts the logic from primary_screen() but works with a specific point in time.
+    Used for backtesting.
     """
     if index < 260:
         return False
@@ -414,18 +400,7 @@ def _primary_screen_at_index(df: pd.DataFrame, index: int) -> bool:
 def backtest_primary_screen(df: pd.DataFrame, check_interval: int) -> pd.Series:
     """
     Backtest the primary screen across historical data.
-    
-    Parameters:
-    -----------
-    df : pd.DataFrame
-        DataFrame with OHLCV data and precomputed indicators
-    check_interval : int
-        How many bars to skip between checks (e.g., 5 = check every 5 days)
-    
-    Returns:
-    --------
-    pd.Series
-        Series with dates as index and bool values indicating screen pass/fail
+    Returns Series with dates as index and bool values indicating screen pass/fail
     """
     return generic_backtest(df, _primary_screen_at_index, check_interval, min_bars=260)
 
@@ -448,20 +423,16 @@ def check_trend_template(df: pd.DataFrame, index: int = -1) -> bool:
     if index < 260: # Need enough data for 200MA + trend
         return False
 
-    # Ensure we have the required columns
     required_cols = ['Close', 'Low', 'High', 'ma50', 'ma150', 'ma200']
     if not all(col in df.columns for col in required_cols):
         return False
 
-    # Current Price
     price = df['Close'].iloc[index]
     
-    # Moving Averages
     ma50 = df['ma50'].iloc[index]
     ma150 = df['ma150'].iloc[index]
     ma200 = df['ma200'].iloc[index]
     
-    # Check for NaN values
     if np.isnan(ma50) or np.isnan(ma150) or np.isnan(ma200):
         return False
 
@@ -496,28 +467,104 @@ def check_trend_template(df: pd.DataFrame, index: int = -1) -> bool:
 
 def calculate_trade_outcome(df: pd.DataFrame, entry_date, entry_price, stop_loss, target):
     """
-    Helper to determine if a trade hit its target or stop loss first.
+    Calculates trade outcome with a split-target strategy:
+    1. Sell 50% at 2:1 Reward/Risk.
+    2. Move Stop to Breakeven (Entry Price).
+    3. Sell remaining 50% at Final Target (or Stop).
     """
-    # this hasn't implemented RS or financial data
+    # Calculate Risk and Targets
+    risk_per_share = entry_price - stop_loss
+    if risk_per_share <= 0: # Should not happen in long trade
+        return {'result': 'Error', 'exit_date': entry_date, 'exit_price': entry_price, 'return_pct': 0.0}
+        
+    target_1 = entry_price + (2 * risk_per_share)
+    
+    # State
+    position_size = 1.0
+    current_stop = stop_loss
+    target_1_hit = False
+    realized_pnl_accumulated = 0.0 # Accumulated weighted PnL %
+    
     # Get data AFTER the entry date
     future_data = df.loc[entry_date:].iloc[1:] # Skip entry day itself
+    
+    exit_date = df.index[-1]
+    exit_price = df['Close'].iloc[-1] # Default to current price if open
+    result_status = 'Open'
     
     for date, row in future_data.iterrows():
         low = row['Low']
         high = row['High']
+        open_price = row['Open']
         
-        # Check Stop Loss (Hit on Low)
-        if low <= stop_loss:
-            return {'result': 'Loss', 'exit_date': date, 'exit_price': stop_loss, 'return_pct': -7.0}
+        # 1. Check Stop Loss
+        # If we gap down below stop, we might exit at Open or Low. 
+        if low <= current_stop:
+            # Stopped out of remaining position
+            exit_p = current_stop 
+            if open_price < current_stop: exit_p = open_price # Gap down handling
             
-        # Check Target (Hit on High)
+            pnl_chunk = position_size * ((exit_p - entry_price) / entry_price)
+            realized_pnl_accumulated += pnl_chunk
+            
+            exit_date = date
+            exit_price = exit_p
+            # Determine status based on total PnL
+            if realized_pnl_accumulated > 0: result_status = 'Win'
+            elif realized_pnl_accumulated < 0: result_status = 'Loss'
+            else: result_status = 'Scratch' # Breakeven
+            
+            position_size = 0.0
+            break
+            
+        # 2. Check Target 1 (First Half)
+        if not target_1_hit and high >= target_1:
+            # Sell 50%
+            portion = 0.5
+            pnl_chunk = portion * ((target_1 - entry_price) / entry_price)
+            realized_pnl_accumulated += pnl_chunk
+            
+            position_size -= portion
+            target_1_hit = True
+            
+            # Move Stop to Breakeven
+            current_stop = entry_price
+            
+            # Note: If the same bar has Low <= New Stop (Entry), we get stopped out of the rest immediately.
+            if low <= current_stop:
+                # The remaining 0.5 stops out at Entry (0% gain)
+                position_size = 0.0
+                exit_date = date
+                exit_price = current_stop
+                result_status = 'Win' # We banked the first half
+                break
+                
+        # 3. Check Final Target (Remaining Half)
         if high >= target:
-            return {'result': 'Win', 'exit_date': date, 'exit_price': target, 'return_pct': 25.0}
+            # Sell remaining
+            pnl_chunk = position_size * ((target - entry_price) / entry_price)
+            realized_pnl_accumulated += pnl_chunk
             
-    # If neither hit by end of data
-    current_price = df['Close'].iloc[-1]
-    pct_change = ((current_price - entry_price) / entry_price) * 100
-    return {'result': 'Open', 'exit_date': df.index[-1], 'exit_price': current_price, 'return_pct': pct_change}
+            exit_date = date
+            exit_price = target
+            result_status = 'Win'
+            position_size = 0.0
+            break
+            
+    # If still open at end of data
+    if position_size > 0:
+        current_price = df['Close'].iloc[-1]
+        pnl_chunk = position_size * ((current_price - entry_price) / entry_price)
+        realized_pnl_accumulated += pnl_chunk
+        exit_date = df.index[-1]
+        exit_price = current_price
+        
+    return {
+        'result': result_status,
+        'exit_date': exit_date,
+        'exit_price': exit_price,
+        'return_pct': round(realized_pnl_accumulated * 100, 2)
+    }
 
 def run_sepa_backtest(df: pd.DataFrame) -> list:
     """

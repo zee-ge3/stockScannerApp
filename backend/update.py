@@ -62,7 +62,7 @@ def get_tickers(filtered=True):
         print(f"Error fetching Nasdaq tickers: {e}")
         return []
 
-# --- CLEANUP LOGIC ---
+# CLEANUP LOGIC 
 def sync_tickers(session: Session, valid_tickers: list):
     """
     Removes any ticker from the DB that is NOT in the valid_tickers list.
@@ -74,7 +74,7 @@ def sync_tickers(session: Session, valid_tickers: list):
     db_set = set(db_symbols)
     valid_set = set(valid_tickers)
     
-    # 2. Identify Invalid Symbols (In DB but not in Nasdaq list)
+    # 2. Identify unused symbols (In DB but not in Nasdaq list)
     tickers_to_remove = list(db_set - valid_set)
     
     if not tickers_to_remove:
@@ -84,7 +84,6 @@ def sync_tickers(session: Session, valid_tickers: list):
     print(f"Removing {len(tickers_to_remove)} obsolete tickers (e.g., {tickers_to_remove[:5]}...)")
     
     # 3. Delete them from ALL tables
-    # Note: This might take a moment if you have tons of data
     for table in [StockPrice, QuarterlyFinancials, EarningsSurprise]:
         statement = delete(table).where(table.symbol.in_(tickers_to_remove))
         session.exec(statement)
@@ -92,7 +91,7 @@ def sync_tickers(session: Session, valid_tickers: list):
     session.commit()
     print("Cleanup complete.")
 
-# --- UPDATE LOGIC ---
+# Updating
 def update_prices(session: Session):
     # 1. Get the Master List from Nasdaq
     nasdaq_tickers = get_tickers(filtered=True)
@@ -101,37 +100,51 @@ def update_prices(session: Session):
         print("Aborting update: Failed to fetch tickers.")
         return
 
-    # 2. Remove bad tickers from DB
-    sync_tickers(session, nasdaq_tickers)
+    # Add Indices to the list (SPX, NDQ, DJI)
+    # We map them: ^GSPC -> SPX, ^NDX -> NDQ, ^DJI -> DJI
+    indices_map = {
+        '^GSPC': 'SPX',
+        '^NDX': 'NDQ',
+        '^DJI': 'DJI'
+    }
+    
+    # 2. Remove bad tickers from DB, excluding indices
+    sync_tickers(session, nasdaq_tickers + list(indices_map.values()))
     
     # 3. Update/Add tickers from the Master List
-    print(f"--- Updating Prices for {len(nasdaq_tickers)} Stocks ---")
+    print(f"--- Updating Prices for {len(nasdaq_tickers)} Stocks + 3 Indices ---")
     
-    for i, symbol in enumerate(nasdaq_tickers):
+    # Combine lists: Indices first, then stocks
+    all_tickers = list(indices_map.keys()) + nasdaq_tickers
+    
+    for i, symbol in enumerate(all_tickers):
         try:
+            # Determine the DB symbol (Map indices to custom names, keep stocks as is)
+            db_symbol = indices_map.get(symbol, symbol)
+            
             # Find the last recorded date for this stock
-            statement = select(func.max(StockPrice.date)).where(StockPrice.symbol == symbol)
+            statement = select(func.max(StockPrice.date)).where(StockPrice.symbol == db_symbol)
             last_date = session.exec(statement).one()
             
             if not last_date:
                 # NEW STOCK: Download roughly 1 year of data
                 start_date = (datetime.today() - timedelta(days=505)).strftime('%Y-%m-%d')
-                print(f"New Stock Found: {symbol}")
+                print(f"New Stock/Index Found: {db_symbol}")
             else:
-                # EXISTING STOCK: Start from next day
+                # EXISTING STOCK: Start from next day -> faster
                 start_date = (last_date + timedelta(days=1)).strftime('%Y-%m-%d')
 
             # If up to date, skip
             if last_date and last_date.date() >= datetime.today().date():
                 continue
 
-            # Download
+            # Download (Use original symbol for YF, e.g. ^GSPC)
             df = yf.download(symbol, start=start_date, progress=False)
             
             if df.empty:
                 continue
 
-            # Add to DB
+            # Add to DB (Use mapped symbol for DB, e.g. SPX)
             new_rows = []
             for date, row in df.iterrows():
                 # Safe access for yfinance multi-index
@@ -140,7 +153,7 @@ def update_prices(session: Session):
                     return float(val.iloc[0]) if isinstance(val, pd.Series) else float(val)
 
                 price = StockPrice(
-                    symbol=symbol,
+                    symbol=db_symbol, # Store as SPX, NDQ, DJI
                     date=date,
                     open=get_val('Open'),
                     high=get_val('High'),
@@ -153,9 +166,9 @@ def update_prices(session: Session):
             if new_rows:
                 session.add_all(new_rows)
                 session.commit()
-                print(f"[{i+1}/{len(nasdaq_tickers)}] Updated {symbol}: +{len(new_rows)} days")
+                print(f"[{i+1}/{len(all_tickers)}] Updated {db_symbol}: +{len(new_rows)} days")
             
-            # Rate limit protection
+            # Rate limit protection (~20 minutes)
             time.sleep(0.1) 
             
         except Exception as e:
@@ -167,7 +180,6 @@ def ticker_earnings(tickers):
     success_list = []
     failed_list = []
     
-    # Create base directory if not exists
     os.makedirs('stockdata/earnings', exist_ok=True)
     try:
         for i, ticker in enumerate(tickers):
@@ -200,8 +212,8 @@ def ticker_earnings(tickers):
                 else:
                     failed_list.append(ticker)
                     
-                # Rate Limit Sleep (Crucial for heavy downloads)
-                time.sleep(0.1)
+                # Rate Limit Sleep
+                #time.sleep(0.1)
 
             except Exception:
                 # print(f"yfinance overload on {ticker}")
@@ -217,7 +229,6 @@ def ticker_earnings(tickers):
 
 def update_fundamentals_full():
     """
-    This runs your HEAVY logic.
     1. Download CSVs using ticker_earnings()
     2. Read CSVs into DB using ingest functions
     """
@@ -237,13 +248,7 @@ def update_specific_ticker(session: Session, ticker: str):
     """
     Downloads ALL available price data for a specific ticker using yfinance
     and updates the database. This will get the complete historical data available.
-    
-    Args:
-        session: Database session
-        ticker: Stock ticker symbol (e.g., 'AAPL', 'MSFT')
-    
-    Returns:
-        Number of rows added/updated, or None if failed
+    used for charting mainly
     """
     print(f"Downloading all available price data for {ticker}...")
     
@@ -294,6 +299,7 @@ def update_specific_ticker(session: Session, ticker: str):
         session.rollback()
         return None
 
+# Testing
 if __name__ == "__main__":
     with Session(engine) as session:
         # update_prices(session)

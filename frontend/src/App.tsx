@@ -45,6 +45,11 @@ function App() {
   const [updatingEarnings, setUpdatingEarnings] = useState(false)
   const [earningsMsg, setEarningsMsg] = useState('')
 
+  // Portfolio Backtest State
+  const [portfolioInput, setPortfolioInput] = useState('')
+  const [portfolioResult, setPortfolioResult] = useState<any>(null)
+  const [runningPortfolio, setRunningPortfolio] = useState(false)
+
   // --- HANDLERS ---
   
   const handleScan = async () => {
@@ -155,6 +160,25 @@ function App() {
     setUpdatingEarnings(false)
 }
 
+  const handlePortfolioBacktest = async () => {
+    if (!portfolioInput.trim()) return;
+    
+    setRunningPortfolio(true);
+    setPortfolioResult(null);
+    
+    // Parse input: split by comma, trim whitespace, remove empty strings
+    const symbols = portfolioInput.split(',').map(s => s.trim()).filter(s => s.length > 0);
+    
+    try {
+        const response = await axios.post(`${API_BASE_URL}/backtest-portfolio`, symbols);
+        setPortfolioResult(response.data);
+    } catch (e) {
+        console.error(e);
+        alert("Portfolio backtest failed.");
+    }
+    setRunningPortfolio(false);
+  };
+
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
       <h1>📈 Algo Dashboard</h1>
@@ -166,6 +190,9 @@ function App() {
         </button>
         <button onClick={() => setActiveTab('lookup')} style={{ flex: 1, background: activeTab === 'lookup' ? '#646cff' : '#333' }}>
           Stock Lookup
+        </button>
+        <button onClick={() => setActiveTab('portfolio')} style={{ flex: 1, background: activeTab === 'portfolio' ? '#646cff' : '#333' }}>
+          SEPA Portfolio
         </button>
         <button onClick={() => setActiveTab('manage')} style={{ flex: 1, background: activeTab === 'manage' ? '#646cff' : '#333' }}>
           Manage Data
@@ -183,9 +210,26 @@ function App() {
 
           <ul style={{ marginTop: '20px', padding: 0 }}>
             {scanResults.map((item: any) => (
-              <li key={item.symbol} style={{ background: '#222', padding: '10px', margin: '5px 0', borderRadius: '5px', display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ fontWeight: 'bold' }}>{item.symbol}</span>
-                <span style={{ color: item.score > 70 ? '#4caf50' : '#f44336' }}>Score: {item.score}</span>
+              <li key={item.symbol} style={{ background: '#222', padding: '15px', margin: '10px 0', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                    <span style={{ fontWeight: 'bold', fontSize: '1.2rem', display: 'block' }}>{item.symbol}</span>
+                    <span style={{ 
+                        fontSize: '0.85rem', 
+                        color: item.status.includes('Breakout') ? '#4caf50' : '#2196f3',
+                        fontWeight: 'bold',
+                        marginTop: '4px',
+                        display: 'block'
+                    }}>
+                        {item.status.toUpperCase()}
+                    </span>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                    <div style={{ color: item.score > 70 ? '#4caf50' : '#f44336', fontWeight: 'bold' }}>Score: {item.score}</div>
+                    <div style={{ fontSize: '0.9rem', color: '#aaa' }}>
+                        Price: ${item.price.toFixed(2)} <br/>
+                        Pivot: ${item.pivot.toFixed(2)}
+                    </div>
+                </div>
               </li>
             ))}
           </ul>
@@ -519,6 +563,82 @@ function App() {
               </div>
             </>
           )}
+        </div>
+      )}
+
+      {/* === PORTFOLIO TAB === */}
+      {activeTab === 'portfolio' && (
+        <div style={{ textAlign: 'left' }}>
+            <h2>SEPA Portfolio Backtest</h2>
+            <p>Enter a comma-separated list of tickers to backtest them as a portfolio over the last 2 years.</p>
+            <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Assumes $100,000 allocated to EACH stock independently.</p>
+            
+            <div style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
+                <input 
+                    type="text" 
+                    value={portfolioInput}
+                    onChange={(e) => setPortfolioInput(e.target.value.toUpperCase())}
+                    placeholder="NVDA, AMD, TSLA, MSFT..."
+                    style={{ flex: 1, padding: '10px', fontSize: '16px' }}
+                />
+                <button onClick={handlePortfolioBacktest} disabled={runningPortfolio}>
+                    {runningPortfolio ? 'Running...' : 'Run Backtest'}
+                </button>
+            </div>
+
+            {portfolioResult && (
+                <div style={{ marginTop: '30px' }}>
+                    <div style={{ background: '#1a1a1a', padding: '20px', borderRadius: '10px', marginBottom: '20px' }}>
+                        <h3 style={{ marginTop: 0 }}>Portfolio Summary</h3>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                            <div>
+                                <div style={{ color: '#aaa', fontSize: '14px' }}>Total Initial Capital</div>
+                                <div style={{ fontSize: '24px', fontWeight: 'bold' }}>{formatCurrency(portfolioResult.summary.total_initial_capital)}</div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#aaa', fontSize: '14px' }}>Total Final Capital</div>
+                                <div style={{ fontSize: '24px', fontWeight: 'bold', color: portfolioResult.summary.total_return_pct >= 0 ? '#4caf50' : '#f44336' }}>
+                                    {formatCurrency(portfolioResult.summary.total_final_capital)}
+                                </div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#aaa', fontSize: '14px' }}>Total Return</div>
+                                <div style={{ fontSize: '24px', fontWeight: 'bold', color: portfolioResult.summary.total_return_pct >= 0 ? '#4caf50' : '#f44336' }}>
+                                    {portfolioResult.summary.total_return_pct > 0 ? '+' : ''}{portfolioResult.summary.total_return_pct}%
+                                </div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#aaa', fontSize: '14px' }}>Stocks Tested</div>
+                                <div style={{ fontSize: '24px', fontWeight: 'bold' }}>{portfolioResult.summary.stocks_tested}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Individual Performance</h3>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
+                        <thead>
+                            <tr style={{ borderBottom: '1px solid #444', textAlign: 'left' }}>
+                                <th style={{ padding: '10px' }}>Symbol</th>
+                                <th style={{ padding: '10px' }}>Trades</th>
+                                <th style={{ padding: '10px' }}>Final Capital</th>
+                                <th style={{ padding: '10px' }}>Return %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {portfolioResult.details.map((item: any) => (
+                                <tr key={item.symbol} style={{ borderBottom: '1px solid #333' }}>
+                                    <td style={{ padding: '10px', fontWeight: 'bold' }}>{item.symbol}</td>
+                                    <td style={{ padding: '10px' }}>{item.trades_count}</td>
+                                    <td style={{ padding: '10px' }}>{formatCurrency(item.final_capital)}</td>
+                                    <td style={{ padding: '10px', color: item.return_pct >= 0 ? '#4caf50' : '#f44336', fontWeight: 'bold' }}>
+                                        {item.return_pct > 0 ? '+' : ''}{item.return_pct}%
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
         </div>
       )}
 

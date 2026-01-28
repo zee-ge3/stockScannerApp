@@ -13,3 +13,4 @@ build/
 .env
 stockdata/
 backend/stocks.db
+backend/venv
