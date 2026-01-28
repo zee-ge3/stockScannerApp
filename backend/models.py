@@ -21,16 +21,13 @@ class StockPrice(SQLModel, table=True):
     close: float
     volume: float
 
-    # OPTIONAL: You can add extra columns here later if you want 
-    # to store calculated indicators permanently, e.g.:
-    # rsi: Optional[float] = None
+    # add extra columns for indicators
 
 class QuarterlyFinancials(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     symbol: str = Field(index=True) # The link to our other data
     date: datetime = Field(index=True)
     
-    # The columns match the data you use in 'FundamentalScreen'
     revenue: Optional[float] = None
     net_income: Optional[float] = None
     eps: Optional[float] = None
@@ -43,7 +40,7 @@ class QuarterlyFinancials(SQLModel, table=True):
 class EarningsSurprise(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     symbol: str = Field(index=True)
-    date: datetime = Field(index=True) # This is the REPORT date (e.g., Apr 25)
+    date: datetime = Field(index=True)
     
     eps_estimate: Optional[float] = None
     eps_actual: Optional[float] = None

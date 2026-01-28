@@ -1,4 +1,4 @@
-__pycache__/
+backend/__pycache__/
 *.py[cod]
 *$py.class
 *.so
@@ -13,4 +13,5 @@ build/
 .env
 stockdata/
 backend/stocks.db
-backend/venv
+backend/venv/
+*.csv
