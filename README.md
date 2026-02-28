@@ -1,4 +1,5 @@
 # Stock Scanner
+### Development has been moved private, however you can request access to georgez.xyz by emailing giz@andrew.cmu.edu
 
 ## A full-stack application that identifies Volatility Contraction Patterns (VCP) using historical stock data. It scans the NASDAQ for specific technical and fundamental setups and visualizes them for traders.
 
